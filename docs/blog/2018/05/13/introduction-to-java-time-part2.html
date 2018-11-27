@@ -18,14 +18,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Tech Stack Java">
 <meta property="og:title" content="Introduction to java.time - Part 2">
-<meta property="og:url" content="/blog/2018/05/13/introduction-to-java-time-part2">
+<meta property="og:url" content="http://localhost:4000/techstackjava/blog/2018/05/13/introduction-to-java-time-part2">
 
 
   <meta property="og:description" content="Part 1 of this series explained the basic time related classes in java.time package and different approaches to create them. In this post we will see how to retrieve time values from these classes.">
 
 
 
-  <meta property="og:image" content="/assets/images/banners/blog-banner-intro-to-java-time-part2.png">
+  <meta property="og:image" content="http://localhost:4000/techstackjava/assets/images/banners/blog-banner-intro-to-java-time-part2.png">
 
 
 
@@ -38,7 +38,7 @@
 
 
 
-<link rel="canonical" href="/blog/2018/05/13/introduction-to-java-time-part2">
+<link rel="canonical" href="http://localhost:4000/techstackjava/blog/2018/05/13/introduction-to-java-time-part2">
 
 
 
@@ -51,7 +51,7 @@
       "@context": "http://schema.org",
       "@type": "Person",
       "name": "Pradeep Kundarapu",
-      "url": null,
+      "url": "http://localhost:4000/techstackjava",
       "sameAs": ["https://twitter.com/PradeepK4J","https://www.linkedin.com/in/pradeepkundarapu"]
     }
   </script>
@@ -65,7 +65,7 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Tech Stack Java Feed">
+<link href="/techstackjava/feed.xml" type="application/atom+xml" rel="alternate" title="Tech Stack Java Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +75,7 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/techstackjava/assets/css/main.css">
 
 <!--[if lte IE 9]>
   <style>
@@ -112,9 +112,9 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="/">Tech Stack Java</a>
+        <a class="site-title" href="/techstackjava/">Tech Stack Java</a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/about/" >About</a>
+              <a href="/techstackjava/about/" >About</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -220,24 +220,24 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Introduction+to+java.time+-+Part+2%20%2Fblog%2F2018%2F05%2F13%2Fintroduction-to-java-time-part2" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+java.time+-+Part+2%20http%3A%2F%2Flocalhost%3A4000%2Ftechstackjava%2Fblog%2F2018%2F05%2F13%2Fintroduction-to-java-time-part2" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fblog%2F2018%2F05%2F13%2Fintroduction-to-java-time-part2" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftechstackjava%2Fblog%2F2018%2F05%2F13%2Fintroduction-to-java-time-part2" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=%2Fblog%2F2018%2F05%2F13%2Fintroduction-to-java-time-part2" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Ftechstackjava%2Fblog%2F2018%2F05%2F13%2Fintroduction-to-java-time-part2" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fblog%2F2018%2F05%2F13%2Fintroduction-to-java-time-part2" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftechstackjava%2Fblog%2F2018%2F05%2F13%2Fintroduction-to-java-time-part2" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/2018/05/03/simple-introduction-to-forkjoin-framework-part2" class="pagination--pager" title="Simple Introduction to ForkJoin Framework - Part 2
+      <a href="/techstackjava/blog/2018/05/03/simple-introduction-to-forkjoin-framework-part2" class="pagination--pager" title="Simple Introduction to ForkJoin Framework - Part 2
 ">Previous</a>
     
     
-      <a href="/blog/2018/05/17/chain-of-responsibility-design-pattern" class="pagination--pager" title="Chain of responsibility
+      <a href="/techstackjava/blog/2018/05/17/chain-of-responsibility-design-pattern" class="pagination--pager" title="Chain of responsibility
 ">Next</a>
     
   </nav>
@@ -263,14 +263,14 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/assets/images/banners/reactiveX-observables.png"
+            "/techstackjava/assets/images/banners/reactiveX-observables.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/2018/07/24/observables" rel="permalink">8 Quick Ways To Create Observables
+        <a href="/techstackjava/blog/2018/07/24/observables" rel="permalink">8 Quick Ways To Create Observables
 </a>
       
     </h2>
@@ -297,14 +297,14 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/assets/images/banners/pull-and-run-first-docker-image.png"
+            "/techstackjava/assets/images/banners/pull-and-run-first-docker-image.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/2018/07/22/pull-and-run-first-docker-image" rel="permalink">Pull And Run First Docker Image
+        <a href="/techstackjava/blog/2018/07/22/pull-and-run-first-docker-image" rel="permalink">Pull And Run First Docker Image
 </a>
       
     </h2>
@@ -331,14 +331,14 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/assets/images/banners/spring-cloud-config-basics-part-2.png"
+            "/techstackjava/assets/images/banners/spring-cloud-config-basics-part-2.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/2018/07/11/spring-cloud-config-basics-part-2" rel="permalink">Spring Cloud Configuration - Part 2
+        <a href="/techstackjava/blog/2018/07/11/spring-cloud-config-basics-part-2" rel="permalink">Spring Cloud Configuration - Part 2
 </a>
       
     </h2>
@@ -365,14 +365,14 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/assets/images/banners/spring-cloud-config-basics-part-1.png"
+            "/techstackjava/assets/images/banners/spring-cloud-config-basics-part-1.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/2018/06/27/spring-cloud-config-basics-part-1" rel="permalink">Spring Cloud Configuration - Part 1
+        <a href="/techstackjava/blog/2018/06/27/spring-cloud-config-basics-part-1" rel="permalink">Spring Cloud Configuration - Part 1
 </a>
       
     </h2>
@@ -430,7 +430,7 @@
       
     
 
-    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    <li><a href="/techstackjava/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
@@ -440,15 +440,15 @@
     </div>
 
     
-  <script src="/assets/js/main.min.js"></script>
+  <script src="/techstackjava/assets/js/main.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/techstackjava/assets/js/lunr/lunr.min.js"></script>
+<script src="/techstackjava/assets/js/lunr/lunr-store.js"></script>
+<script src="/techstackjava/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -456,7 +456,7 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "/blog/2018/05/13/introduction-to-java-time-part2";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.url = "http://localhost:4000/techstackjava/blog/2018/05/13/introduction-to-java-time-part2";  // Replace PAGE_URL with your page's canonical URL variable
       this.page.identifier = "/blog/2018/05/13/introduction-to-java-time-part2"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE

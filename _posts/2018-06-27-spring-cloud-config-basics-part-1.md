@@ -45,7 +45,7 @@ Go to **[start.spring.io](https://start.spring.io/)** to generate spring project
 * Select *Config Server* as dependency
 * Click on *Generate Project*
 
-![Config server demo](/assets/images/posts/2018/06/spring-starter-config-server-demo.png){: height="500px" width="650px"}{: .align-center}
+![Config server demo]({{site.baseurl}}/assets/images/posts/2018/06/spring-starter-config-server-demo.png){: height="500px" width="650px"}{: .align-center}
 
 Unzip and open project in any IDE.
 
@@ -101,7 +101,7 @@ We can see *message* property in the JSON. Config server wraps properties with s
 
 Below image shows the link between server, repository and client applications.
 
-![Config server with client applications](/assets/images/posts/2018/06/config-server-with-clients.jpg){: height="500px" width="650px"}{: .align-center}
+![Config server with client applications]({{site.baseurl}}/assets/images/posts/2018/06/config-server-with-clients.jpg){: height="500px" width="650px"}{: .align-center}
 
 ## Conclusion
 

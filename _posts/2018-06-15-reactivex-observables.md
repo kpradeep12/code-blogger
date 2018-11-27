@@ -18,7 +18,7 @@ Lets say we are interested only in printing even numbers so we can arrange two o
 
 **Number generator (Observable) -> Filter even number (Observable) -> Print to console (Observer)**
 
-![ReactiveX Observables](/assets/images/posts/reactivex-observables.png){: height="450px" width="550px"}{: .align-center}
+![ReactiveX Observables]({{site.baseurl}}/assets/images/posts/reactivex-observables.png){: height="450px" width="550px"}{: .align-center}
 
 ## Hot and Cold Observables
 
@@ -111,7 +111,7 @@ Generating numbers
 {% endhighlight %}
 First execution emits error and second execution completes with out error. Note that after the error there are no more values emitted.
 
-![Number generator observable](/assets/images/posts/number-generator-observable.png){: height="650px" width="550px"}{: .align-center}
+![Number generator observable]({{site.baseurl}}/assets/images/posts/number-generator-observable.png){: height="650px" width="550px"}{: .align-center}
 
 ## Conclusion
 In this article we went through basic introduction of Observables with some coding examples.

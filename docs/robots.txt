@@ -1,1 +1,1 @@
-Sitemap: http://localhost:4000/techstackjava/sitemap.xml
+Sitemap: https://kpradeep12.github.io/techstackjava/sitemap.xml

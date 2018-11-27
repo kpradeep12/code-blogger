@@ -6,13 +6,13 @@ header:
   teaser: /assets/images/banners/spring-cloud-config-basics-part-2.png
 ---
 
-In **[Part 1](/blog/2018/06/27/spring-cloud-config-basics-part-1.html)** we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.
+In **[Part 1]({{site.baseurl}}/blog/2018/06/27/spring-cloud-config-basics-part-1.html)** we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.
 
 ## Create Configuration Client
 
 Go to **[start.spring.io](https://start.spring.io/)** to generate spring project with *web*, **config-client** and *actuator* as dependencies, see below image for reference.
 
-![pet store config client](/assets/images/posts/2018/07/pet-store-config-client.png){: height="500px" width="650px"}{: .align-center}
+![pet store config client]({{site.baseurl}}/assets/images/posts/2018/07/pet-store-config-client.png){: height="500px" width="650px"}{: .align-center}
 
 Unzip and open the project in any IDE. We are going to configure pet-store app to load properties from config server so we no more need application.properties located at src/main/resources folder. 
 
@@ -35,7 +35,7 @@ Above three properties are needed for config client to connect server.
 
 Using all of the above properties client will construct the URL and it looks like this; **http://localhost:8888/pet-store/dev** this URL contains all of the above mentioned three properties; config url, application name and profile.
 
-To verify if everything is working, we can create a REST end point which will return *message* property as response. Note that in **[Part 1](/blog/2018/06/27/spring-cloud-config-basics-part-1.html)** we added **message** property in **pet-store-dev.properties**. Config client will use above three properties to request properties from the server on startup and client gets *message* as part of the response from server.
+To verify if everything is working, we can create a REST end point which will return *message* property as response. Note that in **[Part 1]({{site.baseurl}}/blog/2018/06/27/spring-cloud-config-basics-part-1.html)** we added **message** property in **pet-store-dev.properties**. Config client will use above three properties to request properties from the server on startup and client gets *message* as part of the response from server.
 
 Below is the REST controller which returns message;
 
@@ -54,7 +54,7 @@ class MessageController{
 
 Start pet-store application and in the browser open *http://localhost:8080/message* to get *Hello!* as response.
 
-![pet store hello](/assets/images/posts/2018/07/pet-store-hello.png){: height="150px" width="500px"}{: .align-center}
+![pet store hello]({{site.baseurl}}/assets/images/posts/2018/07/pet-store-hello.png){: height="150px" width="500px"}{: .align-center}
 
 ## Update properties
 
@@ -94,7 +94,7 @@ This curl command will make a POST request, which will make client to again requ
 
 Open **http://localhost:8080/message** to see **Hello World!**
 
-![pet store hello world](/assets/images/posts/2018/07/pet-store-hello-world.png){: height="150px" width="500px"}{: .align-center}
+![pet store hello world]({{site.baseurl}}/assets/images/posts/2018/07/pet-store-hello-world.png){: height="150px" width="500px"}{: .align-center}
 
 ## Conclusion
 In this post we created a client application which depends on the config server to get properties and also used @RefreshScope annotation to update properties.

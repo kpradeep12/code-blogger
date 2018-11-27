@@ -10,11 +10,11 @@ If you are looking to publish your first Maven project to gitHub then this artic
 
 * Login into your gitHub account and create new repository.
 
-![New repo in Git](/assets/images/posts/new-repo-in-git.png){: height="90px" width="510px"}{: .align-center}
+![New repo in Git]({{site.baseurl}}/assets/images/posts/new-repo-in-git.png){: height="90px" width="510px"}{: .align-center}
 
 * Provide name for repository. I am providing name as ‘my-app’.
 
-![Create new repo in Git](/assets/images/posts/create-new-repo-in-git.png){: height="300px" width="500px"}{: .align-center}
+![Create new repo in Git]({{site.baseurl}}/assets/images/posts/create-new-repo-in-git.png){: height="300px" width="500px"}{: .align-center}
 
 * Select ‘java’ from ‘Add .gitignore’ dropdown. This will generate a default .gitignore file needed for a java project.
 
@@ -42,7 +42,7 @@ mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -Dgroup
 * In github.com goto ‘my-app’ project.
 * Click on ‘Clone or download’ drop-down and click copy icon next to repository web URL. This will copy URL into clipboard.
 
-![Copy clone repo](/assets/images/posts/copy-clone-repo-url.png){: height="130px" width="510px"}{: .align-center}
+![Copy clone repo]({{site.baseurl}}/assets/images/posts/copy-clone-repo-url.png){: height="130px" width="510px"}{: .align-center}
 
 * Now we need to clone this project into our maven folder but git clone command will not work if already project folder exists. In our case we already created maven project folder so we will clone it into temp folder. I found this trick from this stack-overflow discussion.
 * If you are in ‘my-app’ folder in CMD/termical then go to parent folder and execute below command. This command will clone gitHub repository into temp folder.

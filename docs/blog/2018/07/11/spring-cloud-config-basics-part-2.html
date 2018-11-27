@@ -18,14 +18,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Tech Stack Java">
 <meta property="og:title" content="Spring Cloud Configuration - Part 2">
-<meta property="og:url" content="http://localhost:4000/techstackjava/blog/2018/07/11/spring-cloud-config-basics-part-2">
+<meta property="og:url" content="https://kpradeep12.github.io/techstackjava/blog/2018/07/11/spring-cloud-config-basics-part-2">
 
 
   <meta property="og:description" content="In Part 1 we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/techstackjava/assets/images/banners/spring-cloud-config-basics-part-2.png">
+  <meta property="og:image" content="https://kpradeep12.github.io/techstackjava/assets/images/banners/spring-cloud-config-basics-part-2.png">
 
 
 
@@ -38,7 +38,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/techstackjava/blog/2018/07/11/spring-cloud-config-basics-part-2">
+<link rel="canonical" href="https://kpradeep12.github.io/techstackjava/blog/2018/07/11/spring-cloud-config-basics-part-2">
 
 
 
@@ -51,7 +51,7 @@
       "@context": "http://schema.org",
       "@type": "Person",
       "name": "Pradeep Kundarapu",
-      "url": "http://localhost:4000/techstackjava",
+      "url": "https://kpradeep12.github.io/techstackjava",
       "sameAs": ["https://twitter.com/PradeepK4J","https://www.linkedin.com/in/pradeepkundarapu"]
     }
   </script>
@@ -170,16 +170,16 @@
         
         
         
-            <img src="/assets/images/banners/spring-cloud-config-basics-part-2.png" style="margin: 1em 0">
+            <img src="/techstackjava/assets/images/banners/spring-cloud-config-basics-part-2.png" style="margin: 1em 0">
         
 
-        <p>In <strong><a href="/blog/2018/06/27/spring-cloud-config-basics-part-1.html">Part 1</a></strong> we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.</p>
+        <p>In <strong><a href="/techstackjava/blog/2018/06/27/spring-cloud-config-basics-part-1.html">Part 1</a></strong> we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.</p>
 
 <h2 id="create-configuration-client">Create Configuration Client</h2>
 
 <p>Go to <strong><a href="https://start.spring.io/">start.spring.io</a></strong> to generate spring project with <em>web</em>, <strong>config-client</strong> and <em>actuator</em> as dependencies, see below image for reference.</p>
 
-<p><img src="/assets/images/posts/2018/07/pet-store-config-client.png" alt="pet store config client" height="500px" width="650px" class="align-center" /></p>
+<p><img src="/techstackjava/assets/images/posts/2018/07/pet-store-config-client.png" alt="pet store config client" height="500px" width="650px" class="align-center" /></p>
 
 <p>Unzip and open the project in any IDE. We are going to configure pet-store app to load properties from config server so we no more need application.properties located at src/main/resources folder.</p>
 
@@ -201,7 +201,7 @@ spring.cloud.config.uri <span class="o">=</span> http://localhost:8888 // &lt;3&
 
 <p>Using all of the above properties client will construct the URL and it looks like this; <strong>http://localhost:8888/pet-store/dev</strong> this URL contains all of the above mentioned three properties; config url, application name and profile.</p>
 
-<p>To verify if everything is working, we can create a REST end point which will return <em>message</em> property as response. Note that in <strong><a href="/blog/2018/06/27/spring-cloud-config-basics-part-1.html">Part 1</a></strong> we added <strong>message</strong> property in <strong>pet-store-dev.properties</strong>. Config client will use above three properties to request properties from the server on startup and client gets <em>message</em> as part of the response from server.</p>
+<p>To verify if everything is working, we can create a REST end point which will return <em>message</em> property as response. Note that in <strong><a href="/techstackjava/blog/2018/06/27/spring-cloud-config-basics-part-1.html">Part 1</a></strong> we added <strong>message</strong> property in <strong>pet-store-dev.properties</strong>. Config client will use above three properties to request properties from the server on startup and client gets <em>message</em> as part of the response from server.</p>
 
 <p>Below is the REST controller which returns message;</p>
 
@@ -218,7 +218,7 @@ spring.cloud.config.uri <span class="o">=</span> http://localhost:8888 // &lt;3&
 
 <p>Start pet-store application and in the browser open <em>http://localhost:8080/message</em> to get <em>Hello!</em> as response.</p>
 
-<p><img src="/assets/images/posts/2018/07/pet-store-hello.png" alt="pet store hello" height="150px" width="500px" class="align-center" /></p>
+<p><img src="/techstackjava/assets/images/posts/2018/07/pet-store-hello.png" alt="pet store hello" height="150px" width="500px" class="align-center" /></p>
 
 <h2 id="update-properties">Update properties</h2>
 
@@ -253,7 +253,7 @@ management.endpoints.web.exposure.include<span class="o">=</span>refresh</code><
 
 <p>Open <strong>http://localhost:8080/message</strong> to see <strong>Hello World!</strong></p>
 
-<p><img src="/assets/images/posts/2018/07/pet-store-hello-world.png" alt="pet store hello world" height="150px" width="500px" class="align-center" /></p>
+<p><img src="/techstackjava/assets/images/posts/2018/07/pet-store-hello-world.png" alt="pet store hello world" height="150px" width="500px" class="align-center" /></p>
 
 <h2 id="conclusion">Conclusion</h2>
 <p>In this post we created a client application which depends on the config server to get properties and also used @RefreshScope annotation to update properties.</p>
@@ -276,13 +276,13 @@ management.endpoints.web.exposure.include<span class="o">=</span>refresh</code><
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Spring+Cloud+Configuration+-+Part+2%20http%3A%2F%2Flocalhost%3A4000%2Ftechstackjava%2Fblog%2F2018%2F07%2F11%2Fspring-cloud-config-basics-part-2" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Spring+Cloud+Configuration+-+Part+2%20https%3A%2F%2Fkpradeep12.github.io%2Ftechstackjava%2Fblog%2F2018%2F07%2F11%2Fspring-cloud-config-basics-part-2" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftechstackjava%2Fblog%2F2018%2F07%2F11%2Fspring-cloud-config-basics-part-2" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkpradeep12.github.io%2Ftechstackjava%2Fblog%2F2018%2F07%2F11%2Fspring-cloud-config-basics-part-2" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Ftechstackjava%2Fblog%2F2018%2F07%2F11%2Fspring-cloud-config-basics-part-2" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fkpradeep12.github.io%2Ftechstackjava%2Fblog%2F2018%2F07%2F11%2Fspring-cloud-config-basics-part-2" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftechstackjava%2Fblog%2F2018%2F07%2F11%2Fspring-cloud-config-basics-part-2" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fkpradeep12.github.io%2Ftechstackjava%2Fblog%2F2018%2F07%2F11%2Fspring-cloud-config-basics-part-2" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -512,7 +512,7 @@ management.endpoints.web.exposure.include<span class="o">=</span>refresh</code><
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/techstackjava/blog/2018/07/11/spring-cloud-config-basics-part-2";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.url = "https://kpradeep12.github.io/techstackjava/blog/2018/07/11/spring-cloud-config-basics-part-2";  // Replace PAGE_URL with your page's canonical URL variable
       this.page.identifier = "/blog/2018/07/11/spring-cloud-config-basics-part-2"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE

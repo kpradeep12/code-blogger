@@ -6,7 +6,7 @@ categories: java
 
 Producer and consumers are two independent entities works together on the  queue. Producer inserts elements into the tail of the queue  and consumer removes them from the head of the queue. Here elements can be tasks or data on which consumer is interested in. This design pattern will allow producer and consumer to work independently.
 
-![Producer consumer](/assets/images/posts/producer-consumer.png){: height="150px" width="800px"}{: .align-center}
+![Producer consumer]({{site.baseurl}}/assets/images/posts/producer-consumer.png){: height="150px" width="800px"}{: .align-center}
 
 Queue allows data to be inserted in FIFO order. FIFO is ‘First In First Out’, in which longest waiting element will be removed first and shorted waiting element will be removed last. Queue acts as a communication channel between Producer and Consumer.
 

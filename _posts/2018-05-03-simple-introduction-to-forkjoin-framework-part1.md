@@ -14,7 +14,7 @@ ForkJoinPool maintains a pool of light weight threads. These light weight thread
 
 Each thread in the pool will have its own queue. This queue will gets filled with the tasks. For example, if we have two threads in the pool then each thread will have its own queue. Internally ForkJoinPool uses work-stealing algorithm. Using this algorithm, threads will first clean up there queue and if there are no more tasks left then it steals work from the queue of other threads. For example, if thread A completed its tasks in the queue then instead of waiting for the next task it will steal from thread B. ForkJoin framework is the best when we have processor intensive tasks because it keeps processor busy by not keeping threads idle.
 
-![Fork Join pool threads](/assets/images/posts/fork-joi-pool-threads.png){: height="400px" width="550px"}{: .align-center}
+![Fork Join pool threads]({{site.baseurl}}/assets/images/posts/fork-joi-pool-threads.png){: height="400px" width="550px"}{: .align-center}
 
 Above image shows two threads. Thread B is not having tasks to execute so it is stealing tasks from Thread A's queue.
 
@@ -28,7 +28,7 @@ Once the subtasks are executed, then the result of each subtasks are joined toge
 
 This works like a divide and conquer problem. First the task is divided in to small enough to work and then all subtasks are joined back to get the result. Below image shows it in the detail;
 
-![Fork Join framework task execution](/assets/images/posts/fork-join-execution.png){: height="550px" width="650px"}{: .align-center}
+![Fork Join framework task execution]({{site.baseurl}}/assets/images/posts/fork-join-execution.png){: height="550px" width="650px"}{: .align-center}
 
 In the above image, an array of twenty elements need to be processed. We configured threshold as five, so input array is forked until each sub-array get five elements. Each sub-array is passed to ForkJoinPool for execution. After the execution all sub-arrays are joined back to get result of fully processed array.
 
@@ -39,7 +39,7 @@ Below is the list of some examples which can be implemented using ForkJoinTask;
 
 ForkJoinTask is an abstract class so we can not directly use it, instead we can extend any of the three abstract classes which extends ForkJoinTask. Based on the type of the task we can extend any one of these three classes.
 
-![Fork Join task classes](/assets/images/posts/forkjointask-classes.png){: height="350px" width="550px"}{: .align-center}
+![Fork Join task classes]({{site.baseurl}}/assets/images/posts/forkjointask-classes.png){: height="350px" width="550px"}{: .align-center}
 
 * **RecursiveAction:** Works on the provided task but not returns any result.
 * **RecursiveTask:** Works on the provided task and returns the result.
@@ -47,4 +47,4 @@ ForkJoinTask is an abstract class so we can not directly use it, instead we can 
 
 ## Conclusion
 
-This article introduced internals of ForkJoinPool and ForkJoinTask classes. In the **[next part](/blog/2018/05/03/simple-introduction-to-forkjoin-framework-part2.html)** of this article we will go through the code examples.
+This article introduced internals of ForkJoinPool and ForkJoinTask classes. In the **[next part]({{site.baseurl}}/blog/2018/05/03/simple-introduction-to-forkjoin-framework-part2.html)** of this article we will go through the code examples.

@@ -10,11 +10,11 @@ Spring framework is the suite of many projects, using which we can develop wide 
 
 In this article I will show the steps needed to create a Spring shell project which tests the regex string provided at the command line. Easier way to create spring project is using [start.spring.io](https://start.spring.io/) Go to the site and select you choice of configuration with ‘Spring Shell’ as dependency. See below screenshot for the reference.
 
-![Regex tester spring starter](/assets/images/posts/Post-Regex-tester-spring-starter.png){: height="300px" width="550px"}{: .align-center}
+![Regex tester spring starter]({{site.baseurl}}/assets/images/posts/Post-Regex-tester-spring-starter.png){: height="300px" width="550px"}{: .align-center}
 
 Click on ‘Generate Project’ which will download the pre-configured spring project. Unzip and import it into your favorite java editor.
 
-![Regex tester spring shell](/assets/images/posts/Post-Regex-tester-spring-shell-pom.png){: height="300px" width="570px"}{: .align-center}
+![Regex tester spring shell]({{site.baseurl}}/assets/images/posts/Post-Regex-tester-spring-shell-pom.png){: height="300px" width="570px"}{: .align-center}
 
 Now we have empty spring shell project ready.
 
@@ -68,7 +68,7 @@ java -jar target/regex-tester-0.0.1-SNAPSHOT.jar
 
 You should see a prompt saying ‘shell:>’ As I mentioned earlier, spring shell provides the required infrastructure for the command line interface so this prompt is provided by the spring shell and it is ready to take the commands. lets execute some commands on the shell prompt.
 
-![Regex tester cli](/assets/images/posts/Post-Regex-tester-regex-cli.png){: height="140px" width="500px"}{: .align-center}
+![Regex tester cli]({{site.baseurl}}/assets/images/posts/Post-Regex-tester-regex-cli.png){: height="140px" width="500px"}{: .align-center}
 
 I passed ‘ab’ as the pattern and ‘abcabc’ as the test string to regex command. Spring will internally execute regex method and passes provided arguments to it. The output of the method will be printed in the console. We can continue to test regex command multiple times with different strings and it can be used as regex utility in local.
 

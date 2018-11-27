@@ -14,7 +14,7 @@ For example, you can assume container as something like JRE. JRE provides a runt
 
 Below image is from docker website which gives the idea of how docker works;
 
-![Docker architecture](/assets/images/posts/docker-architecture.png){: height="350px" width="450px"}{: .align-center}
+![Docker architecture]({{site.baseurl}}/assets/images/posts/docker-architecture.png){: height="350px" width="450px"}{: .align-center}
 
 ## Docker Terminology
 

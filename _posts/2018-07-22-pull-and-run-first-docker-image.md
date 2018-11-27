@@ -14,9 +14,9 @@ Docker image is a file, which contains set of commands. When these commands are 
 
 We can search for mysql-server in **[docker store](https://store.docker.com/)**. Here is the direct link of [mysql-server](https://store.docker.com/community/images/mysql/mysql-server) page in docker store. All image files will have a dedicated page in docker store which provides basic information about the image and instructions to pull, run and configure it, also it shows contents of image file. Below image shows the structure of the page.
 
-![pet store hello](/assets/images/posts/2018/07/docker-image-page.png){: height="450px" width="500px"}{: .align-center}
+![pet store hello]({{site.baseurl}}/assets/images/posts/2018/07/docker-image-page.png){: height="450px" width="500px"}{: .align-center}
 
-Lets pull mysql image from docker store. Open terminal and execute below command. Before executing this command make sure that docker is running. Refer **[Docker introduction](/docker/2018/06/09/docker-intro.html)** for more details on Docker setup.
+Lets pull mysql image from docker store. Open terminal and execute below command. Before executing this command make sure that docker is running. Refer **[Docker introduction]({{site.baseurl}}/blog/2018/06/09/docker-intro.html)** for more details on Docker setup.
 
 {% highlight bash %}
 docker pull mysql/mysql-server

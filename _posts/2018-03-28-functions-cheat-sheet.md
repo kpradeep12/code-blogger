@@ -11,7 +11,7 @@ Functional interface will have single abstract method and they provide target ty
 ### Consumer
 Consumer takes input and always returns void. You can use this to perform some action with out returning anything.
 
-![Consumer Function](/assets/images/posts/consumer-function.png){: height="110px" width="590px"}{: .align-center}
+![Consumer Function]({{site.baseurl}}/assets/images/posts/consumer-function.png){: height="110px" width="590px"}{: .align-center}
 
 Consumer	 |void accept(T t)
 DoubleConsumer	 |void accept(double value)
@@ -25,7 +25,7 @@ ObjLongConsumer	 |void accept(T t, long value)
 ### Function
 Function takes input and produces different kind of output.
 
-![Function](/assets/images/posts/function.png){: height="110px" width="590px"}{: .align-center}
+![Function]({{site.baseurl}}/assets/images/posts/function.png){: height="110px" width="590px"}{: .align-center}
 
 Function	 |R apply(T t)
 IntFunction	 |R apply(int value)
@@ -48,7 +48,7 @@ ToLongBiFunction	 |long applyAsLong(T t, U t)
 ### Operator
 Operator is a special kind of function where it always accepts and produces same type.
 
-![Operator Function](/assets/images/posts/operator-function.png){: height="110px" width="590px"}{: .align-center}
+![Operator Function]({{site.baseurl}}/assets/images/posts/operator-function.png){: height="110px" width="590px"}{: .align-center}
 
 UnaryOperator	 |T apply(T t)
 DoubleUnaryOperator	 |double applyAsDouble(double operand)
@@ -62,7 +62,7 @@ LongBinaryOperator	 |long applyAsLong(long left, long right)
 ### Predicate
 Predicate always returns a boolean so you can this in conditional evaluations.
 
-![Predicate Function](/assets/images/posts/predicate-function.png){: height="110px" width="590px"}{: .align-center}
+![Predicate Function]({{site.baseurl}}/assets/images/posts/predicate-function.png){: height="110px" width="590px"}{: .align-center}
 
 Predicate	 |boolean test(T t)
 DoublePredicate	 |boolean test(double value)
@@ -73,7 +73,7 @@ BiPredicate	 |boolean test(T t, U u)
 ### Supplier
 Supplier always returns a value. This can be used to generate random values or data from some source.
 
-![Supplier Function](/assets/images/posts/supplier-function.png){: height="110px" width="290px"}{: .align-center}
+![Supplier Function]({{site.baseurl}}/assets/images/posts/supplier-function.png){: height="110px" width="290px"}{: .align-center}
 
 Supplier	 |T get()
 BooleanSupplier	 |boolean getAsBoolean()

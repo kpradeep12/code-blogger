@@ -6,7 +6,7 @@ categories: java
 
 In this article we are looking at the Fixed thread pool implementation. This thread pool creates a fixed number of threads and reuses them as the tasks are completed and because the threads are reused so once after reaching the thread pool limit then there will not be any thread creations involved. This pool will be helpful when we want to execute long running threads. For example we can use this pool in running batch jobs or accepting HTTP client requests and so on.
 
-![Fixed thread pool](/assets/images/posts/Fixed-thread-pool.png){: height="130px" width="490px"}{: .align-center}
+![Fixed thread pool]({{site.baseurl}}/assets/images/posts/Fixed-thread-pool.png){: height="130px" width="490px"}{: .align-center}
 
 In the above figure, producer inserts tasks into the queue, queue contains the tasks which are ready to be executed and the pool contains the running tasks. With fixed thread pool of size two, not more than two threads can execute at any time. Threads will be reused once after the current running tasks are completed, so there will not be thread creation overhead involved after completing every task. Fixed thread pool will consume less resources because they will control the number of simultaneous thread executions.
 

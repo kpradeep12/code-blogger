@@ -6,7 +6,7 @@ categories: java
 
 This article will explain the basics of using consumer functional interface. Consume is one of the many available functional interfaces in Java. This interface can be used when we need to take an object and process it but with out returning anything. Below image will show you how it looks in a logical way.
 
-![Consumer Function](/assets/images/posts/consumer.png){: height="130px" width="280px"}{: .align-center}
+![Consumer Function]({{site.baseurl}}/assets/images/posts/consumer.png){: height="130px" width="280px"}{: .align-center}
 
 As you see in the above image, it takes a value and operates on it with a side-effect. Here side-effect means, some thing like printing to console or logging to file or making call to rest service but without returning any value. This interface have single abstract method, which is ‘**void accept(T t)**‘ As you can see this method takes a value but does not return anything.
 
@@ -76,6 +76,6 @@ There are three primitive consumers available in java.util.functional package; I
 ### BiConsumer
 BiConsumer is same like Consumer except it takes two parameters. Below is the logical representation of it.
 
-![BiConsumer Function](/assets/images/posts/biconsumer.png){: height="130px" width="280px"}{: .align-center}
+![BiConsumer Function]({{site.baseurl}}/assets/images/posts/biconsumer.png){: height="130px" width="280px"}{: .align-center}
 
 This interface will be handy if in case you need to consume two parameters and also it allows you to compose multiple BiConsumers. There are primitive versions of this interface; which are **ObjIntConsumer, ObjLongConsumer** and **ObjDoubleConsumer**, all these interfaces takes object as first parameter and primitive value as second parameter.

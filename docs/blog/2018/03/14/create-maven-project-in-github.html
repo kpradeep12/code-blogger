@@ -1,0 +1,586 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.14.1 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Create Maven project in GitHub | Tech Stack Java</title>
+<meta name="description" content="If you are looking to publish your first Maven project to gitHub then this article will help you to get started with that. I am going to explain the steps involved in creating a new maven project and pushing it to gitHub. Before creating local project its better to create empty repository in gitHub so we can later clone it.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Tech Stack Java">
+<meta property="og:title" content="Create Maven project in GitHub">
+<meta property="og:url" content="/blog/2018/03/14/create-maven-project-in-github">
+
+
+  <meta property="og:description" content="If you are looking to publish your first Maven project to gitHub then this article will help you to get started with that. I am going to explain the steps involved in creating a new maven project and pushing it to gitHub. Before creating local project its better to create empty repository in gitHub so we can later clone it.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-03-14T06:42:40-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="/blog/2018/03/14/create-maven-project-in-github">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Pradeep Kundarapu",
+      "url": null,
+      "sameAs": ["https://twitter.com/PradeepK4J","https://www.linkedin.com/in/pradeepkundarapu"]
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Tech Stack Java Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Tech Stack Java</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Create Maven project in GitHub">
+    <meta itemprop="description" content="If you are looking to publish your first Maven project to gitHub then this article will help you to get started with that. I am going to explain the steps involved in creating a new maven project and pushing it to gitHub. Before creating local project its better to create empty repository in gitHub so we can later clone it.">
+    <meta itemprop="datePublished" content="March 14, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Create Maven project in GitHub
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        
+        
+
+        <p>If you are looking to publish your first Maven project to gitHub then this article will help you to get started with that. I am going to explain the steps involved in creating a new maven project and pushing it to gitHub. Before creating local project its better to create empty repository in gitHub so we can later clone it.</p>
+
+<h3 id="create-new-repository-in-github">Create new repository in Github</h3>
+
+<ul>
+  <li>Login into your gitHub account and create new repository.</li>
+</ul>
+
+<p><img src="/assets/images/posts/new-repo-in-git.png" alt="New repo in Git" height="90px" width="510px" class="align-center" /></p>
+
+<ul>
+  <li>Provide name for repository. I am providing name as ‘my-app’.</li>
+</ul>
+
+<p><img src="/assets/images/posts/create-new-repo-in-git.png" alt="Create new repo in Git" height="300px" width="500px" class="align-center" /></p>
+
+<ul>
+  <li>
+    <p>Select ‘java’ from ‘Add .gitignore’ dropdown. This will generate a default .gitignore file needed for a java project.</p>
+  </li>
+  <li>
+    <p>Click on ‘Create repository’ button. Empty repository will be created and in next section we will create Maven project.</p>
+  </li>
+</ul>
+
+<h3 id="create-new-maven-project-in-local">Create new maven project in local</h3>
+
+<ul>
+  <li>Make sure you have java, maven and git installed in your local before proceeding further.</li>
+  <li>Open command prompt (or terminal) and go to a folder where you want to create a new project.</li>
+  <li>Execute below maven command. This command will create a simple Java project with in folder ‘my-app’. Note that this name should match with repository name in gitHub.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mvn <span class="nt">-B</span> archetype:generate <span class="nt">-DarchetypeGroupId</span><span class="o">=</span>org.apache.maven.archetypes <span class="nt">-DgroupId</span><span class="o">=</span>com.mycompany.app <span class="nt">-DartifactId</span><span class="o">=</span>my-app</code></pre></figure>
+
+<ul>
+  <li>Above command should show ‘BUILD SUCCESS’ message and it will create below files and folders:
+    <ul>
+      <li>New folder ‘my-app’ (this is the same name we provided for repository in gitHub)</li>
+      <li>pom.xml in my-app folder. This is the main maven file.</li>
+      <li>Folders for java and test classes.</li>
+    </ul>
+  </li>
+  <li>New maven project is created.</li>
+</ul>
+
+<h3 id="clone-github-repository-and-merge-with-maven-project">Clone GitHub repository and merge with Maven project</h3>
+
+<ul>
+  <li>In github.com goto ‘my-app’ project.</li>
+  <li>Click on ‘Clone or download’ drop-down and click copy icon next to repository web URL. This will copy URL into clipboard.</li>
+</ul>
+
+<p><img src="/assets/images/posts/copy-clone-repo-url.png" alt="Copy clone repo" height="130px" width="510px" class="align-center" /></p>
+
+<ul>
+  <li>Now we need to clone this project into our maven folder but git clone command will not work if already project folder exists. In our case we already created maven project folder so we will clone it into temp folder. I found this trick from this stack-overflow discussion.</li>
+  <li>If you are in ‘my-app’ folder in CMD/termical then go to parent folder and execute below command. This command will clone gitHub repository into temp folder.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone &lt;URL copied from gitHub&gt; temp</code></pre></figure>
+
+<ul>
+  <li>In temp folder you should see .git and .gitignore files downloaded. These are hidden files.</li>
+  <li>Now copy .git and .gitignore from temp into my-app folder and then remove temp folder by executing below commands</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Use below commands <span class="k">in </span>Windows <span class="nb">command </span>prompt
+xcopy /S/H/Y temp my-app
+<span class="nb">rmdir </span>temp /S/Q
+ 
+Use below commands <span class="k">in </span>Mac terminal
+<span class="nb">cp</span> <span class="nt">-a</span> temp/. my-app/
+<span class="nb">rm</span> <span class="nt">-rf</span> temp</code></pre></figure>
+
+<ul>
+  <li>You should see .git, .gitignore, src and pom.xml files in my-app folder.</li>
+  <li>Now we have maven project with git. In next section we will see how to do first commit and push to gitHub repository.</li>
+</ul>
+
+<h3 id="commit-and-push-to-github-repository">Commit and push to gitHub repository</h3>
+<ul>
+  <li>‘git status’ command in gitHub project will show current check-in status of the files so execute ‘git status’ in root folder of the project.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">my-app <span class="nv">$ </span>git status
+On branch master
+Your branch is up-to-date with <span class="s1">'origin/master'</span><span class="nb">.</span>
+Untracked files:
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include <span class="k">in </span>what will be committed<span class="o">)</span>
+ 
+	pom.xml
+	src/
+
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">"git add"</span> to track<span class="o">)</span></code></pre></figure>
+
+<ul>
+  <li>This command shows that pom.xml and src is not yet committed, so execute ‘git add -A’ this will add all new files to staging.</li>
+  <li>Now again check the status ‘git status’</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">my-app <span class="nv">$ </span>git status
+On branch master
+Your branch is up-to-date with <span class="s1">'origin/master'</span><span class="nb">.</span>
+Changes to be committed:
+  <span class="o">(</span>use <span class="s2">"git reset HEAD &lt;file&gt;..."</span> to unstage<span class="o">)</span>
+ 
+	new file:   pom.xml
+	new file:   src/main/java/com/mycompany/app/App.java
+	new file:   src/test/java/com/mycompany/app/AppTest.java</code></pre></figure>
+
+<ul>
+  <li>This time it shows all files are in staging and ready to be committed.</li>
+  <li>Execute ‘git commit -m “initial project setup”‘ this command will commit all staged files to local gitHub repository. We are also providing comment for all these files with -m option.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">my-app <span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"initial project setup"</span>
+<span class="o">[</span>master e719d11] initial project setup
+ 3 files changed, 69 insertions<span class="o">(</span>+<span class="o">)</span>
+ create mode 100644 pom.xml
+ create mode 100644 src/main/java/com/mycompany/app/App.java
+ create mode 100644 src/test/java/com/mycompany/app/AppTest.java</code></pre></figure>
+
+<ul>
+  <li>All files are checked into local repository. Now lets push them to remote gitHub repository. Execute ‘git push origin master’</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">my-app <span class="nv">$ </span>git push origin master
+Counting objects: 16, <span class="k">done</span><span class="nb">.</span>
+Delta compression using up to 4 threads.
+Compressing objects: 100% <span class="o">(</span>6/6<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Writing objects: 100% <span class="o">(</span>16/16<span class="o">)</span>, 1.51 KiB | 0 bytes/s, <span class="k">done</span><span class="nb">.</span>
+Total 16 <span class="o">(</span>delta 0<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+To https://github.com/kpradeep12/my-app.git
+   62985a4..e719d11  master -&gt; master</code></pre></figure>
+
+<ul>
+  <li>Go to gitHub repository and you should see all your maven files uploaded there. Now any one can work on this repository. If you want to pull all new changes from remote to local repository then execute ‘git pull –all’</li>
+</ul>
+
+<p>Now we have a full maven project setup with gitHub integration. This project is ready to be imported into any of your favorite IDE.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-03-14T06:42:40-04:00">March 14, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Create+Maven+project+in+GitHub%20%2Fblog%2F2018%2F03%2F14%2Fcreate-maven-project-in-github" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fblog%2F2018%2F03%2F14%2Fcreate-maven-project-in-github" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=%2Fblog%2F2018%2F03%2F14%2Fcreate-maven-project-in-github" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fblog%2F2018%2F03%2F14%2Fcreate-maven-project-in-github" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/2018/03/10/fixed-thread-pool-using-executor-framework" class="pagination--pager" title="Fixed Thread Pool using Executor framework
+">Previous</a>
+    
+    
+      <a href="/blog/2018/03/17/using-consumer-functional-interface" class="pagination--pager" title="Using consumer functional interface
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/banners/reactiveX-observables.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/2018/07/24/observables" rel="permalink">8 Quick Ways To Create Observables
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Many operators are available in RxJava to create observables. In this post I will go through each of them with examples. In the context of reactive programmi...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/banners/pull-and-run-first-docker-image.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/2018/07/22/pull-and-run-first-docker-image" rel="permalink">Pull And Run First Docker Image
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Docker image is a file, which contains set of commands. When these commands are executed, instance of the image is created and this instance is called Contai...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/banners/spring-cloud-config-basics-part-2.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/2018/07/11/spring-cloud-config-basics-part-2" rel="permalink">Spring Cloud Configuration - Part 2
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In Part 1 we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration se...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/banners/spring-cloud-config-basics-part-1.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/2018/06/27/spring-cloud-config-basics-part-1" rel="permalink">Spring Cloud Configuration - Part 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Configuration can be any key value pair information needed by the application at runtime. Spring applications accepts configuration in many ways like command...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/PradeepK4J" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/kpradeep12" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/pradeepkundarapu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Pradeep Kundarapu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "/blog/2018/03/14/create-maven-project-in-github";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/blog/2018/03/14/create-maven-project-in-github"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://k_pradeep1234.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>

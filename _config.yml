@@ -28,6 +28,7 @@ paginate: 9
 paginate_path: /page:num/
 timezone: America/New_York
 permalink: /blog/:year/:month/:day/:title
+destination: ./docs
 
 # Build settings
 markdown: kramdown

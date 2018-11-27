@@ -47,4 +47,4 @@ ForkJoinTask is an abstract class so we can not directly use it, instead we can 
 
 ## Conclusion
 
-This article introduced internals of ForkJoinPool and ForkJoinTask classes. In the **[next part](/java/2018/05/03/simple-introduction-to-forkjoin-framework-part2.html)** of this article we will go through the code examples.
+This article introduced internals of ForkJoinPool and ForkJoinTask classes. In the **[next part](/blog/2018/05/03/simple-introduction-to-forkjoin-framework-part2.html)** of this article we will go through the code examples.

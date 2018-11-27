@@ -27,6 +27,7 @@ search: true
 paginate: 9
 paginate_path: /page:num/
 timezone: America/New_York
+permalink: /blog/:year/:month/:day/:title
 
 # Build settings
 markdown: kramdown

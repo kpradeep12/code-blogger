@@ -6,7 +6,7 @@ header:
   teaser: /assets/images/banners/blog-banner-intro-to-java-time-part2.png
 ---
 
-**[Part 1](/java/2018/04/18/introduction-to-java-time-part1.html)** of this series explained the basic time related classes in java.time package and different approaches to create them. In this post we will see how to retrieve time values from these classes.
+**[Part 1](/blog/2018/04/18/introduction-to-java-time-part1.html)** of this series explained the basic time related classes in java.time package and different approaches to create them. In this post we will see how to retrieve time values from these classes.
 
 Once the date and time objects are created, we can get information from it using various getter methods. Below code shows some examples of the LocalDate.
 

@@ -6,7 +6,7 @@ header:
   teaser: /assets/images/banners/simple-introduction-to-forkjoin-framework-part2.png
 ---
 
-In the **[first part](/java/2018/05/03/simple-introduction-to-forkjoin-framework-part1.html)** of this series we went through the introduction on ForkJoin framework. In this article we will go through code example to create a ForkJoinTask using RecursiveAction. RecursiveAction is an abstract class and it is one of the subclass of ForkJoinTask. In order to create a divisible task we need to extend RecursiveAction and implement compute() method.
+In the **[first part](/blog/2018/05/03/simple-introduction-to-forkjoin-framework-part1.html)** of this series we went through the introduction on ForkJoin framework. In this article we will go through code example to create a ForkJoinTask using RecursiveAction. RecursiveAction is an abstract class and it is one of the subclass of ForkJoinTask. In order to create a divisible task we need to extend RecursiveAction and implement compute() method.
 
 In this article we will go through an array incrementor example. We declare a class ArrayIncrementor and this class will increment numbers in the given array and this class extends RecursiveAction. RecursiveAction has one abstract method, compute(), we implement this method. Instead of incrementing each element sequentially we will divide array into sub-arrays and threads in the pool will increment values in these sub-arrays. We need to take care of dividing array and ForkJoin framework will handle remaining things like execution of compute method and managing the threads.
 

@@ -1,0 +1,504 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.14.1 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Quick way to create, read, write and delete files in Java | Tech Stack Java</title>
+<meta name="description" content="Files class in java.nio.file package contains static utility methods to operate on files and directories. In this article I will provide information on some of these static methods. These methods will help us in writing simple and quick code to work on the files. The main advantage of using this class is that we no more need to handle lower level input/output streams.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Tech Stack Java">
+<meta property="og:title" content="Quick way to create, read, write and delete files in Java">
+<meta property="og:url" content="http://localhost:4000/java/2018/02/28/quickway-to-create-read-write-delete-files.html">
+
+
+  <meta property="og:description" content="Files class in java.nio.file package contains static utility methods to operate on files and directories. In this article I will provide information on some of these static methods. These methods will help us in writing simple and quick code to work on the files. The main advantage of using this class is that we no more need to handle lower level input/output streams.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-02-28T09:25:40-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/java/2018/02/28/quickway-to-create-read-write-delete-files.html">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Pradeep Kundarapu",
+      "url": "http://localhost:4000",
+      "sameAs": ["https://twitter.com/PradeepK4J","https://www.linkedin.com/in/pradeepkundarapu"]
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Tech Stack Java Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Tech Stack Java</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Quick way to create, read, write and delete files in Java">
+    <meta itemprop="description" content="Files class in java.nio.file package contains static utility methods to operate on files and directories. In this article I will provide information on some of these static methods. These methods will help us in writing simple and quick code to work on the files. The main advantage of using this class is that we no more need to handle lower level input/output streams.">
+    <meta itemprop="datePublished" content="February 28, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Quick way to create, read, write and delete files in Java
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+          
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        
+        
+
+        <p>Files class in java.nio.file package contains static utility methods to operate on files and directories. In this article I will provide information on some of these static methods. These methods will help us in writing simple and quick code to work on the files. The main advantage of using this class is that we no more need to handle lower level input/output streams.</p>
+
+<h2 id="create-file">Create file</h2>
+<p>Quick way to create a file is using createFile method by passing the path object. If file already exists then it throws FileAlreadyExistsException, so in the below example I called deleteIfExists method before creating file. I am creating a file which is located at “/Users/pradeep/temp/data.txt” in my computer, so you can create a file with different path based on your computer. If it is Microsoft OS then use \ in the string to separate the folder paths.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Path</span> <span class="nf">create</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="n">Path</span> <span class="n">path</span> <span class="o">=</span> <span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">);</span>
+        <span class="c1">//deletes the file if it exists</span>
+        <span class="n">Files</span><span class="o">.</span><span class="na">deleteIfExists</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+ 
+        <span class="c1">//creates new file and returns path</span>
+        <span class="k">return</span> <span class="n">Files</span><span class="o">.</span><span class="na">createFile</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="write-to-file">Write to file</h2>
+<p>Files class have couple of overloaded write methods. In below example I used one of the write method which takes three parameters; path of the file, list of strings to be written into the file and optional array of OpenOption objects. OpenOption tells how the file is created or opened.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">write</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="c1">//writes list of cities into file</span>
+        <span class="n">Files</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">),</span> 
+                <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"New York"</span><span class="o">,</span> <span class="s">"San Francisco"</span><span class="o">,</span> <span class="s">"Chicago"</span><span class="o">,</span> <span class="s">"Orlando"</span><span class="o">));</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>If we don’t pass OpenOption to this method then this method will use three default OpenOptions CREATE, TRUNCATE_EXISTING and WRITE which means creates file if it doesn’t exist, opens to write content, truncates all existing contents.</p>
+
+<p>There is another overloaded write method which takes byte[] instead of Iterable. This method is useful if you have large data so you can convert it to byte array, for example a string can be converted to byte arrays by calling getBytes() method on it.</p>
+
+<h2 id="read-file">Read file</h2>
+<p>If you want to get all lines in the file as a List<String> and want to read whole file at once, then you can use ‘readAllLines’ method as mentioned in below example.</String></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">read</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="c1">//readAllLines returns List&lt;String&gt; and forEach iterates on this list and prints to console</span>
+        <span class="n">Files</span><span class="o">.</span><span class="na">readAllLines</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>In the above example I used forEach on the returned list to print each line on the console, so which means you can process each single line separately. If in case data can not be processed line by line then we can use ‘readAllBytes’ method, this will return whole file content as byte[].</p>
+
+<p>We can also get Stream<String> on the file by calling ‘lines’ method. This will be useful if we want to process the content line by line, but after the processing we should close the stream. Below is the example:</String></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">read</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="c1">//get stream of strings from file</span>
+        <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">lines</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">));</span>
+        <span class="c1">//process each line</span>
+        <span class="n">lines</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+        <span class="c1">//close the stream</span>
+        <span class="n">lines</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="delete-file">Delete file</h2>
+<p>There are two methods available to delete a file. One of the method is ‘deleteIfExists’ which I used in create() mentioned in first example. The other method is ‘delete’</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">delete</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">{</span>
+        <span class="c1">//deletes the file</span>
+        <span class="n">Files</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">));</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>All the above examples can be used to do simple file operations easily with out using any third party libraries. Go through the Java 9 Files API to see all available methods.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-02-28T09:25:40-05:00">February 28, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Quick+way+to+create%2C+read%2C+write+and+delete+files+in+Java%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2F2018%2F02%2F28%2Fquickway-to-create-read-write-delete-files.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2F2018%2F02%2F28%2Fquickway-to-create-read-write-delete-files.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2F2018%2F02%2F28%2Fquickway-to-create-read-write-delete-files.html" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2F2018%2F02%2F28%2Fquickway-to-create-read-write-delete-files.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/java/2018/02/23/quick-introduction-to-priorityQueue.html" class="pagination--pager" title="Quick introduction to PriorityQueue
+">Previous</a>
+    
+    
+      <a href="/java/2018/03/03/generate-stream-of-random-numbers.html" class="pagination--pager" title="Generate stream of random numbers
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/banners/reactiveX-observables.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/reactivex/2018/07/24/observables.html" rel="permalink">8 Quick Ways To Create Observables
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Many operators are available in RxJava to create observables. In this post I will go through each of them with examples. In the context of reactive programmi...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/banners/pull-and-run-first-docker-image.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/docker/2018/07/22/pull-and-run-first-docker-image.html" rel="permalink">Pull And Run First Docker Image
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Docker image is a file, which contains set of commands. When these commands are executed, instance of the image is created and this instance is called Contai...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/banners/spring-cloud-config-basics-part-2.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/spring/2018/07/11/spring-cloud-config-basics-part-2.html" rel="permalink">Spring Cloud Configuration - Part 2
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In Part 1 we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration se...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/banners/spring-cloud-config-basics-part-1.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/spring/2018/06/27/spring-cloud-config-basics-part-1.html" rel="permalink">Spring Cloud Configuration - Part 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Configuration can be any key value pair information needed by the application at runtime. Spring applications accepts configuration in many ways like command...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/PradeepK4J" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/kpradeep12" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/pradeepkundarapu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Pradeep Kundarapu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/java/2018/02/28/quickway-to-create-read-write-delete-files.html";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/java/2018/02/28/quickway-to-create-read-write-delete-files"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://k_pradeep1234.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>

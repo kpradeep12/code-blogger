@@ -9,16 +9,16 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Stream of dates with LocalDate | Tech Stack Java</title>
+<!-- begin _includes/seo.html --><title>Stream of dates with LocalDate | Code - Blogger</title>
 <meta name="description" content="I want a list of all dates with starting range from Jan 15, 2018 to Feb 20, 2018. I can generate this list using the new ‘datesUntil’ method in LocalDate class. This method is introduced in Java 9 and I recently found out this method while browsing through Java API and quickly did some code experiments using JShell. I thought this is very useful method and wanted to share my experiments in this article.">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Tech Stack Java">
+<meta property="og:site_name" content="Code - Blogger">
 <meta property="og:title" content="Stream of dates with LocalDate">
-<meta property="og:url" content="https://kpradeep12.github.io/techstackjava/blog/2018/02/17/stream-of-dates-with-localdate">
+<meta property="og:url" content="http://localhost:4000/blog/2018/02/17/stream-of-dates-with-localdate">
 
 
   <meta property="og:description" content="I want a list of all dates with starting range from Jan 15, 2018 to Feb 20, 2018. I can generate this list using the new ‘datesUntil’ method in LocalDate class. This method is introduced in Java 9 and I recently found out this method while browsing through Java API and quickly did some code experiments using JShell. I thought this is very useful method and wanted to share my experiments in this article.">
@@ -36,7 +36,7 @@
 
 
 
-<link rel="canonical" href="https://kpradeep12.github.io/techstackjava/blog/2018/02/17/stream-of-dates-with-localdate">
+<link rel="canonical" href="http://localhost:4000/blog/2018/02/17/stream-of-dates-with-localdate">
 
 
 
@@ -49,7 +49,7 @@
       "@context": "http://schema.org",
       "@type": "Person",
       "name": "Pradeep Kundarapu",
-      "url": "https://kpradeep12.github.io/techstackjava",
+      "url": "http://localhost:4000",
       "sameAs": ["https://twitter.com/PradeepK4J","https://www.linkedin.com/in/pradeepkundarapu"]
     }
   </script>
@@ -63,7 +63,7 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/techstackjava/feed.xml" type="application/atom+xml" rel="alternate" title="Tech Stack Java Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Code - Blogger Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,7 +73,7 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/techstackjava/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 
 <!--[if lte IE 9]>
   <style>
@@ -110,9 +110,9 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="/techstackjava/">Tech Stack Java</a>
+        <a class="site-title" href="/">Code - Blogger</a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/techstackjava/about/" >About</a>
+              <a href="/about/" >About</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -253,13 +253,13 @@ jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class=
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Stream+of+dates+with+LocalDate%20https%3A%2F%2Fkpradeep12.github.io%2Ftechstackjava%2Fblog%2F2018%2F02%2F17%2Fstream-of-dates-with-localdate" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Stream+of+dates+with+LocalDate%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2018%2F02%2F17%2Fstream-of-dates-with-localdate" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkpradeep12.github.io%2Ftechstackjava%2Fblog%2F2018%2F02%2F17%2Fstream-of-dates-with-localdate" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2018%2F02%2F17%2Fstream-of-dates-with-localdate" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fkpradeep12.github.io%2Ftechstackjava%2Fblog%2F2018%2F02%2F17%2Fstream-of-dates-with-localdate" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2018%2F02%2F17%2Fstream-of-dates-with-localdate" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fkpradeep12.github.io%2Ftechstackjava%2Fblog%2F2018%2F02%2F17%2Fstream-of-dates-with-localdate" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2018%2F02%2F17%2Fstream-of-dates-with-localdate" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -269,7 +269,7 @@ jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class=
       <a href="#" class="pagination--pager disabled">Previous</a>
     
     
-      <a href="/techstackjava/blog/2018/02/21/using-comparing-methods-in-comparator-interface" class="pagination--pager" title="Using comparing methods in Comparator Interface
+      <a href="/blog/2018/02/21/using-comparing-methods-in-comparator-interface" class="pagination--pager" title="Using comparing methods in Comparator Interface
 ">Next</a>
     
   </nav>
@@ -295,14 +295,14 @@ jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class=
       <div class="archive__item-teaser">
         <img src=
           
-            "/techstackjava/assets/images/banners/reactiveX-observables.png"
+            "/assets/images/banners/reactiveX-observables.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/techstackjava/blog/2018/07/24/observables" rel="permalink">8 Quick Ways To Create Observables
+        <a href="/blog/2018/07/24/observables" rel="permalink">8 Quick Ways To Create Observables
 </a>
       
     </h2>
@@ -329,14 +329,14 @@ jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class=
       <div class="archive__item-teaser">
         <img src=
           
-            "/techstackjava/assets/images/banners/pull-and-run-first-docker-image.png"
+            "/assets/images/banners/pull-and-run-first-docker-image.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/techstackjava/blog/2018/07/22/pull-and-run-first-docker-image" rel="permalink">Pull And Run First Docker Image
+        <a href="/blog/2018/07/22/pull-and-run-first-docker-image" rel="permalink">Pull And Run First Docker Image
 </a>
       
     </h2>
@@ -363,14 +363,14 @@ jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class=
       <div class="archive__item-teaser">
         <img src=
           
-            "/techstackjava/assets/images/banners/spring-cloud-config-basics-part-2.png"
+            "/assets/images/banners/spring-cloud-config-basics-part-2.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/techstackjava/blog/2018/07/11/spring-cloud-config-basics-part-2" rel="permalink">Spring Cloud Configuration - Part 2
+        <a href="/blog/2018/07/11/spring-cloud-config-basics-part-2" rel="permalink">Spring Cloud Configuration - Part 2
 </a>
       
     </h2>
@@ -397,14 +397,14 @@ jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class=
       <div class="archive__item-teaser">
         <img src=
           
-            "/techstackjava/assets/images/banners/spring-cloud-config-basics-part-1.png"
+            "/assets/images/banners/spring-cloud-config-basics-part-1.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/techstackjava/blog/2018/06/27/spring-cloud-config-basics-part-1" rel="permalink">Spring Cloud Configuration - Part 1
+        <a href="/blog/2018/06/27/spring-cloud-config-basics-part-1" rel="permalink">Spring Cloud Configuration - Part 1
 </a>
       
     </h2>
@@ -462,7 +462,7 @@ jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class=
       
     
 
-    <li><a href="/techstackjava/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
@@ -472,15 +472,15 @@ jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class=
     </div>
 
     
-  <script src="/techstackjava/assets/js/main.min.js"></script>
+  <script src="/assets/js/main.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
 
 
 
-<script src="/techstackjava/assets/js/lunr/lunr.min.js"></script>
-<script src="/techstackjava/assets/js/lunr/lunr-store.js"></script>
-<script src="/techstackjava/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -488,7 +488,7 @@ jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class=
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://kpradeep12.github.io/techstackjava/blog/2018/02/17/stream-of-dates-with-localdate";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.url = "http://localhost:4000/blog/2018/02/17/stream-of-dates-with-localdate";  // Replace PAGE_URL with your page's canonical URL variable
       this.page.identifier = "/blog/2018/02/17/stream-of-dates-with-localdate"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE

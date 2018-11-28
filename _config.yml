@@ -19,7 +19,7 @@ name: "Pradeep Kundarapu"
 email: k.pradeep12@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   Sharing my coding experiments
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/code-blogger" # the subpath of your site, e.g. /blog
 url: "https://kpradeep12.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: PradeepK4J
 github_username:  kpradeep12

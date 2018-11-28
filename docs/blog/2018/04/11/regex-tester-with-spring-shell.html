@@ -18,14 +18,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Code - Blogger">
 <meta property="og:title" content="Regex Tester With Spring Shell">
-<meta property="og:url" content="http://localhost:4000/code-blogger/blog/2018/04/11/regex-tester-with-spring-shell">
+<meta property="og:url" content="http://localhost:4000/blog/2018/04/11/regex-tester-with-spring-shell">
 
 
   <meta property="og:description" content="Spring framework is the suite of many projects, using which we can develop wide variety of applications. These applications may need user interaction, the most common way is to have a web interface. Not all applications need to have a web interface, a simple command line interface can be suffice for some type of applications. Spring Shell is a simple project which provides the infrastructure to build command line interface applications easily and quickly.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/code-blogger/assets/images/banners/blog-banner-regex-tester-with-spring-shell.png">
+  <meta property="og:image" content="http://localhost:4000/assets/images/banners/blog-banner-regex-tester-with-spring-shell.png">
 
 
 
@@ -38,7 +38,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/code-blogger/blog/2018/04/11/regex-tester-with-spring-shell">
+<link rel="canonical" href="http://localhost:4000/blog/2018/04/11/regex-tester-with-spring-shell">
 
 
 
@@ -51,7 +51,7 @@
       "@context": "http://schema.org",
       "@type": "Person",
       "name": "Pradeep Kundarapu",
-      "url": "http://localhost:4000/code-blogger",
+      "url": "http://localhost:4000",
       "sameAs": ["https://twitter.com/PradeepK4J","https://www.linkedin.com/in/pradeepkundarapu"]
     }
   </script>
@@ -65,7 +65,7 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/code-blogger/feed.xml" type="application/atom+xml" rel="alternate" title="Code - Blogger Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Code - Blogger Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +75,7 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="/code-blogger/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 
 <!--[if lte IE 9]>
   <style>
@@ -112,9 +112,9 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="/code-blogger/">Code - Blogger</a>
+        <a class="site-title" href="/">Code - Blogger</a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/code-blogger/about/" >About</a>
+              <a href="/about/" >About</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -170,18 +170,18 @@
         
         
         
-            <img src="/code-blogger/assets/images/banners/blog-banner-regex-tester-with-spring-shell.png" style="margin: 1em 0">
+            <img src="/assets/images/banners/blog-banner-regex-tester-with-spring-shell.png" style="margin: 1em 0">
         
 
         <p>Spring framework is the suite of many projects, using which we can develop wide variety of applications. These applications may need user interaction, the most common way is to have a web interface. Not all applications need to have a web interface, a simple command line interface can be suffice for some type of applications. Spring Shell is a simple project which provides the infrastructure to build command line interface applications easily and quickly.</p>
 
 <p>In this article I will show the steps needed to create a Spring shell project which tests the regex string provided at the command line. Easier way to create spring project is using <a href="https://start.spring.io/">start.spring.io</a> Go to the site and select you choice of configuration with ‘Spring Shell’ as dependency. See below screenshot for the reference.</p>
 
-<p><img src="/code-blogger/assets/images/posts/Post-Regex-tester-spring-starter.png" alt="Regex tester spring starter" height="300px" width="550px" class="align-center" /></p>
+<p><img src="/assets/images/posts/Post-Regex-tester-spring-starter.png" alt="Regex tester spring starter" height="300px" width="550px" class="align-center" /></p>
 
 <p>Click on ‘Generate Project’ which will download the pre-configured spring project. Unzip and import it into your favorite java editor.</p>
 
-<p><img src="/code-blogger/assets/images/posts/Post-Regex-tester-spring-shell-pom.png" alt="Regex tester spring shell" height="300px" width="570px" class="align-center" /></p>
+<p><img src="/assets/images/posts/Post-Regex-tester-spring-shell-pom.png" alt="Regex tester spring shell" height="300px" width="570px" class="align-center" /></p>
 
 <p>Now we have empty spring shell project ready.</p>
 
@@ -229,7 +229,7 @@
 
 <p>You should see a prompt saying ‘shell:&gt;’ As I mentioned earlier, spring shell provides the required infrastructure for the command line interface so this prompt is provided by the spring shell and it is ready to take the commands. lets execute some commands on the shell prompt.</p>
 
-<p><img src="/code-blogger/assets/images/posts/Post-Regex-tester-regex-cli.png" alt="Regex tester cli" height="140px" width="500px" class="align-center" /></p>
+<p><img src="/assets/images/posts/Post-Regex-tester-regex-cli.png" alt="Regex tester cli" height="140px" width="500px" class="align-center" /></p>
 
 <p>I passed ‘ab’ as the pattern and ‘abcabc’ as the test string to regex command. Spring will internally execute regex method and passes provided arguments to it. The output of the method will be printed in the console. We can continue to test regex command multiple times with different strings and it can be used as regex utility in local.</p>
 
@@ -253,24 +253,24 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Regex+Tester+With+Spring+Shell%20http%3A%2F%2Flocalhost%3A4000%2Fcode-blogger%2Fblog%2F2018%2F04%2F11%2Fregex-tester-with-spring-shell" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Regex+Tester+With+Spring+Shell%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2018%2F04%2F11%2Fregex-tester-with-spring-shell" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcode-blogger%2Fblog%2F2018%2F04%2F11%2Fregex-tester-with-spring-shell" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2018%2F04%2F11%2Fregex-tester-with-spring-shell" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fcode-blogger%2Fblog%2F2018%2F04%2F11%2Fregex-tester-with-spring-shell" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2018%2F04%2F11%2Fregex-tester-with-spring-shell" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcode-blogger%2Fblog%2F2018%2F04%2F11%2Fregex-tester-with-spring-shell" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2018%2F04%2F11%2Fregex-tester-with-spring-shell" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/code-blogger/blog/2018/04/08/infinite-streams" class="pagination--pager" title="Infinite streams
+      <a href="/blog/2018/04/08/infinite-streams" class="pagination--pager" title="Infinite streams
 ">Previous</a>
     
     
-      <a href="/code-blogger/blog/2018/04/15/how-concurrentModificationException-is-thrown" class="pagination--pager" title="How ConcurrentModificationException is thrown?
+      <a href="/blog/2018/04/15/how-concurrentModificationException-is-thrown" class="pagination--pager" title="How ConcurrentModificationException is thrown?
 ">Next</a>
     
   </nav>
@@ -296,14 +296,14 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/code-blogger/assets/images/banners/reactiveX-observables.png"
+            "/assets/images/banners/reactiveX-observables.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/code-blogger/blog/2018/07/24/observables" rel="permalink">8 Quick Ways To Create Observables
+        <a href="/blog/2018/07/24/observables" rel="permalink">8 Quick Ways To Create Observables
 </a>
       
     </h2>
@@ -330,14 +330,14 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/code-blogger/assets/images/banners/pull-and-run-first-docker-image.png"
+            "/assets/images/banners/pull-and-run-first-docker-image.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/code-blogger/blog/2018/07/22/pull-and-run-first-docker-image" rel="permalink">Pull And Run First Docker Image
+        <a href="/blog/2018/07/22/pull-and-run-first-docker-image" rel="permalink">Pull And Run First Docker Image
 </a>
       
     </h2>
@@ -364,14 +364,14 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/code-blogger/assets/images/banners/spring-cloud-config-basics-part-2.png"
+            "/assets/images/banners/spring-cloud-config-basics-part-2.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/code-blogger/blog/2018/07/11/spring-cloud-config-basics-part-2" rel="permalink">Spring Cloud Configuration - Part 2
+        <a href="/blog/2018/07/11/spring-cloud-config-basics-part-2" rel="permalink">Spring Cloud Configuration - Part 2
 </a>
       
     </h2>
@@ -398,14 +398,14 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/code-blogger/assets/images/banners/spring-cloud-config-basics-part-1.png"
+            "/assets/images/banners/spring-cloud-config-basics-part-1.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/code-blogger/blog/2018/06/27/spring-cloud-config-basics-part-1" rel="permalink">Spring Cloud Configuration - Part 1
+        <a href="/blog/2018/06/27/spring-cloud-config-basics-part-1" rel="permalink">Spring Cloud Configuration - Part 1
 </a>
       
     </h2>
@@ -463,7 +463,7 @@
       
     
 
-    <li><a href="/code-blogger/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
@@ -473,15 +473,15 @@
     </div>
 
     
-  <script src="/code-blogger/assets/js/main.min.js"></script>
+  <script src="/assets/js/main.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
 
 
 
-<script src="/code-blogger/assets/js/lunr/lunr.min.js"></script>
-<script src="/code-blogger/assets/js/lunr/lunr-store.js"></script>
-<script src="/code-blogger/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -489,7 +489,7 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/code-blogger/blog/2018/04/11/regex-tester-with-spring-shell";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.url = "http://localhost:4000/blog/2018/04/11/regex-tester-with-spring-shell";  // Replace PAGE_URL with your page's canonical URL variable
       this.page.identifier = "/blog/2018/04/11/regex-tester-with-spring-shell"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE

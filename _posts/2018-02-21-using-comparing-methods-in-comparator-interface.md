@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Using comparing methods in Comparator Interface"
 date:   2018-02-21 13:30:24 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 Java 8 introduced some new methods in Comparator interface. I was going through this interface to check all available methods in it and did some code experiments to understand some of them and thought comparing and thenComparing methods are very interesting. There are multiple comparing methods which can be used in various situations. I listed all comparing methods here:

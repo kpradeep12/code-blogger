@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Generate stream of random numbers"
 date:   2018-03-03 10:28:40 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 Its not possible for any computer to generate real random numbers, but they can generate pseudorandom numbers. Pseudorandom numbers are generated based on an algorithm and they are nearly like random numbers. Java’s Random class uses ![linear congruential formula](https://en.wikipedia.org/wiki/File:Linear_congruential_generator_visualisation.svg) to generate pseudorandom numbers and this formula needs initial value or called seed.

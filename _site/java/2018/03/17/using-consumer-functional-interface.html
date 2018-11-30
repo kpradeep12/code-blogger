@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<link rel="icon" href="/assets/images/logo.png">
+    
+<title>Using consumer functional interface | The Tech Stack . Net</title>
+    
+ 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+    
+</head>
+    
+
+    
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About</a>
+                </li>
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/wowthemesnet"><i class="fab fa-twitter"></i></a>
+                </li>
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my coding experiments
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Using consumer functional interface&url=/java/2018/03/17/using-consumer-functional-interface.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=/java/2018/03/17/using-consumer-functional-interface.html" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=/java/2018/03/17/using-consumer-functional-interface.html" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Using consumer functional interface</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>This article will explain the basics of using consumer functional interface. Consume is one of the many available functional interfaces in Java. This interface can be used when we need to take an object and process it but with out returning anything. Below image will show you how it looks in a logical way.</p>
+
+<p><img src="/assets/images/posts/consumer.png" alt="Consumer Function" height="130px" width="280px" class="align-center" /></p>
+
+<p>As you see in the above image, it takes a value and operates on it with a side-effect. Here side-effect means, some thing like printing to console or logging to file or making call to rest service but without returning any value. This interface have single abstract method, which is ‘<strong>void accept(T t)</strong>‘ As you can see this method takes a value but does not return anything.</p>
+
+<p>Using these functional interfaces will make code standardized and code will become easier to understand. We can implement them as lambda expressions and can be used across application by passing them as behaviors. Below are two different examples; first example is with out consumer and second example uses consumer.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">processJobs</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Job</span><span class="o">&gt;</span> <span class="n">jobs</span><span class="o">){</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Job</span> <span class="nl">job:</span> <span class="n">jobs</span><span class="o">){</span>
+            <span class="n">job</span><span class="o">.</span><span class="na">process</span><span class="o">();</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">job</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+        <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">processJobs</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Job</span><span class="o">&gt;</span> <span class="n">jobs</span><span class="o">,</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">postProcess</span><span class="o">){</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Job</span> <span class="nl">job:</span> <span class="n">jobs</span><span class="o">){</span>
+            <span class="n">job</span><span class="o">.</span><span class="na">process</span><span class="o">();</span>
+            <span class="n">postProcess</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="n">job</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+        <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>The advantage with the second method is, I can later change postProcess behavior with out changing code in processJobs function. If I have multiple variations of prints which need to be printed based on different situations then I can pass a different consumer lambdas to it. Below example shows how I passed consumer to processJobs function.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Job</span><span class="o">&gt;</span> <span class="n">jobs</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="k">new</span> <span class="n">Job</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="k">new</span> <span class="n">Job</span><span class="o">(</span><span class="mi">4</span><span class="o">),</span> <span class="k">new</span> <span class="n">Job</span><span class="o">(</span><span class="mi">5</span><span class="o">));</span>
+<span class="n">Consumer</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">print</span> <span class="o">=</span> <span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+        <span class="o">};</span>
+<span class="n">processJobs</span><span class="o">(</span><span class="n">jobs</span><span class="o">,</span> <span class="n">print</span><span class="o">);</span></code></pre></figure>
+
+<p>If you want to start using consumer then one of the best place to start is using forEach method in collections. This function takes consumer.Check below example;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">jobs</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">job</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">job</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+        <span class="o">});</span></code></pre></figure>
+
+<h3 id="composed-consumer">Composed consumer</h3>
+<p>Consumer functional interface have a default method which is:</p>
+
+<p class="text-center"><strong>default Consumer&lt;T&gt; andThen​(Consumer&lt;? super T&gt; after)</strong></p>
+
+<p>This method takes and returns a consumer and as the signature specifies; this is a default method, means this method is implemented by Consumer with default implementation, so we no need to implement this method and we can directly call this on any consumer instance.</p>
+
+<p>This method returns a composed consumer means, sequentially it calls accept on ‘this’ instance and then on ‘after’ instance. Along with printing job id If I also want to send an email alert, then I can call processJobs like below</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">print</span> <span class="o">=</span> <span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+        <span class="o">};</span>
+<span class="n">Consumer</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">emailAlert</span> <span class="o">=</span> <span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"Sending email for job id: %d \n"</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+        <span class="o">};</span>
+<span class="n">processJobs</span><span class="o">(</span><span class="n">jobs</span><span class="o">,</span> <span class="n">print</span><span class="o">.</span><span class="na">andThen</span><span class="o">(</span><span class="n">emailAlert</span><span class="o">));</span></code></pre></figure>
+
+<p>There will be no code change required in processJobs function because we composed multiple consumers into single consumer and passed to it. You can compose by chaining as many as into single consumer.</p>
+
+<h3 id="primitive-consumers">Primitive Consumers</h3>
+<p>There are three primitive consumers available in java.util.functional package; IntConsumer, LongConsumer and DoubleConsumer. If you are operating on primitive values then use these primitive versions, because objects are expensive comparing to primitives.</p>
+
+<h3 id="biconsumer">BiConsumer</h3>
+<p>BiConsumer is same like Consumer except it takes two parameters. Below is the logical representation of it.</p>
+
+<p><img src="/assets/images/posts/biconsumer.png" alt="BiConsumer Function" height="130px" width="280px" class="align-center" /></p>
+
+<p>This interface will be handy if in case you need to consume two parameters and also it allows you to compose multiple BiConsumers. There are primitive versions of this interface; which are <strong>ObjIntConsumer, ObjLongConsumer</strong> and <strong>ObjDoubleConsumer</strong>, all these interfaces takes object as first parameter and primitive value as second parameter.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2018-03-17">17 Mar 2018</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="/java/2018/03/14/create-maven-project-in-github.html"> &laquo; Create Maven project in GitHub</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="/java/2018/03/21/quick-way-to-create-list-set-and-map.html">Quick way to create List, Set and Map &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'k_pradeep1234'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<!--<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt=""> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        <form action="" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>    -->
+    
+</div><!-- /.container>
+    
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (22)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2018 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> <!-- /.site-content>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//k_pradeep1234.disqus.com/count.js"></script>
+</body>
+</html>

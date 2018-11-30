@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "ReactiveX Observables"
 date:   2018-06-15 12:11:10 -0500
 categories: reactiveX
-header:
-  teaser: /assets/images/banners/reactiveX-observables.png
+image: /assets/images/banners/reactiveX-observables.png
+author: pradeep
+featured: false
 ---
 
 Observable emit values over the time and the observer who is interested to receive those values should subscribe for it. On the availability of values observable will push them to subscribers/observers. Observer will not wait for the values instead it will act only when the value is pushed towards it.

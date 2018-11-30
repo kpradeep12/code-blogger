@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Docker Introduction"
 date:   2018-06-09 12:11:10 -0500
 categories: docker
-header:
-  teaser: /assets/images/banners/docker-introduction.png
+image: /assets/images/banners/docker-introduction.png
+author: pradeep
+featured: false
 ---
 
 Lets say we have a Java based reservation application which depends on JRE, MySQL and Tomcat to run. To have this application setup we need to install all these dependencies, configure and then run the application. Not just on single environment, we need to do this setup in multiple environments like in development, testing and production. This setup and configuration process needs a lot of maintenance and also time consuming.

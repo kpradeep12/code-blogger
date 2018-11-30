@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<link rel="icon" href="/assets/images/logo.png">
+    
+<title>Stream of dates with LocalDate | The Tech Stack . Net</title>
+    
+ 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+    
+</head>
+    
+
+    
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About</a>
+                </li>
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/wowthemesnet"><i class="fab fa-twitter"></i></a>
+                </li>
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my coding experiments
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Stream of dates with LocalDate&url=/java/2018/02/17/stream-of-dates-with-localdate.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=/java/2018/02/17/stream-of-dates-with-localdate.html" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=/java/2018/02/17/stream-of-dates-with-localdate.html" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Stream of dates with LocalDate</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>I want a list of all dates with starting range from Jan 15, 2018 to Feb 20, 2018. I can generate this list using the new ‘datesUntil’ method in LocalDate class. This method is introduced in Java 9 and I recently found out this method while browsing through Java API and quickly did some code experiments using JShell. I thought this is very useful method and wanted to share my experiments in this article.</p>
+
+<p>Below is the definition of this method.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">LocalDate</span><span class="o">&gt;</span> <span class="n">datesUntil</span><span class="err">​</span><span class="o">(</span><span class="n">LocalDate</span> <span class="n">endExclusive</span><span class="o">)</span></code></pre></figure>
+
+<p>This method returns stream of LocalDate objects so we can process these dates in a stream. To use this method we need fromDate and toDate so we can generate stream of LocalDate’s.</p>
+
+<p>I fired up my JShell and executed below code snippets. JShell is a quick and best way to experiment small code snippets like below. I always love to use JShell for these type of experiments. I will also give some tips on JShell usage on the way while we do this experiment.</p>
+
+<p>You need Java 9 to run JShell. Go to command prompt/terminal and execute ‘jshell’ command.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">~ <span class="nv">$ </span>jshell
+| Welcome to JShell <span class="nt">--</span> Version 9.0.4
+| For an introduction <span class="nb">type</span>: /help intro
+jshell&gt;</code></pre></figure>
+
+<p>By Default java.time package is not imported in JShell so we need to import this package. (You can check all available imports by executing /imports in JShell)</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">jshell&gt; import java.time.<span class="k">*</span></code></pre></figure>
+
+<p>Create fromDate and toDate and stream using datesUntil method</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">jshell&gt; LocalDate fromDate <span class="o">=</span> LocalDate.of<span class="o">(</span>2018,1,15<span class="o">)</span>
+fromDate <span class="o">==&gt;</span> 2018-01-15
+jshell&gt; LocalDate toDate <span class="o">=</span> LocalDate.of<span class="o">(</span>2018,2,20<span class="o">)</span>
+toDate <span class="o">==&gt;</span> 2018-02-20
+jshell&gt; Stream&lt;LocalDate&gt; dates <span class="o">=</span> fromDate.datesUntil<span class="o">(</span>toDate<span class="o">)</span></code></pre></figure>
+
+<p>Now lets apply forEach to see all dates with in this range.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">jshell&gt; dates.forEach<span class="o">(</span>System.out::println<span class="o">)</span>
+2018-01-15
+2018-01-16
+...
+...
+2018-02-18
+2018-02-19</code></pre></figure>
+
+<p>Nice, we got all dates with in the range. Note that toDate is not in the output because it is a endExclusive parameter. See the declaration of datesUntil method which I mentioned above. If you want to include toDate in the range then quick way to add a day is toDate.plusDays(1)</p>
+
+<p>There is another overloaded ‘datesUntil’ method which is even more useful, it takes Period as second parameter. So we get stream with incremental steps.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">LocalDate</span><span class="o">&gt;</span> <span class="n">datesUntil</span><span class="err">​</span><span class="o">(</span><span class="n">LocalDate</span> <span class="n">endExclusive</span><span class="o">,</span> <span class="n">Period</span> <span class="n">step</span><span class="o">)</span></code></pre></figure>
+
+<p>I will use same above fromDate and toDate to create another stream with weekly increments.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">jshell&gt; Stream&lt;LocalDate&gt; weekly <span class="o">=</span> fromDate.datesUntil<span class="o">(</span>toDate, Period.ofWeeks<span class="o">(</span>1<span class="o">))</span>
+weekly <span class="o">==&gt;</span> java.util.stream.LongPipeline<span class="nv">$1</span>@59494225
+jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class="o">)</span>
+2018-01-15
+2018-01-22
+2018-01-29
+2018-02-05
+2018-02-12
+2018-02-19</code></pre></figure>
+
+<p>Nice, we got dates on weekly intervals. We can apply some functions on these streams and can do lot more interesting stuff like creating continues events for the calendar or scheduling jobs and many more…</p>
+
+<p>Note: Once a stream is executed then you can not reuse it. If I execute above code again then I get IllegalStateException</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">jshell&gt; weekly.forEach<span class="o">(</span>System.out::println<span class="o">)</span>
+| java.lang.IllegalStateException thrown: stream has already been operated upon or closed</code></pre></figure>
+
+<p>One quick way to fix this is to declare a supplier and reuse it every time. I learnt this tip from Baeldung blog. <a href="http://www.baeldung.com/java-stream-operated-upon-or-closed-exception">Here</a> is the more information on this tip.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2018-02-17">17 Feb 2018</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="/java/2018/02/21/using-comparing-methods-in-comparator-interface.html">Using comparing methods in Comparator Interface &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'k_pradeep1234'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<!--<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt=""> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        <form action="" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>    -->
+    
+</div><!-- /.container>
+    
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (22)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2018 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> <!-- /.site-content>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//k_pradeep1234.disqus.com/count.js"></script>
+</body>
+</html>

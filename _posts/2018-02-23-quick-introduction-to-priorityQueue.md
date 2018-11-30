@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Quick introduction to PriorityQueue"
 date:   2018-02-23 21:20:44 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 PriorityQueue is the implementation of Queue interface. Generally queue store elements in FIFO (first in first out) order but PriorityQueue is the exception. As the name specifies, elements in the priority queue are retrieved based on the priority. Priority can be low-to-high which is called min priority or high-to-low which is called max priority. Internally it uses heap data structure to store elements.

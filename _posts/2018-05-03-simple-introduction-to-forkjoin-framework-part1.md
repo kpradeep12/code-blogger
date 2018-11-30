@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Simple Introduction to ForkJoin Framework - Part 1"
 date:   2018-05-03 12:11:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/simple-introduction-to-forkjoin-framework-part1.png
+image: /assets/images/banners/simple-introduction-to-forkjoin-framework-part1.png
+author: pradeep
+featured: false
 ---
 
 ForkJoin framework allows us to execute tasks in a thread based environment. We need to pass tasks to this framework and this framework will execute them efficiently. This framework provides all the required utility classes which will handle all nitty-gritty things like maintaining the thread pool and running the tasks, we just need to pass the task to it. This framework in based on two main classes; **ForkJoinPool** and **ForkJoinTask**. Understanding these two classes is necessary to learn about this framework. In the below sections we will see how these classes works.

@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Introduction to java.time - Part 2"
 date:   2018-05-13 12:11:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/blog-banner-intro-to-java-time-part2.png
+image: /assets/images/banners/blog-banner-intro-to-java-time-part2.png
+author: pradeep
+featured: false
 ---
 
 **[Part 1]({{site.baseurl}}/blog/2018/04/18/introduction-to-java-time-part1.html)** of this series explained the basic time related classes in java.time package and different approaches to create them. In this post we will see how to retrieve time values from these classes.

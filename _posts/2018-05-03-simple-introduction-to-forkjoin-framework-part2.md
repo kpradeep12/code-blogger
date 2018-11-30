@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Simple Introduction to ForkJoin Framework - Part 2"
 date:   2018-05-03 12:11:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/simple-introduction-to-forkjoin-framework-part2.png
+image: /assets/images/banners/simple-introduction-to-forkjoin-framework-part2.png
+author: pradeep
+featured: false
 ---
 
 In the **[first part]({{site.baseurl}}/blog/2018/05/03/simple-introduction-to-forkjoin-framework-part1.html)** of this series we went through the introduction on ForkJoin framework. In this article we will go through code example to create a ForkJoinTask using RecursiveAction. RecursiveAction is an abstract class and it is one of the subclass of ForkJoinTask. In order to create a divisible task we need to extend RecursiveAction and implement compute() method.

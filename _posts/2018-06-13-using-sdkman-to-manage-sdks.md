@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Using SDKMAN to manage SDK's"
 date:   2018-06-13 20:11:10 -0500
 categories: tools
-header:
-  teaser: /assets/images/banners/using-sdkman-to-manage-sdks.png
+image: /assets/images/banners/using-sdkman-to-manage-sdks.png
+author: pradeep
+featured: false
 ---
 
 Some times we may want multiple java versions on our computer. Lets say we want to have java 8 to run a personal application and java 7 to run a old tool. We can install both of them but depending on what we working on, we may need to switch PATH and JAVA_HOME. It doesn't just stop at java, what about if application depends on some old maven but we also need latest version of maven for some other project, then we need to manage multiple maven versions.

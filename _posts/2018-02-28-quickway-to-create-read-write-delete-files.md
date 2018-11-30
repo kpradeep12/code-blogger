@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Quick way to create, read, write and delete files in Java"
 date:   2018-02-28 09:25:40 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 Files class in java.nio.file package contains static utility methods to operate on files and directories. In this article I will provide information on some of these static methods. These methods will help us in writing simple and quick code to work on the files. The main advantage of using this class is that we no more need to handle lower level input/output streams.

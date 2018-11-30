@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Pull And Run First Docker Image"
 date:   2018-07-22 12:11:10 -0500
 categories: docker
-header:
-  teaser: /assets/images/banners/pull-and-run-first-docker-image.png
+image: /assets/images/banners/pull-and-run-first-docker-image.png
+author: pradeep
+featured: false
 ---
 
 Docker image is a file, which contains set of commands. When these commands are executed, instance of the image is created and this instance is called *Container*. We can assume image files are like Java's class files and objects are container instances.

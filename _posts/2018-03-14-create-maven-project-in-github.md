@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Create Maven project in GitHub"
 date:   2018-03-14 05:42:40 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 If you are looking to publish your first Maven project to gitHub then this article will help you to get started with that. I am going to explain the steps involved in creating a new maven project and pushing it to gitHub. Before creating local project its better to create empty repository in gitHub so we can later clone it.

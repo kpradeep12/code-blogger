@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Strategy design pattern"
 date:   2018-04-22 02:11:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/blog-banner-strategy-design-pattern.png
+image: /assets/images/banners/blog-banner-strategy-design-pattern.png
+author: pradeep
+featured: false
 ---
 
 This article will explain the strategy design pattern using functional interfaces. Sometimes application may need to execute an algorithm conditionally. Here the algorithm means nothing but a strategy, execution of this strategy depends on runtime conditions or it depends on the input received from the user. For example, sorting a list of persons can be a strategy and a type of the sorting can depend on age or name, Encrypting a string can be strategy and this strategy can depend on the type like RSA or Blowfish.

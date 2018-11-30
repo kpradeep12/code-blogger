@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Quick way to create List, Set and Map"
 date:   2018-03-21 20:12:40 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 Java 9 introduced **of()** static methods in List, Map and Set interfaces. This method will help us to create collection easily. I got surprised to see this method, it is lot easier to use and easier to remember and less verbose. Lets see some examples of using this method.

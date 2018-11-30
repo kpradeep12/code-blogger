@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<link rel="icon" href="/assets/images/logo.png">
+    
+<title>Spring Cloud Configuration - Part 2 | The Tech Stack . Net</title>
+    
+ 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+    
+</head>
+    
+
+    
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About</a>
+                </li>
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/wowthemesnet"><i class="fab fa-twitter"></i></a>
+                </li>
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my coding experiments
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Spring Cloud Configuration - Part 2&url=/spring/2018/07/11/spring-cloud-config-basics-part-2.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=/spring/2018/07/11/spring-cloud-config-basics-part-2.html" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=/spring/2018/07/11/spring-cloud-config-basics-part-2.html" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Spring Cloud Configuration - Part 2</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="/assets/images/banners/spring-cloud-config-basics-part-2.png" alt="Spring Cloud Configuration - Part 2">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>In <strong><a href="/blog/2018/06/27/spring-cloud-config-basics-part-1.html">Part 1</a></strong> we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.</p>
+
+<h2 id="create-configuration-client">Create Configuration Client</h2>
+
+<p>Go to <strong><a href="https://start.spring.io/">start.spring.io</a></strong> to generate spring project with <em>web</em>, <strong>config-client</strong> and <em>actuator</em> as dependencies, see below image for reference.</p>
+
+<p><img src="/assets/images/posts/2018/07/pet-store-config-client.png" alt="pet store config client" height="500px" width="650px" class="align-center" /></p>
+
+<p>Unzip and open the project in any IDE. We are going to configure pet-store app to load properties from config server so we no more need application.properties located at src/main/resources folder.</p>
+
+<p>In-order for pet-store app to load properties from config server it needs config server connection details, because with out server machine name and port, pet-store can not connect to it. We can use bootstrap.properties to provide these details. Spring will load bootstrap.properties if it is available. bootstrap properties file should be used for only properties which are needed at application startup time, in our case we need server connection details so pet-store will use these details to connect and get properties from server at startup time.</p>
+
+<p>Rename application.properties to bootstrap.properties and add below three properties in it.</p>
+
+<p>File: bootstrap.properties</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">spring.application.name <span class="o">=</span> pet-store // &lt;1&gt;
+spring.profiles.active <span class="o">=</span> dev // &lt;2&gt;
+spring.cloud.config.uri <span class="o">=</span> http://localhost:8888 // &lt;3&gt;</code></pre></figure>
+
+<p>Above three properties are needed for config client to connect server.</p>
+
+<p>&lt;1&gt; In a microservices environment multiple applications work together and this property will allow us to provide unique name for each application.<br />
+&lt;2&gt; Multiple instances of an application can exist like; dev, uat or prod so each of them are profiled with this property.<br />
+&lt;3&gt; Client will make HTTP call using this URL to get properties from config server.</p>
+
+<p>Using all of the above properties client will construct the URL and it looks like this; <strong>http://localhost:8888/pet-store/dev</strong> this URL contains all of the above mentioned three properties; config url, application name and profile.</p>
+
+<p>To verify if everything is working, we can create a REST end point which will return <em>message</em> property as response. Note that in <strong><a href="/blog/2018/06/27/spring-cloud-config-basics-part-1.html">Part 1</a></strong> we added <strong>message</strong> property in <strong>pet-store-dev.properties</strong>. Config client will use above three properties to request properties from the server on startup and client gets <em>message</em> as part of the response from server.</p>
+
+<p>Below is the REST controller which returns message;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
+<span class="kd">class</span> <span class="nc">MessageController</span><span class="o">{</span>
+	<span class="nd">@Value</span><span class="o">(</span><span class="s">"${message}"</span><span class="o">)</span>
+	<span class="n">String</span> <span class="n">message</span><span class="o">;</span>
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/message"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getMessage</span><span class="o">(){</span>
+		<span class="k">return</span> <span class="n">message</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Start pet-store application and in the browser open <em>http://localhost:8080/message</em> to get <em>Hello!</em> as response.</p>
+
+<p><img src="/assets/images/posts/2018/07/pet-store-hello.png" alt="pet store hello" height="150px" width="500px" class="align-center" /></p>
+
+<h2 id="update-properties">Update properties</h2>
+
+<p>In your local perform a small test; change <em>message</em> property in <em>pet-store-dev.properties</em> and save, then open <strong>http://localhost:8080/message</strong> it will not show updated property instead it returns old value. This is because changes to the property files are not automatically propagated to the clients. On the client side we need to manually trigger a refresh event which will request fresh copy again from the server and refreshes only the classes which are declared with <strong>@RefreshScope</strong> annotation.</p>
+
+<p>In our case we update <strong>MessageController</strong> class to include <strong>@RefreshScope</strong> annotation so its <strong>message</strong> fields gets updated with new value.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
+<span class="nd">@RefreshScope</span>
+<span class="kd">class</span> <span class="nc">MessageController</span><span class="o">{</span>
+	<span class="nd">@Value</span><span class="o">(</span><span class="s">"${message}"</span><span class="o">)</span>
+	<span class="n">String</span> <span class="n">message</span><span class="o">;</span>
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/message"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getMessage</span><span class="o">(){</span>
+		<span class="k">return</span> <span class="n">message</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Start pet-store application and open <strong>http://localhost:8080/message</strong> to see current value in the <strong>pet-store-dev.properties</strong> file. Lets update <strong>message</strong> in the properties file like below;</p>
+
+<p>File: pet-store-dev.properties</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">message</span><span class="o">=</span>Hello World!
+management.endpoints.web.exposure.include<span class="o">=</span>refresh</code></pre></figure>
+
+<p>We will not see updated <strong>message</strong> value on <strong>http://localhost:8080/message</strong>. To get updated value we need to manually trigger refresh event. To trigger this event we need to make a HTTP POST request to pet-store client on <strong>/actuator/refresh</strong> end-point. I used <em>curl</em> command to make this request;</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl <span class="nt">-X</span> POST http://localhost:8080/actuator/refresh</code></pre></figure>
+
+<p>This curl command will make a POST request, which will make client to again request the properties and these properties are only applied on the classes which are declared with <strong>@RefreshScope</strong> annotation.</p>
+
+<p>Open <strong>http://localhost:8080/message</strong> to see <strong>Hello World!</strong></p>
+
+<p><img src="/assets/images/posts/2018/07/pet-store-hello-world.png" alt="pet store hello world" height="150px" width="500px" class="align-center" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>In this post we created a client application which depends on the config server to get properties and also used @RefreshScope annotation to update properties.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2018-07-11">11 Jul 2018</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/spring/">spring</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="/spring/2018/06/27/spring-cloud-config-basics-part-1.html"> &laquo; Spring Cloud Configuration - Part 1</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="/docker/2018/07/22/pull-and-run-first-docker-image.html">Pull And Run First Docker Image &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'k_pradeep1234'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<!--<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt=""> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        <form action="" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>    -->
+    
+</div><!-- /.container>
+    
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (22)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2018 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> <!-- /.site-content>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//k_pradeep1234.disqus.com/count.js"></script>
+</body>
+</html>

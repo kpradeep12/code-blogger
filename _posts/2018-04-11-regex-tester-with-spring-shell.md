@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Regex Tester With Spring Shell"
 date:   2018-04-11 09:31:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/blog-banner-regex-tester-with-spring-shell.png
+image: /assets/images/banners/blog-banner-regex-tester-with-spring-shell.png
+author: pradeep
+featured: false
 ---
 
 Spring framework is the suite of many projects, using which we can develop wide variety of applications. These applications may need user interaction, the most common way is to have a web interface. Not all applications need to have a web interface, a simple command line interface can be suffice for some type of applications. Spring Shell is a simple project which provides the infrastructure to build command line interface applications easily and quickly.

@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Recipes for Optional"
 date:   2018-04-03 08:51:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/blog-banner-recipes-for-optional.png
+image: /assets/images/banners/blog-banner-recipes-for-optional.png
+author: pradeep
+featured: false
 ---
 
 Optional allows us to wrap a nullable object in it so we can make a method to return Optional instead of bare object. There is a possibility that below method can return null; so we need to explicitly do the null check on the returned object before using it.

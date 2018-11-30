@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Spring Cloud Configuration - Part 1"
 date:   2018-06-27 12:11:10 -0500
 categories: spring
-header:
-  teaser: /assets/images/banners/spring-cloud-config-basics-part-1.png
+image: /assets/images/banners/spring-cloud-config-basics-part-1.png
+author: pradeep
+featured: false
 ---
 
 Configuration can be any key value pair information needed by the application at runtime. Spring applications accepts configuration in many ways like command line arguments, OS environment variables or application properties and so on. In the context of microservices we can have multiple applications running together and if each application maintains its own set of configuration then a simple change in the configuration needs deployment or restart. If we have to change configuration in multiple applications then this approach is a time consuming and not efficient.

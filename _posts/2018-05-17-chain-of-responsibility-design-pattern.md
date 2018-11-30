@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Chain of responsibility"
 date:   2018-05-17 12:11:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/chain-of-responsibility-design-pattern.png
+image: /assets/images/banners/chain-of-responsibility-design-pattern.png
+author: pradeep
+featured: false
 ---
 
 Chain of responsibility is one of the behavioral design pattern in Gang of Four patterns. The main objective of this design pattern is processing a command. For example, command can be any application related task like approving a transaction, writing text to a log file or filtering HTTP requests. 

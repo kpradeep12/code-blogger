@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Infinite streams"
 date:   2018-04-08 18:01:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/blog-banner-infinite-streams.png
+image: /assets/images/banners/blog-banner-infinite-streams.png
+author: pradeep
+featured: false
 ---
 
 Streams allows us to generate endless progression of discrete objects. There are couple of methods available in Java which will help us to generate infinite sequences.

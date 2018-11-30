@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Introduction to java.time - Part 1"
 date:   2018-04-18 12:11:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/blog-banner-intro-to-java-time-part1.png
+image: /assets/images/banners/blog-banner-intro-to-java-time-part1.png
+author: pradeep
+featured: false
 ---
 
 This article will provide introduction to the java.time package. This package is introduced in Java 8 version and it contains many classes and interfaces to represent and process dates and times. Below are the five most basic classes you need to know in this package.

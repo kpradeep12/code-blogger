@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Functions cheat sheet"
 date:   2018-03-28 09:29:40 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/blog-banner-functions-cheat-sheet.png
+image: /assets/images/banners/blog-banner-functions-cheat-sheet.png
+author: pradeep
+featured: false
 ---
 
 Functional interface will have single abstract method and they provide target types for lambda expressions. There are many functional interfaces in Java and they all are available in java.util.function package. I tried to organize all of them with a logical diagram and table. Table contains interface name and abstract method. You can refer this article to get an idea of available functions and its variants.

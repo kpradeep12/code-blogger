@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Using consumer functional interface"
 date:   2018-03-17 08:12:40 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 This article will explain the basics of using consumer functional interface. Consume is one of the many available functional interfaces in Java. This interface can be used when we need to take an object and process it but with out returning anything. Below image will show you how it looks in a logical way.

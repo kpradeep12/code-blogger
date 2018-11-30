@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "ReactiveX Introduction"
 date:   2018-06-06 12:11:10 -0500
 categories: reactiveX
-header:
-  teaser: /assets/images/banners/reactiveX-introduction.png
+image: /assets/images/banners/reactiveX-introduction.png
+author: pradeep
+featured: false
 ---
 
 ReactiveX library helps us to write applications to handle asynchronous events emitted over the time. Before understanding how to handle these events, lets go through some examples to see why we need this library.

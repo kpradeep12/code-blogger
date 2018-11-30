@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Fixed Thread Pool using Executor framework"
 date:   2018-03-10 19:49:40 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 In this article we are looking at the Fixed thread pool implementation. This thread pool creates a fixed number of threads and reuses them as the tasks are completed and because the threads are reused so once after reaching the thread pool limit then there will not be any thread creations involved. This pool will be helpful when we want to execute long running threads. For example we can use this pool in running batch jobs or accepting HTTP client requests and so on.

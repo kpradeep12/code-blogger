@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Spring Cloud Configuration - Part 2"
 date:   2018-07-11 12:11:10 -0500
 categories: spring
-header:
-  teaser: /assets/images/banners/spring-cloud-config-basics-part-2.png
+image: /assets/images/banners/spring-cloud-config-basics-part-2.png
+author: pradeep
+featured: false
 ---
 
 In **[Part 1]({{site.baseurl}}/blog/2018/06/27/spring-cloud-config-basics-part-1.html)** we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.

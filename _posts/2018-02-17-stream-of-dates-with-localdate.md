@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Stream of dates with LocalDate"
 date:   2018-02-17 09:30:24 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 I want a list of all dates with starting range from Jan 15, 2018 to Feb 20, 2018. I can generate this list using the new ‘datesUntil’ method in LocalDate class. This method is introduced in Java 9 and I recently found out this method while browsing through Java API and quickly did some code experiments using JShell. I thought this is very useful method and wanted to share my experiments in this article.

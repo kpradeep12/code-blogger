@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "Reduce stream to single value"
 date:   2018-03-24 17:19:40 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/blog-banner-reduce-the-streamto-single-value.png
+image: /assets/images/banners/blog-banner-reduce-the-streamto-single-value.png
+author: pradeep
+featured: false
 ---
 
 Lets say we want to return the sum of all numbers in a list, there are multiple ways in Java we can achieve this, one of the way is using a for loop to iterate the list by keeping track of current sum in a temporary variable, like below:

@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "How ConcurrentModificationException is thrown?"
 date:   2018-04-15 12:11:10 -0500
 categories: java
-header:
-  teaser: /assets/images/banners/blog-banner-How-ConcurrentModificationException-is-thrown_.png
+image: /assets/images/banners/blog-banner-How-ConcurrentModificationException-is-thrown_.png
+author: pradeep
+featured: false
 ---
 
 How concurrent modification detection logic works and on what basis ConcurrentModificationException is thrown? This article will explain these questions. Iterating a collection is one of the important operation we usually perform and it can be a time consuming if collection is big enough. Iterator interface is the responsible for iterating the collection. Many collection classes in Java implement iterator like List and Set. If we want to iterate through the collection we first need to get the instance of it, we can get it by calling iterate(). Refer below code, which gets iterator from list.

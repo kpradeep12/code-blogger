@@ -1,7 +1,10 @@
 ---
+layout: post
 title:  "Producer and Consumer with Bounded Blocked Queue"
 date:   2018-03-07 14:08:40 -0500
 categories: java
+author: pradeep
+featured: false
 ---
 
 Producer and consumers are two independent entities works together on the  queue. Producer inserts elements into the tail of the queue  and consumer removes them from the head of the queue. Here elements can be tasks or data on which consumer is interested in. This design pattern will allow producer and consumer to work independently.

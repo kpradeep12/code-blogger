@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<link rel="icon" href="/assets/images/logo.png">
+    
+<title>Functions cheat sheet | The Tech Stack . Net</title>
+    
+ 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+    
+</head>
+    
+
+    
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About</a>
+                </li>
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/wowthemesnet"><i class="fab fa-twitter"></i></a>
+                </li>
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my coding experiments
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Functions cheat sheet&url=/java/2018/03/28/functions-cheat-sheet.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=/java/2018/03/28/functions-cheat-sheet.html" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=/java/2018/03/28/functions-cheat-sheet.html" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Functions cheat sheet</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="/assets/images/banners/blog-banner-functions-cheat-sheet.png" alt="Functions cheat sheet">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>Functional interface will have single abstract method and they provide target types for lambda expressions. There are many functional interfaces in Java and they all are available in java.util.function package. I tried to organize all of them with a logical diagram and table. Table contains interface name and abstract method. You can refer this article to get an idea of available functions and its variants.</p>
+
+<h3 id="consumer">Consumer</h3>
+<p>Consumer takes input and always returns void. You can use this to perform some action with out returning anything.</p>
+
+<p><img src="/assets/images/posts/consumer-function.png" alt="Consumer Function" height="110px" width="590px" class="align-center" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Consumer</td>
+      <td>void accept(T t)</td>
+    </tr>
+    <tr>
+      <td>DoubleConsumer</td>
+      <td>void accept(double value)</td>
+    </tr>
+    <tr>
+      <td>IntConsumer</td>
+      <td>void accept(int value)</td>
+    </tr>
+    <tr>
+      <td>LongConsumer</td>
+      <td>void accept(long value)</td>
+    </tr>
+    <tr>
+      <td>BiConsumer</td>
+      <td>void accept(T t, U t)</td>
+    </tr>
+    <tr>
+      <td>ObjDoubleConsumer</td>
+      <td>void accept(T t, double value)</td>
+    </tr>
+    <tr>
+      <td>ObjIntConsumer</td>
+      <td>void accept(T t, int value)</td>
+    </tr>
+    <tr>
+      <td>ObjLongConsumer</td>
+      <td>void accept(T t, long value)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="function">Function</h3>
+<p>Function takes input and produces different kind of output.</p>
+
+<p><img src="/assets/images/posts/function.png" alt="Function" height="110px" width="590px" class="align-center" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Function</td>
+      <td>R apply(T t)</td>
+    </tr>
+    <tr>
+      <td>IntFunction</td>
+      <td>R apply(int value)</td>
+    </tr>
+    <tr>
+      <td>LongFunction</td>
+      <td>R apply(long value)</td>
+    </tr>
+    <tr>
+      <td>DoubleFunction</td>
+      <td>R apply(double value)</td>
+    </tr>
+    <tr>
+      <td>DoubleToIntFunction</td>
+      <td>int applyAsInt(double value)</td>
+    </tr>
+    <tr>
+      <td>DoubleToLongFunction</td>
+      <td>long applyAsLong(double value)</td>
+    </tr>
+    <tr>
+      <td>IntToDoubleFunction</td>
+      <td>double applyAsDouble(int value)</td>
+    </tr>
+    <tr>
+      <td>IntToLongFunction</td>
+      <td>long applyAsLong(int value)</td>
+    </tr>
+    <tr>
+      <td>LongToDoubleFunction</td>
+      <td>double applyAsDouble(long value)</td>
+    </tr>
+    <tr>
+      <td>LongToIntFunction</td>
+      <td>int applyAsInt(long value)</td>
+    </tr>
+    <tr>
+      <td>ToDoubleFunction</td>
+      <td>double applyAsDouble(T value)</td>
+    </tr>
+    <tr>
+      <td>ToIntFunction</td>
+      <td>int applyAsInt(T value)</td>
+    </tr>
+    <tr>
+      <td>ToLongFunction</td>
+      <td>long applyAsLong(T value)</td>
+    </tr>
+    <tr>
+      <td>BiFunction</td>
+      <td>R apply(T t, U t)</td>
+    </tr>
+    <tr>
+      <td>ToDoubleBiFunction</td>
+      <td>double applyAsDouble(T t, U t)</td>
+    </tr>
+    <tr>
+      <td>ToIntBiFunction</td>
+      <td>int applyAsInt(T t, U t)</td>
+    </tr>
+    <tr>
+      <td>ToLongBiFunction</td>
+      <td>long applyAsLong(T t, U t)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="operator">Operator</h3>
+<p>Operator is a special kind of function where it always accepts and produces same type.</p>
+
+<p><img src="/assets/images/posts/operator-function.png" alt="Operator Function" height="110px" width="590px" class="align-center" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>UnaryOperator</td>
+      <td>T apply(T t)</td>
+    </tr>
+    <tr>
+      <td>DoubleUnaryOperator</td>
+      <td>double applyAsDouble(double operand)</td>
+    </tr>
+    <tr>
+      <td>IntUnaryOperator</td>
+      <td>int applyAsInt(int operand)</td>
+    </tr>
+    <tr>
+      <td>LongUnaryOperator</td>
+      <td>long applyAsLong(long operand)</td>
+    </tr>
+    <tr>
+      <td>BinaryOperator</td>
+      <td>R apply(T t, U t)</td>
+    </tr>
+    <tr>
+      <td>DoubleBinaryOperator</td>
+      <td>double applyAsDouble(double left, double right)</td>
+    </tr>
+    <tr>
+      <td>IntBinaryOperator</td>
+      <td>int applyAsInt(int left, int right)</td>
+    </tr>
+    <tr>
+      <td>LongBinaryOperator</td>
+      <td>long applyAsLong(long left, long right)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="predicate">Predicate</h3>
+<p>Predicate always returns a boolean so you can this in conditional evaluations.</p>
+
+<p><img src="/assets/images/posts/predicate-function.png" alt="Predicate Function" height="110px" width="590px" class="align-center" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Predicate</td>
+      <td>boolean test(T t)</td>
+    </tr>
+    <tr>
+      <td>DoublePredicate</td>
+      <td>boolean test(double value)</td>
+    </tr>
+    <tr>
+      <td>IntPredicate</td>
+      <td>boolean test(int t)</td>
+    </tr>
+    <tr>
+      <td>LongPredicate</td>
+      <td>boolean test(long t)</td>
+    </tr>
+    <tr>
+      <td>BiPredicate</td>
+      <td>boolean test(T t, U u)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="supplier">Supplier</h3>
+<p>Supplier always returns a value. This can be used to generate random values or data from some source.</p>
+
+<p><img src="/assets/images/posts/supplier-function.png" alt="Supplier Function" height="110px" width="290px" class="align-center" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Supplier</td>
+      <td>T get()</td>
+    </tr>
+    <tr>
+      <td>BooleanSupplier</td>
+      <td>boolean getAsBoolean()</td>
+    </tr>
+    <tr>
+      <td>DoubleSupplier</td>
+      <td>double getAsDouble()</td>
+    </tr>
+    <tr>
+      <td>IntSupplier</td>
+      <td>int getAsInt()</td>
+    </tr>
+    <tr>
+      <td>LongSupplier</td>
+      <td>long getAsLong()</td>
+    </tr>
+  </tbody>
+</table>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2018-03-28">28 Mar 2018</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="/java/2018/03/24/reduce-stream-to-single-value.html"> &laquo; Reduce stream to single value</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="/java/2018/04/03/recipes-for-optional.html">Recipes for Optional &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'k_pradeep1234'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<!--<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt=""> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        <form action="" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>    -->
+    
+</div><!-- /.container>
+    
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (22)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2018 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> <!-- /.site-content>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//k_pradeep1234.disqus.com/count.js"></script>
+</body>
+</html>

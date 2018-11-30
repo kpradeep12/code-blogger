@@ -1,9 +1,11 @@
 ---
+layout: post
 title:  "8 Quick Ways To Create Observables"
 date:   2018-07-24 12:11:10 -0500
 categories: reactiveX
-header:
-  teaser: /assets/images/banners/reactiveX-observables.png
+author: pradeep
+image: /assets/images/banners/reactiveX-observables.png
+featured: false
 ---
 
 Many operators are available in RxJava to create observables. In this post I will go through each of them with examples. In the context of reactive programming, operator is nothing but a function which performs some operation, there are many types of operators available like creation, transforming, filtering, error handling, combining and many more. Lets go with each static create operator supported by RxJava.

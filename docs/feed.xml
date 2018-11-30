@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>Sharing my coding experiments</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 30 Nov 2018 16:50:10 -0500</pubDate>
-    <lastBuildDate>Fri, 30 Nov 2018 16:50:10 -0500</lastBuildDate>
+    <link>http://thetechstack.net/</link>
+    <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 30 Nov 2018 16:59:52 -0500</pubDate>
+    <lastBuildDate>Fri, 30 Nov 2018 16:59:52 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -134,8 +134,8 @@
 &lt;p&gt;We went through different operators to generate values for the subscribers.&lt;/p&gt;
 </description>
         <pubDate>Tue, 24 Jul 2018 13:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/07/24/observables</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/07/24/observables</guid>
+        <link>http://thetechstack.net/blog/2018/07/24/observables</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/07/24/observables</guid>
         
         
         <category>reactiveX</category>
@@ -255,8 +255,8 @@ Warning: Unable to load &lt;span class=&quot;s1&quot;&gt;'/usr/share/zoneinfo/zo
 &lt;p&gt;In this article we learnt downloading images, running and testing containers. With this setup we can have mysql in the docker instead of on the machine.&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Jul 2018 13:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/07/22/pull-and-run-first-docker-image</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/07/22/pull-and-run-first-docker-image</guid>
+        <link>http://thetechstack.net/blog/2018/07/22/pull-and-run-first-docker-image</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/07/22/pull-and-run-first-docker-image</guid>
         
         
         <category>docker</category>
@@ -351,8 +351,8 @@ management.endpoints.web.exposure.include&lt;span class=&quot;o&quot;&gt;=&lt;/s
 &lt;p&gt;In this post we created a client application which depends on the config server to get properties and also used @RefreshScope annotation to update properties.&lt;/p&gt;
 </description>
         <pubDate>Wed, 11 Jul 2018 13:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/07/11/spring-cloud-config-basics-part-2</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/07/11/spring-cloud-config-basics-part-2</guid>
+        <link>http://thetechstack.net/blog/2018/07/11/spring-cloud-config-basics-part-2</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/07/11/spring-cloud-config-basics-part-2</guid>
         
         
         <category>spring</category>
@@ -455,8 +455,8 @@ spring.cloud.config.server.git.uri&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
 &lt;p&gt;In this post we created git repository with single configuration file and a config server. In the next part we will create a pet-store application which will request properties from the config server.&lt;/p&gt;
 </description>
         <pubDate>Wed, 27 Jun 2018 13:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/06/27/spring-cloud-config-basics-part-1</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/06/27/spring-cloud-config-basics-part-1</guid>
+        <link>http://thetechstack.net/blog/2018/06/27/spring-cloud-config-basics-part-1</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/06/27/spring-cloud-config-basics-part-1</guid>
         
         
         <category>spring</category>
@@ -572,8 +572,8 @@ Generating numbers
 &lt;p&gt;In this article we went through basic introduction of Observables with some coding examples.&lt;/p&gt;
 </description>
         <pubDate>Fri, 15 Jun 2018 13:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/06/15/reactivex-observables</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/06/15/reactivex-observables</guid>
+        <link>http://thetechstack.net/blog/2018/06/15/reactivex-observables</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/06/15/reactivex-observables</guid>
         
         
         <category>reactiveX</category>
@@ -660,8 +660,8 @@ Available Java Versions
 &lt;p&gt;SDKMAN is a small and easy utility to manage multiple SDK’s in our computer. Its really useful for Java developers and it makes life easier.&lt;/p&gt;
 </description>
         <pubDate>Wed, 13 Jun 2018 21:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/06/13/using-sdkman-to-manage-sdks</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/06/13/using-sdkman-to-manage-sdks</guid>
+        <link>http://thetechstack.net/blog/2018/06/13/using-sdkman-to-manage-sdks</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/06/13/using-sdkman-to-manage-sdks</guid>
         
         
         <category>tools</category>
@@ -709,8 +709,8 @@ Available Java Versions
 &lt;p&gt;We can get a fully configured application in a container when we run a docker image. We can run this image on multiple environments or run multiple images in same machine. Docker makes its easy to setup and configure applications.&lt;/p&gt;
 </description>
         <pubDate>Sat, 09 Jun 2018 13:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/06/09/docker-intro</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/06/09/docker-intro</guid>
+        <link>http://thetechstack.net/blog/2018/06/09/docker-intro</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/06/09/docker-intro</guid>
         
         
         <category>docker</category>
@@ -756,8 +756,8 @@ Williams&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;ReactiveX library uses Observables to operate on discrete values that are emitted over the time. These emitted values are independent of each other and these values are handled asynchronously. ReactiveX will take care of all low-level threading mechanisms and this library supports various types of operators, some of them are like filter, merge, max and map, these operators will help us to process the incoming values. ReactiveX is a polyglot implementation, means it is implemented in various languages.&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Jun 2018 13:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/06/06/reactivex-introduction</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/06/06/reactivex-introduction</guid>
+        <link>http://thetechstack.net/blog/2018/06/06/reactivex-introduction</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/06/06/reactivex-introduction</guid>
         
         
         <category>reactiveX</category>
@@ -901,8 +901,8 @@ transaction amount 500000.0 is higher than approval limit! &lt;/code&gt;&lt;/pre
 &lt;p&gt;In this post we learned Chain of responsibility design patter. It is a object oriented version of if..else condition. Use this pattern if there are possibility of multiple processing objects involved.&lt;/p&gt;
 </description>
         <pubDate>Thu, 17 May 2018 13:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/05/17/chain-of-responsibility-design-pattern</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/05/17/chain-of-responsibility-design-pattern</guid>
+        <link>http://thetechstack.net/blog/2018/05/17/chain-of-responsibility-design-pattern</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/05/17/chain-of-responsibility-design-pattern</guid>
         
         
         <category>java</category>
@@ -941,8 +941,8 @@ transaction amount 500000.0 is higher than approval limit! &lt;/code&gt;&lt;/pre
 &lt;p&gt;In this post we went through the getter methods and TemporalField to access time fields.&lt;/p&gt;
 </description>
         <pubDate>Sun, 13 May 2018 13:11:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2018/05/13/introduction-to-java-time-part2</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/05/13/introduction-to-java-time-part2</guid>
+        <link>http://thetechstack.net/blog/2018/05/13/introduction-to-java-time-part2</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/05/13/introduction-to-java-time-part2</guid>
         
         
         <category>java</category>

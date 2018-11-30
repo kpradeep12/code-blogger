@@ -5,6 +5,7 @@ meta_description: ""
 #logo: 'assets/images/logo.png'
 #favicon: 'assets/images/logo.png'
 baseurl: ''
+url: 'http://thetechstack.net'
 google_analytics: ''
 disqus: 'k_pradeep1234'
 destination: ./docs

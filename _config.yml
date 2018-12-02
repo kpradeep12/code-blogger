@@ -37,7 +37,7 @@ jekyll-archives:
     category: '/blog/:year/:month/:day/:title'
     
 # Pagination 
-paginate: 6
+paginate: 9
 paginate_path: /page:num/
     
 # Other

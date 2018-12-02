@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<link rel="icon" href="/assets/images/logo.png">
+    
+<title>HTTP Client | The Tech Stack . Net</title>
+    
+ 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+    
+</head>
+    
+
+    
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About</a>
+                </li>-->
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my coding experiments
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=HTTP Client&url=http://thetechstack.net/blog/2018/09/01/HTTP-Client" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/blog/2018/09/01/HTTP-Client" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/blog/2018/09/01/HTTP-Client" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">HTTP Client</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/HTTP_Client.png" alt="HTTP Client">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>In this article I will give a simple introduction of HttpClient class and then will use this class to develop a small HTTP program. This program will hit a HTTP end point at <a href="http://numbersapi.com/">http://numbersapi.com/</a> This end point will take a number and returns an interesting fact about the given number.</p>
+
+<p>In Java 11 HttpClient has moved from incubator module to base module under the java.net.http package. This package provides a high-level interfaces to HTTP and low-level interfaces to Websockets. This package provides all the required classes and interfaces to make a HTTP request.</p>
+
+<p>We need to do below three actions to complete a full HTTP request</p>
+
+<ul>
+  <li>Create HTTP request</li>
+  <li>Create HTTP client</li>
+  <li>Get HTTP response</li>
+</ul>
+
+<p>Lets go through each of this action in below sections</p>
+
+<h2 id="create-http-request">Create HTTP request</h2>
+
+<p>HttpRequest class represents the request object. This class contains all the functionality to handle HTTP requests some of them are like request URL, request headers, HTTP protocol version and request types (GET, POST, PUT).</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">HttpRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HttpRequest</span>
+                <span class="o">.</span><span class="na">newBuilder</span><span class="o">(</span><span class="n">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">"http://numbersapi.com/5"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span></code></pre></figure>
+
+<p>newBuilder is a static method which will take a URI of the HTTP request and creates a Builder object. We called build on it to get HttpRequest object. If needed this request object can be cached to use multiple times.</p>
+
+<h2 id="create-http-client">Create HTTP Client</h2>
+
+<p>Once we have request then we can pass it to HTTPClient. HTTPClient class is used to send and get the request and responses from the HTTP server. Below code snippet will send the request and returns the HTTPResponse.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">HttpClient</span><span class="o">.</span><span class="na">newHttpClient</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">HttpResponse</span><span class="o">.</span><span class="na">BodyHandlers</span><span class="o">.</span><span class="na">ofString</span><span class="o">());</span></code></pre></figure>
+
+<p>newHttpClient is a static method which will return an instance of HttpClient and we called send method on it. send method will take request and body handler instances. We will discuss about body handlers in the next section below. send is a synchronous call means this method will block the thread until the response receives from the server. We can make an asynchronous call by using sendAsync method like below</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">HttpClient</span><span class="o">.</span><span class="na">newHttpClient</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">sendAsync</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">HttpResponse</span><span class="o">.</span><span class="na">BodyHandlers</span><span class="o">.</span><span class="na">ofString</span><span class="o">())</span>
+        <span class="o">.</span><span class="na">join</span><span class="o">();</span></code></pre></figure>
+
+<p>sendAsync returns CompletableFuture&lt;HttpResponse<String>&gt;. Both send and sendAsync methods we return HttpResponse object. We will use this object in the below section.</String></p>
+
+<h2 id="get-http-response">Get HTTP response</h2>
+
+<p>send and sendAsync methods in the HttpClient takes the request and Body handlers. Body handlers are used to indicate the response type from the HTTP server, for example response can be a simple string, byte stream or it can be a file to download so BodyHandlers builds the instance of HttpResponse, this is the reason HttpResponse is an interface and BodyHandler will create its instance based on the response type.</p>
+
+<p>Below contains two code snippets to handle response with send and sendAsync;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">HttpRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HttpRequest</span>
+                <span class="o">.</span><span class="na">newBuilder</span><span class="o">(</span><span class="n">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">"http://numbersapi.com/5"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+<span class="c1">//sync call</span>
+<span class="n">HttpResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">HttpClient</span><span class="o">.</span><span class="na">newHttpClient</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">HttpResponse</span><span class="o">.</span><span class="na">BodyHandlers</span><span class="o">.</span><span class="na">ofString</span><span class="o">());</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">body</span><span class="o">());</span>
+
+<span class="c1">//async call</span>
+<span class="n">HttpClient</span><span class="o">.</span><span class="na">newHttpClient</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">sendAsync</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">HttpResponse</span><span class="o">.</span><span class="na">BodyHandlers</span><span class="o">.</span><span class="na">ofString</span><span class="o">())</span>
+        <span class="o">.</span><span class="na">thenApply</span><span class="o">(</span><span class="nl">HttpResponse:</span><span class="o">:</span><span class="n">body</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">thenAccept</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">join</span><span class="o">();</span></code></pre></figure>
+
+<p>Output</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">5 is the number of dots <span class="k">in </span>a quincunx.
+5 is the number of permanent members with veto power on the United Nations Security Council.</code></pre></figure>
+
+<p><a href="http://numbersapi.com/">http://numbersapi.com/</a> responds with a random interesting fact about the provided number. In the above code snippet I made two HTTP calls (sync and async) for number 5 so there are two lines.</p>
+
+<p>Now we have completed all three actions for a HTTP transaction now lets enhance this using Java streams. Lets make five HttpRequests with random numbers.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="k">new</span> <span class="n">Random</span><span class="o">().</span><span class="na">ints</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">mapToObj</span><span class="o">(</span><span class="n">number</span> <span class="o">-&gt;</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"http://numbersapi.com/%d"</span><span class="o">,</span> <span class="n">number</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">url</span> <span class="o">-&gt;</span> <span class="n">HttpRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">(</span><span class="n">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">url</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">())</span>
+        <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">request</span> <span class="o">-&gt;</span> <span class="n">HttpClient</span><span class="o">.</span><span class="na">newHttpClient</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">sendAsync</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">HttpResponse</span><span class="o">.</span><span class="na">BodyHandlers</span><span class="o">.</span><span class="na">ofString</span><span class="o">()))</span>
+        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">response</span> <span class="o">-&gt;</span>
+                <span class="n">response</span><span class="o">.</span><span class="na">thenApply</span><span class="o">(</span><span class="nl">HttpResponse:</span><span class="o">:</span><span class="n">body</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">thenAccept</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">join</span><span class="o">()</span>
+        <span class="o">);</span></code></pre></figure>
+
+<p>Output</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">91 is the atomic number of protactinium.
+33 is the temperature at which water boils according to the Newton scale.
+58 is the minimum wind speed <span class="o">(</span>mph<span class="o">)</span> needed to issue a Severe Thunderstorm Warning.
+17 is the number of flames emanating from the grenade cap-badge of the Grenadier Guards.
+8 is the number of principles of Yong <span class="k">in </span>Chinese calligraphy.</code></pre></figure>
+
+<p>We are generating five random numbers between 1 and 100 and mapping them to URL’s and then creating HttpRequest for each URL and making requests with HttpClient, finally displaying the body content in the console.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>We went through different classes and interfaces in java.net.http package and created some sample HTTP requests.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2018-09-01">01 Sep 2018</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/blog/2018/07/24/observables"> &laquo; 8 Quick Ways To Create Observables</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://thetechstack.net/blog/2018/09/20/create-simple-window-using-javafx-and-maven">Create simple window using JavaFX 11 and Maven &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'k_pradeep1234'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<!--<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt=""> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        <form action="" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>    -->
+    
+</div><!-- /.container>
+    
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (26)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2018 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> <!-- /.site-content>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//k_pradeep1234.disqus.com/count.js"></script>
+</body>
+</html>

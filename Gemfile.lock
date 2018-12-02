@@ -71,6 +71,7 @@ DEPENDENCIES
   jekyll-feed
   jekyll-paginate
   jekyll-sitemap
+  rouge
 
 RUBY VERSION
    ruby 2.5.3p105

@@ -22,6 +22,7 @@ defaults:
       layout: post
       author: pradeep
       featured: false
+      comments: false
 
 # Authors
 authors:

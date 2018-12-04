@@ -266,7 +266,7 @@ License: https://www.wowthemes.net/freebies-license/
 }
  .featured-image {
      display:block;
-     margin-bottom:1.5rem;
+     margin:1.5rem auto;
 }
  .share {
      text-align:center;

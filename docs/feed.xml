@@ -5,9 +5,102 @@
     <description>Sharing my coding experiments</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Dec 2018 13:59:15 -0500</pubDate>
-    <lastBuildDate>Tue, 04 Dec 2018 13:59:15 -0500</lastBuildDate>
+    <pubDate>Tue, 04 Dec 2018 16:32:13 -0500</pubDate>
+    <lastBuildDate>Tue, 04 Dec 2018 16:32:13 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Understanding Kotlin Extension Functions</title>
+        <description>&lt;p&gt;Extension functions allows us to extend the functionality of a class. It does not matter if the class is in a external library. Extension functions will not extend the class. We can customize the functionality of class with out making changes in it. At first these extension functions seems confusing for Java programmers but going though some example should help to understand it.&lt;/p&gt;
+
+&lt;p&gt;I will take &lt;strong&gt;String&lt;/strong&gt; class as an example because ‘String’ is one of the most used class in the Java world, lets add an extended function to it. To print a string in the console we can pass it to &lt;strong&gt;println&lt;/strong&gt; function but instead of passing it to a function we can add an extension function to the &lt;strong&gt;String&lt;/strong&gt; class itself and will function make this function to print it to the console. In below code I created a extension function on String and calling it from main()&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;2&amp;gt; Calling extension function on String class&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//Extension function&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;3&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* Output:
+Hello World!
+Hello World!
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&amp;lt;1&amp;gt; Passing string to &lt;em&gt;println&lt;/em&gt; which prints message on console.&lt;br /&gt;
+&amp;lt;2&amp;gt; &lt;em&gt;println&lt;/em&gt; function is not part of &lt;strong&gt;String&lt;/strong&gt; class but this is an extension function.&lt;br /&gt;
+&amp;lt;3&amp;gt; Declared an extension function on String class. More about this in the next section.&lt;/p&gt;
+
+&lt;p&gt;Now we can directly call &lt;em&gt;println&lt;/em&gt; on &lt;em&gt;String&lt;/em&gt; to print it on console.&lt;/p&gt;
+
+&lt;h2 id=&quot;declare-extension-functions&quot;&gt;Declare Extension Functions&lt;/h2&gt;
+
+&lt;p&gt;To declare an extension function we need to prefix &lt;em&gt;function name&lt;/em&gt; with &lt;em&gt;receiver type&lt;/em&gt; separating with &lt;em&gt;dot&lt;/em&gt; like below.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong class=&quot;align-text-center&quot;&gt;fun &amp;lt;Receiver type&amp;gt;.&amp;lt;function name&amp;gt;(){}&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Based on our example we created an extension function on String so we declared it as &lt;strong&gt;fun String.println()&lt;/strong&gt;. We are saying that &lt;em&gt;String&lt;/em&gt; is the receiver type and &lt;em&gt;println&lt;/em&gt; is the extension function name. Now we can call &lt;em&gt;println&lt;/em&gt; on any String objects in my project if I have this declaration in the class path and this function will print the message to console.&lt;/p&gt;
+
+&lt;p&gt;For this tutorial purpose created a simple example where it just prints a message but we can have any logic in it which can manipulate &lt;em&gt;receiver type&lt;/em&gt;. &lt;strong&gt;How to access receiver type in the function?&lt;/strong&gt; the answer is using &lt;strong&gt;this&lt;/strong&gt;. this is a implicit reference to the receiver type so can manipulate receiver using &lt;strong&gt;this&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In the above example I just want to print so I am directly passing &lt;em&gt;this&lt;/em&gt; to &lt;em&gt;println&lt;/em&gt; function like below&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;how-extension-functions-works&quot;&gt;How Extension Functions Works&lt;/h2&gt;
+
+&lt;p&gt;How &lt;em&gt;this&lt;/em&gt; is implicitly reference the receiver type? I decompiled the above code to show how &lt;em&gt;Kotlin&lt;/em&gt; converts them to &lt;em&gt;Java&lt;/em&gt; compatible code and below is the output:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Kotlin Code&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Decompiled Code&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NotNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;$receiver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;2&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Intrinsics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;checkParameterIsNotNull&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$receiver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;receiver$0&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$receiver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;3&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&amp;lt;1&amp;gt; &lt;em&gt;Receiver type&lt;/em&gt; is passed as the argument to the extension function. This is the reason we can use &lt;strong&gt;this&lt;/strong&gt; in the extension function to refer the receiver.&lt;br /&gt;
+&amp;lt;2&amp;gt; Declaration is changed such that &lt;em&gt;Receiver type&lt;/em&gt; becomes parameter to the function.
+&amp;lt;3&amp;gt; Extension function implementation is converted to &lt;em&gt;Java&lt;/em&gt;.  Where ever we used &lt;em&gt;this&lt;/em&gt; in the &lt;em&gt;Kotlin&lt;/em&gt; is replaced with &lt;em&gt;receiver&lt;/em&gt; in &lt;em&gt;Java&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If extension function &lt;em&gt;println&lt;/em&gt; needs to take arguments then those arguments are appended after the &lt;em&gt;receiver&lt;/em&gt; type in the function implementation. Lets assume we have a class &lt;em&gt;Animal&lt;/em&gt; in a third party library. In below code I created a extended function to add more functionality to it and extended function takes one argument.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;type:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;eat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;$type is Eating&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;speed:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;$type is running at $speed mph&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;2&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Cat&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;3&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;eat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&amp;lt;1&amp;gt; &lt;em&gt;Animal&lt;/em&gt; class is part of third party library so we can not change it.&lt;br /&gt;
+&amp;lt;2&amp;gt; We added &lt;em&gt;run&lt;/em&gt; as extension function on Animal, which prints animal type and speed&lt;br /&gt;
+&amp;lt;3&amp;gt; Creating animal object and calling &lt;em&gt;eat()&lt;/em&gt; and extension function &lt;em&gt;run()&lt;/em&gt;. This example shows that we can add arguments to the external functions.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Extension functions not only just for Java inbuilt classes, we can add them for even third party libraries. But make sure to not overuse it because they may create ambiguity in the project so some policies may be needed in the project to create and maintaining extension functions.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Dec 2018 20:11:10 -0500</pubDate>
+        <link>http://thetechstack.net/blog/2018/12/04/understanding-kotlin-extension-functions</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/12/04/understanding-kotlin-extension-functions</guid>
+        
+        
+        <category>kotlin</category>
+        
+      </item>
     
       <item>
         <title>Design and Implement REST API's using Spring</title>
@@ -1068,94 +1161,6 @@ Generating numbers
         
         
         <category>reactiveX</category>
-        
-      </item>
-    
-      <item>
-        <title>Using SDKMAN to manage SDK's</title>
-        <description>&lt;p&gt;Some times we may want multiple java versions on our computer. Lets say we want to have java 8 to run a personal application and java 7 to run a old tool. We can install both of them but depending on what we working on, we may need to switch PATH and JAVA_HOME. It doesn’t just stop at java, what about if application depends on some old maven but we also need latest version of maven for some other project, then we need to manage multiple maven versions.&lt;/p&gt;
-
-&lt;h2 id=&quot;sdkman&quot;&gt;SDKMAN&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://sdkman.io/&quot;&gt;SDKMAN&lt;/a&gt;&lt;/strong&gt; is a Software Development Kit Manager for java developers. It provides a CLI interface to manage multiple SDK’s like java or maven in the above example. Using this tool we can easily switch, install, uninstall or update candidates. Candidates are nothing but the java SDK’s managed by SDKMAN.&lt;/p&gt;
-
-&lt;p&gt;Installation of SDKMAN is easy on linux based operation systems because it is written in bash but for Windows we need to have Cygwin or MSYS+MinGW. Go through this &lt;strong&gt;&lt;a href=&quot;https://sdkman.io/install&quot;&gt;link&lt;/a&gt;&lt;/strong&gt; for installation steps.&lt;/p&gt;
-
-&lt;p&gt;Note that SDKMAN will not manage pre-existing SDK’s. So either you need to uninstall them and reinstall with SDKMAN or you can continue to keep them.&lt;/p&gt;
-
-&lt;p&gt;After the installation you can see a hidden folder ‘.sdkman’ in users home directory. This contains a sub-folder named ‘candidates’ which is used to store all installed candidates. We no need to learn about these directories but these folders will give us an idea of how SDKMAN works internally.&lt;/p&gt;
-
-&lt;p&gt;If we install multiple java versions then candidates folder will contain more than one java sub-folder. IDE’s like Eclipse or IntelliJ Idea allows us to add multiple JDK’s so we can provide java folders in the candidates to add multiple versions.&lt;/p&gt;
-
-&lt;p&gt;Go through this &lt;strong&gt;&lt;a href=&quot;https://sdkman.io/sdks&quot;&gt;link&lt;/a&gt;&lt;/strong&gt; to see the list of all SDK’s which SDKMAN can install.&lt;/p&gt;
-
-&lt;h2 id=&quot;cli&quot;&gt;CLI&lt;/h2&gt;
-
-&lt;p&gt;Lets open a terminal and fire up some commands to see how SDKMAN works. I provided some basic commands, we can also go through this &lt;strong&gt;&lt;a href=&quot;https://sdkman.io/usage&quot;&gt;link&lt;/a&gt;&lt;/strong&gt; to learn all available options.&lt;/p&gt;
-
-&lt;h3 id=&quot;list-all-available-versions&quot;&gt;List all available versions&lt;/h3&gt;
-
-&lt;p&gt;Below command will list all available java versions.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sdk list java
-
-&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;
-Available Java Versions
-&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;
-     9.0.7-zulu                                                                 
-     9.0.4-openjdk                                                              
-   &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 8.0.172-zulu                                                                
-     8.0.171-oracle                                                              
-     7.0.181-zulu                                                                
-     10.0.1-zulu                                                                 
-     10.0.1-oracle                                                               
- &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 10.0.0-openjdk                                                       
-&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;
-+ - &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;version
-&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; - installed
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; - currently &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;use
-&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Above output is from my local machine. In the list, it indicates that I have two java versions already available on my machine (8.0.172-zulu and 10.0.0-openjdk) out of them java 10 is currently in use.&lt;/p&gt;
-
-&lt;h3 id=&quot;install&quot;&gt;Install&lt;/h3&gt;
-
-&lt;p&gt;No need to mention version if we want to install latest stable release. Below command will install latest stable java version.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;java&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;While installing it asks if we want this version to be set as default. If we say Yes then it will update the PATH so this effects in all new terminal windows.&lt;/p&gt;
-
-&lt;p&gt;To install specific java version:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;java 9.0.7-zulu&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;switching-versions&quot;&gt;Switching versions&lt;/h3&gt;
-
-&lt;p&gt;Switch to different version temporarily in current shell window.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sdk use java 8.0.172-zulu&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Switch to different version permanently. This command will update PATH.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sdk default java 8.0.172-zulu&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;list-current-versions&quot;&gt;List current versions&lt;/h2&gt;
-
-&lt;p&gt;To see all installed SDK’s&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sdk current&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;SDKMAN is a small and easy utility to manage multiple SDK’s in our computer. Its really useful for Java developers and it makes life easier.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 13 Jun 2018 21:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/blog/2018/06/13/using-sdkman-to-manage-sdks</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/06/13/using-sdkman-to-manage-sdks</guid>
-        
-        
-        <category>tools</category>
         
       </item>
     

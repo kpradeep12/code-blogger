@@ -1,9 +1,8 @@
 ---
-title:  "Kotlin extended functions"
+title:  "Understanding Kotlin Extension Functions"
 date:   2018-12-04 20:11:10 -0500
 categories: kotlin
-image: /assets/images/banners/design-and-implement-rest-apis.png
-published: false
+image: /assets/images/banners/kotlin-extension-function.png
 ---
 
 Extension functions allows us to extend the functionality of a class. It does not matter if the class is in a external library. Extension functions will not extend the class. We can customize the functionality of class with out making changes in it. At first these extension functions seems confusing for Java programmers but going though some example should help to understand it.

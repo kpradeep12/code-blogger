@@ -8,7 +8,7 @@
 <meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
 <link rel="icon" href="/assets/images/logo.png">
     
-<title>Quick way to create, read, write and delete files in Java | The Tech Stack . Net</title>
+<title>Understanding Kotlin Extension Functions | The Tech Stack . Net</title>
     
  
     
@@ -120,19 +120,19 @@
     </p>
     <ul>
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=Quick way to create, read, write and delete files in Java&url=http://thetechstack.net/blog/2018/02/28/quickway-to-create-read-write-delete-files" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Understanding Kotlin Extension Functions&url=http://thetechstack.net/blog/2018/12/04/understanding-kotlin-extension-functions" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <i class="fab fa-twitter"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/blog/2018/02/28/quickway-to-create-read-write-delete-files" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/blog/2018/12/04/understanding-kotlin-extension-functions" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
         <i class="fab fa-facebook-f"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/blog/2018/02/28/quickway-to-create-read-write-delete-files" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/blog/2018/12/04/understanding-kotlin-extension-functions" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
         <i class="fab fa-google"></i>
         </a>
         </li>
@@ -172,82 +172,104 @@
                 
                 
                 <!-- Post Title -->
-				<h1 class="posttitle">Quick way to create, read, write and delete files in Java</h1> 
+				<h1 class="posttitle">Understanding Kotlin Extension Functions</h1> 
                 
 			</div>
 
 			<!-- Post Featured Image -->
-			
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/kotlin-extension-function.png" alt="Understanding Kotlin Extension Functions">
 			<!-- End Featured Image -->
 
 			<!-- Post Content -->
 			<div class="article-post">
-				<p>Files class in java.nio.file package contains static utility methods to operate on files and directories. In this article I will provide information on some of these static methods. These methods will help us in writing simple and quick code to work on the files. The main advantage of using this class is that we no more need to handle lower level input/output streams.</p>
+				<p>Extension functions allows us to extend the functionality of a class. It does not matter if the class is in a external library. Extension functions will not extend the class. We can customize the functionality of class with out making changes in it. At first these extension functions seems confusing for Java programmers but going though some example should help to understand it.</p>
 
-<h2 id="create-file">Create file</h2>
-<p>Quick way to create a file is using createFile method by passing the path object. If file already exists then it throws FileAlreadyExistsException, so in the below example I called deleteIfExists method before creating file. I am creating a file which is located at “/Users/pradeep/temp/data.txt” in my computer, so you can create a file with different path based on your computer. If it is Microsoft OS then use \ in the string to separate the folder paths.</p>
+<p>I will take <strong>String</strong> class as an example because ‘String’ is one of the most used class in the Java world, lets add an extended function to it. To print a string in the console we can pass it to <strong>println</strong> function but instead of passing it to a function we can add an extension function to the <strong>String</strong> class itself and will function make this function to print it to the console. In below code I created a extension function on String and calling it from main()</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Path</span> <span class="nf">create</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="n">Path</span> <span class="n">path</span> <span class="o">=</span> <span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">);</span>
-        <span class="c1">//deletes the file if it exists</span>
-        <span class="n">Files</span><span class="o">.</span><span class="na">deleteIfExists</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
- 
-        <span class="c1">//creates new file and returns path</span>
-        <span class="k">return</span> <span class="n">Files</span><span class="o">.</span><span class="na">createFile</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">main</span><span class="o">(){</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"Hello World!"</span><span class="o">)</span> <span class="c1">// &lt;1&gt;</span>
+    <span class="s">"Hello World!"</span><span class="o">.</span><span class="na">println</span><span class="o">()</span> <span class="c1">// &lt;2&gt; Calling extension function on String class</span>
+<span class="o">}</span>
+
+<span class="c1">//Extension function</span>
+<span class="n">fun</span> <span class="n">String</span><span class="o">.</span><span class="na">println</span><span class="o">()</span> <span class="o">=</span> <span class="n">println</span><span class="o">(</span><span class="k">this</span><span class="o">)</span> <span class="c1">// &lt;3&gt;</span>
+
+<span class="cm">/* Output:
+Hello World!
+Hello World!
+*/</span></code></pre></figure>
+
+<p>&lt;1&gt; Passing string to <em>println</em> which prints message on console.<br />
+&lt;2&gt; <em>println</em> function is not part of <strong>String</strong> class but this is an extension function.<br />
+&lt;3&gt; Declared an extension function on String class. More about this in the next section.</p>
+
+<p>Now we can directly call <em>println</em> on <em>String</em> to print it on console.</p>
+
+<h2 id="declare-extension-functions">Declare Extension Functions</h2>
+
+<p>To declare an extension function we need to prefix <em>function name</em> with <em>receiver type</em> separating with <em>dot</em> like below.</p>
+
+<p><strong class="align-text-center">fun &lt;Receiver type&gt;.&lt;function name&gt;(){}</strong></p>
+
+<p>Based on our example we created an extension function on String so we declared it as <strong>fun String.println()</strong>. We are saying that <em>String</em> is the receiver type and <em>println</em> is the extension function name. Now we can call <em>println</em> on any String objects in my project if I have this declaration in the class path and this function will print the message to console.</p>
+
+<p>For this tutorial purpose created a simple example where it just prints a message but we can have any logic in it which can manipulate <em>receiver type</em>. <strong>How to access receiver type in the function?</strong> the answer is using <strong>this</strong>. this is a implicit reference to the receiver type so can manipulate receiver using <strong>this</strong></p>
+
+<p>In the above example I just want to print so I am directly passing <em>this</em> to <em>println</em> function like below</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="n">String</span><span class="o">.</span><span class="na">println</span><span class="o">()</span> <span class="o">=</span> <span class="n">println</span><span class="o">(</span><span class="k">this</span><span class="o">)</span></code></pre></figure>
+
+<h2 id="how-extension-functions-works">How Extension Functions Works</h2>
+
+<p>How <em>this</em> is implicitly reference the receiver type? I decompiled the above code to show how <em>Kotlin</em> converts them to <em>Java</em> compatible code and below is the output:</p>
+
+<p><strong>Kotlin Code</strong></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="s">"Hello World!"</span><span class="o">.</span><span class="na">println</span><span class="o">()</span>
+
+<span class="n">fun</span> <span class="n">String</span><span class="o">.</span><span class="na">println</span><span class="o">()</span> <span class="o">=</span> <span class="n">println</span><span class="o">(</span><span class="k">this</span><span class="o">)</span></code></pre></figure>
+
+<p><strong>Decompiled Code</strong></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">println</span><span class="o">(</span><span class="s">"Hello World!"</span><span class="o">);</span> <span class="c1">// &lt;1&gt;</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">println</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">String</span> <span class="n">$receiver</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// &lt;2&gt;</span>
+    <span class="n">Intrinsics</span><span class="o">.</span><span class="na">checkParameterIsNotNull</span><span class="o">(</span><span class="n">$receiver</span><span class="o">,</span> <span class="s">"receiver$0"</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">$receiver</span><span class="o">);</span> <span class="c1">// &lt;3&gt;</span>
 <span class="o">}</span></code></pre></figure>
 
-<h2 id="write-to-file">Write to file</h2>
-<p>Files class have couple of overloaded write methods. In below example I used one of the write method which takes three parameters; path of the file, list of strings to be written into the file and optional array of OpenOption objects. OpenOption tells how the file is created or opened.</p>
+<p>&lt;1&gt; <em>Receiver type</em> is passed as the argument to the extension function. This is the reason we can use <strong>this</strong> in the extension function to refer the receiver.<br />
+&lt;2&gt; Declaration is changed such that <em>Receiver type</em> becomes parameter to the function.
+&lt;3&gt; Extension function implementation is converted to <em>Java</em>.  Where ever we used <em>this</em> in the <em>Kotlin</em> is replaced with <em>receiver</em> in <em>Java</em></p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">write</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="c1">//writes list of cities into file</span>
-        <span class="n">Files</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">),</span> 
-                <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"New York"</span><span class="o">,</span> <span class="s">"San Francisco"</span><span class="o">,</span> <span class="s">"Chicago"</span><span class="o">,</span> <span class="s">"Orlando"</span><span class="o">));</span>
+<p>If extension function <em>println</em> needs to take arguments then those arguments are appended after the <em>receiver</em> type in the function implementation. Lets assume we have a class <em>Animal</em> in a third party library. In below code I created a extended function to add more functionality to it and extended function takes one argument.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nf">Animal</span><span class="o">(</span><span class="n">val</span> <span class="nl">type:</span><span class="n">String</span><span class="o">){</span> <span class="c1">// &lt;1&gt;</span>
+    <span class="n">fun</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">=</span> <span class="n">println</span><span class="o">(</span><span class="s">"$type is Eating"</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="n">fun</span> <span class="n">Animal</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="nl">speed:</span><span class="n">Int</span><span class="o">)</span> <span class="o">=</span> <span class="n">println</span><span class="o">(</span><span class="s">"$type is running at $speed mph"</span><span class="o">)</span> <span class="c1">// &lt;2&gt;</span>
+
+<span class="n">fun</span> <span class="nf">main</span><span class="o">(){</span>
+    <span class="n">val</span> <span class="n">animal</span> <span class="o">=</span> <span class="n">Animal</span><span class="o">(</span><span class="s">"Cat"</span><span class="o">)</span> <span class="c1">// &lt;3&gt;</span>
+    <span class="n">animal</span><span class="o">.</span><span class="na">eat</span><span class="o">()</span>
+    <span class="n">animal</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
 <span class="o">}</span></code></pre></figure>
 
-<p>If we don’t pass OpenOption to this method then this method will use three default OpenOptions CREATE, TRUNCATE_EXISTING and WRITE which means creates file if it doesn’t exist, opens to write content, truncates all existing contents.</p>
-
-<p>There is another overloaded write method which takes byte[] instead of Iterable. This method is useful if you have large data so you can convert it to byte array, for example a string can be converted to byte arrays by calling getBytes() method on it.</p>
-
-<h2 id="read-file">Read file</h2>
-<p>If you want to get all lines in the file as a List<String> and want to read whole file at once, then you can use ‘readAllLines’ method as mentioned in below example.</String></p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">read</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="c1">//readAllLines returns List&lt;String&gt; and forEach iterates on this list and prints to console</span>
-        <span class="n">Files</span><span class="o">.</span><span class="na">readAllLines</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">))</span>
-                <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-<span class="o">}</span></code></pre></figure>
-
-<p>In the above example I used forEach on the returned list to print each line on the console, so which means you can process each single line separately. If in case data can not be processed line by line then we can use ‘readAllBytes’ method, this will return whole file content as byte[].</p>
-
-<p>We can also get Stream<String> on the file by calling ‘lines’ method. This will be useful if we want to process the content line by line, but after the processing we should close the stream. Below is the example:</String></p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">read</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="c1">//get stream of strings from file</span>
-        <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">lines</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">));</span>
-        <span class="c1">//process each line</span>
-        <span class="n">lines</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-        <span class="c1">//close the stream</span>
-        <span class="n">lines</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="o">}</span></code></pre></figure>
-
-<h2 id="delete-file">Delete file</h2>
-<p>There are two methods available to delete a file. One of the method is ‘deleteIfExists’ which I used in create() mentioned in first example. The other method is ‘delete’</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">delete</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">{</span>
-        <span class="c1">//deletes the file</span>
-        <span class="n">Files</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"/Users/pradeep/temp/data.txt"</span><span class="o">));</span>
-<span class="o">}</span></code></pre></figure>
+<p>&lt;1&gt; <em>Animal</em> class is part of third party library so we can not change it.<br />
+&lt;2&gt; We added <em>run</em> as extension function on Animal, which prints animal type and speed<br />
+&lt;3&gt; Creating animal object and calling <em>eat()</em> and extension function <em>run()</em>. This example shows that we can add arguments to the external functions.</p>
 
 <h2 id="conclusion">Conclusion</h2>
-<p>All the above examples can be used to do simple file operations easily with out using any third party libraries. Go through the Java 9 Files API to see all available methods.</p>
+
+<p>Extension functions not only just for Java inbuilt classes, we can add them for even third party libraries. But make sure to not overuse it because they may create ambiguity in the project so some policies may be needed in the project to create and maintaining extension functions.</p>
 
 			</div>
 
             <!-- Post Date -->
             <p>
             <small>
-                <span class="post-date"><time class="post-date" datetime="2018-02-28">28 Feb 2018</time></span>           
+                <span class="post-date"><time class="post-date" datetime="2018-12-04">04 Dec 2018</time></span>           
                 
                 </small>
             </p>
@@ -258,7 +280,7 @@
                     
                     
                     <li>
-                     <a href="/category/java/">java</a>
+                     <a href="/category/kotlin/">kotlin</a>
                     </li>
                     
 				</ul>
@@ -268,10 +290,8 @@
             <!-- Prev/Next -->
             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
             
-            <a class="prev d-block col-md-6" href="http://thetechstack.net/blog/2018/02/23/quick-introduction-to-priorityQueue"> &laquo; Quick introduction to PriorityQueue</a>
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/blog/2018/10/31/design-and-implement-REST-APIs-using-spring"> &laquo; Design and Implement REST API's using Spring</a>
             
-            
-            <a class="next d-block col-md-6 text-lg-right" href="http://thetechstack.net/blog/2018/03/03/generate-stream-of-random-numbers">Generate stream of random numbers &raquo; </a>
             
             <div class="clearfix"></div>
             </div>

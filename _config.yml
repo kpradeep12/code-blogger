@@ -7,7 +7,7 @@ meta_description: ""
 baseurl: ''
 url: 'http://thetechstack.net'
 google_analytics: 'UA-115619272-1'
-disqus: 'k_pradeep1234'
+disqus: 'thetechstack-net'
 destination: ./docs
 permalink: /blog/:year/:month/:day/:title
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'

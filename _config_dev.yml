@@ -6,11 +6,22 @@ meta_description: ""
 #favicon: 'assets/images/logo.png'
 baseurl: ''
 url: 'http://localhost'
-google_analytics: ''
+google_analytics: 'UA-115619272-1'
 disqus: 'k_pradeep1234'
 destination: ./docs
 permalink: /blog/:year/:month/:day/:title
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+future: true
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: pradeep
+      featured: false
 
 # Authors
 authors:

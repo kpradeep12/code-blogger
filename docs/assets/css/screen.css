@@ -69,6 +69,10 @@ License: https://www.wowthemes.net/freebies-license/
     display: block;
     margin: 0 auto;
 }
+.article-post .align-text-center{
+    display: block;
+    text-align: center;
+}
  .article-post ol ol, .article-post ul ul {
      list-style: disc;
      margin-bottom:0rem;

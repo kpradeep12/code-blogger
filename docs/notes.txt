@@ -1,3 +1,7 @@
 Custom helpfull classes
 .align-text-center
 .align-center
+
+//build:
+bundle exec jekyll clean
+JEKYLL_ENV=production bundle exec jekyll build

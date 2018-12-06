@@ -6,6 +6,28 @@
 <meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
 <!--below verification is techstackjava.com-->
 <meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+
+<!-- Twitter cards -->
+<meta name="twitter:site"    content="@{{ site.twitter_username }}">
+<meta name="twitter:creator" content="@{{ page.author }}">
+<meta name="twitter:title"   content="{{ page.title }}">
+
+{% if page.summary %}
+<meta name="twitter:description" content="{{ page.summary }}">
+{% else %}
+<meta name="twitter:description" content="{{ site.description }}">
+{% endif %}
+
+{% if page.image %}
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+{% else %}
+<meta name="twitter:card"  content="summary">
+<meta name="twitter:image" content="{{ site.title_image }}">
+{% endif %}
+<!-- end of Twitter cards -->
+
+
 <link rel="icon" href="{{ site.baseurl }}/assets/images/logo.png">
     
 <title>{{ page.title }} | {{site.name}}</title>
@@ -21,7 +43,7 @@
 <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
     
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
-    
+
 </head>
     
 {% if jekyll.environment == 'production' %}

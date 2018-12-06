@@ -62,13 +62,13 @@
         <!-- Begin Menu -->
         
             <ul class="navbar-nav ml-auto">
-                
+                <!--
                 
                 <li class="nav-item">
                 
                 <a class="nav-link" href="/index.html">Blog</a>
                 </li>
-                <!--
+                
                 
                 <li class="nav-item">
                 
@@ -182,9 +182,9 @@
 
 			<!-- Post Content -->
 			<div class="article-post">
-				<p>Extension functions allows us to extend the functionality of a class. It does not matter if the class is in a external library. Extension functions will not extend the class. We can customize the functionality of class with out making changes in it. At first these extension functions seems confusing for Java programmers but going though some example should help to understand it.</p>
+				<p>Extension function allows us to extend the functionality of a class. It does not matter if the class is in a external library. We can customize the functionality of class with out making changes to it. At first these extension functions seems confusing for Java programmers but going though some examples should help in understanding it.</p>
 
-<p>I will take <strong>String</strong> class as an example because ‘String’ is one of the most used class in the Java world, lets add an extended function to it. To print a string in the console we can pass it to <strong>println</strong> function but instead of passing it to a function we can add an extension function to the <strong>String</strong> class itself and will function make this function to print it to the console. In below code I created a extension function on String and calling it from main()</p>
+<p>I will take <strong>String</strong> class as an example because <em>String</em> is one of the most used class in the Java world, lets add an extension function to it. Passing a string to <strong>println</strong> will print it on console but instead of passing string to a function we can add an extension function to the <strong>String</strong> itself. In below code I created an extension function on String and calling it from main()</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">main</span><span class="o">(){</span>
     <span class="n">println</span><span class="o">(</span><span class="s">"Hello World!"</span><span class="o">)</span> <span class="c1">// &lt;1&gt;</span>
@@ -199,11 +199,11 @@ Hello World!
 Hello World!
 */</span></code></pre></figure>
 
-<p>&lt;1&gt; Passing string to <em>println</em> which prints message on console.<br />
-&lt;2&gt; <em>println</em> function is not part of <strong>String</strong> class but this is an extension function.<br />
+<p>&lt;1&gt; Passing string to <em>println</em> which prints message on console. This is regular function in <em>Kotlin</em> <br />
+&lt;2&gt; <em>println</em> function is not part of <strong>String</strong> class but we are calling extension function.<br />
 &lt;3&gt; Declared an extension function on String class. More about this in the next section.</p>
 
-<p>Now we can directly call <em>println</em> on <em>String</em> to print it on console.</p>
+<p>Now we can directly call <em>println</em> on <em>String</em> to print text on the console.</p>
 
 <h2 id="declare-extension-functions">Declare Extension Functions</h2>
 
@@ -219,7 +219,7 @@ Hello World!
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="n">String</span><span class="o">.</span><span class="na">println</span><span class="o">()</span> <span class="o">=</span> <span class="n">println</span><span class="o">(</span><span class="k">this</span><span class="o">)</span></code></pre></figure>
 
-<h2 id="how-extension-functions-works">How Extension Functions Works</h2>
+<h2 id="how-extension-functions-works">How Extension Functions Works?</h2>
 
 <p>How <em>this</em> is implicitly reference the receiver type? I decompiled the above code to show how <em>Kotlin</em> converts them to <em>Java</em> compatible code and below is the output:</p>
 
@@ -262,7 +262,7 @@ Hello World!
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Extension functions not only just for Java inbuilt classes, we can add them for even third party libraries. But make sure to not overuse it because they may create ambiguity in the project so some policies may be needed in the project to create and maintaining extension functions.</p>
+<p>Extension functions not only just for Java core classes, we can add them for even third party libraries. But make sure to not overuse it because they may create ambiguity in the project so some policies may be needed in the project to create and maintain extension functions.</p>
 
 			</div>
 

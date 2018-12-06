@@ -5,9 +5,9 @@ categories: kotlin
 image: /assets/images/banners/kotlin-extension-function.png
 ---
 
-Extension functions allows us to extend the functionality of a class. It does not matter if the class is in a external library. Extension functions will not extend the class. We can customize the functionality of class with out making changes in it. At first these extension functions seems confusing for Java programmers but going though some example should help to understand it.
+Extension function allows us to extend the functionality of a class. It does not matter if the class is in a external library. We can customize the functionality of class with out making changes to it. At first these extension functions seems confusing for Java programmers but going though some examples should help in understanding it.
 
-I will take **String** class as an example because 'String' is one of the most used class in the Java world, lets add an extended function to it. To print a string in the console we can pass it to **println** function but instead of passing it to a function we can add an extension function to the **String** class itself and will function make this function to print it to the console. In below code I created a extension function on String and calling it from main()
+I will take **String** class as an example because *String* is one of the most used class in the Java world, lets add an extension function to it. Passing a string to **println** will print it on console but instead of passing string to a function we can add an extension function to the **String** itself. In below code I created an extension function on String and calling it from main()
 
 {% highlight java %}
 fun main(){
@@ -24,11 +24,11 @@ Hello World!
 */
 {% endhighlight %}
 
-<1> Passing string to *println* which prints message on console.  
-<2> *println* function is not part of **String** class but this is an extension function.  
+<1> Passing string to *println* which prints message on console. This is regular function in *Kotlin*   
+<2> *println* function is not part of **String** class but we are calling extension function.  
 <3> Declared an extension function on String class. More about this in the next section.
 
-Now we can directly call *println* on *String* to print it on console.
+Now we can directly call *println* on *String* to print text on the console.
 
 ## Declare Extension Functions
 
@@ -46,7 +46,7 @@ In the above example I just want to print so I am directly passing *this* to *pr
 fun String.println() = println(this)
 {% endhighlight %}
 
-## How Extension Functions Works
+## How Extension Functions Works?
 
 How *this* is implicitly reference the receiver type? I decompiled the above code to show how *Kotlin* converts them to *Java* compatible code and below is the output:
 
@@ -93,4 +93,4 @@ fun main(){
 
 ## Conclusion
 
-Extension functions not only just for Java inbuilt classes, we can add them for even third party libraries. But make sure to not overuse it because they may create ambiguity in the project so some policies may be needed in the project to create and maintaining extension functions.
+Extension functions not only just for Java core classes, we can add them for even third party libraries. But make sure to not overuse it because they may create ambiguity in the project so some policies may be needed in the project to create and maintain extension functions.

@@ -5,15 +5,15 @@
     <description>Sharing my coding experiments</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Dec 2018 18:28:29 -0500</pubDate>
-    <lastBuildDate>Tue, 04 Dec 2018 18:28:29 -0500</lastBuildDate>
+    <pubDate>Wed, 05 Dec 2018 20:24:43 -0500</pubDate>
+    <lastBuildDate>Wed, 05 Dec 2018 20:24:43 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Understanding Kotlin Extension Functions</title>
-        <description>&lt;p&gt;Extension functions allows us to extend the functionality of a class. It does not matter if the class is in a external library. Extension functions will not extend the class. We can customize the functionality of class with out making changes in it. At first these extension functions seems confusing for Java programmers but going though some example should help to understand it.&lt;/p&gt;
+        <description>&lt;p&gt;Extension function allows us to extend the functionality of a class. It does not matter if the class is in a external library. We can customize the functionality of class with out making changes to it. At first these extension functions seems confusing for Java programmers but going though some examples should help in understanding it.&lt;/p&gt;
 
-&lt;p&gt;I will take &lt;strong&gt;String&lt;/strong&gt; class as an example because ‘String’ is one of the most used class in the Java world, lets add an extended function to it. To print a string in the console we can pass it to &lt;strong&gt;println&lt;/strong&gt; function but instead of passing it to a function we can add an extension function to the &lt;strong&gt;String&lt;/strong&gt; class itself and will function make this function to print it to the console. In below code I created a extension function on String and calling it from main()&lt;/p&gt;
+&lt;p&gt;I will take &lt;strong&gt;String&lt;/strong&gt; class as an example because &lt;em&gt;String&lt;/em&gt; is one of the most used class in the Java world, lets add an extension function to it. Passing a string to &lt;strong&gt;println&lt;/strong&gt; will print it on console but instead of passing string to a function we can add an extension function to the &lt;strong&gt;String&lt;/strong&gt; itself. In below code I created an extension function on String and calling it from main()&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
@@ -28,11 +28,11 @@ Hello World!
 Hello World!
 */&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&amp;lt;1&amp;gt; Passing string to &lt;em&gt;println&lt;/em&gt; which prints message on console.&lt;br /&gt;
-&amp;lt;2&amp;gt; &lt;em&gt;println&lt;/em&gt; function is not part of &lt;strong&gt;String&lt;/strong&gt; class but this is an extension function.&lt;br /&gt;
+&lt;p&gt;&amp;lt;1&amp;gt; Passing string to &lt;em&gt;println&lt;/em&gt; which prints message on console. This is regular function in &lt;em&gt;Kotlin&lt;/em&gt; &lt;br /&gt;
+&amp;lt;2&amp;gt; &lt;em&gt;println&lt;/em&gt; function is not part of &lt;strong&gt;String&lt;/strong&gt; class but we are calling extension function.&lt;br /&gt;
 &amp;lt;3&amp;gt; Declared an extension function on String class. More about this in the next section.&lt;/p&gt;
 
-&lt;p&gt;Now we can directly call &lt;em&gt;println&lt;/em&gt; on &lt;em&gt;String&lt;/em&gt; to print it on console.&lt;/p&gt;
+&lt;p&gt;Now we can directly call &lt;em&gt;println&lt;/em&gt; on &lt;em&gt;String&lt;/em&gt; to print text on the console.&lt;/p&gt;
 
 &lt;h2 id=&quot;declare-extension-functions&quot;&gt;Declare Extension Functions&lt;/h2&gt;
 
@@ -48,7 +48,7 @@ Hello World!
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;how-extension-functions-works&quot;&gt;How Extension Functions Works&lt;/h2&gt;
+&lt;h2 id=&quot;how-extension-functions-works&quot;&gt;How Extension Functions Works?&lt;/h2&gt;
 
 &lt;p&gt;How &lt;em&gt;this&lt;/em&gt; is implicitly reference the receiver type? I decompiled the above code to show how &lt;em&gt;Kotlin&lt;/em&gt; converts them to &lt;em&gt;Java&lt;/em&gt; compatible code and below is the output:&lt;/p&gt;
 
@@ -91,7 +91,7 @@ Hello World!
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;Extension functions not only just for Java inbuilt classes, we can add them for even third party libraries. But make sure to not overuse it because they may create ambiguity in the project so some policies may be needed in the project to create and maintaining extension functions.&lt;/p&gt;
+&lt;p&gt;Extension functions not only just for Java core classes, we can add them for even third party libraries. But make sure to not overuse it because they may create ambiguity in the project so some policies may be needed in the project to create and maintain extension functions.&lt;/p&gt;
 </description>
         <pubDate>Tue, 04 Dec 2018 20:11:10 -0500</pubDate>
         <link>http://thetechstack.net/blog/2018/12/04/understanding-kotlin-extension-functions</link>

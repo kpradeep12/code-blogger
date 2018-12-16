@@ -10,7 +10,7 @@ google_analytics: 'UA-115619272-1'
 disqus: 'thetechstack-net'
 destination: ./docs
 permalink: /blog/:year/:month/:day/:title
-#mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+mailchimp-list: 'https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21'
 future: true
 twitter_username: 'PradeepK4J'
 

@@ -1,3 +1,10 @@
 Custom helpfull classes
 .align-text-center
 .align-center
+
+CLI's:
+Update Gem: >bundle update
+
+Links:
+Seo plugin: https://github.com/jekyll/jekyll-seo-tag
+About Seo in Jekyll: https://blog.webjeda.com/optimize-jekyll-seo/

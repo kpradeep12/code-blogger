@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@pradeep">
+<meta name="twitter:title"   content="Recipes for Optional">
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/blog-banner-recipes-for-optional.png">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="/assets/images/logo.png">
+    
+<title>Recipes for Optional | The Tech Stack . Net</title>
+    
+ 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Recipes for Optional | Pradeep’s Java and Kotlin blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Recipes for Optional" />
+<meta name="author" content="pradeep" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Optional allows us to wrap a nullable object in it so we can make a method to return Optional instead of bare object. There is a possibility that below method can return null; so we need to explicitly do the null check on the returned object before using it." />
+<meta property="og:description" content="Optional allows us to wrap a nullable object in it so we can make a method to return Optional instead of bare object. There is a possibility that below method can return null; so we need to explicitly do the null check on the returned object before using it." />
+<link rel="canonical" href="http://thetechstack.net/recipes-for-optional/" />
+<meta property="og:url" content="http://thetechstack.net/recipes-for-optional/" />
+<meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
+<meta property="og:image" content="http://thetechstack.net/assets/images/banners/blog-banner-recipes-for-optional.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-03T09:51:10-04:00" />
+<script type="application/ld+json">
+{"url":"http://thetechstack.net/recipes-for-optional/","author":{"@type":"Person","name":"pradeep"},"description":"Optional allows us to wrap a nullable object in it so we can make a method to return Optional instead of bare object. There is a possibility that below method can return null; so we need to explicitly do the null check on the returned object before using it.","headline":"Recipes for Optional","datePublished":"2018-04-03T09:51:10-04:00","dateModified":"2018-04-03T09:51:10-04:00","@type":"BlogPosting","image":"http://thetechstack.net/assets/images/banners/blog-banner-recipes-for-optional.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/recipes-for-optional/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+    
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About</a>
+                </li>-->
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java and Kotlin coding experiments in this blog
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Recipes for Optional&url=http://thetechstack.net/recipes-for-optional/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/recipes-for-optional/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/recipes-for-optional/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java & Kotlin developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Recipes for Optional</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/blog-banner-recipes-for-optional.png" alt="Recipes for Optional">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>Optional allows us to wrap a nullable object in it so we can make a method to return Optional instead of bare object. There is a possibility that below method can return null; so we need to explicitly do the null check on the returned object before using it.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Employee</span> <span class="nf">getEmployee</span><span class="o">(</span><span class="n">Integer</span> <span class="n">id</span><span class="o">){</span>
+ <span class="c1">//return employee;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Check below modified method which returns Optional<Employee> and it communicates very well, saying that the result can be null.</Employee></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span> <span class="nf">getEmployee</span><span class="o">(</span><span class="n">Integer</span> <span class="n">id</span><span class="o">){</span>
+ <span class="c1">// return optional employee</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>I will go through some recipes to handle Optional results, before that lets create an EmployeeService which returns Employee object.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Employee</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">id</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">age</span><span class="o">;</span>
+ 
+    <span class="n">Employee</span><span class="o">(</span><span class="n">Integer</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+    <span class="o">}</span>
+ 
+    <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">id</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">name</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">getAge</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">age</span><span class="o">;</span> <span class="o">}</span>
+ 
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Employee{ id="</span> <span class="o">+</span> <span class="n">id</span> <span class="o">+</span>
+                <span class="s">", name='"</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+                <span class="s">", age="</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="sc">'}'</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmployeeService</span> <span class="o">{</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Employee</span><span class="o">&gt;</span> <span class="n">store</span> <span class="o">=</span> <span class="n">Map</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="s">"Peter"</span><span class="o">,</span> <span class="mi">34</span><span class="o">),</span>
+            <span class="mi">2</span><span class="o">,</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="s">"John"</span><span class="o">,</span> <span class="mi">28</span><span class="o">),</span>
+            <span class="mi">3</span><span class="o">,</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="s">"Bill"</span><span class="o">,</span> <span class="mi">42</span><span class="o">));</span>
+ 
+    <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span> <span class="nf">getEmployee</span><span class="o">(</span><span class="n">Integer</span> <span class="n">id</span><span class="o">){</span>
+        <span class="k">return</span> <span class="n">Optional</span><span class="o">.</span><span class="na">ofNullable</span><span class="o">(</span><span class="n">store</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">id</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><strong>Recipe 1:</strong> Check if result is present in the Optional using isPresent() and if it present then get the result using get() function.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">EmployeeService</span> <span class="n">es</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeService</span><span class="o">();</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span> <span class="n">emp</span> <span class="o">=</span> <span class="n">es</span><span class="o">.</span><span class="na">getEmployee</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="k">if</span><span class="o">(</span><span class="n">emp</span><span class="o">.</span><span class="na">isPresent</span><span class="o">()){</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">emp</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+<span class="o">}</span>
+<span class="c1">//Output: Employee{id=2, name='John', age=28}</span></code></pre></figure>
+
+<p>Its not a good practice to use isPresent and get methods because this code is doing regular null check and then performing action on it. Instead follow the next recipes which will show you different ways to use Optional result. I used these methods to show available functions in the Optional class.</p>
+
+<p><strong>Recipe 2:</strong> Consume the result with out checking null. ifPresent() takes a consumer and it is  executed only if the result is not null. We no need to explicitly check the null.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">EmployeeService</span> <span class="n">es</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeService</span><span class="o">();</span>
+<span class="n">es</span><span class="o">.</span><span class="na">getEmployee</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> 
+<span class="c1">//Output: Employee{id=2, name='John', age=28}</span></code></pre></figure>
+
+<p><strong>Recipe 3:</strong> Consume and perform action if the result is present and if not present then perform empty action. ifPresentOrElse function takes two parameters, first parameter is consumer which will be executed if the result is present and second parameter is a runnable which will be executed when the result is null.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">EmployeeService</span> <span class="n">es</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeService</span><span class="o">();</span>
+<span class="c1">//Employee id 5 is not available.</span>
+<span class="n">es</span><span class="o">.</span><span class="na">getEmployee</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">ifPresentOrElse</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">,</span>
+                     <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"No object present"</span><span class="o">);});</span>
+<span class="c1">//Output: No object present</span></code></pre></figure>
+
+<p><strong>Recipe 4:</strong> Perform filter before consuming the result. Filter function takes predicate and returns Optional. We can test the result before processing. Filter function returns empty Optional if predicate returns false.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">EmployeeService</span> <span class="n">es</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeService</span><span class="o">();</span>
+<span class="n">es</span><span class="o">.</span><span class="na">getEmployee</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">emp</span> <span class="o">-&gt;</span> <span class="n">emp</span><span class="o">.</span><span class="na">getAge</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+<span class="c1">//Output: Employee{ id=3, name='Bill', age=42}</span></code></pre></figure>
+
+<p><strong>Recipe 5:</strong> If result is present then perform action on it else perform action by creating new Optional. If getEmployee did not return Employee then we can create and return empty Employee. Other alternatives to this function is orElse(T other), orElseGet(Supplier&lt;? extends T&gt; supplier) both of these functions returns T instead of Optional<T></T></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">EmployeeService</span> <span class="n">es</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeService</span><span class="o">();</span>
+<span class="c1">//Employee id 5 is not available.</span>
+<span class="n">es</span><span class="o">.</span><span class="na">getEmployee</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">or</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span><span class="k">return</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="mi">0</span><span class="o">));})</span>
+        <span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+<span class="c1">//Output: Employee{ id=0, name='', age=0}</span></code></pre></figure>
+
+<p><strong>Recipe 6:</strong> Throw exception if result is not present. orElseThrow takes supplier which should return throwable object.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">EmployeeService</span> <span class="n">es</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeService</span><span class="o">();</span>
+<span class="n">es</span><span class="o">.</span><span class="na">getEmployee</span><span class="o">(</span><span class="mi">5</span><span class="o">).</span><span class="na">orElseThrow</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"employee not available"</span><span class="o">);</span>
+        <span class="o">});</span>
+<span class="c1">//Output: Exception in thread "main" java.lang.IllegalStateException: employee not available</span></code></pre></figure>
+
+<p><strong>Recipe 7:</strong> We can map the result to different type with map function. For example using map we can extract employee age from the employee object. The returned employee age from the map is wrapped in its own Optional. So make sure to unwrap it before using.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">EmployeeService</span> <span class="n">es</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeService</span><span class="o">();</span>
+<span class="n">es</span><span class="o">.</span><span class="na">getEmployee</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">Employee:</span><span class="o">:</span><span class="n">getAge</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+<span class="c1">//Output: 28</span></code></pre></figure>
+
+<p><strong>Recipe 8:</strong> Alternative to map is flatMap function. Both of these functions returns Optional except in flatMap we need to explicitly map to Optional.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">EmployeeService</span> <span class="n">es</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeService</span><span class="o">();</span>
+<span class="n">es</span><span class="o">.</span><span class="na">getEmployee</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">emp</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">emp</span><span class="o">.</span><span class="na">getAge</span><span class="o">()))</span>
+        <span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+<span class="c1">//Output: 28</span></code></pre></figure>
+
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2018-04-03">03 Apr 2018</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/functions-cheat-sheet/"> &laquo; Functions cheat sheet</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://thetechstack.net/infinite-streams/">Infinite streams &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt="Pradeep's Java and Kotlin blog"> &nbsp; Never miss an <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div><!-- /.container>
+    
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (26)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+             
+              <a href="/category/kotlin">Kotlin (3)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2018 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> <!-- /.site-content>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

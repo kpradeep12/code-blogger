@@ -6,6 +6,7 @@ categories: java
 image: /assets/images/banners/design-and-implement-rest-apis.png
 author: pradeep
 featured: false
+description: "Example based article on designing and implementing rest API's. Using Spring REST."
 ---
 
 REST endpoints are used in integrating applications or in providing services to the clients. In this article I will go through a CRUD based application to design and implement REST endpoints using Spring boot. I have a sample customer data and I will create a corresponding Spring REST Controller to access customer data. To make it simple I will focus only on the controller class instead of on whole spring application.You can download full project in [github](https://github.com/kpradeep12/mycustomers).

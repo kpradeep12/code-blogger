@@ -3,6 +3,7 @@ title:  "Operator overloading in Kotlin"
 date:   2018-12-15 20:11:10 -0500
 categories: kotlin
 image: /assets/images/banners/kotlin-operator-overloading.png
+description: "Learn basics of operator overloading in Kotlin with some examples"
 ---
 
 Kotlin allows us to implement **Operator overloading** for a predefined set of operators. We can implement them on class members or extension functions. These operators have fixed symbolic representation (like + or -). 
@@ -58,7 +59,7 @@ Output shows that the counter is incremented and decremented ten times.
 
 ## Overloading with Extension functions
 
-We can also override operators using Extension functions. Read this **[article]({{site.baseurl}}/blog/2018/12/04/understanding-kotlin-extension-functions.html)** to learn about extension functions. If we dont have access to Counter class then we can add new extension function like below:
+We can also override operators using Extension functions. Read this **[article]({{site.baseurl}}/understanding-kotlin-extension-functions.html)** to learn about extension functions. If we dont have access to Counter class then we can add new extension function like below:
 
 {% highlight java %}
 operator fun Counter.unaryPlus() = Counter(number + 1)

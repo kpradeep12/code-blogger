@@ -36,6 +36,8 @@ GEM
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
+    jekyll-seo-tag (2.5.0)
+      jekyll (~> 3.3)
     jekyll-sitemap (1.2.0)
       jekyll (~> 3.3)
     jekyll-watch (2.1.2)
@@ -70,11 +72,11 @@ DEPENDENCIES
   jekyll-archives
   jekyll-feed
   jekyll-paginate
+  jekyll-seo-tag
   jekyll-sitemap
-  rouge
 
 RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   1.16.6
+   1.17.2

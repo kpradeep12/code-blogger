@@ -3,6 +3,7 @@ title:  "Understanding Kotlin Extension Functions"
 date:   2018-12-04 20:11:10 -0500
 categories: kotlin
 image: /assets/images/banners/kotlin-extension-function.png
+description: "Basics of Kotlin extension functions. Add println function to String instance instead of passing it to println."
 ---
 
 Extension function allows us to extend the functionality of a class. It does not matter if the class is in a external library. We can customize the functionality of class with out making changes to it. At first these extension functions seems confusing for Java programmers but going though some examples should help in understanding it.

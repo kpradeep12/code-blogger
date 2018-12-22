@@ -3,6 +3,7 @@ title:  "Basics of Domain Specific Language (DSL) using Kotlin"
 date:   2018-12-22 20:11:10 -0500
 categories: kotlin
 image: /assets/images/banners/basics-of-domain-specific-language.jpg
+description: "Learn basics of Domain specific language using Kotlin and create a sample DSL to generate HTML"
 ---
 
 Domain Specific Language (DSL) is a simple language targeted to solve a particular kind of problem. DSL is not a programming language, its a way of using existing programming language to create a new domain language. This new domain language can be used to solve problems with in that particular domain. DSL is not a new concept, it's old and programmers use it frequently. For example SQL, CSS, HTML and XML all these are DSL's.
@@ -83,7 +84,7 @@ class Title{
 }
 {% endhighlight %}
 
-header function is expecting a lambda with extension function on Title, means code passed to header is executed with in the Title context. Read this **[article]({{site.baseurl}}/blog/2018/12/04/understanding-kotlin-extension-functions.html)** for more on extension functions. **Title** class is having single **[infix](https://kotlinlang.org/docs/reference/functions.html#infix-notation)** function (with) which takes String and prints its on the console.
+header function is expecting a lambda with extension function on Title, means code passed to header is executed with in the Title context. Read this **[article]({{site.baseurl}}/understanding-kotlin-extension-functions.html)** for more on extension functions. **Title** class is having single **[infix](https://kotlinlang.org/docs/reference/functions.html#infix-notation)** function (with) which takes String and prints its on the console.
 
 {% highlight java %}
 header{

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <description>Sharing my coding experiments</description>
+    <title>Pradeep's Java and Kotlin blog</title>
+    <description>Sharing my Java and Kotlin coding experiments in this blog</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Dec 2018 09:15:25 -0500</pubDate>
-    <lastBuildDate>Sat, 22 Dec 2018 09:15:25 -0500</lastBuildDate>
+    <pubDate>Sat, 22 Dec 2018 10:04:28 -0500</pubDate>
+    <lastBuildDate>Sat, 22 Dec 2018 10:04:28 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -80,7 +80,7 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;header function is expecting a lambda with extension function on Title, means code passed to header is executed with in the Title context. Read this &lt;strong&gt;&lt;a href=&quot;/blog/2018/12/04/understanding-kotlin-extension-functions.html&quot;&gt;article&lt;/a&gt;&lt;/strong&gt; for more on extension functions. &lt;strong&gt;Title&lt;/strong&gt; class is having single &lt;strong&gt;&lt;a href=&quot;https://kotlinlang.org/docs/reference/functions.html#infix-notation&quot;&gt;infix&lt;/a&gt;&lt;/strong&gt; function (with) which takes String and prints its on the console.&lt;/p&gt;
+&lt;p&gt;header function is expecting a lambda with extension function on Title, means code passed to header is executed with in the Title context. Read this &lt;strong&gt;&lt;a href=&quot;/understanding-kotlin-extension-functions.html&quot;&gt;article&lt;/a&gt;&lt;/strong&gt; for more on extension functions. &lt;strong&gt;Title&lt;/strong&gt; class is having single &lt;strong&gt;&lt;a href=&quot;https://kotlinlang.org/docs/reference/functions.html#infix-notation&quot;&gt;infix&lt;/a&gt;&lt;/strong&gt; function (with) which takes String and prints its on the console.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Welcome&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
@@ -111,8 +111,8 @@
 &lt;p&gt;In this article we created new DSL to generate a simple HTML. DSL’s are mainly used for configuration or generating a structure in a simple contextual way.&lt;/p&gt;
 </description>
         <pubDate>Sat, 22 Dec 2018 20:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/blog/2018/12/22/domain-specific-language</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/12/22/domain-specific-language</guid>
+        <link>http://thetechstack.net/domain-specific-language/</link>
+        <guid isPermaLink="true">http://thetechstack.net/domain-specific-language/</guid>
         
         
         <category>kotlin</category>
@@ -182,7 +182,7 @@ We can overload many operators but we are not covering all of them in this artic
 
 &lt;h2 id=&quot;overloading-with-extension-functions&quot;&gt;Overloading with Extension functions&lt;/h2&gt;
 
-&lt;p&gt;We can also override operators using Extension functions. Read this &lt;strong&gt;&lt;a href=&quot;/blog/2018/12/04/understanding-kotlin-extension-functions.html&quot;&gt;article&lt;/a&gt;&lt;/strong&gt; to learn about extension functions. If we dont have access to Counter class then we can add new extension function like below:&lt;/p&gt;
+&lt;p&gt;We can also override operators using Extension functions. Read this &lt;strong&gt;&lt;a href=&quot;/understanding-kotlin-extension-functions.html&quot;&gt;article&lt;/a&gt;&lt;/strong&gt; to learn about extension functions. If we dont have access to Counter class then we can add new extension function like below:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;unaryPlus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -203,8 +203,8 @@ We can overload many operators but we are not covering all of them in this artic
 &lt;p&gt;We went through some examples to overload &lt;strong&gt;++&lt;/strong&gt;, &lt;strong&gt;–&lt;/strong&gt;, and &lt;strong&gt;+&lt;/strong&gt; operators with class members and extension functions.&lt;/p&gt;
 </description>
         <pubDate>Sat, 15 Dec 2018 20:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/blog/2018/12/15/kotlin-operators</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/12/15/kotlin-operators</guid>
+        <link>http://thetechstack.net/kotlin-operators/</link>
+        <guid isPermaLink="true">http://thetechstack.net/kotlin-operators/</guid>
         
         
         <category>kotlin</category>
@@ -296,8 +296,8 @@ Hello World!
 &lt;p&gt;Extension functions not only just for Java core classes, we can add them for even third party libraries. But make sure to not overuse it because they may create ambiguity in the project so some policies may be needed in the project to create and maintain extension functions.&lt;/p&gt;
 </description>
         <pubDate>Tue, 04 Dec 2018 20:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/blog/2018/12/04/understanding-kotlin-extension-functions</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/12/04/understanding-kotlin-extension-functions</guid>
+        <link>http://thetechstack.net/understanding-kotlin-extension-functions/</link>
+        <guid isPermaLink="true">http://thetechstack.net/understanding-kotlin-extension-functions/</guid>
         
         
         <category>kotlin</category>
@@ -408,8 +408,8 @@ Hello World!
 &lt;p&gt;This article demonstrated various design strategies in developing REST end points.&lt;/p&gt;
 </description>
         <pubDate>Wed, 31 Oct 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/blog/2018/10/31/design-and-implement-REST-APIs-using-spring</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/10/31/design-and-implement-REST-APIs-using-spring</guid>
+        <link>http://thetechstack.net/design-and-implement-REST-APIs-using-spring/</link>
+        <guid isPermaLink="true">http://thetechstack.net/design-and-implement-REST-APIs-using-spring/</guid>
         
         
         <category>java</category>
@@ -548,8 +548,8 @@ Hello World!
 &lt;p&gt;We went through code snippets of creating Jetty server instance and creating dynamic HTML using J2HTML library.&lt;/p&gt;
 </description>
         <pubDate>Sun, 30 Sep 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/blog/2018/09/30/generating-static-pages-with-J2HTML</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/09/30/generating-static-pages-with-J2HTML</guid>
+        <link>http://thetechstack.net/generating-static-pages-with-J2HTML/</link>
+        <guid isPermaLink="true">http://thetechstack.net/generating-static-pages-with-J2HTML/</guid>
         
         
         <category>java</category>
@@ -681,8 +681,8 @@ Hello World!
 &lt;p&gt;We created and executed a simple JavaFX 11 window. You can import this project to any Java IDE.&lt;/p&gt;
 </description>
         <pubDate>Thu, 20 Sep 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/blog/2018/09/20/create-simple-window-using-javafx-and-maven</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/09/20/create-simple-window-using-javafx-and-maven</guid>
+        <link>http://thetechstack.net/create-simple-window-using-javafx-and-maven/</link>
+        <guid isPermaLink="true">http://thetechstack.net/create-simple-window-using-javafx-and-maven/</guid>
         
         
         <category>java</category>
@@ -787,8 +787,8 @@ Hello World!
 &lt;p&gt;We went through different classes and interfaces in java.net.http package and created some sample HTTP requests.&lt;/p&gt;
 </description>
         <pubDate>Sat, 01 Sep 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/blog/2018/09/01/HTTP-Client</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/09/01/HTTP-Client</guid>
+        <link>http://thetechstack.net/HTTP-Client/</link>
+        <guid isPermaLink="true">http://thetechstack.net/HTTP-Client/</guid>
         
         
         <category>java</category>
@@ -920,8 +920,8 @@ Hello World!
 &lt;p&gt;We went through different operators to generate values for the subscribers.&lt;/p&gt;
 </description>
         <pubDate>Tue, 24 Jul 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/blog/2018/07/24/observables</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/07/24/observables</guid>
+        <link>http://thetechstack.net/observables/</link>
+        <guid isPermaLink="true">http://thetechstack.net/observables/</guid>
         
         
         <category>reactiveX</category>
@@ -940,7 +940,7 @@ Hello World!
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/posts/2018/07/docker-image-page.png&quot; alt=&quot;pet store hello&quot; height=&quot;450px&quot; width=&quot;500px&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Lets pull mysql image from docker store. Open terminal and execute below command. Before executing this command make sure that docker is running. Refer &lt;strong&gt;&lt;a href=&quot;/blog/2018/06/09/docker-intro.html&quot;&gt;Docker introduction&lt;/a&gt;&lt;/strong&gt; for more details on Docker setup.&lt;/p&gt;
+&lt;p&gt;Lets pull mysql image from docker store. Open terminal and execute below command. Before executing this command make sure that docker is running. Refer &lt;strong&gt;&lt;a href=&quot;/docker-intro.html&quot;&gt;Docker introduction&lt;/a&gt;&lt;/strong&gt; for more details on Docker setup.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker pull mysql/mysql-server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1041,8 +1041,8 @@ Warning: Unable to load &lt;span class=&quot;s1&quot;&gt;'/usr/share/zoneinfo/zo
 &lt;p&gt;In this article we learnt downloading images, running and testing containers. With this setup we can have mysql in the docker instead of on the machine.&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Jul 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/blog/2018/07/22/pull-and-run-first-docker-image</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/07/22/pull-and-run-first-docker-image</guid>
+        <link>http://thetechstack.net/pull-and-run-first-docker-image/</link>
+        <guid isPermaLink="true">http://thetechstack.net/pull-and-run-first-docker-image/</guid>
         
         
         <category>docker</category>
@@ -1051,7 +1051,7 @@ Warning: Unable to load &lt;span class=&quot;s1&quot;&gt;'/usr/share/zoneinfo/zo
     
       <item>
         <title>Spring Cloud Configuration - Part 2</title>
-        <description>&lt;p&gt;In &lt;strong&gt;&lt;a href=&quot;/blog/2018/06/27/spring-cloud-config-basics-part-1.html&quot;&gt;Part 1&lt;/a&gt;&lt;/strong&gt; we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.&lt;/p&gt;
+        <description>&lt;p&gt;In &lt;strong&gt;&lt;a href=&quot;/spring-cloud-config-basics-part-1.html&quot;&gt;Part 1&lt;/a&gt;&lt;/strong&gt; we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.&lt;/p&gt;
 
 &lt;h2 id=&quot;create-configuration-client&quot;&gt;Create Configuration Client&lt;/h2&gt;
 
@@ -1079,7 +1079,7 @@ spring.cloud.config.uri &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http://lo
 
 &lt;p&gt;Using all of the above properties client will construct the URL and it looks like this; &lt;strong&gt;http://localhost:8888/pet-store/dev&lt;/strong&gt; this URL contains all of the above mentioned three properties; config url, application name and profile.&lt;/p&gt;
 
-&lt;p&gt;To verify if everything is working, we can create a REST end point which will return &lt;em&gt;message&lt;/em&gt; property as response. Note that in &lt;strong&gt;&lt;a href=&quot;/blog/2018/06/27/spring-cloud-config-basics-part-1.html&quot;&gt;Part 1&lt;/a&gt;&lt;/strong&gt; we added &lt;strong&gt;message&lt;/strong&gt; property in &lt;strong&gt;pet-store-dev.properties&lt;/strong&gt;. Config client will use above three properties to request properties from the server on startup and client gets &lt;em&gt;message&lt;/em&gt; as part of the response from server.&lt;/p&gt;
+&lt;p&gt;To verify if everything is working, we can create a REST end point which will return &lt;em&gt;message&lt;/em&gt; property as response. Note that in &lt;strong&gt;&lt;a href=&quot;/spring-cloud-config-basics-part-1.html&quot;&gt;Part 1&lt;/a&gt;&lt;/strong&gt; we added &lt;strong&gt;message&lt;/strong&gt; property in &lt;strong&gt;pet-store-dev.properties&lt;/strong&gt;. Config client will use above three properties to request properties from the server on startup and client gets &lt;em&gt;message&lt;/em&gt; as part of the response from server.&lt;/p&gt;
 
 &lt;p&gt;Below is the REST controller which returns message;&lt;/p&gt;
 
@@ -1137,8 +1137,8 @@ management.endpoints.web.exposure.include&lt;span class=&quot;o&quot;&gt;=&lt;/s
 &lt;p&gt;In this post we created a client application which depends on the config server to get properties and also used @RefreshScope annotation to update properties.&lt;/p&gt;
 </description>
         <pubDate>Wed, 11 Jul 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/blog/2018/07/11/spring-cloud-config-basics-part-2</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/07/11/spring-cloud-config-basics-part-2</guid>
+        <link>http://thetechstack.net/spring-cloud-config-basics-part-2/</link>
+        <guid isPermaLink="true">http://thetechstack.net/spring-cloud-config-basics-part-2/</guid>
         
         
         <category>spring</category>

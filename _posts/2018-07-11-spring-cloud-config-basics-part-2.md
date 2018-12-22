@@ -8,7 +8,7 @@ author: pradeep
 featured: false
 ---
 
-In **[Part 1]({{site.baseurl}}/blog/2018/06/27/spring-cloud-config-basics-part-1.html)** we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.
+In **[Part 1]({{site.baseurl}}/spring-cloud-config-basics-part-1.html)** we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.
 
 ## Create Configuration Client
 
@@ -37,7 +37,7 @@ Above three properties are needed for config client to connect server.
 
 Using all of the above properties client will construct the URL and it looks like this; **http://localhost:8888/pet-store/dev** this URL contains all of the above mentioned three properties; config url, application name and profile.
 
-To verify if everything is working, we can create a REST end point which will return *message* property as response. Note that in **[Part 1]({{site.baseurl}}/blog/2018/06/27/spring-cloud-config-basics-part-1.html)** we added **message** property in **pet-store-dev.properties**. Config client will use above three properties to request properties from the server on startup and client gets *message* as part of the response from server.
+To verify if everything is working, we can create a REST end point which will return *message* property as response. Note that in **[Part 1]({{site.baseurl}}/spring-cloud-config-basics-part-1.html)** we added **message** property in **pet-store-dev.properties**. Config client will use above three properties to request properties from the server on startup and client gets *message* as part of the response from server.
 
 Below is the REST controller which returns message;
 

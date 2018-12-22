@@ -5,9 +5,119 @@
     <description>Sharing my coding experiments</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Dec 2018 10:38:51 -0500</pubDate>
-    <lastBuildDate>Sun, 16 Dec 2018 10:38:51 -0500</lastBuildDate>
+    <pubDate>Sat, 22 Dec 2018 09:15:25 -0500</pubDate>
+    <lastBuildDate>Sat, 22 Dec 2018 09:15:25 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Basics of Domain Specific Language (DSL) using Kotlin</title>
+        <description>&lt;p&gt;Domain Specific Language (DSL) is a simple language targeted to solve a particular kind of problem. DSL is not a programming language, its a way of using existing programming language to create a new domain language. This new domain language can be used to solve problems with in that particular domain. DSL is not a new concept, it’s old and programmers use it frequently. For example SQL, CSS, HTML and XML all these are DSL’s.&lt;/p&gt;
+
+&lt;p&gt;With out any more theory lets dive in to this concept using some examples. Lets create our own HTML DSL language using Kotlin and then we use it to generate HTML dynamically.&lt;/p&gt;
+
+&lt;p&gt;Below is the example of DSL we are going to create in this article&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Welcome&quot;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Someone who is not Kotlin programmer can understand this code. One of the main advantage of DSL is providing an API which can be understandable and usable by naive user. The structure and levels of blocks in the above code is easy to figure out whats going on. Running this code will generate an HTML as shown below.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Welcome&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Hello World!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Lets go through each piece to understand how it works. I am using &lt;strong&gt;Kotlin&lt;/strong&gt; language to create this DSL.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-html-block&quot;&gt;Create HTML block&lt;/h2&gt;
+
+&lt;p&gt;I declared a &lt;strong&gt;html&lt;/strong&gt; function which takes a lambda like below&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;content:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;html&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;/html&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;html&lt;/em&gt; function is expecting an empty parameter lambda which does not return anything. With in the function it just prints start and end tags and between it calls the passed lambda &lt;strong&gt;content()&lt;/strong&gt;. So when I call html function I can pass any code to it so that code will be executed as part of lambda.&lt;/p&gt;
+
+&lt;p&gt;In kotlin we need to pass lambda implementation with in curly brackets so we can call html function like below.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Test&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//Output:&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;header-block&quot;&gt;Header block&lt;/h2&gt;
+
+&lt;p&gt;Creating header block is same as html but only difference is, header function should accept a Title object.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;title:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;\t&amp;lt;header&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;\t&amp;lt;/header&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;infix&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;value:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;\t\t&amp;lt;title&amp;gt;$value&amp;lt;/title&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;header function is expecting a lambda with extension function on Title, means code passed to header is executed with in the Title context. Read this &lt;strong&gt;&lt;a href=&quot;/blog/2018/12/04/understanding-kotlin-extension-functions.html&quot;&gt;article&lt;/a&gt;&lt;/strong&gt; for more on extension functions. &lt;strong&gt;Title&lt;/strong&gt; class is having single &lt;strong&gt;&lt;a href=&quot;https://kotlinlang.org/docs/reference/functions.html#infix-notation&quot;&gt;infix&lt;/a&gt;&lt;/strong&gt; function (with) which takes String and prints its on the console.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Welcome&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;1&amp;gt;&lt;/strong&gt; We are passing this statement to extension function in header. With in the header function instead of directly calling &lt;strong&gt;title()&lt;/strong&gt; we are calling it on new Title instance like &lt;strong&gt;Title().title()&lt;/strong&gt;. This is because &lt;em&gt;title()&lt;/em&gt; is not just a lambda, it is also an extension function. Extension function needs a context object so we are creating Title object and it is passed as context.&lt;/p&gt;
+
+&lt;p&gt;The code we are passing to the header function is executed in the context of new title instance created.&lt;/p&gt;
+
+&lt;h2 id=&quot;body-and-header-block&quot;&gt;Body and Header block&lt;/h2&gt;
+
+&lt;p&gt;Body is similar to HTML block, it is a function which accepts a lambda and h1() is a simple function which accepts a String.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;content:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;\t&amp;lt;body&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;\t&amp;lt;/body&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;content:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;\t\t&amp;lt;h1&amp;gt;$content&amp;lt;/h1&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We now have all parts for our HTML DSL. Right now we are just printing tags to console but we can make it more powerful by adding more functionality.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In this article we created new DSL to generate a simple HTML. DSL’s are mainly used for configuration or generating a structure in a simple contextual way.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 22 Dec 2018 20:11:10 -0500</pubDate>
+        <link>http://thetechstack.net/blog/2018/12/22/domain-specific-language</link>
+        <guid isPermaLink="true">http://thetechstack.net/blog/2018/12/22/domain-specific-language</guid>
+        
+        
+        <category>kotlin</category>
+        
+      </item>
     
       <item>
         <title>Operator overloading in Kotlin</title>
@@ -1029,110 +1139,6 @@ management.endpoints.web.exposure.include&lt;span class=&quot;o&quot;&gt;=&lt;/s
         <pubDate>Wed, 11 Jul 2018 13:11:10 -0400</pubDate>
         <link>http://thetechstack.net/blog/2018/07/11/spring-cloud-config-basics-part-2</link>
         <guid isPermaLink="true">http://thetechstack.net/blog/2018/07/11/spring-cloud-config-basics-part-2</guid>
-        
-        
-        <category>spring</category>
-        
-      </item>
-    
-      <item>
-        <title>Spring Cloud Configuration - Part 1</title>
-        <description>&lt;p&gt;Configuration can be any key value pair information needed by the application at runtime. Spring applications accepts configuration in many ways like command line arguments, OS environment variables or application properties and so on. In the context of microservices we can have multiple applications running together and if each application maintains its own set of configuration then a simple change in the configuration needs deployment or restart. If we have to change configuration in multiple applications then this approach is a time consuming and not efficient.&lt;/p&gt;
-
-&lt;p&gt;Alternative way is to have a config server application. The main purpose of this application is to manage configuration for all applications. All other applications on the startup will request configuration from the config server. Applications which request configuration are called config clients. Config server and config clients, both are the spring based applications.&lt;/p&gt;
-
-&lt;p&gt;With the config server and clients in the place now the config changes we make on the server will reflect on the client application with out deployment or restart. In the microservices environment this is a very useful setup because configuration for all applications are maintained at single location and the changes are reflected on the client applications with out restart or deployment.&lt;/p&gt;
-
-&lt;h2 id=&quot;config-server-setup&quot;&gt;Config server setup&lt;/h2&gt;
-
-&lt;p&gt;Config server is just another spring application which runs on its own port and manages config repository. Config repository is a location in which we can store application properties. Config server can support many types of repositories like git, local file system, database or vault back-end. By-default config server uses git folder as the repository.&lt;/p&gt;
-
-&lt;h3 id=&quot;create-local-git-repository&quot;&gt;Create local Git repository&lt;/h3&gt;
-
-&lt;p&gt;To create a local git repository make sure your computer have git installed. Open a terminal and create a git repository by executing below command;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;repository&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;In this repository folder, create a configuration file for pet-store application. In the next part of this article we will create a pet-store application which uses config server to get configuration from this repository. To create a pet-store configuration for a dev profile we need to name file as &lt;em&gt;pet-store-dev.properties&lt;/em&gt;. We can have multiple configurations for same application but different profiles. Lets just have a single property in it.&lt;/p&gt;
-
-&lt;p&gt;File: pet-store-dev.properties&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Hello!&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Add and commit this file to local repository by executing below commands;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git add &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt;
-git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;config&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now our local git repository contains single configuration file. Lets create a config server.&lt;/p&gt;
-
-&lt;p&gt;Go to &lt;strong&gt;&lt;a href=&quot;https://start.spring.io/&quot;&gt;start.spring.io&lt;/a&gt;&lt;/strong&gt; to generate spring project&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Change Artifact to &lt;em&gt;config-server-demo&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Select &lt;em&gt;Config Server&lt;/em&gt; as dependency&lt;/li&gt;
-  &lt;li&gt;Click on &lt;em&gt;Generate Project&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2018/06/spring-starter-config-server-demo.png&quot; alt=&quot;Config server demo&quot; height=&quot;500px&quot; width=&quot;650px&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Unzip and open project in any IDE.&lt;/p&gt;
-
-&lt;p&gt;Open ConfigServerDemoApplication.java and add &lt;strong&gt;@EnableConfigServer&lt;/strong&gt; annotation, like below;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@SpringBootApplication&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;@EnableConfigServer&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ConfigServerDemoApplication&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;SpringApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ConfigServerDemoApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;@EnableConfigServer&lt;/strong&gt; annotation will add configuration server features to the application. Update application.properties with below configuration;&lt;/p&gt;
-
-&lt;p&gt;File: application.properties&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;server.port&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 8888
-spring.cloud.config.server.git.uri&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; file://&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.home&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/code/spring/pet-store-repository&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Config server will startup on the port 8888. spring.cloud.config.server.git.uri property is for the path to the repository location. On my computer repository is located at /&lt;user&gt;/code/spring/pet-store-repository. If it is windows computer then provide three forward slashes 'file:///'&lt;/user&gt;&lt;/p&gt;
-
-&lt;p&gt;Start config-server-demo application and access URL &lt;strong&gt;http://localhost:8888/pet-store/dev&lt;/strong&gt; in the browser. This should return below JSON&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;// 20180626222509
-// http://localhost:8888/pet-store/dev
-
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;pet-store&quot;&lt;/span&gt;,
-  &lt;span class=&quot;s2&quot;&gt;&quot;profiles&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;dev&quot;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;,
-  &lt;span class=&quot;s2&quot;&gt;&quot;label&quot;&lt;/span&gt;: null,
-  &lt;span class=&quot;s2&quot;&gt;&quot;version&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;1738976280ccd3ba3c776f28cffe8f5ecbd800fd&quot;&lt;/span&gt;,
-  &lt;span class=&quot;s2&quot;&gt;&quot;state&quot;&lt;/span&gt;: null,
-  &lt;span class=&quot;s2&quot;&gt;&quot;propertySources&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;file:///Users/pradeep/code/spring/pet-store-repository/pet-store-dev.properties&quot;&lt;/span&gt;,
-      &lt;span class=&quot;s2&quot;&gt;&quot;source&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;message&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;Hello!&quot;&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;We can see &lt;em&gt;message&lt;/em&gt; property in the JSON. Config server wraps properties with some meta information, like version and profile. We can access this JSON with various URL combinations. Look for the config server startup logs to see all URL end points server can accept. If we update properties and refresh the browser we should see new changes in the JSON response. Config server will always serve updated properties from the repository&lt;/p&gt;
-
-&lt;p&gt;Below image shows the link between server, repository and client applications.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2018/06/config-server-with-clients.jpg&quot; alt=&quot;Config server with client applications&quot; height=&quot;500px&quot; width=&quot;650px&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;In this post we created git repository with single configuration file and a config server. In the next part we will create a pet-store application which will request properties from the config server.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 27 Jun 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/blog/2018/06/27/spring-cloud-config-basics-part-1</link>
-        <guid isPermaLink="true">http://thetechstack.net/blog/2018/06/27/spring-cloud-config-basics-part-1</guid>
         
         
         <category>spring</category>

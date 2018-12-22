@@ -10,17 +10,17 @@
 <!-- Twitter cards -->
 <meta name="twitter:site"    content="@PradeepK4J">
 <meta name="twitter:creator" content="@pradeep">
-<meta name="twitter:title"   content="Infinite streams">
+<meta name="twitter:title"   content="Basics of Domain Specific Language (DSL) using Kotlin">
 
 <meta name="twitter:card"  content="summary_large_image">
-<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/blog-banner-infinite-streams.png">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/basics-of-domain-specific-language.jpg">
 
 <!-- end of Twitter cards -->
 
 
 <link rel="icon" href="/assets/images/logo.png">
     
-<title>Infinite streams | The Tech Stack . Net</title>
+<title>Basics of Domain Specific Language (DSL) using Kotlin | The Tech Stack . Net</title>
     
  
     
@@ -132,19 +132,19 @@
     </p>
     <ul>
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=Infinite streams&url=http://thetechstack.net/blog/2018/04/08/infinite-streams" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Basics of Domain Specific Language (DSL) using Kotlin&url=http://thetechstack.net/blog/2018/12/22/domain-specific-language" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <i class="fab fa-twitter"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/blog/2018/04/08/infinite-streams" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/blog/2018/12/22/domain-specific-language" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
         <i class="fab fa-facebook-f"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/blog/2018/04/08/infinite-streams" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/blog/2018/12/22/domain-specific-language" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
         <i class="fab fa-google"></i>
         </a>
         </li>
@@ -184,49 +184,121 @@
                 
                 
                 <!-- Post Title -->
-				<h1 class="posttitle">Infinite streams</h1> 
+				<h1 class="posttitle">Basics of Domain Specific Language (DSL) using Kotlin</h1> 
                 
 			</div>
 
 			<!-- Post Featured Image -->
-			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/blog-banner-infinite-streams.png" alt="Infinite streams">
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/basics-of-domain-specific-language.jpg" alt="Basics of Domain Specific Language (DSL) using Kotlin">
 			<!-- End Featured Image -->
 
 			<!-- Post Content -->
 			<div class="article-post">
-				<p>Streams allows us to generate endless progression of discrete objects. There are couple of methods available in Java which will help us to generate infinite sequences.</p>
+				<p>Domain Specific Language (DSL) is a simple language targeted to solve a particular kind of problem. DSL is not a programming language, its a way of using existing programming language to create a new domain language. This new domain language can be used to solve problems with in that particular domain. DSL is not a new concept, it’s old and programmers use it frequently. For example SQL, CSS, HTML and XML all these are DSL’s.</p>
 
-<h3 id="with-streams">With streams</h3>
-<p>There are four main stream interfaces in java.util.stream package; Stream, IntStream, LongStream and DoubleStream. All of these interfaces have a common method called iterate, which will generate infinite objects. I am using IntStream as an example in this article but these examples are also applicable for other stream interfaces.</p>
+<p>With out any more theory lets dive in to this concept using some examples. Lets create our own HTML DSL language using Kotlin and then we use it to generate HTML dynamically.</p>
 
-<p><strong><a href="https://docs.oracle.com/javase/9/docs/api/java/util/stream/IntStream.html#iterate-int-java.util.function.IntUnaryOperator-">static IntStream iterate​(int seed, IntUnaryOperator f)</a></strong></p>
+<p>Below is the example of DSL we are going to create in this article</p>
 
-<p>This method generates infinite sequence of integers based on the provided unary operator. Unary operator is one of the functional interface which takes single parameter and returns same type of result. Iterate in IntStream expects IntUnaryOperator so it always takes and returns integer. We can implement unary operator to generate customizable sequence. Input to this unary operator is always its previous returned result but for first execution it gets the seed from the first parameter. If f is an unary operator then it generates sequence like {seed, f(seed), f(f(seed)), f(f(f(seed))) … }</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">main</span><span class="o">(){</span>
+    <span class="n">html</span><span class="o">{</span>
+        <span class="n">header</span><span class="o">{</span>
+            <span class="n">title</span> <span class="n">with</span> <span class="s">"Welcome"</span>
+        <span class="o">}</span>
+        <span class="n">body</span><span class="o">{</span>
+            <span class="n">h1</span><span class="o">(</span><span class="s">"Hello World!"</span><span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
 
-<p>Below code starts from 0 and continues to generate numbers by incrementing two.We can customize the lambda expression to generate different type of sequences. I added a limit on the sequence else the code continues to execute indefinitely.</p>
+<p>Someone who is not Kotlin programmer can understand this code. One of the main advantage of DSL is providing an API which can be understandable and usable by naive user. The structure and levels of blocks in the above code is easy to figure out whats going on. Running this code will generate an HTML as shown below.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">IntStream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="o">)</span>
-	<span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+	<span class="nt">&lt;header&gt;</span>
+		<span class="nt">&lt;title&gt;</span>Welcome<span class="nt">&lt;/title&gt;</span>
+	<span class="nt">&lt;/header&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
+		<span class="nt">&lt;h1&gt;</span>Hello World!<span class="nt">&lt;/h1&gt;</span>
+	<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
-<p>We can also use ‘generate’ method which takes the supplier as parameter. This method can be used to generate constant or random numbers. Supplier is a functional interface which will not take any input so it will not depend on its previous state.</p>
+<p>Lets go through each piece to understand how it works. I am using <strong>Kotlin</strong> language to create this DSL.</p>
 
-<p><strong><a href="https://docs.oracle.com/javase/9/docs/api/java/util/stream/IntStream.html#generate-java.util.function.IntSupplier-">static IntStream generate​(IntSupplier s)</a></strong></p>
+<h2 id="create-html-block">Create HTML block</h2>
 
-<h3 id="with-random-class">With Random class</h3>
-<p>Random class provides some utility methods to generate infinite random numbers in the form of integers, longs or doubles. In below example I used ints method, which takes inclusive start and exclusive end range.</p>
+<p>I declared a <strong>html</strong> function which takes a lambda like below</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">(</span><span class="mi">120</span><span class="o">);</span>
-<span class="n">r</span><span class="o">.</span><span class="na">ints</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">30</span><span class="o">)</span>
-   <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span>
-   <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">html</span><span class="o">(</span><span class="nl">content:</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="n">Unit</span><span class="o">){</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"&lt;html&gt;"</span><span class="o">)</span>
+    <span class="n">content</span><span class="o">()</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"&lt;/html&gt;"</span><span class="o">)</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><em>html</em> function is expecting an empty parameter lambda which does not return anything. With in the function it just prints start and end tags and between it calls the passed lambda <strong>content()</strong>. So when I call html function I can pass any code to it so that code will be executed as part of lambda.</p>
+
+<p>In kotlin we need to pass lambda implementation with in curly brackets so we can call html function like below.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">html</span><span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"Test"</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c1">//Output:</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="n">test</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span></code></pre></figure>
+
+<h2 id="header-block">Header block</h2>
+
+<p>Creating header block is same as html but only difference is, header function should accept a Title object.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">header</span><span class="o">(</span><span class="nl">title:</span> <span class="n">Title</span><span class="o">.()</span> <span class="o">-&gt;</span> <span class="n">Unit</span><span class="o">){</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"\t&lt;header&gt;"</span><span class="o">)</span>
+    <span class="n">Title</span><span class="o">().</span><span class="na">title</span><span class="o">()</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"\t&lt;/header&gt;"</span><span class="o">)</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Title</span><span class="o">{</span>
+    <span class="kt">var</span> <span class="n">title</span> <span class="o">=</span> <span class="k">this</span>
+    <span class="n">infix</span> <span class="n">fun</span> <span class="nf">with</span><span class="o">(</span><span class="nl">value:</span><span class="n">String</span><span class="o">){</span>
+        <span class="n">println</span><span class="o">(</span><span class="s">"\t\t&lt;title&gt;$value&lt;/title&gt;"</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>header function is expecting a lambda with extension function on Title, means code passed to header is executed with in the Title context. Read this <strong><a href="/blog/2018/12/04/understanding-kotlin-extension-functions.html">article</a></strong> for more on extension functions. <strong>Title</strong> class is having single <strong><a href="https://kotlinlang.org/docs/reference/functions.html#infix-notation">infix</a></strong> function (with) which takes String and prints its on the console.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">header</span><span class="o">{</span>
+    <span class="n">title</span> <span class="n">with</span> <span class="s">"Welcome"</span> <span class="c1">// &lt;1&gt;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><strong>&lt;1&gt;</strong> We are passing this statement to extension function in header. With in the header function instead of directly calling <strong>title()</strong> we are calling it on new Title instance like <strong>Title().title()</strong>. This is because <em>title()</em> is not just a lambda, it is also an extension function. Extension function needs a context object so we are creating Title object and it is passed as context.</p>
+
+<p>The code we are passing to the header function is executed in the context of new title instance created.</p>
+
+<h2 id="body-and-header-block">Body and Header block</h2>
+
+<p>Body is similar to HTML block, it is a function which accepts a lambda and h1() is a simple function which accepts a String.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">body</span><span class="o">(</span><span class="nl">content:</span><span class="o">()</span> <span class="o">-&gt;</span> <span class="n">Unit</span><span class="o">){</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"\t&lt;body&gt;"</span><span class="o">)</span>
+    <span class="n">content</span><span class="o">()</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"\t&lt;/body&gt;"</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="n">fun</span> <span class="nf">h1</span><span class="o">(</span><span class="nl">content:</span><span class="n">String</span><span class="o">){</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">"\t\t&lt;h1&gt;$content&lt;/h1&gt;"</span><span class="o">)</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>We now have all parts for our HTML DSL. Right now we are just printing tags to console but we can make it more powerful by adding more functionality.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this article we created new DSL to generate a simple HTML. DSL’s are mainly used for configuration or generating a structure in a simple contextual way.</p>
 
 			</div>
 
             <!-- Post Date -->
             <p>
             <small>
-                <span class="post-date"><time class="post-date" datetime="2018-04-08">08 Apr 2018</time></span>           
+                <span class="post-date"><time class="post-date" datetime="2018-12-22">22 Dec 2018</time></span>           
                 
                 </small>
             </p>
@@ -237,7 +309,7 @@
                     
                     
                     <li>
-                     <a href="/category/java/">java</a>
+                     <a href="/category/kotlin/">kotlin</a>
                     </li>
                     
 				</ul>
@@ -247,10 +319,8 @@
             <!-- Prev/Next -->
             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
             
-            <a class="prev d-block col-md-6" href="http://thetechstack.net/blog/2018/04/03/recipes-for-optional"> &laquo; Recipes for Optional</a>
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/blog/2018/12/15/kotlin-operators"> &laquo; Operator overloading in Kotlin</a>
             
-            
-            <a class="next d-block col-md-6 text-lg-right" href="http://thetechstack.net/blog/2018/04/11/regex-tester-with-spring-shell">Regex Tester With Spring Shell &raquo; </a>
             
             <div class="clearfix"></div>
             </div>

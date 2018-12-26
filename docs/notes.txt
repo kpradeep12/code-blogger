@@ -8,3 +8,6 @@ Update Gem: >bundle update
 Links:
 Seo plugin: https://github.com/jekyll/jekyll-seo-tag
 About Seo in Jekyll: https://blog.webjeda.com/optimize-jekyll-seo/
+
+ToDo:
+https://jekyllrb.com/docs/liquid/tags/#linking-to-posts

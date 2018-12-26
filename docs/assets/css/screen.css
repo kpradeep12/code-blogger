@@ -556,7 +556,7 @@ License: https://www.wowthemes.net/freebies-license/
  img {
     max-width:100%;
 }
- .bottompagination span.navigation {
+ .bottompagination div.navigation {
      display:block;
      font-size:0.93rem;
      padding:15px 0 0 0;
@@ -573,10 +573,10 @@ License: https://www.wowthemes.net/freebies-license/
  .pointerup i.fa {
      color:#eaeaea;
 }
- .bottompagination span.navigation i {
+ .bottompagination div.navigation i {
      display:inline-block;
 }
- span.navigation {
+ div.navigation {
      display: inline-block;
      font-size: 0.93rem;
      font-weight: 700;

@@ -10,7 +10,7 @@
 <!-- Twitter cards-->
 <meta name="twitter:site"    content="@PradeepK4J">
 <meta name="twitter:creator" content="@">
-<meta name="twitter:title"   content="kotlin">
+<meta name="twitter:title"   content="algorithms">
 
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:image" content="">
@@ -20,7 +20,7 @@
 
 <link rel="icon" href="/assets/images/logo.png">
     
-<!--<title>kotlin | The Tech Stack . Net</title>-->
+<!--<title>algorithms | The Tech Stack . Net</title>-->
     
  
     
@@ -35,9 +35,9 @@
 <link href="/assets/css/main.css" rel="stylesheet">
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>kotlin | Pradeep’s Java and Kotlin blog</title>
+<title>algorithms | Pradeep’s Java and Kotlin blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="kotlin" />
+<meta property="og:title" content="algorithms" />
 <meta name="author" content="Pradeep Kundarapu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sharing my Java and Kotlin coding experiments in this blog" />
@@ -46,7 +46,7 @@
 <meta property="og:url" content="http://thetechstack.net/blog/:year/:month/:day/:title" />
 <meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
 <script type="application/ld+json">
-{"url":"http://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java and Kotlin coding experiments in this blog","headline":"kotlin","@type":"WebPage","@context":"http://schema.org"}</script>
+{"url":"http://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java and Kotlin coding experiments in this blog","headline":"algorithms","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -140,7 +140,7 @@
 ================================================== -->
 <section class="recent-posts">
 <div class="section-title">
-    <h2>Archive of posts with <span>category 'kotlin'</span></h2>
+    <h2>Archive of posts with <span>category 'algorithms'</span></h2>
 </div>
 <div class="row listrecent">
 
@@ -152,13 +152,13 @@
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="http://thetechstack.net/domain-specific-language/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/basics-of-domain-specific-language.jpg" alt="Basics of Domain Specific Language (DSL) using Kotlin"> 
+            <a href="http://thetechstack.net/graph-algorithms/">
+                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/no.jpg" alt="Graph Algorithms"> 
             </a>
         </div>
         <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/domain-specific-language/">Basics of Domain Specific Language (DSL) using Kotlin</a></h2>
-            <h4 class="card-text">Domain Specific Language (DSL) is a simple language targeted to solve a particular kind of problem. DSL is not a programming language, its a way of using existing programming language...</h4>            
+            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/graph-algorithms/">Graph Algorithms</a></h2>
+            <h4 class="card-text">Lets begin learning graph algorithms in a fun and easier way. I try to simplify things with some examples so its easier to understand. How and where we can use...</h4>            
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
@@ -169,79 +169,9 @@
                 <span class="author-meta">
                 <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
                 
-                <span class="post-date">22 Dec 2018</span>
+                <span class="post-date">01 Jan 2019</span>
                 </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/domain-specific-language/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/kotlin-operators/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/kotlin-operator-overloading.png" alt="Operator overloading in Kotlin"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/kotlin-operators/">Operator overloading in Kotlin</a></h2>
-            <h4 class="card-text">Kotlin allows us to implement Operator overloading for a predefined set of operators. We can implement them on class members or extension functions. These operators have fixed symbolic representation (like...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">15 Dec 2018</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/kotlin-operators/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/understanding-kotlin-extension-functions/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/kotlin-extension-function.png" alt="Understanding Kotlin Extension Functions"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/understanding-kotlin-extension-functions/">Understanding Kotlin Extension Functions</a></h2>
-            <h4 class="card-text">Extension function allows us to extend the functionality of a class. It does not matter if the class is in a external library. We can customize the functionality of class...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">04 Dec 2018</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/understanding-kotlin-extension-functions/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                <span class="post-read-more"><a href="http://thetechstack.net/graph-algorithms/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -295,6 +225,8 @@
               <a href="/category/spring">Spring (2)</a>
              
               <a href="/category/kotlin">Kotlin (3)</a>
+             
+              <a href="/category/algorithms">Algorithms (1)</a>
             
           
         

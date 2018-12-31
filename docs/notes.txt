@@ -1,6 +1,7 @@
 Custom helpfull classes
 .align-text-center
 .align-center
+.width-50, .width-35, .width-20
 
 CLI's:
 Update Gem: >bundle update
@@ -11,3 +12,9 @@ About Seo in Jekyll: https://blog.webjeda.com/optimize-jekyll-seo/
 
 ToDo:
 https://jekyllrb.com/docs/liquid/tags/#linking-to-posts
+
+SEO
+Mobile friendly Test - Google https://www.google.com/webmasters/tools/mobile-friendly/
+Web standards validator https://validator.w3.org/
+Check for 404 errors in Google Search Console Crawl results https://www.google.com/webmasters/tools/
+

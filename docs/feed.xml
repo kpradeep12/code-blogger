@@ -5,79 +5,9 @@
     <description>Sharing my Java and Kotlin coding experiments in this blog</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 31 Dec 2018 12:31:23 -0500</pubDate>
-    <lastBuildDate>Mon, 31 Dec 2018 12:31:23 -0500</lastBuildDate>
+    <pubDate>Mon, 31 Dec 2018 12:34:22 -0500</pubDate>
+    <lastBuildDate>Mon, 31 Dec 2018 12:34:22 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
-    
-      <item>
-        <title>Graph Algorithms</title>
-        <description>&lt;p&gt;Lets begin learning &lt;strong&gt;graph algorithms&lt;/strong&gt; in a fun and easier way. I try to simplify things with some examples so its easier to understand. How and where we can use Graph algorithms? below are some quick examples I came up with;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Maps: Cities or places connected with roads.&lt;/li&gt;
-  &lt;li&gt;Electricity grid: Poles connected with electric lines.&lt;/li&gt;
-  &lt;li&gt;Rail transportation system: Passengers travel from one station to other.&lt;/li&gt;
-  &lt;li&gt;Package delivery system: Ship a package from office to customer.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;All of the above examples can be represented in a graph. Points in a graph is called nodes (or Vertex) and these points can be any thing like city, station or pole and the connection between them are called edges.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2018/12/basic-graph.jpg&quot; alt=&quot;&quot; class=&quot;width-35 align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-kind-of-graphs-we-have&quot;&gt;What kind of graphs we have?&lt;/h2&gt;
-&lt;p&gt;There are many flavors of graphs available, some of them are below;&lt;/p&gt;
-
-&lt;h4 id=&quot;directed-or-undirected&quot;&gt;Directed or undirected&lt;/h4&gt;
-&lt;p&gt;Edges in the graph can be directed or undirected, just like a road can be &lt;strong&gt;One way&lt;/strong&gt; or &lt;strong&gt;Two way&lt;/strong&gt;. If a graph is directed means all edges are one way and they represent the edge with an arrow to show the direction. If an edge between point a and b is directed means we can only travel from a to b but not in reverse. Where as in undirected we can travel in any direction.&lt;/p&gt;
-
-&lt;h4 id=&quot;cyclic-or-acyclic&quot;&gt;Cyclic or acyclic&lt;/h4&gt;
-&lt;p&gt;A graph can be cyclic if edges are connected in a way to form circles, such that we can reach a node from multiple directions. It is a acyclic graph if there are no circles.&lt;/p&gt;
-
-&lt;h4 id=&quot;weighted-or-unweighted&quot;&gt;Weighted or unweighted&lt;/h4&gt;
-&lt;p&gt;A road in a map will have a distance, means edges can have some information and these graphs are called Weighted and edges with out any information are unweighted graphs.&lt;/p&gt;
-
-&lt;h2 id=&quot;ways-to-save-the-graph&quot;&gt;Ways to save the graph&lt;/h2&gt;
-
-&lt;p&gt;There are two main ways to store the graphs &lt;strong&gt;Adjacency matrix&lt;/strong&gt; and &lt;strong&gt;Adjacency list&lt;/strong&gt;. Lets save below graph using these methods.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2018/12/save-graph.jpg&quot; alt=&quot;&quot; class=&quot;width-35 align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;adjacency-matrix&quot;&gt;Adjacency matrix&lt;/h4&gt;
-
-&lt;p&gt;This is the simplest way to store a graph. If you observe below graph, it is have couple of nodes with each node having unique number. We can store each edge pair in a two dimensional array.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[][]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;To figure out if we have any edge between node 0 to 3 then we need to scan whole array in worst case.&lt;/p&gt;
-
-&lt;h4 id=&quot;adjacency-list&quot;&gt;Adjacency List&lt;/h4&gt;
-
-&lt;p&gt;We can represent array indexes as nodes and the edges from that node as its value like below;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(){&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;asList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;asList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;asList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;asList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;asList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-</description>
-        <pubDate>Tue, 01 Jan 2019 20:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/graph-algorithms/</link>
-        <guid isPermaLink="true">http://thetechstack.net/graph-algorithms/</guid>
-        
-        
-        <category>algorithms</category>
-        
-      </item>
     
       <item>
         <title>Basics of Domain Specific Language (DSL) using Kotlin</title>
@@ -1116,6 +1046,102 @@ Warning: Unable to load &lt;span class=&quot;s1&quot;&gt;'/usr/share/zoneinfo/zo
         
         
         <category>docker</category>
+        
+      </item>
+    
+      <item>
+        <title>Spring Cloud Configuration - Part 2</title>
+        <description>&lt;p&gt;In &lt;strong&gt;&lt;a href=&quot;/spring-cloud-config-basics-part-1.html&quot;&gt;Part 1&lt;/a&gt;&lt;/strong&gt; we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-configuration-client&quot;&gt;Create Configuration Client&lt;/h2&gt;
+
+&lt;p&gt;Go to &lt;strong&gt;&lt;a href=&quot;https://start.spring.io/&quot;&gt;start.spring.io&lt;/a&gt;&lt;/strong&gt; to generate spring project with &lt;em&gt;web&lt;/em&gt;, &lt;strong&gt;config-client&lt;/strong&gt; and &lt;em&gt;actuator&lt;/em&gt; as dependencies, see below image for reference.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2018/07/pet-store-config-client.png&quot; alt=&quot;pet store config client&quot; height=&quot;500px&quot; width=&quot;650px&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Unzip and open the project in any IDE. We are going to configure pet-store app to load properties from config server so we no more need application.properties located at src/main/resources folder.&lt;/p&gt;
+
+&lt;p&gt;In-order for pet-store app to load properties from config server it needs config server connection details, because with out server machine name and port, pet-store can not connect to it. We can use bootstrap.properties to provide these details. Spring will load bootstrap.properties if it is available. bootstrap properties file should be used for only properties which are needed at application startup time, in our case we need server connection details so pet-store will use these details to connect and get properties from server at startup time.&lt;/p&gt;
+
+&lt;p&gt;Rename application.properties to bootstrap.properties and add below three properties in it.&lt;/p&gt;
+
+&lt;p&gt;File: bootstrap.properties&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;spring.application.name &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; pet-store // &amp;lt;1&amp;gt;
+spring.profiles.active &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dev // &amp;lt;2&amp;gt;
+spring.cloud.config.uri &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http://localhost:8888 // &amp;lt;3&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Above three properties are needed for config client to connect server.&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;1&amp;gt; In a microservices environment multiple applications work together and this property will allow us to provide unique name for each application.&lt;br /&gt;
+&amp;lt;2&amp;gt; Multiple instances of an application can exist like; dev, uat or prod so each of them are profiled with this property.&lt;br /&gt;
+&amp;lt;3&amp;gt; Client will make HTTP call using this URL to get properties from config server.&lt;/p&gt;
+
+&lt;p&gt;Using all of the above properties client will construct the URL and it looks like this; &lt;strong&gt;http://localhost:8888/pet-store/dev&lt;/strong&gt; this URL contains all of the above mentioned three properties; config url, application name and profile.&lt;/p&gt;
+
+&lt;p&gt;To verify if everything is working, we can create a REST end point which will return &lt;em&gt;message&lt;/em&gt; property as response. Note that in &lt;strong&gt;&lt;a href=&quot;/spring-cloud-config-basics-part-1.html&quot;&gt;Part 1&lt;/a&gt;&lt;/strong&gt; we added &lt;strong&gt;message&lt;/strong&gt; property in &lt;strong&gt;pet-store-dev.properties&lt;/strong&gt;. Config client will use above three properties to request properties from the server on startup and client gets &lt;em&gt;message&lt;/em&gt; as part of the response from server.&lt;/p&gt;
+
+&lt;p&gt;Below is the REST controller which returns message;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@RestController&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@Value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;${message}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;nd&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/message&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Start pet-store application and in the browser open &lt;em&gt;http://localhost:8080/message&lt;/em&gt; to get &lt;em&gt;Hello!&lt;/em&gt; as response.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2018/07/pet-store-hello.png&quot; alt=&quot;pet store hello&quot; height=&quot;150px&quot; width=&quot;500px&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;update-properties&quot;&gt;Update properties&lt;/h2&gt;
+
+&lt;p&gt;In your local perform a small test; change &lt;em&gt;message&lt;/em&gt; property in &lt;em&gt;pet-store-dev.properties&lt;/em&gt; and save, then open &lt;strong&gt;http://localhost:8080/message&lt;/strong&gt; it will not show updated property instead it returns old value. This is because changes to the property files are not automatically propagated to the clients. On the client side we need to manually trigger a refresh event which will request fresh copy again from the server and refreshes only the classes which are declared with &lt;strong&gt;@RefreshScope&lt;/strong&gt; annotation.&lt;/p&gt;
+
+&lt;p&gt;In our case we update &lt;strong&gt;MessageController&lt;/strong&gt; class to include &lt;strong&gt;@RefreshScope&lt;/strong&gt; annotation so its &lt;strong&gt;message&lt;/strong&gt; fields gets updated with new value.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@RestController&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@RefreshScope&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@Value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;${message}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;nd&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/message&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Start pet-store application and open &lt;strong&gt;http://localhost:8080/message&lt;/strong&gt; to see current value in the &lt;strong&gt;pet-store-dev.properties&lt;/strong&gt; file. Lets update &lt;strong&gt;message&lt;/strong&gt; in the properties file like below;&lt;/p&gt;
+
+&lt;p&gt;File: pet-store-dev.properties&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Hello World!
+management.endpoints.web.exposure.include&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;refresh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We will not see updated &lt;strong&gt;message&lt;/strong&gt; value on &lt;strong&gt;http://localhost:8080/message&lt;/strong&gt;. To get updated value we need to manually trigger refresh event. To trigger this event we need to make a HTTP POST request to pet-store client on &lt;strong&gt;/actuator/refresh&lt;/strong&gt; end-point. I used &lt;em&gt;curl&lt;/em&gt; command to make this request;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST http://localhost:8080/actuator/refresh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This curl command will make a POST request, which will make client to again request the properties and these properties are only applied on the classes which are declared with &lt;strong&gt;@RefreshScope&lt;/strong&gt; annotation.&lt;/p&gt;
+
+&lt;p&gt;Open &lt;strong&gt;http://localhost:8080/message&lt;/strong&gt; to see &lt;strong&gt;Hello World!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2018/07/pet-store-hello-world.png&quot; alt=&quot;pet store hello world&quot; height=&quot;150px&quot; width=&quot;500px&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this post we created a client application which depends on the config server to get properties and also used @RefreshScope annotation to update properties.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Jul 2018 13:11:10 -0400</pubDate>
+        <link>http://thetechstack.net/spring-cloud-config-basics-part-2/</link>
+        <guid isPermaLink="true">http://thetechstack.net/spring-cloud-config-basics-part-2/</guid>
+        
+        
+        <category>spring</category>
         
       </item>
     

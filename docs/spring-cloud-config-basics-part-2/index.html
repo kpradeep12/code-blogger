@@ -214,7 +214,7 @@
 
 			<!-- Post Content -->
 			<div class="article-post">
-				<p>In <strong><a href="/spring-cloud-config-basics-part-1.html">Part 1</a></strong> we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.</p>
+				<p>In <strong><a href="/spring-cloud-config-basics-part-1/">Part 1</a></strong> we created git repository and config server. In this article we will create a pet-store application which is also a client for the configuration server, because pet-store will request application properties from config server.</p>
 
 <h2 id="create-configuration-client">Create Configuration Client</h2>
 
@@ -242,7 +242,7 @@ spring.cloud.config.uri <span class="o">=</span> http://localhost:8888 // &lt;3&
 
 <p>Using all of the above properties client will construct the URL and it looks like this; <strong>http://localhost:8888/pet-store/dev</strong> this URL contains all of the above mentioned three properties; config url, application name and profile.</p>
 
-<p>To verify if everything is working, we can create a REST end point which will return <em>message</em> property as response. Note that in <strong><a href="/spring-cloud-config-basics-part-1.html">Part 1</a></strong> we added <strong>message</strong> property in <strong>pet-store-dev.properties</strong>. Config client will use above three properties to request properties from the server on startup and client gets <em>message</em> as part of the response from server.</p>
+<p>To verify if everything is working, we can create a REST end point which will return <em>message</em> property as response. Note that in <strong><a href="/spring-cloud-config-basics-part-1/">Part 1</a></strong> we added <strong>message</strong> property in <strong>pet-store-dev.properties</strong>. Config client will use above three properties to request properties from the server on startup and client gets <em>message</em> as part of the response from server.</p>
 
 <p>Below is the REST controller which returns message;</p>
 

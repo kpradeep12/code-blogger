@@ -77,4 +77,4 @@ LocalDate.parse("1 Jan 2018", DateTimeFormatter.ofPattern("d MMM uuuu"));
 Above example shows the basic usage of parsing with DateTimeFormatter. In this article I am not providing much information on DateTimeFormatter because it is a huge class with lot of methods.
 
 ### Conclusion
-This article provided information about the basic classes in java.time package and the different ways to create there instances. Go through the **[second part]({{site.baseurl}}/introduction-to-java-time-part2.html)** of this post to learn about accessing time fields.
+This article provided information about the basic classes in java.time package and the different ways to create there instances. Go through the **[second part]({{site.baseurl}}/introduction-to-java-time-part2/)** of this post to learn about accessing time fields.

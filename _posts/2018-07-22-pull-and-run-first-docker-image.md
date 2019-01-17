@@ -18,7 +18,7 @@ We can search for mysql-server in **[docker store](https://store.docker.com/)**.
 
 ![pet store hello]({{site.baseurl}}/assets/images/posts/2018/07/docker-image-page.png){: height="450px" width="500px"}{: .align-center}
 
-Lets pull mysql image from docker store. Open terminal and execute below command. Before executing this command make sure that docker is running. Refer **[Docker introduction]({{site.baseurl}}/docker-intro.html)** for more details on Docker setup.
+Lets pull mysql image from docker store. Open terminal and execute below command. Before executing this command make sure that docker is running. Refer **[Docker introduction]({{site.baseurl}}/docker-intro/)** for more details on Docker setup.
 
 {% highlight bash %}
 docker pull mysql/mysql-server

@@ -84,7 +84,7 @@ class Title{
 }
 {% endhighlight %}
 
-header function is expecting a lambda with extension function on Title, means code passed to header is executed with in the Title context. Read this **[article]({{site.baseurl}}/understanding-kotlin-extension-functions.html)** for more on extension functions. **Title** class is having single **[infix](https://kotlinlang.org/docs/reference/functions.html#infix-notation)** function (with) which takes String and prints its on the console.
+header function is expecting a lambda with extension function on Title, means code passed to header is executed with in the Title context. Read this **[article]({{site.baseurl}}/understanding-kotlin-extension-functions/)** for more on extension functions. **Title** class is having single **[infix](https://kotlinlang.org/docs/reference/functions.html#infix-notation)** function (with) which takes String and prints its on the console.
 
 {% highlight java %}
 header{

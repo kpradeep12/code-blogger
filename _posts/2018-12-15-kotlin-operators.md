@@ -59,7 +59,7 @@ Output shows that the counter is incremented and decremented ten times.
 
 ## Overloading with Extension functions
 
-We can also override operators using Extension functions. Read this **[article]({{site.baseurl}}/understanding-kotlin-extension-functions.html)** to learn about extension functions. If we dont have access to Counter class then we can add new extension function like below:
+We can also override operators using Extension functions. Read this **[article]({{site.baseurl}}/understanding-kotlin-extension-functions/)** to learn about extension functions. If we dont have access to Counter class then we can add new extension function like below:
 
 {% highlight java %}
 operator fun Counter.unaryPlus() = Counter(number + 1)

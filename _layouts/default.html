@@ -87,19 +87,27 @@
                 <li class="nav-item">
                 {% endif %}
                 <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
-                </li>
+                </li>-->
                 
                 {% if page.url == "/about.html" %}
                 <li class="nav-item active">
                 {% else %}
                 <li class="nav-item">
                 {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
-                </li>-->
+                <a class="nav-link" href="{{ site.baseurl }}/about">About Me</a>
+                </li>
                 
+                {% if page.url == "/twitter.html" %}
+                <li class="nav-item active">
+                {% else %}
+                <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{{ site.baseurl }}/twitter">Twitter</a>
+                </li>
+                <!--
                 <li class="nav-item">
                 <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
-                </li>
+                </li>-->
                 
             </ul>		
   

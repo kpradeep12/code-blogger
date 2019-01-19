@@ -1,15 +1,14 @@
 ---
 title:  "Generate data using strategy design pattern"
-date:   2019-01-16 20:11:10 -0500
+date:   2019-01-17 20:11:10 -0500
 categories: java
-image: /assets/images/banners/no.jpg
-description: "Learn Graph Algorithms with examples."
-published: false
+image: /assets/images/banners/generate-data-using-strategy-design-pat.jpg
+description: "Generate random data of different types like numbers, strings, boolean, dates and characters. Implemented using strategy design pattern."
 ---
 
-We need data for testing applications and there are many libraries which will provide but in this article we are going to develop a Java class which will generate test data for us. This class will generate different types of data; number, boolean, character, string and dates. There are many ways to develop this class, I am going to use **strategy design pattern**.
+There are many libraries which generates data but in this article I am going to develop a simple Java class which will generate test data for us so we can understand how these libraries internally works. These libraries provide lot of functionality and options but here we develop a small and simple class with out much options. This class will generate different types of data like number, boolean, character, string and dates. There are many ways to develop this class here I am going to use **strategy design pattern**.
 
-Strategy design pattern helps us in current context because we are going to have different strategies to generate each type of data. For example code to generate numbers are different than strings. Read this article to learn more about **[strategy design pattern]({{site.baseurl}}/strategy-design-pattern/)**.
+Strategy design pattern is correct fit in this context because we are going to have different strategies to generate each type of data. For example code to generate numbers are different than generating strings. Read this article to learn more about **[strategy design pattern]({{site.baseurl}}/strategy-design-pattern/)**.
 
 We need to define our interface before implementing our generators. Each generator will implement this interface so this helps us to access any generator using single interface type instead of having multiple different instance types.
 
@@ -19,11 +18,11 @@ interface Generator<T> {
 }
 {% endhighlight %}
 
-This is a simple generic interface. We are taking advantage of generics here so this single interface can be used to implement any type of data.
+This is a simple generic interface. We are taking advantage of generics here so this interface can be used to implement any type of data.
 
 #### Boolean Generator
 
-Instead of creating a separate class for each data type we can add static methods to this interface for each type of generator and these methods will return the generators. Lets first implement a boolean generator.
+Instead of creating a separate class for each data type we can add static methods to this interface so these methods will return the generators. Static methods in interfaces are supported from 1.8 version.
 
 {% highlight java %}
 interface Generator<T> {
@@ -41,11 +40,11 @@ interface Generator<T> {
 }
 {% endhighlight %}
 
-*generateBoolean()* method will return an instance of anonymous class which implements Generator interface. This method internally uses *java.util.Random* class to return value.
+*generateBoolean()* method will return an instance of anonymous class which implements Generator interface. This method internally uses *java.util.Random* class to return value. This way we no more need to maintain separate class.
 
 #### Number Generator
 
-In the below example I added *generateNumber()* method which returns integers.
+I added *generateNumber()* method in the interface which returns integers.
 
 {% highlight java %}
     static Generator<Integer> generateNumber(){
@@ -53,10 +52,11 @@ In the below example I added *generateNumber()* method which returns integers.
     }
 {% endhighlight %}
 
-I am using lambda to implement number generator. This is to demonstrate that since *Generator* is having only one method so we can use lambda to implement it. This lambda returns random number with in the range of 0 to 100,000 numbers.
+I am using lambda to implement Generator. Since *Generator* is having only one method so we can use lambda to implement it. This lambda returns random number with in the range of 0 to 100,000 numbers.
 
 #### Character Generator
-All required characters are stored in an array and then we will pick random character from it.
+
+All required characters are stored in an array and then we will pick a random character from it.
 
 {% highlight java %}
     static Generator<Character> generateCharacter(){
@@ -72,7 +72,8 @@ All required characters are stored in an array and then we will pick random char
 {% endhighlight %}
 
 #### String Generator
-Since string is a combination of characters so this will internally uses character generator.
+
+Since string is a combination of characters so this will depend on character generator. It calls character generator seven times to create a string of size 7.
 
 {% highlight java %}
     static Generator<String> generateString(){
@@ -88,6 +89,7 @@ Since string is a combination of characters so this will internally uses charact
 {% endhighlight %}
 
 #### Date Generator
+
 I want to generate random dates between Jan 1, 1970 to Dec 31, 2018. There are total 1546214400 seconds between this date range so I pick any random number between 0 to 1546214400. This number is passed to *java.time.Instance* to create *java.time.LocalDate* instances.
 
 {% highlight java %}
@@ -119,5 +121,15 @@ Now it is time to test our Generate interface and its implementations.
     }
 {% endhighlight %}
 
+Below is the output of this class. You will have different output because this is randomly generated data.
+
+{% highlight bash %}
+17888 57145 82321 37612 26707 
+false false true false true 
+c b C I I 
+iDZhenT sGCMkZl OttVBZE BHuQhzi yCxRPgE 
+1975-12-28 2015-12-20 1974-01-15 1994-10-14 2017-01-19 
+{% endhighlight %}
+
 ### Conclusion
-Created a *Generator* interface and implemented it to generate test data. We used Strategy design pattern to implement this. Full code is available **[here](https://gist.github.com/kpradeep12/1afe32af14a4b309e0eb8c18d2de2e16)**.
+Created *Generator* interface and implemented it to generate test data. We used Strategy design pattern to implement this. Full code is available **[here](https://gist.github.com/kpradeep12/1afe32af14a4b309e0eb8c18d2de2e16)**.

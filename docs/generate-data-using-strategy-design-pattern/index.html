@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+<meta name="google-site-verification" content="6prhbit_zvr5fgjCg8h5zm8eH7tQrVeMcbHGOhb393g" />
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@pradeep">
+<meta name="twitter:title"   content="Generate data using strategy design pattern">
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/generate-data-using-strategy-design-pat.jpg">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="/assets/images/logo.png">
+    
+<!--<title>Generate data using strategy design pattern | The Tech Stack . Net</title>-->
+    
+<meta name="description" content="Generate random data of different types like numbers, strings, boolean, dates and characters. Implemented using strategy design pattern."> 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Generate data using strategy design pattern | Pradeep’s Java and Kotlin blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Generate data using strategy design pattern" />
+<meta name="author" content="pradeep" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Generate random data of different types like numbers, strings, boolean, dates and characters. Implemented using strategy design pattern." />
+<meta property="og:description" content="Generate random data of different types like numbers, strings, boolean, dates and characters. Implemented using strategy design pattern." />
+<link rel="canonical" href="http://thetechstack.net/generate-data-using-strategy-design-pattern/" />
+<meta property="og:url" content="http://thetechstack.net/generate-data-using-strategy-design-pattern/" />
+<meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
+<meta property="og:image" content="http://thetechstack.net/assets/images/banners/generate-data-using-strategy-design-pat.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-17T20:11:10-05:00" />
+<script type="application/ld+json">
+{"url":"http://thetechstack.net/generate-data-using-strategy-design-pattern/","author":{"@type":"Person","name":"pradeep"},"description":"Generate random data of different types like numbers, strings, boolean, dates and characters. Implemented using strategy design pattern.","headline":"Generate data using strategy design pattern","datePublished":"2019-01-17T20:11:10-05:00","dateModified":"2019-01-17T20:11:10-05:00","@type":"BlogPosting","image":"http://thetechstack.net/assets/images/banners/generate-data-using-strategy-design-pat.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/generate-data-using-strategy-design-pattern/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+    
+
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About</a>
+                </li>-->
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java and Kotlin coding experiments in this blog
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Generate data using strategy design pattern&url=http://thetechstack.net/generate-data-using-strategy-design-pattern/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/generate-data-using-strategy-design-pattern/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/generate-data-using-strategy-design-pattern/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java & Kotlin developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Generate data using strategy design pattern</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/generate-data-using-strategy-design-pat.jpg" alt="Generate data using strategy design pattern">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>There are many libraries which generates data but in this article I am going to develop a simple Java class which will generate test data for us so we can understand how these libraries internally works. These libraries provide lot of functionality and options but here we develop a small and simple class with out much options. This class will generate different types of data like number, boolean, character, string and dates. There are many ways to develop this class here I am going to use <strong>strategy design pattern</strong>.</p>
+
+<p>Strategy design pattern is correct fit in this context because we are going to have different strategies to generate each type of data. For example code to generate numbers are different than generating strings. Read this article to learn more about <strong><a href="/strategy-design-pattern/">strategy design pattern</a></strong>.</p>
+
+<p>We need to define our interface before implementing our generators. Each generator will implement this interface so this helps us to access any generator using single interface type instead of having multiple different instance types.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">Generator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="n">T</span> <span class="nf">generate</span><span class="o">();</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>This is a simple generic interface. We are taking advantage of generics here so this interface can be used to implement any type of data.</p>
+
+<h4 id="boolean-generator">Boolean Generator</h4>
+
+<p>Instead of creating a separate class for each data type we can add static methods to this interface so these methods will return the generators. Static methods in interfaces are supported from 1.8 version.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">Generator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="n">T</span> <span class="nf">generate</span><span class="o">();</span>
+
+    <span class="kd">static</span> <span class="n">Generator</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span> <span class="nf">generateBoolean</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Generator</span><span class="o">&lt;&gt;()</span> <span class="o">{</span>
+            <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="n">Boolean</span> <span class="nf">generate</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="na">nextBoolean</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><em>generateBoolean()</em> method will return an instance of anonymous class which implements Generator interface. This method internally uses <em>java.util.Random</em> class to return value. This way we no more need to maintain separate class.</p>
+
+<h4 id="number-generator">Number Generator</h4>
+
+<p>I added <em>generateNumber()</em> method in the interface which returns integers.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">static</span> <span class="n">Generator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">generateNumber</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Random</span><span class="o">().</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">100000</span><span class="o">);</span>
+    <span class="o">}</span></code></pre></figure>
+
+<p>I am using lambda to implement Generator. Since <em>Generator</em> is having only one method so we can use lambda to implement it. This lambda returns random number with in the range of 0 to 100,000 numbers.</p>
+
+<h4 id="character-generator">Character Generator</h4>
+
+<p>All required characters are stored in an array and then we will pick a random character from it.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">static</span> <span class="n">Generator</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="nf">generateCharacter</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Generator</span><span class="o">&lt;&gt;()</span> <span class="o">{</span>
+            <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+            <span class="kt">char</span><span class="o">[]</span> <span class="n">chars</span> <span class="o">=</span> <span class="s">"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="n">Character</span> <span class="nf">generate</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">chars</span><span class="o">[</span><span class="n">random</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">chars</span><span class="o">.</span><span class="na">length</span><span class="o">)];</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+    <span class="o">}</span></code></pre></figure>
+
+<h4 id="string-generator">String Generator</h4>
+
+<p>Since string is a combination of characters so this will depend on character generator. It calls character generator seven times to create a string of size 7.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">static</span> <span class="n">Generator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">generateString</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="kt">char</span><span class="o">[]</span> <span class="n">chars</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="mi">7</span><span class="o">];</span>
+            <span class="n">Generator</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="n">generator</span> <span class="o">=</span> <span class="n">generateCharacter</span><span class="o">();</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">7</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+                <span class="n">chars</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="na">generate</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="n">chars</span><span class="o">);</span>
+        <span class="o">};</span>
+    <span class="o">}</span></code></pre></figure>
+
+<h4 id="date-generator">Date Generator</h4>
+
+<p>I want to generate random dates between Jan 1, 1970 to Dec 31, 2018. There are total 1546214400 seconds between this date range so I pick any random number between 0 to 1546214400. This number is passed to <em>java.time.Instance</em> to create <em>java.time.LocalDate</em> instances.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">static</span> <span class="n">Generator</span><span class="o">&lt;</span><span class="n">LocalDate</span><span class="o">&gt;</span> <span class="nf">generateDate</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="c1">// Number of seconds from 1970 Jan 1 to 2018 Dec 31 is 1546214400.</span>
+            <span class="kt">int</span> <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">().</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">1546214400</span><span class="o">);</span>
+            <span class="k">return</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">ofInstant</span><span class="o">(</span><span class="n">Instant</span><span class="o">.</span><span class="na">ofEpochSecond</span><span class="o">(</span><span class="n">instance</span><span class="o">),</span> <span class="n">ZoneId</span><span class="o">.</span><span class="na">systemDefault</span><span class="o">());</span>
+        <span class="o">};</span>
+    <span class="o">}</span></code></pre></figure>
+
+<h3 id="generate-data">Generate Data</h3>
+
+<p>Now it is time to test our Generate interface and its implementations.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">testGenerator</span><span class="o">(</span><span class="n">Generator</span><span class="o">.</span><span class="na">generateNumber</span><span class="o">());</span>
+        <span class="n">testGenerator</span><span class="o">(</span><span class="n">Generator</span><span class="o">.</span><span class="na">generateBoolean</span><span class="o">());</span>
+        <span class="n">testGenerator</span><span class="o">(</span><span class="n">Generator</span><span class="o">.</span><span class="na">generateCharacter</span><span class="o">());</span>
+        <span class="n">testGenerator</span><span class="o">(</span><span class="n">Generator</span><span class="o">.</span><span class="na">generateString</span><span class="o">());</span>
+        <span class="n">testGenerator</span><span class="o">(</span><span class="n">Generator</span><span class="o">.</span><span class="na">generateDate</span><span class="o">());</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">testGenerator</span><span class="o">(</span><span class="n">Generator</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&gt;</span> <span class="n">gen</span><span class="o">){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">gen</span><span class="o">.</span><span class="na">generate</span><span class="o">()+</span><span class="s">" "</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+    <span class="o">}</span></code></pre></figure>
+
+<p>Below is the output of this class. You will have different output because this is randomly generated data.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">17888 57145 82321 37612 26707 
+<span class="nb">false false true false true 
+</span>c b C I I 
+iDZhenT sGCMkZl OttVBZE BHuQhzi yCxRPgE 
+1975-12-28 2015-12-20 1974-01-15 1994-10-14 2017-01-19 </code></pre></figure>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>Created <em>Generator</em> interface and implemented it to generate test data. We used Strategy design pattern to implement this. Full code is available <strong><a href="https://gist.github.com/kpradeep12/1afe32af14a4b309e0eb8c18d2de2e16">here</a></strong>.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2019-01-17">17 Jan 2019</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/domain-specific-language/"> &laquo; Basics of Domain Specific Language (DSL) using Kotlin</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt="Pradeep's Java and Kotlin blog"> &nbsp; Never miss an <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div>
+
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (27)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+             
+              <a href="/category/kotlin">Kotlin (3)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2019 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> 
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

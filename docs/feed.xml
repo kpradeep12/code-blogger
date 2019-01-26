@@ -5,8 +5,8 @@
     <description>Sharing my Java and Kotlin coding experiments in this blog</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 26 Jan 2019 11:46:53 -0500</pubDate>
-    <lastBuildDate>Sat, 26 Jan 2019 11:46:53 -0500</lastBuildDate>
+    <pubDate>Sat, 26 Jan 2019 11:47:34 -0500</pubDate>
+    <lastBuildDate>Sat, 26 Jan 2019 11:47:34 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -163,7 +163,7 @@
 
 &lt;p&gt;We used many kotlin features to develop pizza DSL. Using this DSL we can configure pizza and print its information to the console.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 23 Jan 2019 20:11:10 -0500</pubDate>
+        <pubDate>Sat, 26 Jan 2019 20:11:10 -0500</pubDate>
         <link>http://thetechstack.net/pizza-dsl-with-kotlin/</link>
         <guid isPermaLink="true">http://thetechstack.net/pizza-dsl-with-kotlin/</guid>
         

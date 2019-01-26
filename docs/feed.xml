@@ -5,9 +5,172 @@
     <description>Sharing my Java and Kotlin coding experiments in this blog</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 18 Jan 2019 23:15:00 -0500</pubDate>
-    <lastBuildDate>Fri, 18 Jan 2019 23:15:00 -0500</lastBuildDate>
+    <pubDate>Sat, 26 Jan 2019 11:46:53 -0500</pubDate>
+    <lastBuildDate>Sat, 26 Jan 2019 11:46:53 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Pizza DSL with Kotlin</title>
+        <description>&lt;p&gt;DSL is not a programming language, it is the term used to describe any application API which is designed in a way such that users can easily use it in there domain to solve problems with out knowing any programming language. Domain Specific Languages is used to solve problems in a specific field or domain. For example; SQL is based on a natural language so users can easily create there queries to get data from database. Learn more about DSL &lt;strong&gt;&lt;a href=&quot;/domain-specific-language&quot;&gt;here&lt;/a&gt;&lt;/strong&gt;. Below are some of the examples of DSL’s and there applications;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTML -&amp;gt; Render web pages&lt;/li&gt;
+  &lt;li&gt;SQL -&amp;gt; Query database&lt;/li&gt;
+  &lt;li&gt;XML -&amp;gt; Data transfer between applications&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this article I am using &lt;strong&gt;Kotlin&lt;/strong&gt; to create a Pizza DSL. We can not really order a pizza with this but my intention is to develop a new DSL so we can configure a pizza and call &lt;strong&gt;order()&lt;/strong&gt; on it so it prints pizza configuration on the console. This is a fun way to understand how DSL work and also we can learn some kotlin’s programming features. We are going to use below features of Kotlin to build this DSL.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://kotlinlang.org/docs/reference/lambdas.html#lambda-expressions-and-anonymous-functions&quot;&gt;Lambdas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://kotlinlang.org/docs/reference/extensions.html&quot;&gt;Extension functions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://kotlinlang.org/docs/reference/coding-conventions.html#using-strings&quot;&gt;Multi line strings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Kotlin have many features which are helpful in developing DSL’s so lets create a basic shell and then we will build-up our pizza API on it.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pizza&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;build:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pizza&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;2&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pizza&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pizza&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pizza&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;3&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;1&amp;gt;&lt;/strong&gt; Initial Pizza class with only order function and it just prints the instance. Nothing much in this class.&lt;br /&gt;
+&lt;strong&gt;&amp;lt;2&amp;gt;&lt;/strong&gt; Declared a pizza function which takes an extension function of Pizza and it returns a new Pizza instance. If you are new to extension function then read more about it &lt;a href=&quot;/understanding-kotlin-extension-functions&quot;&gt;here&lt;/a&gt;.&lt;br /&gt;
+&lt;strong&gt;&amp;lt;3&amp;gt;&lt;/strong&gt; We are calling &lt;em&gt;pizza&lt;/em&gt; function with out passing any thing to lambda and then calling &lt;em&gt;order()&lt;/em&gt; on it.&lt;/p&gt;
+
+&lt;h3 id=&quot;pizza-size-large-or-medium-&quot;&gt;Pizza size (Large or Medium ??)&lt;/h3&gt;
+
+&lt;p&gt;Pizza order starts by mentioning the size so lets create some functions to handle size of the pizza.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;size:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Medium&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;size:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pizza&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;2&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Large&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;size:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pizza&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Medium&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;large&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;1&amp;gt;&lt;/strong&gt; Our Pizza class supports &lt;em&gt;medium&lt;/em&gt; and &lt;em&gt;large&lt;/em&gt; size pizzas and by default it is medium sized so we initialized &lt;em&gt;size&lt;/em&gt; with &lt;em&gt;Medium&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&amp;lt;2&amp;gt;&lt;/strong&gt; Implemented functions to handle each size: large and medium. These functions take extension function on Pizza then it sets the related size and then calls the passed function.&lt;/p&gt;
+
+&lt;h3 id=&quot;cheese-it-up&quot;&gt;Cheese it up&lt;/h3&gt;
+
+&lt;p&gt;We need to allow users to add sauce and cheese. We are going to give user to choose three levels or cheese (light, normal and extra) and three types of sauces (Marinara, Garlic parmesan, Alfredo)&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Cheese&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Light&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Normal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Extra&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Sauce&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Marinara&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GarlicParmesan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Alfredo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;sauce:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sauce&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sauce&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Marinara&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;cheese:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cheese&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cheese&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Normal&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;sauce:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sauce&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;2&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sauce&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sauce&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;cheese:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cheese&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cheese&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cheese&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;large&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sauce&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Alfredo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;3&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Cheese&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Extra&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;1&amp;gt;&lt;/strong&gt; Declared enums to maintain Cheese level and Sauce types.&lt;br /&gt;
+&lt;strong&gt;&amp;lt;2&amp;gt;&lt;/strong&gt; Implemented two functions to add sauce and cheese. These functions will just set the passed values into the class level fields.&lt;br /&gt;
+&lt;strong&gt;&amp;lt;3&amp;gt;&lt;/strong&gt; Calling &lt;em&gt;add&lt;/em&gt; function to add sauce and cheese. These functions are part of large pizza context.&lt;/p&gt;
+
+&lt;h3 id=&quot;toppings&quot;&gt;Toppings&lt;/h3&gt;
+
+&lt;p&gt;Allow users to add toppings and also what if users want toppings on one side? so lets implement this.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Topping&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Veg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Topping&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Onion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tomato&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pepper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Spinach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Meat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Topping&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Chicken&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pepperoni&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;toppings:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MutableList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Topping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mutableListOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;toppings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;tops:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pizza&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;2&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;half&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;side:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pizza&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;side&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vararg&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;toppings:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Topping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toppings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toppings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;large&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sauce&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Alfredo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Cheese&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Extra&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;toppings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Veg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Tomato&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Veg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Onion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Meat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Chicken&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;3&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;half&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;4&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Meat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Pepperoni&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;1&amp;gt;&lt;/strong&gt; Two enums are used to maintain Veg and Meat toppings. These enums extend a common interface &lt;em&gt;Topping&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&amp;lt;2&amp;gt;&lt;/strong&gt; &lt;strong&gt;toppings&lt;/strong&gt; will create new context to add toppings on the pizza. &lt;strong&gt;half&lt;/strong&gt; will create new context to add toppings on half part of the pizza and &lt;strong&gt;add&lt;/strong&gt; will take variable arguments to add toppings to the list.&lt;br /&gt;
+&lt;strong&gt;&amp;lt;3&amp;gt;&lt;/strong&gt; call &lt;em&gt;add&lt;/em&gt; by passing some toppings which are added to the list.&lt;br /&gt;
+&lt;strong&gt;&amp;lt;4&amp;gt;&lt;/strong&gt; creates new context to add toppings on half side of the pizza.&lt;/p&gt;
+
+&lt;h3 id=&quot;print-pizza-information&quot;&gt;Print pizza information&lt;/h3&gt;
+
+&lt;p&gt;Display configured pizza information on the console.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Pizza&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;():&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;1&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Pizza [
+    $size [
+        Sauce: $sauce Cheese: $cheese
+        $toppings
+    ]
+]&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;1&amp;gt;&lt;/strong&gt; Overload &lt;em&gt;toString&lt;/em&gt; to return string representation of pizza instance. This will use multi-line string to return pizza details.&lt;/p&gt;
+
+&lt;p&gt;Full code of this code available on &lt;strong&gt;&lt;a href=&quot;https://gist.github.com/kpradeep12/2c3af25e210f96c5e54ac060129f6797&quot;&gt;gist&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;We used many kotlin features to develop pizza DSL. Using this DSL we can configure pizza and print its information to the console.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Jan 2019 20:11:10 -0500</pubDate>
+        <link>http://thetechstack.net/pizza-dsl-with-kotlin/</link>
+        <guid isPermaLink="true">http://thetechstack.net/pizza-dsl-with-kotlin/</guid>
+        
+        
+        <category>kotlin</category>
+        
+      </item>
     
       <item>
         <title>Generate data using strategy design pattern</title>
@@ -1048,127 +1211,6 @@ Hello World!
         
         
         <category>reactiveX</category>
-        
-      </item>
-    
-      <item>
-        <title>Pull And Run First Docker Image</title>
-        <description>&lt;p&gt;Docker image is a file, which contains set of commands. When these commands are executed, instance of the image is created and this instance is called &lt;em&gt;Container&lt;/em&gt;. We can assume image files are like Java’s class files and objects are container instances.&lt;/p&gt;
-
-&lt;h2 id=&quot;pull-docker-image&quot;&gt;Pull docker image&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://store.docker.com/&quot;&gt;Docker Store&lt;/a&gt; is a central repository for docker image files. This repository is maintained by Docker and it contains images of many major applications. In this section we will pull &lt;em&gt;mysql&lt;/em&gt; image from docker store and then run it to create a container instance.&lt;/p&gt;
-
-&lt;p&gt;We can search for mysql-server in &lt;strong&gt;&lt;a href=&quot;https://store.docker.com/&quot;&gt;docker store&lt;/a&gt;&lt;/strong&gt;. Here is the direct link of &lt;a href=&quot;https://store.docker.com/community/images/mysql/mysql-server&quot;&gt;mysql-server&lt;/a&gt; page in docker store. All image files will have a dedicated page in docker store which provides basic information about the image and instructions to pull, run and configure it, also it shows contents of image file. Below image shows the structure of the page.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2018/07/docker-image-page.png&quot; alt=&quot;pet store hello&quot; height=&quot;450px&quot; width=&quot;500px&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Lets pull mysql image from docker store. Open terminal and execute below command. Before executing this command make sure that docker is running. Refer &lt;strong&gt;&lt;a href=&quot;/docker-intro/&quot;&gt;Docker introduction&lt;/a&gt;&lt;/strong&gt; for more details on Docker setup.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker pull mysql/mysql-server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This command will download mysql image and while downloading it prints some information on the console. On my terminal it printed below text;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Using default tag: latest // &amp;lt;1&amp;gt;
-latest: Pulling from mysql/mysql-server
-b0efbbec3b2e: Pull &lt;span class=&quot;nb&quot;&gt;complete 
-&lt;/span&gt;4d06a7b7ca82: Pull &lt;span class=&quot;nb&quot;&gt;complete 
-&lt;/span&gt;7ddc24d9f468: Pull &lt;span class=&quot;nb&quot;&gt;complete 
-&lt;/span&gt;8b211b61b1a0: Pull &lt;span class=&quot;nb&quot;&gt;complete 
-&lt;/span&gt;Digest: sha256:f1cb1e3f0124601b1496f485e9f4401ad10138294b5a38d932089daafd555e34 // &amp;lt;2&amp;gt;
-Status: Downloaded newer image &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;mysql/mysql-server:latest // &amp;lt;3&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&amp;lt;1&amp;gt; &lt;strong&gt;tag&lt;/strong&gt; is like version number. If we don’t mention the version then docker will download &lt;strong&gt;latest&lt;/strong&gt; version by default. In the docker image page go to the &lt;strong&gt;tags&lt;/strong&gt; tab to check all available versions/tags. Check point &lt;strong&gt;3&lt;/strong&gt; below for more details on downloading specific tag.&lt;br /&gt;
-&amp;lt;2&amp;gt; Docker image files are immutable, means once the image is build its content will never change. Each image will have unique digest value. This shows the digest of mysql image which we downloaded.&lt;br /&gt;
-&amp;lt;3&amp;gt; In the pull command we didn’t mentioned the version so by default docker downloads &lt;strong&gt;latest&lt;/strong&gt; version. We can provide specific version in the pull command, for example to pull &lt;strong&gt;8.0&lt;/strong&gt; we can execute &lt;strong&gt;docker pull mysql/mysql-server:8.0&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;run-image-file&quot;&gt;Run image file&lt;/h2&gt;
-
-&lt;p&gt;In the previous section we downloaded mysql image. In this section we will run this image. Execute below command, which will create mysql container instance.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker run mysql/mysql-server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;We use &lt;em&gt;run&lt;/em&gt; sub-command to execute image files. If we downloaded multiple tags then we can provide specific tag name like &lt;strong&gt;docker run mysql/mysql-server:&amp;lt;tag&amp;gt;&lt;/strong&gt;. Run command takes some time to execute and while execution it prints text in the terminal. Look for below two important lines in the output;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;...
-...
-Warning: Unable to load &lt;span class=&quot;s1&quot;&gt;'/usr/share/zoneinfo/zone1970.tab'&lt;/span&gt; as &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;zone. Skipping it.
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Entrypoint] GENERATED ROOT PASSWORD: ILOvILAt20fIwSYlMEtKoruNEzk // &amp;lt;1&amp;gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Server] &lt;span class=&quot;s1&quot;&gt;'user'&lt;/span&gt; entry &lt;span class=&quot;s1&quot;&gt;'healthchecker@localhost'&lt;/span&gt; ignored &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--skip-name-resolve&lt;/span&gt; mode.
-...
-...
-...
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;System] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;MY-010931] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Server] /usr/sbin/mysqld: ready &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;connections. Version: &lt;span class=&quot;s1&quot;&gt;'8.0.11'&lt;/span&gt;  socket: &lt;span class=&quot;s1&quot;&gt;'/var/lib/mysql/mysql.sock'&lt;/span&gt;  port: 3306  MySQL Community Server - GPL. // &amp;lt;2&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&amp;lt;1&amp;gt; Some where in the center of the logs, we should see generated root password. Note down this password, it will be different on your machine. We need this password to connect mysql. If we want to provide our own password then we can provide it in run command like this &lt;strong&gt;docker run -e MYSQL_ROOT_PASSWORD=root mysql/mysql-server&lt;/strong&gt;. Here I provided ‘root’ as the password.&lt;br /&gt;
-&amp;lt;2&amp;gt; At the end of the logs we should see message saying &lt;strong&gt;ready for connections&lt;/strong&gt; and also it shows &lt;em&gt;version&lt;/em&gt; and &lt;em&gt;port number&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;stop-container&quot;&gt;Stop container&lt;/h2&gt;
-
-&lt;p&gt;In the above section we ran mysql as foreground process means terminal is taken up by the run command and we can not get prompt to enter other commands. To stop current running container first we need to execute below command in other terminal.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker ps&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This command will list all running containers with some basic information for each container. Below are the some of the details it provides;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Container Id: Randomly generated unique Id to identify this container.&lt;/li&gt;
-  &lt;li&gt;Ports: Ports exposed by this container.&lt;/li&gt;
-  &lt;li&gt;Names: Random name assigned to this container.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Now we have the container id, we use this to stop the container. Execute below command;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker stop b1b681db49f2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;b1b681db49f2 is the container id assigned to mysql container executing on my machine, this id will be different on your machine because it is a randomly generated id. Get this id from the result of &lt;strong&gt;docker ps&lt;/strong&gt; command. Verify if container was stopped by running &lt;em&gt;docker ps&lt;/em&gt; again, this time you should not see the mysql container in the result.&lt;/p&gt;
-
-&lt;h2 id=&quot;connect-to-mysql-container&quot;&gt;Connect to mysql container&lt;/h2&gt;
-
-&lt;p&gt;In the previous sections we went through the process of starting and stopping containers. In this section we will test mysql container by connecting to it.&lt;/p&gt;
-
-&lt;p&gt;IMPORTANT: Every container is different. Steps in this section explains the verification process of mysql container if we want verify any other container then we need to follow the process mentioned in the docker store page for that container.&lt;/p&gt;
-
-&lt;p&gt;Lets start the mysql container;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mysql &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;root &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; mysql/mysql-server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;I used below options in the run command:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;–name&lt;/strong&gt;: We can provide custom name to the container&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;-e&lt;/strong&gt;: This flag helps us to set environment variables for the container. In this case we used this to set mysql root password. Check mysql docker store page for all available environment options for mysql.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;-d&lt;/strong&gt;: Runs container in the background so we can continue to use the prompt in this terminal.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Because we are running container in the background we can not see the output logs on the terminal. We can see these logs by executing below command;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker logs mysql&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;docker logs&lt;/strong&gt; takes the container name and I provided &lt;em&gt;mysql&lt;/em&gt; because in the previous run command I provided container name as &lt;strong&gt;mysql&lt;/strong&gt;. We are having a running mysql container now lets execute bash in the mysql container so we can connect and execute some queries.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; mysql bash&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;em&gt;docker exec&lt;/em&gt; command runs the provided command with in the container. In this case we want &lt;em&gt;bash&lt;/em&gt; to run in the mysql container. This will provide a bash prompt which is running in the mysql container. Now connect to the mysql like below;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;root&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This command prompts for the mysql password, enter the password. Now we can execute sql queries on mysql container. Below query lists all available databases.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql&amp;gt; show databases&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You can continue to execute mysql queries here.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;In this article we learnt downloading images, running and testing containers. With this setup we can have mysql in the docker instead of on the machine.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 22 Jul 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/pull-and-run-first-docker-image/</link>
-        <guid isPermaLink="true">http://thetechstack.net/pull-and-run-first-docker-image/</guid>
-        
-        
-        <category>docker</category>
         
       </item>
     

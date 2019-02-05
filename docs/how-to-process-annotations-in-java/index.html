@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+<meta name="google-site-verification" content="6prhbit_zvr5fgjCg8h5zm8eH7tQrVeMcbHGOhb393g" />
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@pradeep">
+<meta name="twitter:title"   content="How to process annotations in Java">
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/how-to-process-annotations-in-java.jpg">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="/assets/images/logo.png">
+    
+<!--<title>How to process annotations in Java | The Tech Stack . Net</title>-->
+    
+<meta name="description" content="Learn how to process annotations in Java. Create an annotation and process annotations at compile time."> 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>How to process annotations in Java | Pradeep’s Java and Kotlin blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="How to process annotations in Java" />
+<meta name="author" content="pradeep" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learn how to process annotations in Java. Create an annotation and process annotations at compile time." />
+<meta property="og:description" content="Learn how to process annotations in Java. Create an annotation and process annotations at compile time." />
+<link rel="canonical" href="http://thetechstack.net/how-to-process-annotations-in-java/" />
+<meta property="og:url" content="http://thetechstack.net/how-to-process-annotations-in-java/" />
+<meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
+<meta property="og:image" content="http://thetechstack.net/assets/images/banners/how-to-process-annotations-in-java.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-04T20:11:10-05:00" />
+<script type="application/ld+json">
+{"url":"http://thetechstack.net/how-to-process-annotations-in-java/","author":{"@type":"Person","name":"pradeep"},"description":"Learn how to process annotations in Java. Create an annotation and process annotations at compile time.","headline":"How to process annotations in Java","datePublished":"2019-02-04T20:11:10-05:00","dateModified":"2019-02-04T20:11:10-05:00","@type":"BlogPosting","image":"http://thetechstack.net/assets/images/banners/how-to-process-annotations-in-java.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/how-to-process-annotations-in-java/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+    
+
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>-->
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/twitter">Twitter</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>-->
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java and Kotlin coding experiments in this blog
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=How to process annotations in Java&url=http://thetechstack.net/how-to-process-annotations-in-java/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/how-to-process-annotations-in-java/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/how-to-process-annotations-in-java/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java & Kotlin developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">How to process annotations in Java</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/how-to-process-annotations-in-java.jpg" alt="How to process annotations in Java">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>Many libraries in Java uses Annotations. Annotations help developers to write less code because they will generate code or help is configuring application with less hassle, they also can be used as providing meta-data to compiler and runtime environments. In this article I will explain how annotations are declared and processed by creating a simple annotation. We don’t need to have any fancy editors or build tools to learn annotations because they add more complexity. We can use simple text editor and command line to compile the examples in this article.</p>
+
+<p>I will create a simple <em>Todo</em> annotation. Developers can annotate any method with @Todo annotation like below;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Todo</span><span class="o">(</span><span class="s">"technical details pending"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">neutral</span><span class="o">(){}</span></code></pre></figure>
+
+<p>This Todo acts like a reminder for the developer. We will later create an annotation processor which will detect <em>Todo</em> annotations and fails the compilation with some message so developer will not forgot to implement methods. This annotation will be useful in cases where for example requirements from client are not clear or waiting for some information from other teams, then we can annotate these methods with <strong>Todo</strong> annotation.</p>
+
+<p>Our annotation processor will catch all these <strong>Todo</strong> annotations at compile time and fails the compilation. This will help developers to either implement this method or if it is already implemented then developer should remove it so the compilation will succeed. This annotation acts like tagging.</p>
+
+<p>We will go through below steps to create and process annotations:</p>
+
+<ul>
+  <li>Declare an annotation</li>
+  <li>Implement annotation processor</li>
+  <li>Use annotation in the code</li>
+</ul>
+
+<p>Lets understand each of them in below sections</p>
+
+<h3 id="declare-an-annotation">Declare an annotation</h3>
+
+<p>Create a new java file <em>Todo.java</em> to declare an annotation. Annotation declaration looks similar to interface except the keyword <strong>interface</strong> is preceded with <strong>@</strong></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.lang.annotation.ElementType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.annotation.Retention</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.annotation.RetentionPolicy</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.annotation.Target</span><span class="o">;</span>
+
+<span class="nd">@Retention</span><span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">SOURCE</span><span class="o">)</span>
+<span class="nd">@Target</span><span class="o">(</span><span class="n">ElementType</span><span class="o">.</span><span class="na">METHOD</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nd">@interface</span> <span class="n">Todo</span><span class="o">{</span>
+    <span class="n">String</span> <span class="nf">value</span><span class="o">();</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><strong>Todo</strong> annotation is declared with two meta-annotations. Meta annotations helps in providing more information about the annotation;</p>
+
+<ul>
+  <li><em>Retention</em>: How long this annotation retains or available.
+    <ul>
+      <li>SOURCE: It is available in the source code and discarded by compiler. In above example we want our annotation to be available in the source code.</li>
+      <li>CLASS: This is the default. Available in the class file but VM may ignore it at runtime.</li>
+      <li>RUNTIME: Available in the class file and VM will load it at runtime and they can be processed reflectively.</li>
+    </ul>
+  </li>
+  <li><em>Target</em>: Type of elements we can use this annotation like; constructor, field, package… but here we want our annotation to be used on the methods. If we apply this annotation on the other types then compiler will throw error.</li>
+</ul>
+
+<p>I want users to mention the task description so I have <strong>String</strong> field where the task description will be stored.</p>
+
+<p>For more information on Annotations read this <a href="https://docs.oracle.com/javase/tutorial/java/annotations/basics.html">tutorial</a>.</p>
+
+<h3 id="implement-annotation-processor">Implement annotation processor</h3>
+
+<p>Annotations declared in the classes need to processed either at compile time or runtime. In this article we are going to learn compile time annotation processing. This processor will look for <strong>Todo</strong> annotations in the class and throws an error if it finds. The main intention of this <strong>Todo</strong> annotation is helping developers by reminding missed implementations at compile time.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">javax.annotation.processing.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.lang.model.SourceVersion</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.lang.model.element.Element</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.lang.model.element.TypeElement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.tools.Diagnostic</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+
+<span class="nd">@SupportedAnnotationTypes</span><span class="o">(</span><span class="s">"Todo"</span><span class="o">)</span>   <span class="c1">// &lt;1&gt;</span>
+<span class="nd">@SupportedSourceVersion</span><span class="o">(</span><span class="n">SourceVersion</span><span class="o">.</span><span class="na">RELEASE_8</span><span class="o">)</span>   <span class="c1">// &lt;2&gt;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TodoProcessor</span> <span class="kd">extends</span> <span class="n">AbstractProcessor</span><span class="o">{</span>   <span class="c1">// &lt;3&gt;</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">process</span><span class="o">(</span><span class="n">Set</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">TypeElement</span><span class="o">&gt;</span> <span class="n">annotations</span><span class="o">,</span> <span class="n">RoundEnvironment</span> <span class="n">roundEnv</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// &lt;4&gt;</span>
+        <span class="n">Messager</span> <span class="n">messager</span> <span class="o">=</span> <span class="n">processingEnv</span><span class="o">.</span><span class="na">getMessager</span><span class="o">();</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">TypeElement</span> <span class="n">typeElement</span> <span class="o">:</span> <span class="n">annotations</span><span class="o">)</span> <span class="o">{</span>   <span class="c1">// &lt;5&gt;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Element</span> <span class="n">element</span> <span class="o">:</span> <span class="n">roundEnv</span><span class="o">.</span><span class="na">getElementsAnnotatedWith</span><span class="o">(</span><span class="n">typeElement</span><span class="o">))</span> <span class="o">{</span>    <span class="c1">// &lt;6&gt;</span>
+                <span class="n">Todo</span> <span class="n">todo</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="na">getAnnotation</span><span class="o">(</span><span class="n">Todo</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>  <span class="c1">// &lt;7&gt;</span>
+                <span class="n">messager</span><span class="o">.</span><span class="na">printMessage</span><span class="o">(</span><span class="n">Diagnostic</span><span class="o">.</span><span class="na">Kind</span><span class="o">.</span><span class="na">ERROR</span><span class="o">,</span>    <span class="c1">// &lt;8&gt;</span>
+                        <span class="s">"Task '"</span> <span class="o">+</span> <span class="n">todo</span><span class="o">.</span><span class="na">value</span><span class="o">()</span> <span class="o">+</span> <span class="s">"' is pending on "</span> <span class="o">+</span> <span class="n">element</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>    <span class="c1">// &lt;9&gt;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><strong>&lt;1&gt;</strong> <strong>SupportedAnnotationTypes</strong> is a meta annotation which will tell the type of annotations this class will process. In this case this class will process <strong>Todo</strong> annotations.<br />
+<strong>&lt;2&gt;</strong> <strong>SupportedSourceVersion</strong> Latest java version this annotation processor supports.<br />
+<strong>&lt;3&gt;</strong> Annotation processor must either implement <strong>Processor</strong> interface or extend <strong>AbstractProcessor</strong> class.<br />
+<strong>&lt;4&gt;</strong> Override <strong>process</strong> method of <strong>AbstractProcessor</strong> class. Compiler will call this method on every class in the application. <br />
+<strong>&lt;5&gt;</strong> Single annotation processor class can be used to process multiple annotations by providing multiple entries in <strong>SupportedAnnotationTypes</strong>. Here we are processing only one annotation so <strong>annotations</strong> set contains only one <strong>TypeElement</strong> which is <strong>Todo</strong><br />
+<strong>&lt;6&gt;</strong> <strong>Todo</strong> can be declared on multiple methods. <strong>RoundEnvironment</strong> provides set of all elements where <strong>Todo</strong> annotations are used.<br />
+<strong>&lt;7&gt;</strong> Get and store annotation instance.<br />
+<strong>&lt;8&gt;</strong> <strong>processingEnv</strong> is the instance of <strong>ProcessingEnvironment</strong> interface. This will provide some utilities to work with the compiler environment. This class provides a <strong>Messager</strong> which can be used to indicate errors in the annotation processing. In this case we printed the error message which contains value of the Todo annotation and the method name on which it is used.<br />
+<strong>&lt;9&gt;</strong> <strong>true</strong> is returned to mention that we complemented our processing. In some cases annotation processor will generate classes in those cases we need to return false.</p>
+
+<p>We completed our annotation processor, now lets use it.</p>
+
+<h3 id="using-annotation-in-the-code">Using annotation in the code</h3>
+
+<p><strong>Vehicle.java</strong> uses <strong>Todo</strong> annotation. It contains three methods and two of them are marked with <strong>Todo</strong> annotations.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicle</span><span class="o">{</span>
+
+	<span class="nd">@Todo</span><span class="o">(</span><span class="s">"implement after phase 1"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">drive</span><span class="o">(){}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">park</span><span class="o">(){}</span>
+
+	<span class="nd">@Todo</span><span class="o">(</span><span class="s">"technical details pending"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">neutral</span><span class="o">(){}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="compile-code">Compile code</h3>
+
+<p>Open terminal/command line then change the directory to the folder where you created these three java files. Execute below commands;</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>javac Todo.java TodoProcessor.java
+<span class="nv">$ </span>javac <span class="nt">-processor</span> TodoProcessor Vehicle.java
+error: Task <span class="s1">'implement after phase 1'</span> is pending on drive<span class="o">()</span>
+error: Task <span class="s1">'technical details pending'</span> is pending on neutral<span class="o">()</span>
+2 errors</code></pre></figure>
+
+<p>First compile <strong>Todo</strong> and <strong>TodoProcessor</strong> and then compile <strong>Vehicle</strong> because it depends on these classes. While compiling <strong>Vehicle</strong> we need to pass <strong>-processor</strong> flag to <strong>javac</strong> to indicate the compiler that we are using annotation processor (<strong>TodoProcessor</strong>) so compiler will use passed class to process annotations.</p>
+
+<p>Compiler shows two errors because two methods in the <strong>Vehicle</strong> class is using <strong>Todo</strong> annotations. Error message shows the value which we passed to the annotation and the method name. Now developer can either implement the incomplete methods or remove the annotations/methods if the implementation is no longer needed.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>We created a Todo annotation and annotation processor class. Used this annotation in a <strong>Vehicle</strong> class then compiled it using annotation processor. You can expand this example even more by providing more details and adding more functionality.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2019-02-04">04 Feb 2019</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/pizza-dsl-with-kotlin/"> &laquo; Pizza DSL with Kotlin</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt="Pradeep's Java and Kotlin blog"> &nbsp; Never miss an <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div>
+
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (28)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+             
+              <a href="/category/kotlin">Kotlin (4)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2019 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> 
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

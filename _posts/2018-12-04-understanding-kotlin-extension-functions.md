@@ -29,8 +29,6 @@ Hello World!
 <2> *println* function is not part of **String** class but we are calling extension function.  
 <3> Declared an extension function on String class. More about this in the next section.
 
-Now we can directly call *println* on *String* to print text on the console.
-
 ## Declare Extension Functions
 
 To declare an extension function we need to prefix *function name* with *receiver type* separating with *dot* like below.
@@ -39,7 +37,7 @@ To declare an extension function we need to prefix *function name* with *receive
 
 Based on our example we created an extension function on String so we declared it as **fun String.println()**. We are saying that *String* is the receiver type and *println* is the extension function name. Now we can call *println* on any String objects in my project if I have this declaration in the class path and this function will print the message to console.
 
-For this tutorial purpose created a simple example where it just prints a message but we can have any logic in it which can manipulate *receiver type*. **How to access receiver type in the function?** the answer is using **this**. this is a implicit reference to the receiver type so can manipulate receiver using **this**
+For this tutorial purpose I created a simple example where it just prints a message but we can have any logic in it which can manipulate *receiver type*. **How to access receiver type in the function?** the answer is using **this**. this is a implicit reference to the receiver type so we can manipulate receiver using **this**
 
 In the above example I just want to print so I am directly passing *this* to *println* function like below
 

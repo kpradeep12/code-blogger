@@ -7,8 +7,6 @@ Tech enthusiast. Java and Kotlin tech blogger at [http://thetechstack.net/](http
 
 13+ Years of extensive experience in the IT industry with diversified exposure in Software Process Engineering, Programming in Client/Server & Web architecture using Java and various open source technologies.
 
-Part of various financial products development like Credit Risk, Online Banking, Payments, Collections, Direct Deposits and Receivables.
-
 #### Follow me
 
 * [Twitter](https://twitter.com/PradeepK4J)

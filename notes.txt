@@ -21,3 +21,8 @@ Mobile friendly Test - Google https://www.google.com/webmasters/tools/mobile-fri
 Web standards validator https://validator.w3.org/
 Check for 404 errors in Google Search Console Crawl results https://www.google.com/webmasters/tools/
 
+Tasks after every blog post:
+Publish in LinkedIn.
+Publish in LinkedIn Java / Kotlin.
+
+

@@ -159,4 +159,4 @@ Inner join is the most common way to join two tables. In below example I will jo
 
 ### Conclusion
 
-We used **Exposed** SQL library to perform CRUD operations on h2 database.
+In this article we learned using **Exposed** SQL library to perform CRUD operations on h2 database and here is the [link](https://github.com/kpradeep12/myprojects/tree/master/kotlin-exposed) for the code.

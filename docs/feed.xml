@@ -5,13 +5,25 @@
     <description>Sharing my Java and Kotlin coding experiments in this blog</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 Feb 2019 09:16:17 -0500</pubDate>
-    <lastBuildDate>Sun, 17 Feb 2019 09:16:17 -0500</lastBuildDate>
+    <pubDate>Sat, 23 Feb 2019 17:38:19 -0500</pubDate>
+    <lastBuildDate>Sat, 23 Feb 2019 17:38:19 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>Light Weight SQL Kotlin library</title>
-        <description>Learn how to use a light weight SQL Kotlin library called Exposed. It is written in Kotlin and supports two layers to access database: DSL and DAO.</description>
+        <title>Create REST services using Ktor</title>
+        <description>Learn Ktor framework by creating a REST service. This service will use SQL library called Exposed to perform database operations.</description>
+        <pubDate>Sat, 23 Feb 2019 20:11:10 -0500</pubDate>
+        <link>http://thetechstack.net/rest-services-using-ktor/</link>
+        <guid isPermaLink="true">http://thetechstack.net/rest-services-using-ktor/</guid>
+        
+        
+        <category>kotlin</category>
+        
+      </item>
+    
+      <item>
+        <title>Lightweight SQL Kotlin library</title>
+        <description>Learn how to use a lightweight SQL Kotlin library called Exposed. It is written in Kotlin and supports two layers to access database: DSL and DAO.</description>
         <pubDate>Sat, 16 Feb 2019 20:11:10 -0500</pubDate>
         <link>http://thetechstack.net/light-weight-sql-kotlin-library/</link>
         <guid isPermaLink="true">http://thetechstack.net/light-weight-sql-kotlin-library/</guid>
@@ -111,18 +123,6 @@
         <pubDate>Sun, 30 Sep 2018 13:11:10 -0400</pubDate>
         <link>http://thetechstack.net/generating-static-pages-with-J2HTML/</link>
         <guid isPermaLink="true">http://thetechstack.net/generating-static-pages-with-J2HTML/</guid>
-        
-        
-        <category>java</category>
-        
-      </item>
-    
-      <item>
-        <title>Create simple window using JavaFX 11 and Maven</title>
-        <description></description>
-        <pubDate>Thu, 20 Sep 2018 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/create-simple-window-using-javafx-and-maven/</link>
-        <guid isPermaLink="true">http://thetechstack.net/create-simple-window-using-javafx-and-maven/</guid>
         
         
         <category>java</category>

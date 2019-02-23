@@ -6,8 +6,19 @@ Custom helpfull classes
 Apply multiple classes:
 {: .table .table-striped}
 
+Table example:
+Group Id | Artifact Id | Version | Description
+--- | --- | --- | ---
+io.ktor | ktor-server-core | 1.1.2 | Ktor core library
+{: .table .table-striped}
+
+published: false
+
 CLI's:
 Update Gem: >bundle update
+
+Visual CODE:
+To add/change snippets go to Code > Preferences > User Snippets > Select markdown
 
 Links:
 Seo plugin: https://github.com/jekyll/jekyll-seo-tag

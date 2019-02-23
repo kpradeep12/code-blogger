@@ -1,12 +1,12 @@
 ---
-title:  "Light Weight SQL Kotlin library"
+title:  "Lightweight SQL Kotlin library"
 date:   2019-02-16 20:11:10 -0500
 categories: kotlin
 image: /assets/images/banners/light-weight-sql-kotlin-library.jpg
-description: "Learn how to use a light weight SQL Kotlin library called Exposed. It is written in Kotlin and supports two layers to access database: DSL and DAO."
+description: "Learn how to use a lightweight SQL Kotlin library called Exposed. It is written in Kotlin and supports two layers to access database: DSL and DAO."
 ---
 
-**Exposed** is a light weight SQL library written using Kotlin language. In this article I will demonstrate this library with some simple examples. I will create some test tables and perform **CRUD** operations on it. I was looking for some light wight SQL library for quick and small application and found **Exposed**. It is so simple to learn.
+**Exposed** is a lightweight SQL library written using Kotlin language. In this article I will demonstrate this library with some simple examples. I will create some test tables and perform **CRUD** operations on it. I was looking for some light wight SQL library for quick and small application and found **Exposed**. It is so simple to learn.
 
 **Exposed** have two layers of database access: *DSL* and *DAO*. In this article I will use DSL layer. To make it simple I we use only single kotlin file to perform all database calls. If you want to read further about exposed then, [here](https://github.com/JetBrains/Exposed) is the link to its github repository.
 

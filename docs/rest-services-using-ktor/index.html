@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+<meta name="google-site-verification" content="6prhbit_zvr5fgjCg8h5zm8eH7tQrVeMcbHGOhb393g" />
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@pradeep">
+<meta name="twitter:title"   content="Create REST services using Ktor">
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/create-rest-services-using-ktor.jpg">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="/assets/images/logo.png">
+    
+<!--<title>Create REST services using Ktor | The Tech Stack . Net</title>-->
+    
+<meta name="description" content="Learn Ktor framework by creating a REST service. This service will use SQL library called Exposed to perform database operations."> 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Create REST services using Ktor | Pradeep’s Java and Kotlin blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Create REST services using Ktor" />
+<meta name="author" content="pradeep" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learn Ktor framework by creating a REST service. This service will use SQL library called Exposed to perform database operations." />
+<meta property="og:description" content="Learn Ktor framework by creating a REST service. This service will use SQL library called Exposed to perform database operations." />
+<link rel="canonical" href="http://thetechstack.net/rest-services-using-ktor/" />
+<meta property="og:url" content="http://thetechstack.net/rest-services-using-ktor/" />
+<meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
+<meta property="og:image" content="http://thetechstack.net/assets/images/banners/create-rest-services-using-ktor.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-23T20:11:10-05:00" />
+<script type="application/ld+json">
+{"url":"http://thetechstack.net/rest-services-using-ktor/","author":{"@type":"Person","name":"pradeep"},"description":"Learn Ktor framework by creating a REST service. This service will use SQL library called Exposed to perform database operations.","headline":"Create REST services using Ktor","datePublished":"2019-02-23T20:11:10-05:00","dateModified":"2019-02-23T20:11:10-05:00","@type":"BlogPosting","image":"http://thetechstack.net/assets/images/banners/create-rest-services-using-ktor.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/rest-services-using-ktor/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+    
+
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>-->
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/twitter">Twitter</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>-->
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java and Kotlin coding experiments in this blog
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Create REST services using Ktor&url=http://thetechstack.net/rest-services-using-ktor/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/rest-services-using-ktor/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/rest-services-using-ktor/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java & Kotlin developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Create REST services using Ktor</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/create-rest-services-using-ktor.jpg" alt="Create REST services using Ktor">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p><strong>Ktor</strong> is a lightweight framework written in Kotlin programming language. This framework allows us to create asynchronous servers and clients. In this article I will explain the basics of <strong>Ktor</strong> framework by creating a simple REST service. This service will listen on GET, POST, PUT and DELETE requests and perform CRUD database operations. I will use <strong>Exposed</strong> for database operations.</p>
+
+<p>In this article we are creating a simple REST service with CRUD operations. To develop this application we are going to use Kotlin programming language with below frameworks/libraries.</p>
+
+<ul>
+  <li>Ktor framework</li>
+  <li>H2 in-memory database</li>
+  <li>Exposed SQL library</li>
+</ul>
+
+<p>Following is the checklist of items we will go through in this article.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#create-kotlin-project" id="markdown-toc-create-kotlin-project">Create Kotlin project</a></li>
+  <li><a href="#add-and-configure-ktor-framework" id="markdown-toc-add-and-configure-ktor-framework">Add and configure Ktor framework</a>    <ul>
+      <li><a href="#configure-netty-embedded-server" id="markdown-toc-configure-netty-embedded-server">Configure Netty embedded server</a></li>
+      <li><a href="#understanding-ktor" id="markdown-toc-understanding-ktor">Understanding Ktor</a></li>
+      <li><a href="#configure-routing" id="markdown-toc-configure-routing">Configure Routing</a></li>
+      <li><a href="#test-ktor-server" id="markdown-toc-test-ktor-server">Test Ktor server</a></li>
+    </ul>
+  </li>
+  <li><a href="#dao-layer-for-database" id="markdown-toc-dao-layer-for-database">DAO layer for database</a>    <ul>
+      <li><a href="#create-model-and-mapping" id="markdown-toc-create-model-and-mapping">Create Model and Mapping</a></li>
+      <li><a href="#create-dao" id="markdown-toc-create-dao">Create DAO</a></li>
+      <li><a href="#integrate-exposed-with-ktor" id="markdown-toc-integrate-exposed-with-ktor">Integrate Exposed with Ktor</a></li>
+    </ul>
+  </li>
+  <li><a href="#configure-rest-controllers" id="markdown-toc-configure-rest-controllers">Configure REST controllers</a>    <ul>
+      <li><a href="#create-get-put-post-and-delete-requests" id="markdown-toc-create-get-put-post-and-delete-requests">Create GET, PUT, POST and DELETE requests</a></li>
+      <li><a href="#test-http-endpoints-with-curl" id="markdown-toc-test-http-endpoints-with-curl">Test HTTP endpoints with cURL</a></li>
+    </ul>
+  </li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+</ul>
+
+<blockquote>
+  <p>Please note that this whole project setup is available in <a href="https://github.com/kpradeep12/techstack-projects/tree/master/ktor-rest">github</a></p>
+</blockquote>
+
+<h3 id="create-kotlin-project">Create Kotlin project</h3>
+
+<p>First step is to create Kotlin project. Execute below command to create an empty gradle Kotlin project. Once the project is created then import it into your favorite editor.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">mkdir </span>ktor-rest
+<span class="nb">cd </span>ktor-rest
+gradle init <span class="nt">--type</span> kotlin-application
+
+Select build script DSL:
+  1: groovy
+  2: kotlin
+Enter selection <span class="o">(</span>default: kotlin<span class="o">)</span> <span class="o">[</span>1..2] 
+
+Project name <span class="o">(</span>default: ktor-rest<span class="o">)</span>: 
+Source package <span class="o">(</span>default: ktor.rest<span class="o">)</span>: net.thetechstack</code></pre></figure>
+
+<blockquote>
+  <p>I executed this command on Gradle 5.2.1 version. You can choose to create kotlin project with any other build tool.</p>
+</blockquote>
+
+<p>This command will create new project with standard folder structure with default <strong>App.kt</strong> file.</p>
+
+<h3 id="add-and-configure-ktor-framework">Add and configure Ktor framework</h3>
+
+<p>Adding <strong>Ktor</strong> framework to the project is easy, just add below dependencies to your build.gradle</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">val</span> <span class="n">ktor_version</span> <span class="o">=</span> <span class="s">"1.1.3"</span>
+
+<span class="n">dependencies</span> <span class="o">{</span>
+    <span class="c1">//..</span>
+    <span class="n">implementation</span><span class="o">(</span><span class="s">"io.ktor:ktor-server-core:$ktor_version"</span><span class="o">)</span>
+    <span class="n">implementation</span><span class="o">(</span><span class="s">"io.ktor:ktor-server-netty:$ktor_version"</span><span class="o">)</span>
+    <span class="n">implementation</span><span class="o">(</span><span class="s">"io.ktor:ktor-jackson:$ktor_version"</span><span class="o">)</span>
+    <span class="n">implementation</span><span class="o">(</span><span class="s">"ch.qos.logback:logback-classic:1.2.3"</span><span class="o">)</span>
+<span class="o">}</span></code></pre></figure>
+
+<h4 id="configure-netty-embedded-server">Configure Netty embedded server</h4>
+
+<p>Open <strong>App.kt</strong> and update it with below code.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">net</span><span class="o">.</span><span class="na">thetechstack</span>
+
+<span class="kn">import</span> <span class="nn">io.ktor.application.install</span>
+<span class="kn">import</span> <span class="nn">io.ktor.features.CallLogging</span>
+<span class="kn">import</span> <span class="nn">io.ktor.features.ContentNegotiation</span>
+<span class="kn">import</span> <span class="nn">io.ktor.jackson.jackson</span>
+<span class="kn">import</span> <span class="nn">io.ktor.server.engine.embeddedServer</span>
+<span class="kn">import</span> <span class="nn">io.ktor.server.netty.Netty</span>
+
+<span class="n">fun</span> <span class="nf">main</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">embeddedServer</span><span class="o">(</span><span class="n">Netty</span><span class="o">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">8080</span><span class="o">){</span> <span class="o">}.</span><span class="na">start</span><span class="o">(</span><span class="n">wait</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><strong>main()</strong> function is the starting point of the Kotlin program. We will initialize and start embedded server by passing required information and then we will block main thread such that embedded server can stay live and listen for the requests.</p>
+
+<p>We called <strong>embeddedServer</strong> function. This function will initiate and run the embedded server. We need to pass some important information to it, they are;</p>
+
+<ul>
+  <li>Server instance type; We passed Netty. Ktor support Jetty and Tomcat as well.</li>
+  <li>Port number on which the server will listen.</li>
+  <li>Lambda instance of <strong>Application</strong>. More details about this in next section.</li>
+</ul>
+
+<p><strong>start</strong> function make server to start and we passed <strong>wait = true</strong> to block main thread such that server can listen for the requests.</p>
+
+<blockquote>
+  <p>Now you can run <strong>main()</strong> function and should see Ktor server startup logs in the console. Server should start with out any errors but we can not test it yet because no end points are defined.</p>
+</blockquote>
+
+<h4 id="understanding-ktor">Understanding Ktor</h4>
+
+<p>In the previous section a lambda instance which runs with in the context of <strong>Application</strong> is passed to <strong>embeddedServer</strong> function. This lambda instance is the where real Ktor framework comes into picture. I am not going into deeper details because it is not in the context of this article, but I will explain the basics.</p>
+
+<p>Ktor works on the concept of <strong>features</strong>. A Feature is a functionality that we want to put it in the request and response pipeline. Below are some of the examples;</p>
+
+<ul>
+  <li>Logging client requests</li>
+  <li>Handling sessions</li>
+  <li>Authenticating client requests</li>
+</ul>
+
+<p>Ktor provides many features but they are not included in the pipeline by default. We can customize or use any third party features. In-order to use these features we need to install them. Installing features is so easy, just need to pass the features to the <strong>install</strong> function. In the below code we installed <strong>CallLogging</strong> and <strong>ContentNegotiation</strong> features.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">main</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">embeddedServer</span><span class="o">(</span><span class="n">Netty</span><span class="o">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">8080</span><span class="o">){</span>
+        <span class="n">install</span><span class="o">(</span><span class="n">CallLogging</span><span class="o">)</span>
+        <span class="n">install</span><span class="o">(</span><span class="n">ContentNegotiation</span><span class="o">){</span>
+            <span class="n">jackson</span> <span class="o">{}</span>
+        <span class="o">}</span>
+    <span class="o">}.</span><span class="na">start</span><span class="o">(</span><span class="n">wait</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
+  <li>CallLogging is to log client requests</li>
+  <li>ContentNegotiation is used to convert JSON messages. Ktor supports <strong>Jackson</strong> and <strong>GSON</strong> but in this article I used <strong>Jackson</strong>. We can customize this library by passing configuration object but here I am not customizing it.</li>
+</ul>
+
+<p>Once the features are installed then Ktor will listen for the requests. Here we not yet configured end-points so it will not listen for anything. In the next section we will define routing where we will declare some end-points.</p>
+
+<h4 id="configure-routing">Configure Routing</h4>
+
+<p>Routing will allow us to configure end points of the REST service. In below code I configured a single route;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">embeddedServer</span><span class="o">(</span><span class="n">Netty</span><span class="o">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">8080</span><span class="o">){</span>
+        <span class="c1">//install() ...</span>
+        <span class="n">routing</span> <span class="o">{</span>
+            <span class="n">route</span><span class="o">(</span><span class="s">"/employees"</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// matches the URL which ends with /employees</span>
+                <span class="n">get</span> <span class="o">{</span> <span class="c1">// matches the GET verb</span>
+                    <span class="n">call</span><span class="o">.</span><span class="na">respond</span><span class="o">(</span><span class="s">"Employees test"</span><span class="o">)</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}.</span><span class="na">start</span><span class="o">(</span><span class="n">wait</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span></code></pre></figure>
+
+<p>Looking at the code it understands that we created a parent <strong>routing</strong> context and with in this we have a single <strong>route(‘/employees’)</strong>. We have <strong>get</strong> under this route so requests with GET on this route will end up in this block. Another approach to configure routing is using <strong>Location</strong> annotation. To make it simple I am not using this approach in this tutorial.</p>
+
+<p><strong>call</strong> is the instance of the <strong>ApplicationCall</strong> which is part of the <strong>get</strong> context and this instance contains properties to access request and response. Here we just reponding with some text ‘Employees test’</p>
+
+<h4 id="test-ktor-server">Test Ktor server</h4>
+
+<p>By now we have routing configured with single endpoint. To make sure everything is working fine, lets start our application and test it. Run <strong>main()</strong> function and check for no errors in the console log. Open terminal/command prompt and enter below cURL command.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>curl http://localhost:8080/employees
+<span class="nv">$ </span>Employees <span class="nb">test</span></code></pre></figure>
+
+<p>By default curl sends GET request. Response contains ‘Employees test’ means our endpoint is working fine.</p>
+
+<h3 id="dao-layer-for-database">DAO layer for database</h3>
+
+<p>We are using <strong>Exposed</strong> to connect and perform SQL operations on H2 in-memory database. We need to include required dependencies in the build.gradle so go to build.gradle and add below dependencies.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+    <span class="n">implementation</span><span class="o">(</span><span class="s">"org.jetbrains.exposed:exposed:0.12.1"</span><span class="o">)</span>
+    <span class="n">implementation</span><span class="o">(</span><span class="s">"com.h2database:h2:1.4.191"</span><span class="o">)</span>
+    <span class="n">implementation</span><span class="o">(</span><span class="s">"joda-time:joda-time:2.9.2"</span><span class="o">)</span>
+ 
+<span class="o">}</span></code></pre></figure>
+
+<blockquote>
+  <p>To learn more about SQL library <strong>Exposed</strong> please read this <a href="/light-weight-sql-kotlin-library">article</a></p>
+</blockquote>
+
+<h4 id="create-model-and-mapping">Create Model and Mapping</h4>
+
+<p>We are using Employee entity as an example so lets create a new package <strong>model</strong> and add <strong>Employee.kt</strong> with below code.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">net</span><span class="o">.</span><span class="na">thetechstack</span><span class="o">.</span><span class="na">model</span>
+
+<span class="n">data</span> <span class="kd">class</span> <span class="nf">Employee</span><span class="o">(</span><span class="n">val</span> <span class="nl">id:</span> <span class="n">Int</span><span class="o">,</span> <span class="n">val</span> <span class="nl">name:</span> <span class="n">String</span><span class="o">,</span>
+                    <span class="n">val</span> <span class="nl">email:</span> <span class="n">String</span><span class="o">,</span> <span class="n">val</span> <span class="nl">city:</span> <span class="n">String</span><span class="o">)</span></code></pre></figure>
+
+<p>This is a simple data class with four fields. We want to maintain id, name, email and city for the Employee so the constructor needs all these values.</p>
+
+<p>Create a new package <strong>dao</strong> and add <strong>Employees.kt</strong> file with below content;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.jetbrains.exposed.sql.Table</span>
+
+<span class="n">object</span> <span class="nl">Employees:</span> <span class="n">Table</span><span class="o">(){</span>
+    <span class="n">val</span> <span class="n">id</span> <span class="o">=</span> <span class="n">integer</span><span class="o">(</span><span class="s">"id"</span><span class="o">).</span><span class="na">primaryKey</span><span class="o">().</span><span class="na">autoIncrement</span><span class="o">()</span>
+    <span class="n">val</span> <span class="n">name</span> <span class="o">=</span> <span class="n">varchar</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="mi">50</span><span class="o">)</span>
+    <span class="n">val</span> <span class="n">email</span> <span class="o">=</span> <span class="n">varchar</span><span class="o">(</span><span class="s">"email"</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span>
+    <span class="n">val</span> <span class="n">city</span> <span class="o">=</span> <span class="n">varchar</span><span class="o">(</span><span class="s">"city"</span><span class="o">,</span> <span class="mi">50</span><span class="o">)</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Employees is the mapping object for Employee. This object will give enough information for <strong>Exposed</strong> to map fields with the database table. This object acts like a object to table mapping.</p>
+
+<h4 id="create-dao">Create DAO</h4>
+
+<p>Instead of directly performing database operations we are creating <strong>DAO</strong> layer. DAO (Data Access Layer) will wrap all database operations in it. Create <strong>DAOFacadeDatabase.kt</strong> file in <strong>dao</strong> package with below code.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">net</span><span class="o">.</span><span class="na">thetechstack</span><span class="o">.</span><span class="na">dao</span>
+
+<span class="kn">import</span> <span class="nn">net.thetechstack.model.Employee</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.exposed.sql.*</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.exposed.sql.transactions.transaction</span>
+<span class="kn">import</span> <span class="nn">java.io.Closeable</span>
+
+<span class="kd">interface</span> <span class="nc">DAOFacade</span><span class="o">:</span> <span class="n">Closeable</span><span class="o">{</span>
+    <span class="n">fun</span> <span class="nf">init</span><span class="o">()</span>
+    <span class="n">fun</span> <span class="nf">createEmployee</span><span class="o">(</span><span class="nl">name:</span><span class="n">String</span><span class="o">,</span> <span class="nl">email:</span><span class="n">String</span><span class="o">,</span> <span class="nl">city:</span><span class="n">String</span><span class="o">)</span>
+    <span class="n">fun</span> <span class="nf">updateEmployee</span><span class="o">(</span><span class="nl">id:</span><span class="n">Int</span><span class="o">,</span> <span class="nl">name:</span><span class="n">String</span><span class="o">,</span> <span class="nl">email:</span><span class="n">String</span><span class="o">,</span> <span class="nl">city:</span><span class="n">String</span><span class="o">)</span>
+    <span class="n">fun</span> <span class="nf">deleteEmployee</span><span class="o">(</span><span class="nl">id:</span><span class="n">Int</span><span class="o">)</span>
+    <span class="n">fun</span> <span class="nf">getEmployee</span><span class="o">(</span><span class="nl">id:</span><span class="n">Int</span><span class="o">):</span> <span class="n">Employee</span><span class="o">?</span>
+    <span class="n">fun</span> <span class="nf">getAllEmployees</span><span class="o">():</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>We created an interface, this defines the contract for DAO layer. We added all the methods needed to perform CRUD operations. With in the same class lets implement this interface.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nf">DAOFacadeDatabase</span><span class="o">(</span><span class="n">val</span> <span class="nl">db:</span> <span class="n">Database</span><span class="o">):</span> <span class="n">DAOFacade</span><span class="o">{</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">init</span><span class="o">()</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">(</span><span class="n">db</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">SchemaUtils</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">Employees</span><span class="o">)</span>
+        <span class="o">}</span>
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">createEmployee</span><span class="o">(</span><span class="nl">name:</span> <span class="n">String</span><span class="o">,</span> <span class="nl">email:</span> <span class="n">String</span><span class="o">,</span> <span class="nl">city:</span> <span class="n">String</span><span class="o">)</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">(</span><span class="n">db</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Employees</span><span class="o">.</span><span class="na">insert</span> <span class="o">{</span><span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">name</span><span class="o">]</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+                <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">email</span><span class="o">]</span> <span class="o">=</span> <span class="n">email</span><span class="o">;</span> <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">city</span><span class="o">]</span> <span class="o">=</span> <span class="n">city</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">Unit</span>
+        <span class="o">}</span>
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">updateEmployee</span><span class="o">(</span><span class="nl">id:</span> <span class="n">Int</span><span class="o">,</span> <span class="nl">name:</span> <span class="n">String</span><span class="o">,</span> <span class="nl">email:</span> <span class="n">String</span><span class="o">,</span> <span class="nl">city:</span> <span class="n">String</span><span class="o">)</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">(</span><span class="n">db</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Employees</span><span class="o">.</span><span class="na">update</span><span class="o">({</span><span class="n">Employees</span><span class="o">.</span><span class="na">id</span> <span class="n">eq</span> <span class="n">id</span><span class="o">}){</span>
+                <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">name</span><span class="o">]</span> <span class="o">=</span> <span class="n">name</span>
+                <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">email</span><span class="o">]</span> <span class="o">=</span> <span class="n">email</span>
+                <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">city</span><span class="o">]</span> <span class="o">=</span> <span class="n">city</span>
+            <span class="o">}</span>
+            <span class="n">Unit</span>
+        <span class="o">}</span>
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">deleteEmployee</span><span class="o">(</span><span class="nl">id:</span> <span class="n">Int</span><span class="o">)</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">(</span><span class="n">db</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Employees</span><span class="o">.</span><span class="na">deleteWhere</span> <span class="o">{</span> <span class="n">Employees</span><span class="o">.</span><span class="na">id</span> <span class="n">eq</span> <span class="n">id</span> <span class="o">}</span>
+        <span class="n">Unit</span>
+    <span class="o">}</span>
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getEmployee</span><span class="o">(</span><span class="nl">id:</span> <span class="n">Int</span><span class="o">)</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">(</span><span class="n">db</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Employees</span><span class="o">.</span><span class="na">select</span> <span class="o">{</span> <span class="n">Employees</span><span class="o">.</span><span class="na">id</span> <span class="n">eq</span> <span class="n">id</span> <span class="o">}.</span><span class="na">map</span> <span class="o">{</span>
+                <span class="n">Employee</span><span class="o">(</span><span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">id</span><span class="o">],</span> <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">name</span><span class="o">],</span> <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">email</span><span class="o">],</span> <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">city</span><span class="o">]</span>
+                <span class="o">)</span>
+            <span class="o">}.</span><span class="na">singleOrNull</span><span class="o">()</span>
+        <span class="o">}</span>
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getAllEmployees</span><span class="o">()</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">(</span><span class="n">db</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Employees</span><span class="o">.</span><span class="na">selectAll</span><span class="o">().</span><span class="na">map</span> <span class="o">{</span>
+            <span class="n">Employee</span><span class="o">(</span><span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">id</span><span class="o">],</span> <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">name</span><span class="o">],</span> <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">email</span><span class="o">],</span> <span class="n">it</span><span class="o">[</span><span class="n">Employees</span><span class="o">.</span><span class="na">city</span><span class="o">]</span>
+            <span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">close</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>DAOFacadeDatabase needs <strong>Database</strong> instance. We wrapped all query statements with in the <strong>transaction</strong> because <strong>Exposed</strong> needs all the database operations to be performed with in a transaction.</p>
+
+<blockquote>
+  <p>To understand more about Exposed please read this <a href="/light-weight-sql-kotlin-library">article</a></p>
+</blockquote>
+
+<p>Now we have our DAO layer ready.</p>
+
+<h4 id="integrate-exposed-with-ktor">Integrate Exposed with Ktor</h4>
+
+<p>Lets integrate DAO layer with Ktor. We need to instantiate <strong>DAOFacadeDatabase</strong> by passing H2 in-memory database instance. Below is code;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">val</span> <span class="n">dao</span> <span class="o">=</span> <span class="n">DAOFacadeDatabase</span><span class="o">(</span><span class="n">Database</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="s">"jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"</span><span class="o">,</span> <span class="n">driver</span> <span class="o">=</span> <span class="s">"org.h2.Driver"</span><span class="o">))</span>
+<span class="n">fun</span> <span class="nf">main</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">embeddedServer</span><span class="o">(</span><span class="n">Netty</span><span class="o">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">8080</span><span class="o">){</span>
+        <span class="n">dao</span><span class="o">.</span><span class="na">init</span><span class="o">()</span>
+        <span class="c1">//install</span>
+        <span class="c1">//routing</span>
+    <span class="o">}.</span><span class="na">start</span><span class="o">(</span><span class="n">wait</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span></code></pre></figure>
+
+<p>Instantiated <strong>DAOFacadeDatabase</strong> by passing H2 database instance and used this instance to create the tables by calling <strong>init()</strong></p>
+
+<h3 id="configure-rest-controllers">Configure REST controllers</h3>
+
+<p>We have DAO and Ktor server configured. Now we will create controller end-points for HTTP requests</p>
+
+<h4 id="create-get-put-post-and-delete-requests">Create GET, PUT, POST and DELETE requests</h4>
+
+<p>Update <strong>routing</strong> context with new end-points to handle GET, PUT, POST and DELETE requests.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">embeddedServer</span><span class="o">(</span><span class="n">Netty</span><span class="o">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">8080</span><span class="o">){</span>
+        <span class="c1">//install</span>
+        <span class="n">routing</span> <span class="o">{</span>
+            <span class="n">route</span><span class="o">(</span><span class="s">"/employees"</span><span class="o">){</span>
+                <span class="n">get</span> <span class="o">{</span>
+                    <span class="n">call</span><span class="o">.</span><span class="na">respond</span><span class="o">(</span><span class="n">dao</span><span class="o">.</span><span class="na">getAllEmployees</span><span class="o">())</span>
+                <span class="o">}</span>
+                <span class="n">post</span> <span class="o">{</span>
+                    <span class="n">val</span> <span class="n">emp</span> <span class="o">=</span> <span class="n">call</span><span class="o">.</span><span class="na">receive</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;()</span>
+                    <span class="n">dao</span><span class="o">.</span><span class="na">createEmployee</span><span class="o">(</span><span class="n">emp</span><span class="o">.</span><span class="na">name</span><span class="o">,</span> <span class="n">emp</span><span class="o">.</span><span class="na">email</span><span class="o">,</span> <span class="n">emp</span><span class="o">.</span><span class="na">city</span><span class="o">)</span>
+                <span class="o">}</span>
+                <span class="n">put</span> <span class="o">{</span>
+                    <span class="n">val</span> <span class="n">emp</span> <span class="o">=</span> <span class="n">call</span><span class="o">.</span><span class="na">receive</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;()</span>
+                    <span class="n">dao</span><span class="o">.</span><span class="na">updateEmployee</span><span class="o">(</span><span class="n">emp</span><span class="o">.</span><span class="na">id</span><span class="o">,</span> <span class="n">emp</span><span class="o">.</span><span class="na">name</span><span class="o">,</span> <span class="n">emp</span><span class="o">.</span><span class="na">email</span><span class="o">,</span> <span class="n">emp</span><span class="o">.</span><span class="na">city</span><span class="o">)</span>
+                <span class="o">}</span>
+                <span class="n">delete</span><span class="o">(</span><span class="s">"/{id}"</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">val</span> <span class="n">id</span> <span class="o">=</span> <span class="n">call</span><span class="o">.</span><span class="na">parameters</span><span class="o">[</span><span class="s">"id"</span><span class="o">]</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">id</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+                        <span class="n">dao</span><span class="o">.</span><span class="na">deleteEmployee</span><span class="o">(</span><span class="n">id</span><span class="o">.</span><span class="na">toInt</span><span class="o">())</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}.</span><span class="na">start</span><span class="o">(</span><span class="n">wait</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span></code></pre></figure>
+
+<ul>
+  <li>GET: returns all employees from the database</li>
+  <li>POST: receives Employee JSON and stores in the database</li>
+  <li>PUT: updates employee record</li>
+  <li>DELETE: deletes the employee for the given id</li>
+</ul>
+
+<h4 id="test-http-endpoints-with-curl">Test HTTP endpoints with cURL</h4>
+
+<p>Start the application by running <strong>App.kt</strong> and check for no errors in the console. Below are the examples to test end-points with cURL</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl <span class="nt">--data</span> <span class="s1">'{"name":"Connor","email":"connor@thetechstack.net","city":"New York"}'</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">--request</span> POST http://localhost:8080/employees
+curl <span class="nt">--data</span> <span class="s1">'{"name":"Owlette","email":"owlette@thetechstack.net","city":"New York"}'</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">--request</span> POST http://localhost:8080/employees
+curl <span class="nt">--data</span> <span class="s1">'{"name":"Gekko","email":"gekko@thetechstack.net","city":"New York"}'</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">--request</span> POST http://localhost:8080/employees
+
+curl http://localhost:8080/employees
+
+curl <span class="nt">--data</span> <span class="s1">'{"id":1,"name":"Catboy","email":"catboy@thetechstack.net","city":"New York"}'</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">--request</span> PUT http://localhost:8080/employees
+
+curl <span class="nt">-X</span> DELETE http://localhost:8080/employees/3</code></pre></figure>
+
+<p>We performed CRUD operations on the database using REST end-points.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>We created a Employee rest service using Ktor and Exposed and then tested all endpoints with some data to verify all database operations.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2019-02-23">23 Feb 2019</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/kotlin/">kotlin</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/light-weight-sql-kotlin-library/"> &laquo; Lightweight SQL Kotlin library</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt="Pradeep's Java and Kotlin blog"> &nbsp; Never miss any <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div>
+
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (28)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+             
+              <a href="/category/kotlin">Kotlin (6)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2019 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> 
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

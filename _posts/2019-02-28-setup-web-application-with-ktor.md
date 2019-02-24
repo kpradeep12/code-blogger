@@ -4,7 +4,6 @@ date:   2019-02-28 20:11:10 -0500
 categories: kotlin
 image: /assets/images/banners/create-rest-services-using-ktor.jpg
 description: ""
-published: false
 ---
 
 Its easy to create a web application with **Ktor**. In this article I will explain the tools we need and the process for developing a small CRUD based web application. I will take **Employee** as an entity to demonstrate this application. To develop this application we are going to use below frameworks/libraries.

@@ -14,6 +14,9 @@ io.ktor | ktor-server-core | 1.1.2 | Ktor core library
 
 published: false
 
+Search:
+https://mmistakes.github.io/minimal-mistakes/docs/configuration/#recaptcha-support-v2-only
+
 CLI's:
 Update Gem: >bundle update
 

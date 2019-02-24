@@ -673,3 +673,6 @@ License: https://www.wowthemes.net/freebies-license/
 .reaction-items div .reaction-item:nth-child(2) {
     display: none;
 }
+.reaction-items div.reaction-item:nth-child(2){
+    display: none;
+}

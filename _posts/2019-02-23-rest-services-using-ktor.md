@@ -182,7 +182,7 @@ dependencies {
 
 #### Create Model and Mapping
 
-We are using Employee entity as an example so lets create a new package **model** and add **Employee.kt** with below code.
+We are using Employee entity as an example so lets create a new package **net.thetechstack.model** and add **Employee.kt** with below code.
 
 {% highlight java %}
 package net.thetechstack.model
@@ -193,7 +193,7 @@ data class Employee(val id: Int, val name: String,
 
 This is a simple data class with four fields. We want to maintain id, name, email and city for the Employee so the constructor needs all these values.
 
-Create a new package **dao** and add **Employees.kt** file with below content;
+Create a new package **net.thetechstack.dao** and add **Employees.kt** file with below content;
 
 {% highlight java %}
 import org.jetbrains.exposed.sql.Table
@@ -206,11 +206,11 @@ object Employees: Table(){
 }
 {% endhighlight %}
 
-Employees is the mapping object for Employee. This object will give enough information for **Exposed** to map fields with the database table. This object acts like a object to table mapping.
+Employees is the mapping object for Employee. This object will give enough information for **Exposed** to map fields with the database table. This object acts like a object to table relational mapping.
 
 #### Create DAO
 
-Instead of directly performing database operations we are creating **DAO** layer. DAO (Data Access Layer) will wrap all database operations in it. Create **DAOFacadeDatabase.kt** file in **dao** package with below code.
+Instead of directly performing database operations we are creating **DAO** layer. DAO (Data Access Layer) will wrap all database operations in it. Create **DAOFacadeDatabase.kt** file in **net.thetechstack.dao** package with below code.
 
 {% highlight java %}
 package net.thetechstack.dao

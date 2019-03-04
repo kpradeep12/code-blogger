@@ -17,6 +17,9 @@ published: false
 Search:
 https://mmistakes.github.io/minimal-mistakes/docs/configuration/#recaptcha-support-v2-only
 
+Internal links:
+[here]({{site.baseurl}}/understanding-kotlin-extension-functions).
+
 CLI's:
 Update Gem: >bundle update
 

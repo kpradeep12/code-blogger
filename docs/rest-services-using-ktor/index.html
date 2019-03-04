@@ -404,7 +404,7 @@ Source package <span class="o">(</span>default: ktor.rest<span class="o">)</span
 
 <h4 id="create-model-and-mapping">Create Model and Mapping</h4>
 
-<p>We are using Employee entity as an example so lets create a new package <strong>model</strong> and add <strong>Employee.kt</strong> with below code.</p>
+<p>We are using Employee entity as an example so lets create a new package <strong>net.thetechstack.model</strong> and add <strong>Employee.kt</strong> with below code.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">net</span><span class="o">.</span><span class="na">thetechstack</span><span class="o">.</span><span class="na">model</span>
 
@@ -413,7 +413,7 @@ Source package <span class="o">(</span>default: ktor.rest<span class="o">)</span
 
 <p>This is a simple data class with four fields. We want to maintain id, name, email and city for the Employee so the constructor needs all these values.</p>
 
-<p>Create a new package <strong>dao</strong> and add <strong>Employees.kt</strong> file with below content;</p>
+<p>Create a new package <strong>net.thetechstack.dao</strong> and add <strong>Employees.kt</strong> file with below content;</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.jetbrains.exposed.sql.Table</span>
 
@@ -424,11 +424,11 @@ Source package <span class="o">(</span>default: ktor.rest<span class="o">)</span
     <span class="n">val</span> <span class="n">city</span> <span class="o">=</span> <span class="n">varchar</span><span class="o">(</span><span class="s">"city"</span><span class="o">,</span> <span class="mi">50</span><span class="o">)</span>
 <span class="o">}</span></code></pre></figure>
 
-<p>Employees is the mapping object for Employee. This object will give enough information for <strong>Exposed</strong> to map fields with the database table. This object acts like a object to table mapping.</p>
+<p>Employees is the mapping object for Employee. This object will give enough information for <strong>Exposed</strong> to map fields with the database table. This object acts like a object to table relational mapping.</p>
 
 <h4 id="create-dao">Create DAO</h4>
 
-<p>Instead of directly performing database operations we are creating <strong>DAO</strong> layer. DAO (Data Access Layer) will wrap all database operations in it. Create <strong>DAOFacadeDatabase.kt</strong> file in <strong>dao</strong> package with below code.</p>
+<p>Instead of directly performing database operations we are creating <strong>DAO</strong> layer. DAO (Data Access Layer) will wrap all database operations in it. Create <strong>DAOFacadeDatabase.kt</strong> file in <strong>net.thetechstack.dao</strong> package with below code.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">net</span><span class="o">.</span><span class="na">thetechstack</span><span class="o">.</span><span class="na">dao</span>
 
@@ -596,6 +596,8 @@ curl <span class="nt">-X</span> DELETE http://localhost:8080/employees/3</code><
             <a class="prev d-block col-md-6" href="http://thetechstack.net/light-weight-sql-kotlin-library/"> &laquo; Lightweight SQL Kotlin library</a>
             
             
+            <a class="next d-block col-md-6 text-lg-right" href="http://thetechstack.net/create-web-application-with-ktor/">Create Web Application With Ktor &raquo; </a>
+            
             <div class="clearfix"></div>
             </div>
             <!-- End Categories -->
@@ -677,7 +679,7 @@ curl <span class="nt">-X</span> DELETE http://localhost:8080/employees/3</code><
              
               <a href="/category/spring">Spring (2)</a>
              
-              <a href="/category/kotlin">Kotlin (6)</a>
+              <a href="/category/kotlin">Kotlin (7)</a>
             
           
         

@@ -396,8 +396,7 @@ We imported template.ftl as layout and used it in **index.ftl**. In this page we
 </@layout.mainLayout>
 {% endhighlight %}
 
-* **Add**: _action_ hidden field contains _new_ or _edit_ based on the request.
-* **Edit**: _id_ hidden field contains id of the employee which we are editing.
+This template is for new/edit employee records. **action** field in the form is used to maintain the type of action and **id** contains the employee id which server can use to update it. On submit form will be submitted to **/employee**.
 
 #### Declare controllers
 

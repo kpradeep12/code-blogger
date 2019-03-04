@@ -605,10 +605,7 @@ Source package <span class="o">(</span>default: ktor.rest<span class="o">)</span
     <span class="nt">&lt;/form&gt;</span>
 <span class="nt">&lt;/</span><span class="err">@</span><span class="nt">layout</span><span class="err">.mainLayout</span><span class="nt">&gt;</span></code></pre></figure>
 
-<ul>
-  <li><strong>Add</strong>: <em>action</em> hidden field contains <em>new</em> or <em>edit</em> based on the request.</li>
-  <li><strong>Edit</strong>: <em>id</em> hidden field contains id of the employee which we are editing.</li>
-</ul>
+<p>This template is for new/edit employee records. <strong>action</strong> field in the form is used to maintain the type of action and <strong>id</strong> contains the employee id which server can use to update it. On submit form will be submitted to <strong>/employee</strong>.</p>
 
 <h4 id="declare-controllers">Declare controllers</h4>
 

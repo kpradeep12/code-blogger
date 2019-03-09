@@ -3,7 +3,7 @@ title:  "Create Web Application With Ktor"
 date:   2019-02-28 20:11:10 -0500
 categories: kotlin
 image: /assets/images/banners/create-web-app-with-ktor.jpg
-description: "Learn how to create a web application using Ktor. We will create a demo application to understand it and see how to perform an end-to-end operations on an entity."
+description: "Learn how to create a web application using Ktor. I will create a demo application to understand it and see how to perform an end-to-end operations on an entity."
 ---
 
 Its easy to develop a web application using **Ktor**, In this article I am going to explain the tools we need and the steps for developing a small CRUD based web application using **Ktor**. I will take **Employee** entity as an example to demonstrate this application. We are going to use below frameworks/libraries.

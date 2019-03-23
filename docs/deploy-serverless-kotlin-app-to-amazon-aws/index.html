@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+<meta name="google-site-verification" content="6prhbit_zvr5fgjCg8h5zm8eH7tQrVeMcbHGOhb393g" />
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@pradeep">
+<meta name="twitter:title"   content="Deploy Serverless Kotlin App To Amazon AWS">
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/deploy-serverless-kotlin-app.jpg">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="/assets/images/logo.png">
+    
+<!--<title>Deploy Serverless Kotlin App To Amazon AWS | The Tech Stack . Net</title>-->
+    
+<meta name="description" content="AWS Lambda is a serverless architecture where we can deploy our functions and pay for only the compute time. I will explain the steps needed to create, build and deploy a Kotlin function as AWS Lambda using some simple tools."> 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Deploy Serverless Kotlin App To Amazon AWS | Pradeep’s Java and Kotlin blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Deploy Serverless Kotlin App To Amazon AWS" />
+<meta name="author" content="pradeep" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AWS Lambda is a serverless architecture where we can deploy our functions and pay for only the compute time. I will explain the steps needed to create, build and deploy a Kotlin function as AWS Lambda using some simple tools." />
+<meta property="og:description" content="AWS Lambda is a serverless architecture where we can deploy our functions and pay for only the compute time. I will explain the steps needed to create, build and deploy a Kotlin function as AWS Lambda using some simple tools." />
+<link rel="canonical" href="http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/" />
+<meta property="og:url" content="http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/" />
+<meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
+<meta property="og:image" content="http://thetechstack.net/assets/images/banners/deploy-serverless-kotlin-app.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-23T21:11:10-04:00" />
+<script type="application/ld+json">
+{"url":"http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/","author":{"@type":"Person","name":"pradeep"},"description":"AWS Lambda is a serverless architecture where we can deploy our functions and pay for only the compute time. I will explain the steps needed to create, build and deploy a Kotlin function as AWS Lambda using some simple tools.","headline":"Deploy Serverless Kotlin App To Amazon AWS","datePublished":"2019-03-23T21:11:10-04:00","dateModified":"2019-03-23T21:11:10-04:00","@type":"BlogPosting","image":"http://thetechstack.net/assets/images/banners/deploy-serverless-kotlin-app.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+    
+
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>-->
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/twitter">Twitter</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>-->
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java and Kotlin coding experiments
+    </p>
+</div>
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Deploy Serverless Kotlin App To Amazon AWS&url=http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java & Kotlin developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Deploy Serverless Kotlin App To Amazon AWS</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/deploy-serverless-kotlin-app.jpg" alt="Deploy Serverless Kotlin App To Amazon AWS">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>In this article, we’ll implement a basic <strong>Kotlin</strong> function and deploy it as <strong>AWS Lambda</strong>. AWS Lambda is a serverless architecture which lets us to run code without managing servers and the main advantage of this architecture is, this function executes only when needed and scales automatically. AWS charges only for the compute time and there are no charges incurred when the code is not running.</p>
+
+<blockquote>
+  <p>For basic usage we no need to pay anything we just need AWS account. See this link for <a href="https://aws.amazon.com/lambda/pricing/">AWS lambda pricing</a>. Free tier gets 1M requests and 40,000 GB-seconds of compute time per month. This limit is more than enough for our simple application.</p>
+</blockquote>
+
+<p>I am going to use <strong>serverless</strong> CLI tool to develop our basic function. <a href="https://serverless.com/">serverless</a>: is a simple CLI tool helps us to create, manage and deploy lambda functions and it works with major providers (AWS, Azure, Google, Fn and many more). The main advantage of using this is, it provides single CLI interface for many providers so we no need to learn deployment process for each provider. To install it, make sure you have <strong>npm</strong> installed on your computer and execute below command;</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm <span class="nb">install </span>serverless <span class="nt">-g</span></code></pre></figure>
+
+<p>This command will install serverless globally.</p>
+
+<blockquote>
+  <p>This whole project is available <a href="https://github.com/kpradeep12/myprojects/tree/master/hello-kotlin">here</a>.</p>
+</blockquote>
+
+<ul id="markdown-toc">
+  <li><a href="#create-aws-kotlin-application" id="markdown-toc-create-aws-kotlin-application">Create AWS Kotlin application</a></li>
+  <li><a href="#lambda-function" id="markdown-toc-lambda-function">Lambda function</a></li>
+  <li><a href="#configuration" id="markdown-toc-configuration">Configuration</a>    <ul>
+      <li><a href="#configure-credentials" id="markdown-toc-configure-credentials">Configure credentials</a></li>
+    </ul>
+  </li>
+  <li><a href="#build--deploy" id="markdown-toc-build--deploy">Build &amp; deploy</a></li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+</ul>
+
+<h3 id="create-aws-kotlin-application">Create AWS Kotlin application</h3>
+
+<p>Lets create new <strong>Kotlin</strong> project. Go to terminal and execute below commands;</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">mkdir </span>hello-kotlin
+<span class="nv">$ </span><span class="nb">cd </span>hello-kotlin
+<span class="nv">$ </span>sls create <span class="nt">--template</span> aws-kotlin-jvm-maven</code></pre></figure>
+
+<p>We created new folder <strong>hello-kotlin</strong> for our project and moved into it. <strong>sls</strong> is the shortcut command for <strong>serverless</strong> so I used short version. We are creating new project so mention <strong>create</strong> as sub-command by providing <strong>–template</strong> to it. In our case we need <strong>Kotlin</strong> project so I passed <strong>aws-kotlin-jvm-maven</strong>. Click <a href="https://serverless.com/framework/docs/providers/aws/cli-reference/create/">here</a> to see complete list of available templates for AWS.</p>
+
+<p>Below are the list of files it created in my local</p>
+
+<p><img src="/assets/images/posts/2019/03/aws-sls-kotlin-create.jpg" alt="Serverless create kotlin project" height="400px" width="400px" class="align-center" /></p>
+
+<p>In the next section we will learn about the generated function and configuration.</p>
+
+<h3 id="lambda-function">Lambda function</h3>
+
+<p>Serverless generates a normal Kotlin project except with one special file <strong>serverless.yml</strong>. Serverless depends on this file because it contains the whole configuration needed to deploy and configure lambda. It also creates three Kotlin files out of them Handler.kt is the important file. Below is the content of this file;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Handler</span><span class="o">:</span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Any</span><span class="o">&gt;,</span> <span class="n">ApiGatewayResponse</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">handleRequest</span><span class="o">(</span><span class="nl">input:</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Any</span><span class="o">&gt;,</span> <span class="nl">context:</span><span class="n">Context</span><span class="o">):</span><span class="n">ApiGatewayResponse</span> <span class="o">{</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"received: "</span> <span class="o">+</span> <span class="n">input</span><span class="o">.</span><span class="na">keys</span><span class="o">.</span><span class="na">toString</span><span class="o">())</span>
+
+        <span class="n">val</span> <span class="n">responseBody</span> <span class="o">=</span> <span class="n">Response</span><span class="o">(</span><span class="s">"Go Serverless v1.x! Your Kotlin function executed successfully!"</span><span class="o">,</span> <span class="n">input</span><span class="o">)</span>
+        <span class="k">return</span> <span class="n">ApiGatewayResponse</span><span class="o">.</span><span class="na">build</span> <span class="o">{</span>
+            <span class="n">statusCode</span> <span class="o">=</span> <span class="mi">200</span>
+            <span class="n">objectBody</span> <span class="o">=</span> <span class="n">responseBody</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">singletonMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;(</span><span class="s">"X-Powered-By"</span><span class="o">,</span> <span class="s">"AWS Lambda &amp; serverless"</span><span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="n">companion</span> <span class="n">object</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="n">val</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LogManager</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="nl">Handler:</span><span class="o">:</span><span class="kd">class</span><span class="err">.</span><span class="nc">java</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Class <strong>Handler</strong> implements <strong>RequestHandler</strong> interface which contains single function <strong>handleRequest</strong>. We need to implement this function because it is the starting point of lambda execution. AWS executes this function by passing input and context. These objects are needed if you want to read input from the request and context is to get the context of execution environment. handleRequest function uses two utility classes <strong>Response.kt</strong> and <strong>ApiGatewayResponse.kt</strong> to construct the Response. In this case we are building the response by setting statusCode to 200 and Response with some text and adding custom header ‘X-Powered-By’.</p>
+
+<p>This is a simple function with out much functionality it just responds with some text.</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>serverless.yml comes with basic configuration. I removed everything it comes with and replaced with below configuration.</p>
+
+<figure class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="na">service</span><span class="pi">:</span> <span class="s">aws-kotlin-jvm-maven</span>
+<span class="na">provider</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">aws</span>
+  <span class="na">runtime</span><span class="pi">:</span> <span class="s">java8</span>
+<span class="na">package</span><span class="pi">:</span>
+  <span class="na">artifact</span><span class="pi">:</span> <span class="s">target/hello-dev.jar</span>
+<span class="na">functions</span><span class="pi">:</span>
+  <span class="na">hello</span><span class="pi">:</span>
+    <span class="na">handler</span><span class="pi">:</span> <span class="s">com.serverless.Handler</span>
+    <span class="na">events</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">http</span><span class="pi">:</span>
+          <span class="na">path</span><span class="pi">:</span> <span class="s">hello</span>
+          <span class="na">method</span><span class="pi">:</span> <span class="s">get</span></code></pre></figure>
+
+<p>Properties in this file are self explanatory.</p>
+<ul>
+  <li><strong>service</strong> is a unique name for this function.</li>
+  <li><strong>provider</strong> contains provider specific configuration.</li>
+  <li><strong>package</strong> is the artifact name which is generated in the target folder at the build time.</li>
+  <li><strong>functions</strong> contains list of functions with there configuration. Each function needs the handler. Handler is the class which implements <strong>RequestHandler</strong> and we need to provide the events on which this function gets triggered. There are many ways to trigger functions like HTTP, CRON or event based. Here we want our function to get executed when it receives a HTTP request on <strong>hello</strong> path.</li>
+</ul>
+
+<h4 id="configure-credentials">Configure credentials</h4>
+
+<p>In-order for serverless to connect AWS it needs our credentials because it will upload and deploy lambda on behalf of us. Follow below steps to configure this.</p>
+
+<ul>
+  <li>Login into <strong>AWS Management Console</strong></li>
+  <li>Go to <strong>Security Credentials</strong> page by clicking on the user name at the top right of the page and selecting <strong>My Security Credentials</strong> from the drop-down menu.</li>
+  <li>A confirmation dialog appears so click on <strong>Continue to Security Credentials</strong></li>
+  <li>Under <strong>Access keys</strong> click on <strong>Create New Access Key</strong> which will create new keys and displays them in the new dialog. Click on <strong>Show Access Key</strong> to view them. Remember to save these values because later you may need them for the reference and keep them securely.</li>
+  <li>We need these access keys to set them in serverless so go back to the terminal and execute below command</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sls config credentials <span class="nt">--provider</span> aws <span class="nt">--key</span> &lt;Access Key ID&gt; <span class="nt">--secret</span> &lt;Secret Access Key&gt;</code></pre></figure>
+
+<p>Replace <strong>Access Key ID</strong> and <strong>Secret Access Key</strong> with the values displayed in the AWS Console.</p>
+
+<h3 id="build--deploy">Build &amp; deploy</h3>
+
+<p>We have configured our function and now lets build it. Since this is a maven application so we can either use IDE or maven commands to build our application. Here I used maven command to build the application;</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mvn package</code></pre></figure>
+
+<p>Build got completed now lets deploy our app to AWS by executing below command;</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sls deploy</code></pre></figure>
+
+<p>It takes some time to deploy. Once the deploy completes then the output shows some key information. Copy the endpoint which is displayed after deployment to your browser and hit. If everything goes normal then you should see response from our function. Our function responds with the message and HTTP headers.</p>
+
+<blockquote>
+  <p>URL will be like **https://<aws instance="">/dev/hello/create**</aws></p>
+</blockquote>
+
+<p>You can go to AWS lambda console to see more details about this function and also you can even test it from there.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>We created a simple Kotlin function and deployed to AWS lambda using serverless. This function returns a text along with HTTP headers in the response. Click <a href="https://github.com/kpradeep12/myprojects/tree/master/hello-kotlin">here</a> to access the source code.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2019-03-23">23 Mar 2019</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/kotlin/">kotlin</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/using-jsoup-with-kotlin-to-scrape-wiki-pages/"> &laquo; Using Jsoup With Kotlin To Scrape Wiki Pages</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt="Pradeep's Java and Kotlin blog"> &nbsp; Never miss any <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div>
+
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (28)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+             
+              <a href="/category/kotlin">Kotlin (9)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2019 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> 
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

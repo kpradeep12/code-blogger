@@ -3,7 +3,7 @@ title:  "Deploy Serverless Kotlin App To Amazon AWS"
 date:   2019-03-23 20:11:10 -0500
 categories: kotlin
 tags: [kotlin, aws, lambda, serverless]
-image: /assets/images/banners/deploy-serverless-kotlin-app.jpg
+image: /assets/images/banners/deploy-serverless-kotlin-app.png
 description: "AWS Lambda is a serverless architecture where we can deploy our functions and pay for only the compute time. I will explain the steps needed to create, build and deploy a Kotlin function as AWS Lambda using some simple tools."
 ---
 

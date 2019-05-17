@@ -5,9 +5,21 @@
     <description>Sharing my Java and Kotlin coding experiments</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Apr 2019 21:30:38 -0400</pubDate>
-    <lastBuildDate>Mon, 08 Apr 2019 21:30:38 -0400</lastBuildDate>
+    <pubDate>Fri, 17 May 2019 18:47:36 -0400</pubDate>
+    <lastBuildDate>Fri, 17 May 2019 18:47:36 -0400</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Asyn Method Invocation Design Pattern</title>
+        <description>Instead of executing thread and managing its life cycle lets create an Async method invocation pattern which allows us to submit tasks and this pattern manages the threads and when execution completes it passes the result with a callback. This pattern frees up the main thread so it can continue to execute other tasks. This article explains the design and implementation of the Async method invocation design pattern.</description>
+        <pubDate>Fri, 17 May 2019 13:11:10 -0400</pubDate>
+        <link>http://thetechstack.net/async-method-invocation-design-pattern/</link>
+        <guid isPermaLink="true">http://thetechstack.net/async-method-invocation-design-pattern/</guid>
+        
+        
+        <category>kotlin</category>
+        
+      </item>
     
       <item>
         <title>Secure web application with OAuth</title>
@@ -122,18 +134,6 @@
         
         
         <category>java</category>
-        
-      </item>
-    
-      <item>
-        <title>Basics of Domain Specific Language (DSL) using Kotlin</title>
-        <description>Learn basics of Domain specific language using Kotlin and create a sample DSL to generate HTML</description>
-        <pubDate>Sat, 22 Dec 2018 20:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/domain-specific-language/</link>
-        <guid isPermaLink="true">http://thetechstack.net/domain-specific-language/</guid>
-        
-        
-        <category>kotlin</category>
         
       </item>
     

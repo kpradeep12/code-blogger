@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+<meta name="google-site-verification" content="6prhbit_zvr5fgjCg8h5zm8eH7tQrVeMcbHGOhb393g" />
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@pradeep">
+<meta name="twitter:title"   content="Asyn Method Invocation Design Pattern">
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/async-method-invocation.png">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="/assets/images/logo.png">
+    
+<!--<title>Asyn Method Invocation Design Pattern | The Tech Stack . Net</title>-->
+    
+<meta name="description" content="Instead of executing thread and managing its life cycle lets create an Async method invocation pattern which allows us to submit tasks and this pattern manages the threads and when execution completes it passes the result with a callback. This pattern frees up the main thread so it can continue to execute other tasks. This article explains the design and implementation of the Async method invocation design pattern."> 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Asyn Method Invocation Design Pattern | Pradeep’s Java and Kotlin blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Asyn Method Invocation Design Pattern" />
+<meta name="author" content="pradeep" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Instead of executing thread and managing its life cycle lets create an Async method invocation pattern which allows us to submit tasks and this pattern manages the threads and when execution completes it passes the result with a callback. This pattern frees up the main thread so it can continue to execute other tasks. This article explains the design and implementation of the Async method invocation design pattern." />
+<meta property="og:description" content="Instead of executing thread and managing its life cycle lets create an Async method invocation pattern which allows us to submit tasks and this pattern manages the threads and when execution completes it passes the result with a callback. This pattern frees up the main thread so it can continue to execute other tasks. This article explains the design and implementation of the Async method invocation design pattern." />
+<link rel="canonical" href="http://thetechstack.net/async-method-invocation-design-pattern/" />
+<meta property="og:url" content="http://thetechstack.net/async-method-invocation-design-pattern/" />
+<meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
+<meta property="og:image" content="http://thetechstack.net/assets/images/banners/async-method-invocation.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-05-17T13:11:10-04:00" />
+<script type="application/ld+json">
+{"url":"http://thetechstack.net/async-method-invocation-design-pattern/","author":{"@type":"Person","name":"pradeep"},"description":"Instead of executing thread and managing its life cycle lets create an Async method invocation pattern which allows us to submit tasks and this pattern manages the threads and when execution completes it passes the result with a callback. This pattern frees up the main thread so it can continue to execute other tasks. This article explains the design and implementation of the Async method invocation design pattern.","headline":"Asyn Method Invocation Design Pattern","datePublished":"2019-05-17T13:11:10-04:00","dateModified":"2019-05-17T13:11:10-04:00","@type":"BlogPosting","image":"http://thetechstack.net/assets/images/banners/async-method-invocation.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/async-method-invocation-design-pattern/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+    
+
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>-->
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/twitter">Twitter</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>-->
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<!--<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java and Kotlin coding experiments
+    </p>
+</div>-->
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Asyn Method Invocation Design Pattern&url=http://thetechstack.net/async-method-invocation-design-pattern/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/async-method-invocation-design-pattern/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/async-method-invocation-design-pattern/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java & Kotlin developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Asyn Method Invocation Design Pattern</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/async-method-invocation.png" alt="Asyn Method Invocation Design Pattern">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>Synchronous execution blocks the thread until the task gets executed, means thread need to wait before moving on to the next task. For example, in a car reservation app, if user interface gets frozen for every search, then it results in poor user experience. To overcome this problem, we can asynchronously execute tasks. The task is handed over to another thread so the main thread can work on other tasks; for example, we can show a progress bar or allow users to see partial results.</p>
+
+<p>In this article, we design and implement an <strong>Asynchronous method invocation design pattern</strong>. This pattern allows us to submit a task. This task gets executed in a new thread, and when the execution completes, then the result or exception if any are passed to a callback.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#code" id="markdown-toc-code">Code</a></li>
+  <li><a href="#execute" id="markdown-toc-execute">Execute</a></li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+</ul>
+
+<blockquote>
+  <p>This whole project is available in <a href="https://github.com/kpradeep12/myprojects/tree/master/design-patterns/src/main/java/net/thetechstack/concurrency/future">Github</a></p>
+</blockquote>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Working on lower level thread programming is complex because it involves handling thread life-cycle and inter-thread communication with proper synchronization and also testing multi-thread code is cumbersome. To overcome these problems, we can use the Async method invocation design pattern. In this design pattern, we delegate our tasks to an Executor, and it is responsible for executing our task on a separate thread.</p>
+
+<p>To implement this pattern, we are going to define two interfaces and two classes.</p>
+
+<p><img src="/assets/images/posts/2019/async-method-design-pattern-uml.jpg" alt="" height="342px" width="1009px" class="align-center" /></p>
+
+<ul>
+  <li>AsyncExecutor: This interface contains a single method <strong>submit</strong> which takes a <strong>Callable</strong> and a <strong>callback</strong>. When callable completes its execution, then the result is provided by executing the passed callback. This callback is a BiConsumer, and it is a functional interface, and it accepts two values. First one is the result of the Callable and second is the Optional of Exception which might be caught while executing Callable.</li>
+  <li>AsyncResult: This interface has single method <strong>await()</strong>. If in case main thread wants to wait until the execution completes then this method will block it. This method acts like <strong>join()</strong> on Thread. Once the AsyncExecutor completes its task then it releases the lock. CompletableResult class implements this interface.</li>
+</ul>
+
+<p>Below picture shows how this pattern works.</p>
+
+<p><img src="/assets/images/posts/2019/async-method-flow.jpg" alt="" height="435px" width="740px" class="align-center" /></p>
+
+<h3 id="code">Code</h3>
+
+<p>Below are the interface declarations.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">//AsyncExecutor.java</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Optional</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.Callable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.function.BiConsumer</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AsyncExecutor</span> <span class="o">{</span>
+    <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">AsyncResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">submit</span><span class="o">(</span><span class="n">Callable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">,</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Exception</span><span class="o">&gt;&gt;</span> <span class="n">callback</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">//AsyncResult.java</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AsyncResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">await</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">InterruptedException</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>AsyncExecutor has <strong>submit</strong> method which takes _Callable<T>_ and _BiConsumer&lt;T, Optional<Exception>&gt;_ and returns AsyncResult. AsyncResult has **await** method, and it is a blocking method, means if the execution is still going on, then it blocks the caller until execution completes.</Exception></T></p>
+
+<p>Lets implement these interfaces;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadAsyncExecutor</span> <span class="kd">implements</span> <span class="n">AsyncExecutor</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">AsyncResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">submit</span><span class="o">(</span><span class="n">Callable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">CompletableResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CompletableResult</span><span class="o">&lt;&gt;();</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">result</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">call</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">result</span><span class="o">.</span><span class="na">setException</span><span class="o">(</span><span class="n">exc</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}).</span><span class="na">start</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+<span class="o">}</span></code></pre></figure>
+
+<p>ThreadAsyncExecutor implements <strong>submit</strong>. Within this method, we are creating a new instance of CompletableResult. This class implements AsyncResult interface, and it is an inner-class of ThreadAsyncExecutor. We see this class in the next snippet. The is inner-class because this class is used by only ThreadAsyncExecutor so no need to bloat package with extra classes.</p>
+
+<p>We execute passed Callable in a new thread, then the result of the execution is injected to AsyncResult (CompletableResult) instance. If in case of an exception we need to notify the user, so we pass it to AsyncResult instance and finally returns AsyncResult instance.</p>
+
+<p>Next lets implement AsyncExecutor interface.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadAsyncExecutor</span> <span class="kd">implements</span> <span class="n">AsyncExecutor</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">AsyncResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">submit</span><span class="o">(</span><span class="n">Callable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">,</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Exception</span><span class="o">&gt;&gt;</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">CompletableResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CompletableResult</span><span class="o">&lt;&gt;(</span><span class="n">callback</span><span class="o">);</span>
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">result</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">call</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">result</span><span class="o">.</span><span class="na">setException</span><span class="o">(</span><span class="n">exc</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}).</span><span class="na">start</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>ThreadSyncExecutor implemented <strong>submit</strong> method of AsyncExecutor, and this method executes passed Callable in a new thread. <em>Result</em> or <em>Exception</em> of the Callable, is stored in CompletableResult. CompletableResult implements AsyncResult, and we see the code of this class in the next snippet. Finally, this method starts the thread and returns the instance of AsyncResult (CompletableResult).</p>
+
+<p>Let’s implement CompletableResult. Users will never directly use this class, so we declared it as an inner class of ThreadSyncExecutor.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadAsyncExecutor</span> <span class="kd">implements</span> <span class="n">AsyncExecutor</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">AsyncResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">submit</span><span class="o">(</span><span class="n">Callable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">task</span><span class="o">,</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Exception</span><span class="o">&gt;&gt;</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// ...</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">CompletableResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">AsyncResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">RUNNING</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">FAILED</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">COMPLETED</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">volatile</span> <span class="kt">int</span> <span class="n">state</span> <span class="o">=</span> <span class="n">RUNNING</span><span class="o">;</span>  <span class="c1">// &lt;1&gt;</span>
+        <span class="kd">private</span> <span class="kd">final</span> <span class="n">Object</span> <span class="n">lock</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Exception</span><span class="o">&gt;&gt;</span> <span class="n">callback</span><span class="o">;</span>
+
+        <span class="n">CompletableResult</span><span class="o">(</span><span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Exception</span><span class="o">&gt;&gt;</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>  <span class="c1">// &lt;2&gt;</span>
+            <span class="n">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">();</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">callback</span> <span class="o">=</span> <span class="n">callback</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setValue</span><span class="o">(</span><span class="n">T</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>  <span class="c1">// &lt;3&gt;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">state</span> <span class="o">=</span> <span class="n">COMPLETED</span><span class="o">;</span>
+            <span class="n">callback</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">Optional</span><span class="o">.</span><span class="na">empty</span><span class="o">());</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="n">lock</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">lock</span><span class="o">.</span><span class="na">notifyAll</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setException</span><span class="o">(</span><span class="n">Exception</span> <span class="n">exception</span><span class="o">)</span> <span class="o">{</span>  <span class="c1">// &lt;4&gt;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">state</span> <span class="o">=</span> <span class="n">FAILED</span><span class="o">;</span>
+            <span class="n">callback</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">exception</span><span class="o">));</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="n">lock</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">lock</span><span class="o">.</span><span class="na">notifyAll</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">await</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>  <span class="c1">// &lt;5&gt;</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="n">lock</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">while</span> <span class="o">(!</span><span class="n">isDone</span><span class="o">())</span> <span class="o">{</span>
+                    <span class="n">lock</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isDone</span><span class="o">()</span> <span class="o">{</span>  <span class="c1">// &lt;6&gt;</span>
+            <span class="k">return</span> <span class="n">state</span> <span class="o">&gt;</span> <span class="n">RUNNING</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><strong>&lt;1&gt;</strong> Instantiate all required variables to track the execution progress.</p>
+<ul>
+  <li><strong>state</strong> field gets updated with different statuses based on the execution; it can be any of <em>RUNNING</em>, <em>FAILED</em> and <em>COMPLETED</em>. Initially, it is in <em>RUNNING</em>. If any exception then it gets updated with FAILED, and if completes successfully then it gets updated with COMPLETED.</li>
+  <li>lock is used for the synchronization.</li>
+  <li>callback is a BiConsumer which is used after execution by passing result or exception.</li>
+</ul>
+
+<p><strong>&lt;2&gt;</strong> New <strong>object</strong> instance is created to use it for synchronization and <strong>callback</strong> is stored for later use.</p>
+
+<p><strong>&lt;3&gt;</strong> Once after the Callable execution completes, then its result is stored by calling setValue() and setValue updates the state to COMPLETED. Callback gets invoked with the result and because there is no exception, so exception will be empty. Lock on the object needs to be released because there might have been a thread waiting on the lock, then it gets released. <strong>await()</strong> method is the blocking method so some threads might have been waiting for the result so <strong>setvalue()</strong> method releases it.</p>
+
+<p><strong>&lt;4&gt;</strong> In case of an exception, ThreadAsyncExecutor calls setException by passing the exception. <strong>setException()</strong> we update the value to FAILED and invokes callback with value as null and exception instance and then releases the lock on the object instance.</p>
+
+<p><strong>&lt;5&gt;</strong> <strong>await()</strong> method contains synchronized block on the lock instance. It uses <strong>isDone()</strong> to check the status of the execution. If the execution is still in the RUNNING state, then it calls <strong>wait()</strong> on the lock object. Once the ThreadAsyncExecutor calls setValue or setException, then the lock gets released.</p>
+
+<p><strong>&lt;6&gt;</strong> It returns the status of the execution. If the status is higher than RUNNING, then either execution of the Callable is complete, or it might have thrown an exception so in either case it is completed, so it returns true or else, it returns false.</p>
+
+<h3 id="execute">Execute</h3>
+
+<p>Lets submit some tasks to Async method and see how it behaves, below code will use ThreadAsyncExecutor.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+        <span class="n">AsyncExecutor</span> <span class="n">executor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ThreadAsyncExecutor</span><span class="o">();</span>  <span class="c1">// &lt;1&gt;</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"-- Main thread started --"</span><span class="o">);</span>
+
+        <span class="n">AsyncResult</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span> <span class="n">task1</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">task</span><span class="o">(</span><span class="kc">true</span><span class="o">,</span> <span class="mi">3</span><span class="o">),</span> <span class="o">(</span><span class="n">val</span><span class="o">,</span> <span class="n">exc</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>  <span class="c1">// &lt;2&gt;</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Result of task1 -&gt; "</span> <span class="o">+</span> <span class="n">val</span><span class="o">);</span>
+            <span class="n">exc</span><span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+        <span class="o">});</span>
+        <span class="n">task1</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>  <span class="c1">// &lt;3&gt;</span>
+
+        <span class="n">AsyncResult</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">task2</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">task</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">,</span> <span class="mi">5</span><span class="o">),</span> <span class="o">(</span><span class="n">val</span><span class="o">,</span> <span class="n">exc</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>  <span class="c1">// &lt;4&gt;</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Result of task2 -&gt; "</span> <span class="o">+</span> <span class="n">val</span><span class="o">);</span>
+            <span class="n">exc</span><span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+        <span class="o">});</span>
+
+        <span class="n">AsyncResult</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">task3</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">taskWithExeption</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">),</span> <span class="o">(</span><span class="n">val</span><span class="o">,</span> <span class="n">exc</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>  <span class="c1">// &lt;5&gt;</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Result of task3 -&gt; "</span> <span class="o">+</span> <span class="n">val</span><span class="o">);</span>
+            <span class="n">exc</span><span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+        <span class="o">});</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"-- Main thread complete --"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Callable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">task</span><span class="o">(</span><span class="n">T</span> <span class="n">value</span><span class="o">,</span> <span class="kt">int</span> <span class="n">seconds</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">seconds</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+        <span class="o">};</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Callable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">taskWithExeption</span><span class="o">(</span><span class="n">T</span> <span class="n">value</span><span class="o">,</span> <span class="kt">int</span> <span class="n">seconds</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">seconds</span><span class="o">);</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="o">(</span><span class="s">"execution failed"</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Output of the code:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nt">--</span> Main thread started <span class="nt">--</span>
+Result of task1 -&gt; <span class="nb">true</span>
+<span class="nt">--</span> Main thread <span class="nb">complete</span> <span class="nt">--</span>
+Result of task3 -&gt; null
+java.lang.Exception: execution failed
+Result of task2 -&gt; Hello</code></pre></figure>
+
+<p><strong>&lt;1&gt;</strong> Created AsyncExecutor instance and then we are printing a message to show that main thread started execution.</p>
+
+<p><strong>&lt;2&gt;</strong> Passed a Callable of type boolean which returns true after 3 seconds. Look at the implementation of task method, which returns the passed value after given seconds. Second argument is BiConsumer callback, after Callable execution, AsyncExecutor executes this callback. In this case, this callback gets value ‘true,’ and it gets executed after 3 seconds and finally printing the result to console.</p>
+
+<p><strong>&lt;3&gt;</strong> Main thread gets blocked when it executes <strong>await()</strong> on task1 because it has a synchronized block which blocks the thread until the passed Callable gets executed.</p>
+
+<p><strong>&lt;4&gt;</strong> Callable of type String which takes 5 seconds to execute.</p>
+
+<p><strong>&lt;5&gt;</strong> Callable of type integer but this throws an exception after 2 seconds. task3 result is printed before task2 because task3 only takes 2 seconds while task2 takes 5 seconds. task2 prints the value and task3 prints the exception.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>We implemented the Async method invocation design pattern and tested by passing some Callable and callback instances. This pattern allows us to submit tasks, and the main thread can continue with other tasks without waiting for the result. Once the result is ready, then the result is passed back with a callback.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2019-05-17">17 May 2019</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/kotlin/">kotlin</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/secure-web-application-with-oauth/"> &laquo; Secure web application with OAuth</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt="Pradeep's Java and Kotlin blog"> &nbsp; Never miss any <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div>
+
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (28)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+             
+              <a href="/category/kotlin">Kotlin (11)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2019 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> 
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

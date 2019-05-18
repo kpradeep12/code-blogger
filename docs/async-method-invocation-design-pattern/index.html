@@ -244,8 +244,8 @@
 <p><img src="/assets/images/posts/2019/async-method-design-pattern-uml.jpg" alt="" height="342px" width="1009px" class="align-center" /></p>
 
 <ul>
-  <li>AsyncExecutor: This interface contains a single method <strong>submit</strong> which takes a <strong>Callable</strong> and a <strong>callback</strong>. When callable completes its execution, then the result is provided by executing the passed callback. This callback is a BiConsumer, and it is a functional interface, and it accepts two values. First one is the result of the Callable and second is the Optional of Exception which might be caught while executing Callable.</li>
-  <li>AsyncResult: This interface has single method <strong>await()</strong>. If in case main thread wants to wait until the execution completes then this method will block it. This method acts like <strong>join()</strong> on Thread. Once the AsyncExecutor completes its task then it releases the lock. CompletableResult class implements this interface.</li>
+  <li><strong>AsyncExecutor</strong>: This interface contains a single method <strong>submit</strong> which takes a <strong>Callable</strong> and a <strong>callback</strong>. When callable completes its execution, then the result is provided by executing the passed callback. This callback is a BiConsumer, and it is a functional interface, and it accepts two values. First one is the result of the Callable and second is the Optional of Exception which might be caught while executing Callable.</li>
+  <li><strong>AsyncResult</strong>: This interface has single method <strong>await()</strong>. If in case main thread wants to wait until the execution completes then this method will block it. This method acts like <strong>join()</strong> on Thread. Once the AsyncExecutor completes its task then it releases the lock. CompletableResult class implements this interface.</li>
 </ul>
 
 <p>Below picture shows how this pattern works.</p>

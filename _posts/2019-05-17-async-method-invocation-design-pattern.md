@@ -26,8 +26,8 @@ To implement this pattern, we are going to define two interfaces and two classes
 
 ![]({{site.baseurl}}/assets/images/posts/2019/async-method-design-pattern-uml.jpg){: height="342px" width="1009px"}{: .align-center}
 
-* AsyncExecutor: This interface contains a single method **submit** which takes a **Callable** and a **callback**. When callable completes its execution, then the result is provided by executing the passed callback. This callback is a BiConsumer, and it is a functional interface, and it accepts two values. First one is the result of the Callable and second is the Optional of Exception which might be caught while executing Callable.
-* AsyncResult: This interface has single method **await()**. If in case main thread wants to wait until the execution completes then this method will block it. This method acts like **join()** on Thread. Once the AsyncExecutor completes its task then it releases the lock. CompletableResult class implements this interface.
+* **AsyncExecutor**: This interface contains a single method **submit** which takes a **Callable** and a **callback**. When callable completes its execution, then the result is provided by executing the passed callback. This callback is a BiConsumer, and it is a functional interface, and it accepts two values. First one is the result of the Callable and second is the Optional of Exception which might be caught while executing Callable.
+* **AsyncResult**: This interface has single method **await()**. If in case main thread wants to wait until the execution completes then this method will block it. This method acts like **join()** on Thread. Once the AsyncExecutor completes its task then it releases the lock. CompletableResult class implements this interface.
 
 Below picture shows how this pattern works.
 

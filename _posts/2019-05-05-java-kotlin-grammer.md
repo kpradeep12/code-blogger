@@ -8,6 +8,7 @@ published: false
 ---
 
 * JUnit5
+* Mockito
 * Java method references - cheat sheet
 * 12factor apps
 * IntelliJ
@@ -48,6 +49,14 @@ class ArithmeticTest {
 Use @Nested JUnit annotation to express the relationship among groups of tests. Apply this annotation on the inner test classes to organize related tests within a single class file.
 
 ![]({{site.baseurl}}/assets/images/posts/2019/junit-nested-annotation.jpg){: height="1058px" width="904px"}{: .align-center}
+
+### Mockito
+
+Three things to remember before doing mock testing
+
+📌 Do not mock types you don't own (ex: third party libraries)
+📌 Do not mock value objects (ex: Person, Employee)
+📌 Do not mock everything
 
 ### Java method references - cheat sheet
 
@@ -117,6 +126,12 @@ Windows -> ctrl-shift-alt + V
 
 Code should be easily read and understood with a minimum of effort required. If a code requires too much thinking to understand then it can probably stand to be simplified.
 
+* Minimize coupling
+
+📌 Each section of code (block, function, class, package, modules...) 
+should minimize the dependencies on other areas of code
+📌 Use shared variables as little as possible
+📌 Low coupling is often a sign of a well-structured computer system and a good design
 
 ### Lombok
 

@@ -5,9 +5,21 @@
     <description>Sharing my Java and Kotlin coding experiments</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 May 2019 08:17:00 -0400</pubDate>
-    <lastBuildDate>Sat, 18 May 2019 08:17:00 -0400</lastBuildDate>
+    <pubDate>Tue, 16 Jul 2019 06:57:33 -0400</pubDate>
+    <lastBuildDate>Tue, 16 Jul 2019 06:57:33 -0400</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Cloud Configuration With Micronaut and Consul</title>
+        <description>Services may be running on multiple machines/containers, and if each service has its copy of the configuration, then it is a very tedious job to change and restart all instances, in cloud environments we can resolve this issue by publishing configuration at a single location and allowing all services to read it. We learn more about this by developing a sample application using Micronaut and Consul.</description>
+        <pubDate>Tue, 16 Jul 2019 13:11:10 -0400</pubDate>
+        <link>http://thetechstack.net/micronaut-configuration/</link>
+        <guid isPermaLink="true">http://thetechstack.net/micronaut-configuration/</guid>
+        
+        
+        <category>cloud</category>
+        
+      </item>
     
       <item>
         <title>Asyn Method Invocation Design Pattern</title>
@@ -122,18 +134,6 @@
         
         
         <category>kotlin</category>
-        
-      </item>
-    
-      <item>
-        <title>Generate data using strategy design pattern</title>
-        <description>Generate random data of different types like numbers, strings, boolean, dates and characters. Implemented using strategy design pattern.</description>
-        <pubDate>Thu, 17 Jan 2019 20:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/generate-data-using-strategy-design-pattern/</link>
-        <guid isPermaLink="true">http://thetechstack.net/generate-data-using-strategy-design-pattern/</guid>
-        
-        
-        <category>java</category>
         
       </item>
     

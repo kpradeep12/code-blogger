@@ -10,7 +10,7 @@
 <!-- Twitter cards-->
 <meta name="twitter:site"    content="@PradeepK4J">
 <meta name="twitter:creator" content="@">
-<meta name="twitter:title"   content="kotlin">
+<meta name="twitter:title"   content="cloud">
 
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:image" content="">
@@ -20,7 +20,7 @@
 
 <link rel="icon" href="/assets/images/logo.png">
     
-<!--<title>kotlin | The Tech Stack . Net</title>-->
+<!--<title>cloud | The Tech Stack . Net</title>-->
     
  
     
@@ -35,9 +35,9 @@
 <link href="/assets/css/main.css" rel="stylesheet">
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>kotlin | Pradeep’s Java and Kotlin blog</title>
+<title>cloud | Pradeep’s Java and Kotlin blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="kotlin" />
+<meta property="og:title" content="cloud" />
 <meta name="author" content="Pradeep Kundarapu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sharing my Java and Kotlin coding experiments" />
@@ -46,7 +46,7 @@
 <meta property="og:url" content="http://thetechstack.net/blog/:year/:month/:day/:title" />
 <meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
 <script type="application/ld+json">
-{"url":"http://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java and Kotlin coding experiments","headline":"kotlin","@type":"WebPage","@context":"http://schema.org"}</script>
+{"url":"http://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java and Kotlin coding experiments","headline":"cloud","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -146,7 +146,7 @@
 ================================================== -->
 <section class="recent-posts">
 <div class="section-title">
-    <h2>Archive of posts with <span>category 'kotlin'</span></h2>
+    <h2>Archive of posts with <span>category 'cloud'</span></h2>
 </div>
 <div class="row listrecent">
 
@@ -158,13 +158,13 @@
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="http://thetechstack.net/async-method-invocation-design-pattern/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/async-method-invocation.png" alt="Asyn Method Invocation Design Pattern"> 
+            <a href="http://thetechstack.net/micronaut-configuration/">
+                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/Micronaut-cloud-configuration-with-consul.png" alt="Cloud Configuration With Micronaut and Consul"> 
             </a>
         </div>
         <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/async-method-invocation-design-pattern/">Asyn Method Invocation Design Pattern</a></h2>
-            <h4 class="card-text">Synchronous execution blocks the thread until the task gets executed, means thread need to wait before moving on to the next task. For example, in a car reservation app, if...</h4>            
+            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/micronaut-configuration/">Cloud Configuration With Micronaut and Consul</a></h2>
+            <h4 class="card-text">Micronaut is one of the new framework available to Java world which helps in developing web, cloud, and serverless applications. Recently we see many new frameworks evolving like Quarkus from...</h4>            
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
@@ -175,359 +175,9 @@
                 <span class="author-meta">
                 <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
                 
-                <span class="post-date">17 May 2019</span>
+                <span class="post-date">16 Jul 2019</span>
                 </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/async-method-invocation-design-pattern/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/secure-web-application-with-oauth/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/kotlin-ktor-oauth.png" alt="Secure web application with OAuth"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/secure-web-application-with-oauth/">Secure web application with OAuth</a></h2>
-            <h4 class="card-text">OAuth is a standard for authenticating users. There are many third-party OAuth authentication service providers are available. In this post, we learn to create a web application which allows users...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">08 Apr 2019</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/secure-web-application-with-oauth/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/deploy-serverless-kotlin-app.png" alt="Deploy Serverless Kotlin App To Amazon AWS"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/">Deploy Serverless Kotlin App To Amazon AWS</a></h2>
-            <h4 class="card-text">In this article, we’ll implement a basic Kotlin function and deploy it as AWS Lambda. AWS Lambda is a serverless architecture which lets us to run code without managing servers...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">23 Mar 2019</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/using-jsoup-with-kotlin-to-scrape-wiki-pages/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/scrape-wiki-pages-with-jsoup.jpg" alt="Using Jsoup With Kotlin To Scrape Wiki Pages"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/using-jsoup-with-kotlin-to-scrape-wiki-pages/">Using Jsoup With Kotlin To Scrape Wiki Pages</a></h2>
-            <h4 class="card-text">In this article, I will explain using Jsoup library with Kotlin language. Jsoup helps us to parse and extract data from HTML documents. Depending on the use-case we can use...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">13 Mar 2019</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/using-jsoup-with-kotlin-to-scrape-wiki-pages/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/create-web-application-with-ktor/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/create-web-app-with-ktor.jpg" alt="Create Web Application With Ktor"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/create-web-application-with-ktor/">Create Web Application With Ktor</a></h2>
-            <h4 class="card-text">Its easy to develop a web application using Ktor, In this article I am going to explain the tools we need and the steps for developing a small CRUD based...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">28 Feb 2019</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/create-web-application-with-ktor/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/rest-services-using-ktor/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/create-rest-services-using-ktor.jpg" alt="Create REST services using Ktor"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/rest-services-using-ktor/">Create REST services using Ktor</a></h2>
-            <h4 class="card-text">Ktor is a lightweight framework written in Kotlin programming language. This framework allows us to create asynchronous servers and clients. In this article I will explain the basics of Ktor...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">23 Feb 2019</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/rest-services-using-ktor/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/light-weight-sql-kotlin-library/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/light-weight-sql-kotlin-library.jpg" alt="Lightweight SQL Kotlin library"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/light-weight-sql-kotlin-library/">Lightweight SQL Kotlin library</a></h2>
-            <h4 class="card-text">Exposed is a lightweight SQL library written using Kotlin language. In this article I will demonstrate this library with some simple examples. I will create some test tables and perform...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">16 Feb 2019</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/light-weight-sql-kotlin-library/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/pizza-dsl-with-kotlin/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/pizza-dsl-with-kotlin.png" alt="Pizza DSL with Kotlin"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/pizza-dsl-with-kotlin/">Pizza DSL with Kotlin</a></h2>
-            <h4 class="card-text">DSL is not a programming language, it is the term used to describe any application API which is designed in a way such that users can easily use it in...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">26 Jan 2019</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/pizza-dsl-with-kotlin/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/domain-specific-language/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/basics-of-domain-specific-language.jpg" alt="Basics of Domain Specific Language (DSL) using Kotlin"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/domain-specific-language/">Basics of Domain Specific Language (DSL) using Kotlin</a></h2>
-            <h4 class="card-text">Domain Specific Language (DSL) is a simple language targeted to solve a particular kind of problem. DSL is not a programming language, its a way of using existing programming language...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">22 Dec 2018</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/domain-specific-language/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/kotlin-operators/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/kotlin-operator-overloading.png" alt="Operator overloading in Kotlin"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/kotlin-operators/">Operator overloading in Kotlin</a></h2>
-            <h4 class="card-text">Kotlin allows us to implement Operator overloading for a predefined set of operators. We can implement them on class members or extension functions. These operators have fixed symbolic representation (like...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">15 Dec 2018</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/kotlin-operators/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="http://thetechstack.net/understanding-kotlin-extension-functions/">
-                 <img class="img-fluid" src="http://thetechstack.net/assets/images/banners/kotlin-extension-function.png" alt="Understanding Kotlin Extension Functions"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="http://thetechstack.net/understanding-kotlin-extension-functions/">Understanding Kotlin Extension Functions</a></h2>
-            <h4 class="card-text">Extension function allows us to extend the functionality of a class. It does not matter if the class is in a external library. We can customize the functionality of class...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="http://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">04 Dec 2018</span>
-                </span>
-                <span class="post-read-more"><a href="http://thetechstack.net/understanding-kotlin-extension-functions/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                <span class="post-read-more"><a href="http://thetechstack.net/micronaut-configuration/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -581,6 +231,8 @@
               <a href="/category/spring">Spring (2)</a>
              
               <a href="/category/kotlin">Kotlin (11)</a>
+             
+              <a href="/category/cloud">Cloud (1)</a>
             
           
         

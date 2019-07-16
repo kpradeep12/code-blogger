@@ -23,6 +23,8 @@ In this article, we use **Micronaut** to develop a simple microservice, and then
 * Conclusion
 {:toc}
 
+> Source code of this project is available at [github](https://github.com/kpradeep12/techstack-projects/tree/master/micronaut-config)
+
 ### Create Micronaut project
 
 Creating a new Micronaut project is so simple with a Micronaut CLI tool. Installing is simple if you have SDKMAN. Execute below command;

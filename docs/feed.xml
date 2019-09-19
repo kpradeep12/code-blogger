@@ -5,9 +5,21 @@
     <description>Sharing my Java and Kotlin coding experiments</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Jul 2019 06:59:42 -0400</pubDate>
-    <lastBuildDate>Tue, 16 Jul 2019 06:59:42 -0400</lastBuildDate>
+    <pubDate>Thu, 19 Sep 2019 07:45:25 -0400</pubDate>
+    <lastBuildDate>Thu, 19 Sep 2019 07:45:25 -0400</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Create Singleton Instance In Kotlin</title>
+        <description>There are many use cases where we need Singleton instances in applications. For example; to maintain a single instance of resources like a database or object store or file system. Kotlin supports singleton instances within the language with object keyword. In this article, we learn using the object keyword to implement singleton instances in Kotlin.</description>
+        <pubDate>Thu, 19 Sep 2019 13:11:10 -0400</pubDate>
+        <link>http://thetechstack.net/create-singleton-instance-in-kotlin/</link>
+        <guid isPermaLink="true">http://thetechstack.net/create-singleton-instance-in-kotlin/</guid>
+        
+        
+        <category>kotlin</category>
+        
+      </item>
     
       <item>
         <title>Cloud Configuration With Micronaut and Consul</title>
@@ -122,18 +134,6 @@
         
         
         <category>java</category>
-        
-      </item>
-    
-      <item>
-        <title>Pizza DSL with Kotlin</title>
-        <description>We develop a fun pizza DSL which will help in learning kotlin features and DSL.</description>
-        <pubDate>Sat, 26 Jan 2019 20:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/pizza-dsl-with-kotlin/</link>
-        <guid isPermaLink="true">http://thetechstack.net/pizza-dsl-with-kotlin/</guid>
-        
-        
-        <category>kotlin</category>
         
       </item>
     

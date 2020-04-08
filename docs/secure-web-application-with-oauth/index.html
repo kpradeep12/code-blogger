@@ -13,7 +13,7 @@
 <meta name="twitter:title"   content="Secure web application with OAuth">
 
 <meta name="twitter:card"  content="summary_large_image">
-<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/kotlin-ktor-oauth.png">
+<meta name="twitter:image" content="http://localhost:4000/assets/images/banners/kotlin-ktor-oauth.png">
 
 <!-- end of Twitter cards -->
 
@@ -42,27 +42,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This post explains the details needed to authorize users using OAuth. The main advantage of using this approach is that some third party application authorizes users, so it is more secure than storing and maintaining user credentials on the application side." />
 <meta property="og:description" content="This post explains the details needed to authorize users using OAuth. The main advantage of using this approach is that some third party application authorizes users, so it is more secure than storing and maintaining user credentials on the application side." />
-<link rel="canonical" href="http://thetechstack.net/secure-web-application-with-oauth/" />
-<meta property="og:url" content="http://thetechstack.net/secure-web-application-with-oauth/" />
+<link rel="canonical" href="http://localhost:4000/secure-web-application-with-oauth/" />
+<meta property="og:url" content="http://localhost:4000/secure-web-application-with-oauth/" />
 <meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
-<meta property="og:image" content="http://thetechstack.net/assets/images/banners/kotlin-ktor-oauth.png" />
+<meta property="og:image" content="http://localhost:4000/assets/images/banners/kotlin-ktor-oauth.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-08T21:11:10-04:00" />
 <script type="application/ld+json">
-{"description":"This post explains the details needed to authorize users using OAuth. The main advantage of using this approach is that some third party application authorizes users, so it is more secure than storing and maintaining user credentials on the application side.","@type":"BlogPosting","headline":"Secure web application with OAuth","dateModified":"2019-04-08T21:11:10-04:00","datePublished":"2019-04-08T21:11:10-04:00","url":"http://thetechstack.net/secure-web-application-with-oauth/","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/secure-web-application-with-oauth/"},"image":"http://thetechstack.net/assets/images/banners/kotlin-ktor-oauth.png","author":{"@type":"Person","name":"pradeep"},"@context":"http://schema.org"}</script>
+{"description":"This post explains the details needed to authorize users using OAuth. The main advantage of using this approach is that some third party application authorizes users, so it is more secure than storing and maintaining user credentials on the application side.","@type":"BlogPosting","headline":"Secure web application with OAuth","dateModified":"2019-04-08T21:11:10-04:00","datePublished":"2019-04-08T21:11:10-04:00","url":"http://localhost:4000/secure-web-application-with-oauth/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/secure-web-application-with-oauth/"},"image":"http://localhost:4000/assets/images/banners/kotlin-ktor-oauth.png","author":{"@type":"Person","name":"pradeep"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-115619272-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
 </head>
@@ -158,31 +148,23 @@
     </p>
     <ul>
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=Secure web application with OAuth&url=http://thetechstack.net/secure-web-application-with-oauth/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Secure web application with OAuth&url=http://localhost:4000/secure-web-application-with-oauth/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <i class="fab fa-twitter"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/secure-web-application-with-oauth/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/secure-web-application-with-oauth/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
         <i class="fab fa-facebook-f"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/secure-web-application-with-oauth/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/secure-web-application-with-oauth/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
         <i class="fab fa-google"></i>
         </a>
         </li>
         
-    </ul>
-    
-    <div class="sep">
-    </div>				
-    <ul>
-        <li> 
-        <a  class="small smoothscroll" href="#disqus_thread"></a>
-        </li>
     </ul>
     
 </div>  
@@ -215,7 +197,7 @@
 			</div>
 
 			<!-- Post Featured Image -->
-			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/kotlin-ktor-oauth.png" alt="Secure web application with OAuth">
+			<img class="featured-image img-fluid" src="http://localhost:4000/assets/images/banners/kotlin-ktor-oauth.png" alt="Secure web application with OAuth">
 			<!-- End Featured Image -->
 
 			<!-- Post Content -->
@@ -500,10 +482,10 @@ Source package <span class="o">(</span>default: ktor.oauth<span class="o">)</spa
             <!-- Prev/Next -->
             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
             
-            <a class="prev d-block col-md-6" href="http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/"> &laquo; Deploy Serverless Kotlin App To Amazon AWS</a>
+            <a class="prev d-block col-md-6" href="http://localhost:4000/deploy-serverless-kotlin-app-to-amazon-aws/"> &laquo; Deploy Serverless Kotlin App To Amazon AWS</a>
             
             
-            <a class="next d-block col-md-6 text-lg-right" href="http://thetechstack.net/async-method-invocation-design-pattern/">Asyn Method Invocation Design Pattern &raquo; </a>
+            <a class="next d-block col-md-6 text-lg-right" href="http://localhost:4000/async-method-invocation-design-pattern/">Asyn Method Invocation Design Pattern &raquo; </a>
             
             <div class="clearfix"></div>
             </div>
@@ -521,29 +503,6 @@ Source package <span class="o">(</span>default: ktor.oauth<span class="o">)</spa
 
 <!-- Begin Comments
 ================================================== -->
-
-    <div class="container">
-        <div id="comments" class="row justify-content-center mb-5">
-            <div class="col-md-8">              
-                
-<section class="disqus">
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var disqus_shortname = 'thetechstack-net'; 
-        var disqus_developer = 0;
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</section>
-                
-            </div>
-        </div>
-    </div>
 
 <!--End Comments
 ================================================== -->
@@ -576,7 +535,7 @@ Source package <span class="o">(</span>default: ktor.oauth<span class="o">)</spa
             
           
              
-              <a href="/category/java">Java (29)</a>
+              <a href="/category/java">Java (30)</a>
              
               <a href="/category/reactiveX">Reactivex (3)</a>
              

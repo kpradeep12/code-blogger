@@ -1,10 +1,9 @@
 ---
 title: "Using new Switch expressions"
-date: 2020-04-10 12:11:10 -0500
+date: 2020-04-12 12:11:10 -0500
 categories: java
 image: /assets/images/banners/switch-expression-java14.png
 description: "One of the new features released as part of Java 14 is the switch expressions. This feature was available in earlier versions (Java 12 and 13), too, but as a preview. In Java 14, it became standard. The main difference between the existing and new switch is, the new switch is not the only statement but also expression. There are some more differences, which we will learn in this article."
-published: false
 ---
 
 One of the new features released as part of Java 14 is the switch expressions. This feature was available in earlier versions (Java 12 and 13), too, but as a preview. In Java 14, it became standard. The main difference between the existing and new switch is, the new switch is not the only statement but also expression. There are some more differences, which we will learn in this article.

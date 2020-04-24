@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+<meta name="google-site-verification" content="6prhbit_zvr5fgjCg8h5zm8eH7tQrVeMcbHGOhb393g" />
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@pradeep">
+<meta name="twitter:title"   content="Understanding CountDownLatch With Simple Example">
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/understanding-countdownlatch-with-simple-example.png">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="/assets/images/logo.png">
+    
+<!--<title>Understanding CountDownLatch With Simple Example | The Tech Stack . Net</title>-->
+    
+<meta name="description" content="CountDownLatch is a simple utility, which we can use to wait for multiple threads to complete their job, till then CountDownLatch will block the thread. In this article, we will compare two examples, one without and the other with CountDownLatch. This comparison will help in understanding how CountDownLatch will work."> 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Understanding CountDownLatch With Simple Example | Pradeep’s Java and Kotlin blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Understanding CountDownLatch With Simple Example" />
+<meta name="author" content="pradeep" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CountDownLatch is a simple utility, which we can use to wait for multiple threads to complete their job, till then CountDownLatch will block the thread. In this article, we will compare two examples, one without and the other with CountDownLatch. This comparison will help in understanding how CountDownLatch will work." />
+<meta property="og:description" content="CountDownLatch is a simple utility, which we can use to wait for multiple threads to complete their job, till then CountDownLatch will block the thread. In this article, we will compare two examples, one without and the other with CountDownLatch. This comparison will help in understanding how CountDownLatch will work." />
+<link rel="canonical" href="http://thetechstack.net/understanding-countdownlatch-with-simple-example/" />
+<meta property="og:url" content="http://thetechstack.net/understanding-countdownlatch-with-simple-example/" />
+<meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
+<meta property="og:image" content="http://thetechstack.net/assets/images/banners/understanding-countdownlatch-with-simple-example.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-24T13:11:10-04:00" />
+<script type="application/ld+json">
+{"image":"http://thetechstack.net/assets/images/banners/understanding-countdownlatch-with-simple-example.png","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/understanding-countdownlatch-with-simple-example/"},"dateModified":"2020-04-24T13:11:10-04:00","url":"http://thetechstack.net/understanding-countdownlatch-with-simple-example/","author":{"@type":"Person","name":"pradeep"},"headline":"Understanding CountDownLatch With Simple Example","description":"CountDownLatch is a simple utility, which we can use to wait for multiple threads to complete their job, till then CountDownLatch will block the thread. In this article, we will compare two examples, one without and the other with CountDownLatch. This comparison will help in understanding how CountDownLatch will work.","datePublished":"2020-04-24T13:11:10-04:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+    
+
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>-->
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/twitter">Twitter</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>-->
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">   
+<div class="container">
+    
+<!-- Site Title
+================================================== -->
+<!--<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java and Kotlin coding experiments
+    </p>
+</div>-->
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Understanding CountDownLatch With Simple Example&url=http://thetechstack.net/understanding-countdownlatch-with-simple-example/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/understanding-countdownlatch-with-simple-example/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/understanding-countdownlatch-with-simple-example/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
+
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
+
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="http://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java & Kotlin developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Understanding CountDownLatch With Simple Example</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/understanding-countdownlatch-with-simple-example.png" alt="Understanding CountDownLatch With Simple Example">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>We use Threads to run multiple tasks in parallel. We usually create a thread, start them, and at a later point in the application, we wait for the thread to join back. Below is the simple example which shows how it works.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadDemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+        <span class="n">Thread</span> <span class="n">one</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Task</span><span class="o">(</span><span class="s">"one"</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+        <span class="n">Thread</span> <span class="n">two</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Task</span><span class="o">(</span><span class="s">"two"</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+        <span class="n">Thread</span> <span class="n">three</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Task</span><span class="o">(</span><span class="s">"three"</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+
+        <span class="n">one</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">two</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">three</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+        <span class="n">one</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+        <span class="n">two</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+        <span class="n">three</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"All workers joined"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Task</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">delay</span><span class="o">;</span>
+        <span class="n">Task</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">delay</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">setName</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">delay</span> <span class="o">=</span> <span class="n">delay</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">delay</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">" finished"</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">//OUTPUT</span>
+<span class="n">one</span> <span class="n">finished</span>
+<span class="n">three</span> <span class="n">finished</span>
+<span class="n">two</span> <span class="n">finished</span>
+<span class="n">All</span> <span class="n">workers</span> <span class="n">joined</span></code></pre></figure>
+
+<p>We created three instances of Task (which extends thread), then started them and then finally called join() on each thread. We called join() on each thread because we want to make sure that all child threads are completed execution before main Thread exits. The run() method in the Task is just blocking the thread for a couple of seconds to mimic a long-running job. After the sleep, it prints its name in the console.</p>
+
+<p>This simple example works fine for a small number of threads, but what if, if we want to create more threads and wait for all of them to join()? Like for example, ten threads or maybe a hundred threads? The approach, as mentioned earlier, is not suitable for more threads because we need to declare and maintain multiple Thread instances. CountDownLatch will rescue us from this problem.</p>
+
+<h3 id="countdownlatch">CountDownLatch</h3>
+
+<p>We will initialize a CountDownLatch object with a count; this count should be equal to the number of Threads. Means if we want to run ten Threads and wait for all of them to finish, then we will initialize CountDownLatch with ten. The below example shows the initialization of CountDownLatch with three because we want to start and wait for three threads.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">CountDownLatch</span> <span class="n">countDownLatch</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CountDownLatch</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span></code></pre></figure>
+
+<p>CountDownLatch works like a counter, and we need to pass the instance of CountDownLatch to each thread. When each thread completes its job, then they need to count this counter down by calling countDown() on CountDownLatch. By the time all threads complete their tasks, then this counter will be zero. The below code shows how it works; this time, I used ExecutorService to run threads because this way, I no need to create Thread instances.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.concurrent.CountDownLatch</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.ExecutorService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.Executors</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CountDownLatchDemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+        <span class="n">CountDownLatch</span> <span class="n">countDownLatch</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CountDownLatch</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+        <span class="n">ExecutorService</span> <span class="n">service</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newFixedThreadPool</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+
+        <span class="n">service</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="k">new</span> <span class="n">Task</span><span class="o">(</span><span class="s">"one"</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">countDownLatch</span><span class="o">));</span>
+        <span class="n">service</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="k">new</span> <span class="n">Task</span><span class="o">(</span><span class="s">"two"</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="n">countDownLatch</span><span class="o">));</span>
+        <span class="n">service</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="k">new</span> <span class="n">Task</span><span class="o">(</span><span class="s">"three"</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="n">countDownLatch</span><span class="o">));</span>
+
+        <span class="n">countDownLatch</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>
+        <span class="n">service</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"All workers joined"</span><span class="o">);</span>
+
+    <span class="o">}</span>
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Task</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">delay</span><span class="o">;</span>
+        <span class="n">CountDownLatch</span> <span class="n">countDownLatch</span><span class="o">;</span>
+        <span class="n">Task</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">delay</span><span class="o">,</span> <span class="n">CountDownLatch</span> <span class="n">countDownLatch</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">setName</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">delay</span> <span class="o">=</span> <span class="n">delay</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">countDownLatch</span> <span class="o">=</span> <span class="n">countDownLatch</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">delay</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">" finished"</span><span class="o">);</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">countDownLatch</span><span class="o">.</span><span class="na">countDown</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">//OUTPUT</span>
+<span class="n">one</span> <span class="n">finished</span>
+<span class="n">three</span> <span class="n">finished</span>
+<span class="n">two</span> <span class="n">finished</span>
+<span class="n">All</span> <span class="n">workers</span> <span class="n">joined</span></code></pre></figure>
+
+<p>We passed CountDownLatch to each Thread, and within the run() method, we called countDownLatch.countDown() to decrement the counter.</p>
+
+<p>countDownLatch.await() causes the current thread to wait until the latch has counted down to zero. Finally, we are shutting down ExecutorService and printing a message to console.</p>
+
+<p>What if a thread doesn’t count down? Then the main thread waits indefinitely. To fix this, we can use await(long timeout, TimeUnit unit), which waits for a specific time and returns boolean, this boolean tells us if all threads ran successfully or not.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="n">countDownLatch</span><span class="o">.</span><span class="na">await</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+<span class="n">service</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"All workers job status "</span> <span class="o">+</span> <span class="n">result</span><span class="o">);</span></code></pre></figure>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In this article, we learned about CountDownLatch and went through different examples to understand how it works.</p>
+
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2020-04-24">24 Apr 2020</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/using-new-switch-expressions/"> &laquo; Using new Switch expressions</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/" alt="Pradeep's Java and Kotlin blog"> &nbsp; Never miss any <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div>
+
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (31)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (2)</a>
+             
+              <a href="/category/kotlin">Kotlin (12)</a>
+             
+              <a href="/category/cloud">Cloud (1)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ 
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2020 The Tech Stack . Net 
+            </div>
+            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> 
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

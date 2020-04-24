@@ -1,10 +1,9 @@
 ---
 title: "Understanding CountDownLatch With Simple Example"
-date: 2020-04-10 12:11:10 -0500
+date: 2020-04-24 12:11:10 -0500
 categories: java
 image: /assets/images/banners/understanding-countdownlatch-with-simple-example.png
 description: "CountDownLatch is a simple utility, which we can use to wait for multiple threads to complete their job, till then CountDownLatch will block the thread. In this article, we will compare two examples, one without and the other with CountDownLatch. This comparison will help in understanding how CountDownLatch will work."
-published: false
 ---
 
 We use Threads to run multiple tasks in parallel. We usually create a thread, start them, and at a later point in the application, we wait for the thread to join back. Below is the simple example which shows how it works.

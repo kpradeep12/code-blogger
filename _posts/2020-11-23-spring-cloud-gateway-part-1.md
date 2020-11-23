@@ -2,7 +2,7 @@
 title: "Spring Cloud Gateway - Part 1"
 date: 2020-11-23 12:11:10 -0500
 categories: java
-image: /assets/images/banners/spring-cloud-gateway-routes-with-predicates.png
+image: /assets/images/banners/spring-cloud-gateway-part-1.png
 description: "We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates."
 ---
 

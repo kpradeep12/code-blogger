@@ -1,9 +1,9 @@
 ---
-title: "Configure route with Predicates using Spring API Gateway"
+title: "Spring Cloud Gateway - Part 1"
 date: 2020-11-23 12:11:10 -0500
 categories: java
-image: /assets/images/banners/configure-route-with-predicates-using-spring-api-gateway.png
-description: "We will learn the basics and configure the Spring API Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates."
+image: /assets/images/banners/spring-cloud-gateway-routes-with-predicates.png
+description: "We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates."
 ---
 
 **API Gateway** is the entry point to the application, through which the client (Web/Mobile/Desktop) can make REST API calls. API Gateway will allow us to secure the endpoints, throttle, and monitor the traffic.
@@ -43,7 +43,7 @@ spring:
 * API gateway will listen on port 9091.
 * Configure routes under 'spring.cloud.gateway.routes' property. In this file, we configured one Route.
 * Route will have a unique id, destination URL, and a list of predicates or filters. In this case, we have one predicate.
-* Spring API gateway provides many predicates. For example, some of them are Path, Header, Cookie, and Query. In our example, we used the Path predicate. Predicates are recognized by the predicate type (Path, Cookie, Header), followed by an equal sign (=), followed by argument values separated by commas (,).
+* Spring cloud gateway provides many predicates. For example, some of them are Path, Header, Cookie, and Query. In our example, we used the Path predicate. Predicates are recognized by the predicate type (Path, Cookie, Header), followed by an equal sign (=), followed by argument values separated by commas (,).
 
 Run the application and execute a CURL command to make a get request on 'http://localhost:9091/get.'
 

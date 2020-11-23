@@ -1,6 +1,6 @@
 ---
 title: "Configure route with Predicates using Spring API Gateway"
-date: 2020-11-22 12:11:10 -0500
+date: 2020-11-23 12:11:10 -0500
 categories: java
 image: /assets/images/banners/configure-route-with-predicates-using-spring-api-gateway.png
 description: "We will learn the basics and configure the Spring API Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates."

@@ -5,14 +5,14 @@
     <description>Sharing my Java and Kotlin coding experiments</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Nov 2020 13:11:35 -0500</pubDate>
-    <lastBuildDate>Mon, 23 Nov 2020 13:11:35 -0500</lastBuildDate>
+    <pubDate>Mon, 23 Nov 2020 13:13:53 -0500</pubDate>
+    <lastBuildDate>Mon, 23 Nov 2020 13:13:53 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Configure route with Predicates using Spring API Gateway</title>
         <description>We will learn the basics and configure the Spring API Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates.</description>
-        <pubDate>Sun, 22 Nov 2020 12:11:10 -0500</pubDate>
+        <pubDate>Mon, 23 Nov 2020 12:11:10 -0500</pubDate>
         <link>http://thetechstack.net/configure-route-with-predicates-using-spring-api-gateway-demo/</link>
         <guid isPermaLink="true">http://thetechstack.net/configure-route-with-predicates-using-spring-api-gateway-demo/</guid>
         

@@ -12,6 +12,8 @@ Many open-source libraries are available for creating an API Gateway, like Netfl
 
 Spring cloud gateway simplifies the creation of API Gateway service. We should have a separate API gateway service in the production environment without any business logic; this will allow us to deploy or change the API gateway without impacting other services.
 
+![Spring Cloud Gateway]({{site.baseurl}}/assets/images/posts/2020/11/spring_cloud_gateway_flow.png){: height="500px" width="800px"}{: .align-center}
+
 We only need to make changes in the application.yml file to configure the routes, and we can create a Spring cloud gateway project by simply going to **[start.spring.io](http://start.spring.io/)** and selecting **gateway** dependency.
 
 You can click this **[link](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.4.0.RELEASE&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=cloud-gateway)** to see my preconfigured spring cloud gateway project. Download and import into your editor.
@@ -79,6 +81,8 @@ predicates:
 {% endhighlight %}
 
 Matches only if the request contains a header 'App-Context-Id' with any alphanumeric value.
+
+Go through this **[link](https://docs.spring.io/spring-cloud-gateway/docs/2.2.5.RELEASE/reference/html/#gateway-request-predicates-factories)** to see all available Predicate's in Spring Cloud Gateway
 
 ### Conclusion
 

@@ -226,6 +226,8 @@
 
 <p>Spring cloud gateway simplifies the creation of API Gateway service. We should have a separate API gateway service in the production environment without any business logic; this will allow us to deploy or change the API gateway without impacting other services.</p>
 
+<p><img src="/assets/images/posts/2020/11/spring_cloud_gateway_flow.png" alt="Spring Cloud Gateway" height="500px" width="800px" class="align-center" /></p>
+
 <p>We only need to make changes in the application.yml file to configure the routes, and we can create a Spring cloud gateway project by simply going to <strong><a href="http://start.spring.io/">start.spring.io</a></strong> and selecting <strong>gateway</strong> dependency.</p>
 
 <p>You can click this <strong><a href="https://start.spring.io/#!type=maven-project&amp;language=java&amp;platformVersion=2.4.0.RELEASE&amp;packaging=jar&amp;jvmVersion=11&amp;groupId=com.example&amp;artifactId=demo&amp;name=demo&amp;description=Demo%20project%20for%20Spring%20Boot&amp;packageName=com.example.demo&amp;dependencies=cloud-gateway">link</a></strong> to see my preconfigured spring cloud gateway project. Download and import into your editor.</p>
@@ -291,6 +293,8 @@
   <span class="pi">-</span> <span class="s">Header=App-Context-Id,^[a-zA-Z0-9]+$</span></code></pre></figure>
 
 <p>Matches only if the request contains a header ‘App-Context-Id’ with any alphanumeric value.</p>
+
+<p>Go through this <strong><a href="https://docs.spring.io/spring-cloud-gateway/docs/2.2.5.RELEASE/reference/html/#gateway-request-predicates-factories">link</a></strong> to see all available Predicate’s in Spring Cloud Gateway</p>
 
 <h3 id="conclusion">Conclusion</h3>
 

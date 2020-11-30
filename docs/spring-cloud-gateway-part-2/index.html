@@ -10,19 +10,19 @@
 <!-- Twitter cards-->
 <meta name="twitter:site"    content="@PradeepK4J">
 <meta name="twitter:creator" content="@pradeep">
-<meta name="twitter:title"   content="Spring Cloud Gateway - Part 1">
+<meta name="twitter:title"   content="Spring Cloud Gateway - Part 2">
 
 <meta name="twitter:card"  content="summary_large_image">
-<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/spring-cloud-gateway-part-1.png">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/spring-cloud-gateway-part-2.png">
 
 <!-- end of Twitter cards -->
 
 
 <link rel="icon" href="/assets/images/logo.png">
     
-<!--<title>Spring Cloud Gateway - Part 1 | The Tech Stack . Net</title>-->
+<!--<title>Spring Cloud Gateway - Part 2 | The Tech Stack . Net</title>-->
     
-<meta name="description" content="We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates."> 
+<meta name="description" content="This is the second part of Spring cloud gateway tutorial. We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Filters to change request and response."> 
     
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -35,21 +35,21 @@
 <link href="/assets/css/main.css" rel="stylesheet">
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Spring Cloud Gateway - Part 1 | Pradeep’s Java and Kotlin blog</title>
+<title>Spring Cloud Gateway - Part 2 | Pradeep’s Java and Kotlin blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Spring Cloud Gateway - Part 1" />
+<meta property="og:title" content="Spring Cloud Gateway - Part 2" />
 <meta name="author" content="pradeep" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates." />
-<meta property="og:description" content="We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates." />
-<link rel="canonical" href="http://thetechstack.net/spring-cloud-gateway-part-1/" />
-<meta property="og:url" content="http://thetechstack.net/spring-cloud-gateway-part-1/" />
+<meta name="description" content="This is the second part of Spring cloud gateway tutorial. We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Filters to change request and response." />
+<meta property="og:description" content="This is the second part of Spring cloud gateway tutorial. We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Filters to change request and response." />
+<link rel="canonical" href="http://thetechstack.net/spring-cloud-gateway-part-2/" />
+<meta property="og:url" content="http://thetechstack.net/spring-cloud-gateway-part-2/" />
 <meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
-<meta property="og:image" content="http://thetechstack.net/assets/images/banners/spring-cloud-gateway-part-1.png" />
+<meta property="og:image" content="http://thetechstack.net/assets/images/banners/spring-cloud-gateway-part-2.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-23T12:11:10-05:00" />
+<meta property="article:published_time" content="2020-11-30T12:11:10-05:00" />
 <script type="application/ld+json">
-{"description":"We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates.","@type":"BlogPosting","headline":"Spring Cloud Gateway - Part 1","dateModified":"2020-11-23T12:11:10-05:00","datePublished":"2020-11-23T12:11:10-05:00","url":"http://thetechstack.net/spring-cloud-gateway-part-1/","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/spring-cloud-gateway-part-1/"},"image":"http://thetechstack.net/assets/images/banners/spring-cloud-gateway-part-1.png","author":{"@type":"Person","name":"pradeep"},"@context":"http://schema.org"}</script>
+{"description":"This is the second part of Spring cloud gateway tutorial. We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Filters to change request and response.","@type":"BlogPosting","headline":"Spring Cloud Gateway - Part 2","dateModified":"2020-11-30T12:11:10-05:00","datePublished":"2020-11-30T12:11:10-05:00","url":"http://thetechstack.net/spring-cloud-gateway-part-2/","mainEntityOfPage":{"@type":"WebPage","@id":"http://thetechstack.net/spring-cloud-gateway-part-2/"},"image":"http://thetechstack.net/assets/images/banners/spring-cloud-gateway-part-2.png","author":{"@type":"Person","name":"pradeep"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -158,19 +158,19 @@
     </p>
     <ul>
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=Spring Cloud Gateway - Part 1&url=http://thetechstack.net/spring-cloud-gateway-part-1/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Spring Cloud Gateway - Part 2&url=http://thetechstack.net/spring-cloud-gateway-part-2/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <i class="fab fa-twitter"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/spring-cloud-gateway-part-1/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=http://thetechstack.net/spring-cloud-gateway-part-2/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
         <i class="fab fa-facebook-f"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/spring-cloud-gateway-part-1/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://plus.google.com/share?url=http://thetechstack.net/spring-cloud-gateway-part-2/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
         <i class="fab fa-google"></i>
         </a>
         </li>
@@ -210,40 +210,27 @@
                 
                 
                 <!-- Post Title -->
-				<h1 class="posttitle">Spring Cloud Gateway - Part 1</h1> 
+				<h1 class="posttitle">Spring Cloud Gateway - Part 2</h1> 
                 
 			</div>
 
 			<!-- Post Featured Image -->
-			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/spring-cloud-gateway-part-1.png" alt="Spring Cloud Gateway - Part 1">
+			<img class="featured-image img-fluid" src="http://thetechstack.net/assets/images/banners/spring-cloud-gateway-part-2.png" alt="Spring Cloud Gateway - Part 2">
 			<!-- End Featured Image -->
 
 			<!-- Post Content -->
 			<div class="article-post">
-				<p><strong>API Gateway</strong> is the entry point to the application, through which the client (Web/Mobile/Desktop) can make REST API calls. API Gateway will allow us to secure the endpoints, throttle, and monitor the traffic.</p>
+				<p>In <strong><a href="/spring-cloud-gateway-part-1/">Part 1</a></strong> of this tutorial series, we learned to configure routes using Predicates. Predicates help us to define the conditions on the request to match the Route. In this article, we will learn about Filters.</p>
 
-<p>Many open-source libraries are available for creating an API Gateway, like Netflix Zuul and Amazon API Gateway. In this article, we will look at creating a project using Spring Cloud Gateway.</p>
+<p>Filters allow us to modify the request and response. For example, We can add a customized header to the HTTP request so all downstream services can use it. In the same way, we can add a header in the HTTP response to the client.</p>
 
-<p>Spring cloud gateway simplifies the creation of API Gateway service. We should have a separate API gateway service in the production environment without any business logic; this will allow us to deploy or change the API gateway without impacting other services.</p>
+<p>Spring Cloud Gateway comes with many Filter factories; We can configure them easily in the configuration file or customize it using <strong>RouteLocatorBuilder</strong>. In this article, we learn configuring filters but not customizing them.</p>
 
-<p><img src="/assets/images/posts/2020/11/spring_cloud_gateway_flow.png" alt="Spring Cloud Gateway" height="500px" width="800px" class="align-center" /></p>
+<p>We continue to use the same project we downloaded in <strong><a href="/spring-cloud-gateway-part-1/">Part 1</a></strong>. If you want to download it again, click on this <strong><a href="https://start.spring.io/#!type=maven-project&amp;language=java&amp;platformVersion=2.4.0.RELEASE&amp;packaging=jar&amp;jvmVersion=11&amp;groupId=com.example&amp;artifactId=demo&amp;name=demo&amp;description=Demo%20project%20for%20Spring%20Boot&amp;packageName=com.example.demo&amp;dependencies=cloud-gateway">link</a></strong>. Open it in the editor and modify application.yml with the below content.</p>
 
-<p>We only need to make changes in the application.yml file to configure the routes, and we can create a Spring cloud gateway project by simply going to <strong><a href="http://start.spring.io/">start.spring.io</a></strong> and selecting <strong>gateway</strong> dependency.</p>
+<h3 id="add-request-header-filter">Add Request Header Filter</h3>
 
-<p>You can click this <strong><a href="https://start.spring.io/#!type=maven-project&amp;language=java&amp;platformVersion=2.4.0.RELEASE&amp;packaging=jar&amp;jvmVersion=11&amp;groupId=com.example&amp;artifactId=demo&amp;name=demo&amp;description=Demo%20project%20for%20Spring%20Boot&amp;packageName=com.example.demo&amp;dependencies=cloud-gateway">link</a></strong> to see my preconfigured spring cloud gateway project. Download and import into your editor.</p>
-
-<p>We need to understand three concepts to work on the Spring cloud gateway project.</p>
-<ul>
-  <li><strong>Route</strong>: Route is the combination of destination URL, predicate, and filter.</li>
-  <li><strong>Predicate</strong>: These are like ‘if’ conditions. If the predicate is true, then the request is directed to the configured Route.</li>
-  <li><strong>Filter</strong>: To modify the request and responses.</li>
-</ul>
-
-<p>I used <strong><a href="https://httpbin.org/#/">HttpBin</a></strong> to configure gateway endpoints. Httpbin is the free HTTP request and response service.</p>
-
-<h3 id="configure-routes">Configure Routes</h3>
-
-<p>Open <strong>application.yml</strong> and modify it with the below content;</p>
+<p>Open <strong>application.yml</strong> and add Request Header filter to the request.</p>
 
 <figure class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="na">server</span><span class="pi">:</span>
   <span class="na">port</span><span class="pi">:</span> <span class="s">9091</span>
@@ -254,16 +241,17 @@
         <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">one</span>
           <span class="na">uri</span><span class="pi">:</span> <span class="s">https://httpbin.org/</span>
           <span class="na">predicates</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s">Path=/get</span></code></pre></figure>
+            <span class="pi">-</span> <span class="s">Path=/get</span>
+          <span class="na">filters</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">AddRequestHeader=X-Request-AppId, 238732</span></code></pre></figure>
 
 <ul>
-  <li>API gateway will listen on port 9091.</li>
-  <li>Configure routes under ‘spring.cloud.gateway.routes’ property. In this file, we configured one Route.</li>
-  <li>Route will have a unique id, destination URL, and a list of predicates or filters. In this case, we have one predicate.</li>
-  <li>Spring cloud gateway provides many predicates. For example, some of them are Path, Header, Cookie, and Query. In our example, we used the Path predicate. Predicates are recognized by the predicate type (Path, Cookie, Header), followed by an equal sign (=), followed by argument values separated by commas (,).</li>
+  <li>Configured API gateway to use port 9091.</li>
+  <li>Predicate will redirect the requests to <strong>https://httpbin.org/</strong> if the request starts with the path <strong>/get’</strong>.</li>
+  <li>Filter will add a header in the HTTP request. In this case, we want to add an HTTP header with key <strong>X-Request-AppId</strong> and value as <strong>238732</strong></li>
 </ul>
 
-<p>Run the application and execute a CURL command to make a get request on ‘http://localhost:9091/get.’</p>
+<p>Run the application and execute a CURL command to make a get request to ‘http://localhost:9091/get.’</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl http://localhost:9091/get
 <span class="o">{</span>
@@ -271,41 +259,62 @@
  <span class="s2">"headers"</span>: <span class="o">{</span>
   <span class="s2">"Accept"</span>: <span class="s2">"*/*"</span>, 
   <span class="s2">"Content-Length"</span>: <span class="s2">"0"</span>, 
-  <span class="s2">"Forwarded"</span>: <span class="s2">"proto=http;host=</span><span class="se">\"</span><span class="s2">localhost:9091</span><span class="se">\"</span><span class="s2">;for=</span><span class="se">\"</span><span class="s2">0:0:0:0:0:0:0:1:56684</span><span class="se">\"</span><span class="s2">"</span>, 
+  <span class="s2">"Forwarded"</span>: <span class="s2">"proto=http;host=</span><span class="se">\"</span><span class="s2">localhost:9091</span><span class="se">\"</span><span class="s2">;for=</span><span class="se">\"</span><span class="s2">0:0:0:0:0:0:0:1:58775</span><span class="se">\"</span><span class="s2">"</span>, 
   <span class="s2">"Host"</span>: <span class="s2">"httpbin.org"</span>, 
   <span class="s2">"User-Agent"</span>: <span class="s2">"curl/7.54.0"</span>, 
-  <span class="s2">"X-Amzn-Trace-Id"</span>: <span class="s2">"Root=1-5fbbe24c-076ada6d328a832d22e38d51"</span>, 
-  <span class="s2">"X-Forwarded-Host"</span>: <span class="s2">"localhost:9091"</span>
+  <span class="s2">"X-Amzn-Trace-Id"</span>: <span class="s2">"Root=1-5fbc29e7-0f7fffaa50c1c198661a2ecf"</span>, 
+  <span class="s2">"X-Forwarded-Host"</span>: <span class="s2">"localhost:9091"</span>, 
+  <span class="s2">"X-Request-Appid"</span>: <span class="s2">"23452"</span>
  <span class="o">}</span>, 
  <span class="s2">"origin"</span>: <span class="s2">"0:0:0:0:0:0:0:1, XX.XX.X.XXX"</span>, 
  <span class="s2">"url"</span>: <span class="s2">"https://localhost:9091/get"</span>
 <span class="o">}</span></code></pre></figure>
 
-<p>We made a GET request on /get endpoint, and this request will match with the Path ‘/get’ which we mentioned in the Predicate, so the request directs to https://httpbin.org/.</p>
+<p>We made a GET request on /get endpoint, and this request will match with the Path ‘/get’ which we mentioned in the Predicate, so the request directs to https://httpbin.org/, and along with that, our Filter will add a new header to the Request. HttpBin will send us back the response with all our request headers as a JSON body. We can see our Request header in the JSON response.</p>
 
-<p>In the next section, we will see an example of Header Predicate.</p>
+<h3 id="rewrite-path-filter">Rewrite Path Filter</h3>
 
-<h3 id="header-predicate">Header Predicate</h3>
+<p>Rewrite Path is one of the Filters, which is part of Spring Cloud Gateway, which I want to explain along with AddRequestHeader Filter in this article. For instance, if we want to redirect traffic to multiple different services based on the path, we can use it to direct the traffic. Following Route configuration will help you to understand how this will work.</p>
 
-<p>Matches with a header in the HTTP request. To make it simple, I am showing only the predicates section instead of the whole configuration file.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">server:
+  port: 9091
+spring:
+  cloud:
+    gateway:
+      routes:
+        - <span class="nb">id</span>: one
+          uri: http://localhost:8080/
+          predicates:
+            - <span class="nv">Path</span><span class="o">=</span>/retail/<span class="k">**</span>
+          filters:
+            - <span class="nv">RewritePath</span><span class="o">=</span>/retail<span class="o">(</span>?&lt;segment&gt;/?.<span class="k">*</span><span class="o">)</span>, <span class="nv">$\</span><span class="o">{</span>segment<span class="o">}</span>
+        - <span class="nb">id</span>: two
+            uri: http://localhost:8081/
+            predicates:
+              - <span class="nv">Path</span><span class="o">=</span>/banking/<span class="k">**</span>
+            filters:
+              - <span class="nv">RewritePath</span><span class="o">=</span>/banking<span class="o">(</span>?&lt;segment&gt;/?.<span class="k">*</span><span class="o">)</span>, <span class="nv">$\</span><span class="o">{</span>segment<span class="o">}</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="na">predicates</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">Header=App-Context-Id,^[a-zA-Z0-9]+$</span></code></pre></figure>
+<ul>
+  <li>RewritePath will take two arguments; regular expression and replacement parameter, regular expression will contain the root context and the regExp to retrive the remaining part of the Path and this remaining part is used in the replacement parameter.</li>
+  <li>HTTP calls received on <strong>http://localhost:9091/retail/orders/1</strong> will be directed to <strong>http://localhost:8080/orders/1</strong></li>
+  <li>HTTP calls received on <strong>http://localhost:9091/banking/account/1</strong> will be directed to <strong>http://localhost:8081/account/1</strong></li>
+</ul>
 
-<p>Matches only if the request contains a header ‘App-Context-Id’ with any alphanumeric value.</p>
+<p>This configuration is useful for directing traffic to different downstream services and grouping them under a single context path.</p>
 
-<p>Go through this <strong><a href="https://docs.spring.io/spring-cloud-gateway/docs/2.2.5.RELEASE/reference/html/#gateway-request-predicates-factories">link</a></strong> to see all available Predicate’s in Spring Cloud Gateway</p>
+<p>There are many other predefined filters available. We can directly use them by configuring them in the application properties file.</p>
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p>We went through the basics of Sping API gateway components and worked on a sample project to configure a route using Path and Header predicates.</p>
+<p>We learned to configure routes using Filter. Filters will modify the Request and response of the HTTP call. In this article, we used an Add Header filter and Rewrite Path filter to modify HTTP headers.</p>
 
 			</div>
 
             <!-- Post Date -->
             <p>
             <small>
-                <span class="post-date"><time class="post-date" datetime="2020-11-23">23 Nov 2020</time></span>           
+                <span class="post-date"><time class="post-date" datetime="2020-11-30">30 Nov 2020</time></span>           
                 
                 </small>
             </p>
@@ -326,7 +335,7 @@
             <!-- Prev/Next -->
             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
             
-            <a class="prev d-block col-md-6" href="http://thetechstack.net/understanding-countdownlatch-with-simple-example-copy/"> &laquo; Understanding CountDownLatch With Simple Example</a>
+            <a class="prev d-block col-md-6" href="http://thetechstack.net/spring-cloud-gateway-part-1-copy/"> &laquo; Spring Cloud Gateway - Part 1</a>
             
             
             <div class="clearfix"></div>
@@ -400,7 +409,7 @@
             
           
              
-              <a href="/category/java">Java (32)</a>
+              <a href="/category/java">Java (33)</a>
              
               <a href="/category/reactiveX">Reactivex (3)</a>
              

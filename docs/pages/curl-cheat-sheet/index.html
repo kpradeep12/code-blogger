@@ -42,11 +42,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sharing my Java and Kotlin coding experiments" />
 <meta property="og:description" content="Sharing my Java and Kotlin coding experiments" />
-<link rel="canonical" href="http://thetechstack.net/pages/curl-cheet-sheet/" />
-<meta property="og:url" content="http://thetechstack.net/pages/curl-cheet-sheet/" />
+<link rel="canonical" href="http://thetechstack.net/pages/curl-cheat-sheet/" />
+<meta property="og:url" content="http://thetechstack.net/pages/curl-cheat-sheet/" />
 <meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://thetechstack.net/pages/curl-cheet-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"headline":"cURL cheat sheet","description":"Sharing my Java and Kotlin coding experiments","@context":"http://schema.org"}</script>
+{"description":"Sharing my Java and Kotlin coding experiments","@type":"WebPage","headline":"cURL cheat sheet","url":"http://thetechstack.net/pages/curl-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -148,7 +148,36 @@
     </div>
     
     <div class="article-post">
-    
+    <p>cURL is an open-source command-line tool to make network calls. It supports many protocols. In this page, we will see some most commonly used options to test HTTP end points.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#get" id="markdown-toc-get">Get</a></li>
+</ul>
+
+<h5 id="get">Get</h5>
+
+<table class="custom-cheat-sheet-table" width="100%">
+  <tbody>
+    <tr>
+      <td><strong>curl http://localhost:9091/hello</strong></td>
+      <td>Prints headers and response body</td>
+    </tr>
+    <tr>
+      <td><strong>curl -i http://localhost:9091/hello</strong></td>
+      <td>Prints only response</td>
+    </tr>
+    <tr>
+      <td><strong>curl -u &lt;userid&gt;:&lt;password&gt; http://localhost:9091/hello</strong></td>
+      <td>Pass basic authentication details with user id and password.</td>
+    </tr>
+    <tr>
+      <td><strong>curl -H “&lt;key&gt;: &lt;value&gt;” http://localhost:9091/hello</strong></td>
+      <td>Pass header in the request.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
 
     </div>
     

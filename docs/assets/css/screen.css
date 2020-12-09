@@ -673,3 +673,9 @@ License: https://www.wowthemes.net/freebies-license/
 #reactions > div.reaction-items > div > div:nth-child(2){
     display: none;
 }
+.custom-cheat-sheet-table tr:nth-child(odd){
+	background-color: rgb(233, 233, 233);
+}
+.custom-cheat-sheet-table tr td:first-child {
+    width: 30%;
+  }

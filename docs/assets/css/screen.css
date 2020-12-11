@@ -4,6 +4,10 @@ Copyright: Sal, WowThemes.net, https://www.wowthemes.net
 Version: 1.0.22 
 License: https://www.wowthemes.net/freebies-license/ 
 */
+@media screen and (min-width:1500px) {
+    html { font-size:18px; } /* Increase the font size on higher resolutions */
+    .container {max-width:80%;}
+}
  .mainheading {
      padding:1rem 0rem;
 }
@@ -673,9 +677,3 @@ License: https://www.wowthemes.net/freebies-license/
 #reactions > div.reaction-items > div > div:nth-child(2){
     display: none;
 }
-.custom-cheat-sheet-table tr:nth-child(odd){
-	background-color: rgb(233, 233, 233);
-}
-.custom-cheat-sheet-table tr td:first-child {
-    width: 30%;
-  }

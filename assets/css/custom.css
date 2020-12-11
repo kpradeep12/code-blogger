@@ -18,3 +18,9 @@
     width: 100%;
     align-items: stretch;
 }
+.article-post-cheat-sheet {
+    font-family:Merriweather;
+    font-size:0.9rem;
+    line-height:1.50;
+    color:rgba(0,0,0,.8);
+}

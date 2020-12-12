@@ -2,11 +2,11 @@
 layout: page
 title: cURL cheat sheet
 published: false
+menus:
+    - title: Get
+      url: get
 ---
 cURL is an open-source command-line tool to make network calls. It supports many protocols. In this page, we will see some most commonly used options to test HTTP end points.
-
-* Get
-{:toc}
 
 ##### Get
 

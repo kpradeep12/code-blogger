@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<section>
+    <div class="section-title">
+        <h2><span>{{ page.title }}</span></h2>
+    </div>
+    <div class="article-post">
+    <div class="container-fluid">
+        <div class="row">
+            
+                {% if page.file == "git-cheat-sheet" %}
+                {% assign doclist = site.data.cheat-sheets.git-cheat-sheet  %}
+                {% endif %}
+
+                {% for columns in doclist %}
+                <div class="col-sm-6">
+                        {% for group in columns.groups %}
+                            <h5>{{group.title}}</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    {% for item in group.items %}
+                                <tr>
+                                    <td><strong>{{item.key | escape}}</strong></td>
+                                    <td>{{item.value | escape}}</td>
+                                </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% endfor %}
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+</section>

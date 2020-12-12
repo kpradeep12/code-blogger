@@ -1,5 +1,6 @@
 .custom-cheat-sheet-table{
-	width: 100%;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 .custom-cheat-sheet-table tr:nth-child(odd){
 	background-color: rgb(217, 217, 217);
@@ -18,9 +19,10 @@
     width: 100%;
     align-items: stretch;
 }
-.article-post-cheat-sheet {
-    font-family:Merriweather;
+.article-post {
     font-size:0.9rem;
-    line-height:1.50;
-    color:rgba(0,0,0,.8);
+    line-height:1.5;
+}
+.article-post h5{
+    margin-bottom: 1rem;
 }

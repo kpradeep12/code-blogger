@@ -2,10 +2,10 @@
 layout: book
 title: Git cheat sheet
 menus:
-    - title: New repository
-      url: new-repository
     - title: Basic operations
       url: basic-operations
+    - title: Branching
+      url: branching
     - title: Remote branch
       url: remote-branch
     - title: Stash
@@ -16,17 +16,13 @@ menus:
       url: view-commit-history
     - title: Working with remotes
       url: working-with-remotes
+    - title: Tagging
+      url: tagging
 ---
-##### New repository
-
-| **git clone \<repo_url>**   | Clone and create new local repository
-| **git checkout \<branch name>**   | Create new local branch
-| **git checkout -b \<branch name>**   | Create new local branch and switch to it
-{: .custom-cheat-sheet-table}
-&nbsp;
 
 ##### Basic operations
 
+| **git clone \<repo_url>**   | Clone and create new local repository
 | **git status**   | List all the changes in the repository; new file, modification or deletion
 | **git status -s**   | List all the changes in the repository; short format
 | **git diff**   | Compares modified files to staging area
@@ -38,7 +34,18 @@ menus:
 | **git push \<origin> \<master>**   | Push local commited changes to remote. <origin> is the server and <master> is the branch to which changes are pushed
 | **git pull --all**   | Pull all new changes on remote to local
 {: .custom-cheat-sheet-table}
-&nbsp;
+
+##### Branching
+
+| **git checkout \<branch name>**   | Create new branch
+| **git checkout -b \<branch name>**   | Create new branch and switch
+| **git merge \<branch name>**   | Merge branch
+| **git branch -d \<branch name>**   | Delete branch
+| **git branch**   | List all local branches
+| **git branch -v**   | List branches with last commit
+| **git branch --merged**   | List all branches merged with current branch
+| **git branch --no-merged**   | List all branches which haven't yet merged
+{: .custom-cheat-sheet-table}
 
 ##### Remote branch
 
@@ -46,7 +53,6 @@ menus:
 | **git checkout -b \<branch-name> \<remote-branch-name>**   | Creates new local repo from this remote branch
 | **git push origin --delete \<branch-name>**   | Delete's remote branch
 {: .custom-cheat-sheet-table}
-&nbsp;
 
 ##### Stash
 
@@ -56,24 +62,22 @@ menus:
 | **git stash apply**   | Pops and applies recent stash
 | **git stash show**   | List all recent stash changes
 {: .custom-cheat-sheet-table}
-&nbsp;
 
 ##### Rebase
 
 | **git rebase \<branch>**   |
 | **git rebase --continue**   | To continue after fixing rebase conflict issues
 {: .custom-cheat-sheet-table}
-&nbsp;
 
 ##### View commit history
 
 | **git log**   | Lists summary of all commits
 | **git log -p -2**   | Lists last two commit details
 | **git log --stat**   | Displays stats
-| **git log --pretty=online**   | Display in one line (other options for pretty is short, full and fuller)
+| **git log --pretty=online**   | Display in one line. *Other options for pretty is short, full and fuller*{:.bg-warning}
 | **git log --pretty=format: "%h %s" --graph**   | Display as graph
+| **git log --oneline --decorate**   | Shows current HEAD pointer. (Git keeps a special pointer called HEAD, which helps git to know in which branch it is on)
 {: .custom-cheat-sheet-table}
-&nbsp;
 
 ##### Working with remotes
 
@@ -85,5 +89,15 @@ menus:
 | **git remote show origin**   | Inspect remote; lists all details about the remote
 | **git remote remove pb**   | Remove remotes
 {: .custom-cheat-sheet-table}
-&nbsp;
+
+##### Tagging
+
+| **git tag**   | List all tags
+| **git tag -a v1.4 -m "my version"**   | Create annotated tag
+| **git tag v1.4**   | Create a lightweight tag
+| **git tag v1.4**   | Show tag info
+| **git tag -a v1.4 \<commit-id>**   | Tag a particular commit
+| **git push origin v1.4**   | Push particular tag to remote (By default 'git push' will not upload tags to remote)
+| **git push origin --tags**   | Push all tags
+{: .custom-cheat-sheet-table}
 

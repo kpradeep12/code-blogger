@@ -1,0 +1,7 @@
+intro-to-certificates-for-java-developers:
+  title: Introduction to certificates for java developers
+  sections:
+    - title: Introduction
+      url: 0-introduction
+    - title: Security concepts
+      url: 1-security-concepts

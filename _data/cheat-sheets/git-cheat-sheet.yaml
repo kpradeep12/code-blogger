@@ -79,7 +79,7 @@
       - key: git log --stat
         value: Displays stats
       - key: git log --pretty=online
-        value: Display in one line. *Other options for pretty is short, full and fuller*{:.bg-warning}
+        value: Display in one line. Other options for pretty is short, full and fuller
       - key: 'git log --pretty=format: "%h %s" --graph'
         value: Display as graph
       - key: git log --oneline --decorate

@@ -35,18 +35,18 @@
 <link href="/assets/css/main.css" rel="stylesheet">
 <link href="/assets/css/custom.css" rel="stylesheet">
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Git cheat sheet | Pradeep’s Java and Kotlin blog</title>
+<title>Git cheat sheet | Pradeep’s Java blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Git cheat sheet" />
 <meta name="author" content="Pradeep Kundarapu" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Sharing my Java and Kotlin coding experiments" />
-<meta property="og:description" content="Sharing my Java and Kotlin coding experiments" />
+<meta name="description" content="Sharing my Java coding experiments" />
+<meta property="og:description" content="Sharing my Java coding experiments" />
 <link rel="canonical" href="http://thetechstack.net/pages/cheat-sheets/git-cheat-sheet/" />
 <meta property="og:url" content="http://thetechstack.net/pages/cheat-sheets/git-cheat-sheet/" />
-<meta property="og:site_name" content="Pradeep’s Java and Kotlin blog" />
+<meta property="og:site_name" content="Pradeep’s Java blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://thetechstack.net/pages/cheat-sheets/git-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"headline":"Git cheat sheet","description":"Sharing my Java and Kotlin coding experiments","@context":"http://schema.org"}</script>
+{"@type":"WebPage","url":"http://thetechstack.net/pages/cheat-sheets/git-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"headline":"Git cheat sheet","description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -66,7 +66,7 @@
     
 
 
-<body class="layout-book">
+<body class="layout-cheat-sheet">
 
     
 <!-- Begin Menu Navigation
@@ -98,6 +98,12 @@
                 <a class="nav-link" href="/index.html">Blog</a>
                 </li>-->
                 
+                
+                <li class="nav-item active">
+                
+                <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git Cheat Sheet</a>
+                </li>
+
                 
                 <li class="nav-item">
                 
@@ -133,7 +139,7 @@
 <!--<div class="mainheading">
     <h1 class="sitetitle">The Tech Stack . Net</h1>
     <p class="lead">
-         Sharing my Java and Kotlin coding experiments
+         Sharing my Java coding experiments
     </p>
 </div>-->
 
@@ -146,250 +152,352 @@
     <div class="section-title">
         <h2><span>Git cheat sheet</span></h2>
     </div>
-    <section>
+    <div class="article-post">
     <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-2">
-            <h2>&nbsp;</h2>
-            <ul class="markdown-toc">
+        <div class="row">
+            
                 
-                <li>
-                    <a href="#new-repository">New repository</a>
-                </li>
+
                 
-                <li>
-                    <a href="#basic-operations">Basic operations</a>
-                </li>
-                
-                <li>
-                    <a href="#remote-branch">Remote branch</a>
-                </li>
-                
-                <li>
-                    <a href="#stash">Stash</a>
-                </li>
-                
-                <li>
-                    <a href="#rebase">Rebase</a>
-                </li>
-                
-                <li>
-                    <a href="#view-commit-history">View commit history</a>
-                </li>
-                
-                <li>
-                    <a href="#working-with-remotes">Working with remotes</a>
-                </li>
-                
-            </ul>
-        </div>
-        <div class="col-sm-10">
-                <div class="article-post">
-                    <h5 id="new-repository">New repository</h5>
-
-<table class="custom-cheat-sheet-table">
-  <tbody>
-    <tr>
-      <td><strong>git clone &lt;repo_url&gt;</strong></td>
-      <td>Clone and create new local repository</td>
-    </tr>
-    <tr>
-      <td><strong>git checkout &lt;branch name&gt;</strong></td>
-      <td>Create new local branch</td>
-    </tr>
-    <tr>
-      <td><strong>git checkout -b &lt;branch name&gt;</strong></td>
-      <td>Create new local branch and switch to it</td>
-    </tr>
-  </tbody>
-</table>
-<p> </p>
-
-<h5 id="basic-operations">Basic operations</h5>
-
-<table class="custom-cheat-sheet-table">
-  <tbody>
-    <tr>
-      <td><strong>git status</strong></td>
-      <td>List all the changes in the repository; new file, modification or deletion</td>
-    </tr>
-    <tr>
-      <td><strong>git status -s</strong></td>
-      <td>List all the changes in the repository; short format</td>
-    </tr>
-    <tr>
-      <td><strong>git diff</strong></td>
-      <td>Compares modified files to staging area</td>
-    </tr>
-    <tr>
-      <td><strong>git diff –staged</strong></td>
-      <td>Compares staged files to last commit</td>
-    </tr>
-    <tr>
-      <td><strong>git add &lt;file&gt;</strong></td>
-      <td>Move file from working area to staging area</td>
-    </tr>
-    <tr>
-      <td><strong>git add -A</strong></td>
-      <td>Move all modified/new files to staging area</td>
-    </tr>
-    <tr>
-      <td><strong>git commit -m “&lt;message&gt;”</strong></td>
-      <td>Commit all staged files to local project history</td>
-    </tr>
-    <tr>
-      <td><strong>git commit -a -m “&lt;message&gt;”</strong></td>
-      <td>Add and commit together. Short form for ‘git add -A &amp;&amp; git commit -m &lt;&gt;’</td>
-    </tr>
-    <tr>
-      <td><strong>git push &lt;origin&gt; &lt;master&gt;</strong></td>
-      <td>Push local commited changes to remote. <origin> is the server and <master> is the branch to which changes are pushed</master></origin></td>
-    </tr>
-    <tr>
-      <td><strong>git pull –all</strong></td>
-      <td>Pull all new changes on remote to local</td>
-    </tr>
-  </tbody>
-</table>
-<p> </p>
-
-<h5 id="remote-branch">Remote branch</h5>
-
-<table class="custom-cheat-sheet-table">
-  <tbody>
-    <tr>
-      <td><strong>git branch -r</strong></td>
-      <td>List all remote branches</td>
-    </tr>
-    <tr>
-      <td><strong>git checkout -b &lt;branch-name&gt; &lt;remote-branch-name&gt;</strong></td>
-      <td>Creates new local repo from this remote branch</td>
-    </tr>
-    <tr>
-      <td><strong>git push origin –delete &lt;branch-name&gt;</strong></td>
-      <td>Delete’s remote branch</td>
-    </tr>
-  </tbody>
-</table>
-<p> </p>
-
-<h5 id="stash">Stash</h5>
-
-<table class="custom-cheat-sheet-table">
-  <tbody>
-    <tr>
-      <td><strong>git stash</strong></td>
-      <td>Saves all files to stash</td>
-    </tr>
-    <tr>
-      <td><strong>git stash clear</strong></td>
-      <td>Delete all changes in stash</td>
-    </tr>
-    <tr>
-      <td><strong>git stash list</strong></td>
-      <td>List all changes in the stash</td>
-    </tr>
-    <tr>
-      <td><strong>git stash apply</strong></td>
-      <td>Pops and applies recent stash</td>
-    </tr>
-    <tr>
-      <td><strong>git stash show</strong></td>
-      <td>List all recent stash changes</td>
-    </tr>
-  </tbody>
-</table>
-<p> </p>
-
-<h5 id="rebase">Rebase</h5>
-
-<table class="custom-cheat-sheet-table">
-  <tbody>
-    <tr>
-      <td><strong>git rebase &lt;branch&gt;</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>git rebase –continue</strong></td>
-      <td>To continue after fixing rebase conflict issues</td>
-    </tr>
-  </tbody>
-</table>
-<p> </p>
-
-<h5 id="view-commit-history">View commit history</h5>
-
-<table class="custom-cheat-sheet-table">
-  <tbody>
-    <tr>
-      <td><strong>git log</strong></td>
-      <td>Lists summary of all commits</td>
-    </tr>
-    <tr>
-      <td><strong>git log -p -2</strong></td>
-      <td>Lists last two commit details</td>
-    </tr>
-    <tr>
-      <td><strong>git log –stat</strong></td>
-      <td>Displays stats</td>
-    </tr>
-    <tr>
-      <td><strong>git log –pretty=online</strong></td>
-      <td>Display in one line (other options for pretty is short, full and fuller)</td>
-    </tr>
-    <tr>
-      <td><strong>git log –pretty=format: “%h %s” –graph</strong></td>
-      <td>Display as graph</td>
-    </tr>
-  </tbody>
-</table>
-<p> </p>
-
-<h5 id="working-with-remotes">Working with remotes</h5>
-
-<table class="custom-cheat-sheet-table">
-  <tbody>
-    <tr>
-      <td><strong>git remote</strong></td>
-      <td>List all remote branches (use -v option to show URL’s)</td>
-    </tr>
-    <tr>
-      <td><strong>git remote add pb &lt;URL&gt;</strong></td>
-      <td>Add remote repo</td>
-    </tr>
-    <tr>
-      <td><strong>git fetch pb</strong></td>
-      <td>Fetch new changes from remote (fetch will not merge changes automatically)</td>
-    </tr>
-    <tr>
-      <td><strong>git pull</strong></td>
-      <td>Fetch and merge changes into curent branch</td>
-    </tr>
-    <tr>
-      <td><strong>git push origin master</strong></td>
-      <td>Push local changes from origin to master branch in remote</td>
-    </tr>
-    <tr>
-      <td><strong>git remote show origin</strong></td>
-      <td>Inspect remote; lists all details about the remote</td>
-    </tr>
-    <tr>
-      <td><strong>git remote remove pb</strong></td>
-      <td>Remove remotes</td>
-    </tr>
-  </tbody>
-</table>
-<p> </p>
-
-
+                <div class="col-sm-6">
+                        
+                            <h5>Basic operations</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>git clone &lt;repo_url&gt;</strong></td>
+                                    <td>Clone and create new local repository</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git status</strong></td>
+                                    <td>List all the changes in the repository; new file, modification or deletion</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git status -s</strong></td>
+                                    <td>List all the changes in the repository; short format</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git diff</strong></td>
+                                    <td>Compares modified files to staging area</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git diff --staged</strong></td>
+                                    <td>Compares staged files to last commit</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git add &lt;file&gt;</strong></td>
+                                    <td>Move file from working area to staging area</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git add -A</strong></td>
+                                    <td>Move all modified/new files to staging area</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git commit -m &quot;&lt;message&gt;&quot;</strong></td>
+                                    <td>Commit all staged files to local project history</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git commit -a -m &quot;&lt;message&gt;&quot;</strong></td>
+                                    <td>Add and commit together. Short form for &#39;git add -A &amp;&amp; git commit -m &lt;&gt;&#39;</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git push &lt;origin&gt; &lt;master&gt;</strong></td>
+                                    <td>Push local commited changes to remote. &lt;origin&gt; is the server and &lt;master&gt; is the branch to which changes are pushed</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git pull --all</strong></td>
+                                    <td>Pull all new changes on remote to local</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Branching</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>git checkout &lt;branch name&gt;</strong></td>
+                                    <td>Create new branch</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git checkout -b &lt;branch name&gt;</strong></td>
+                                    <td>Create new branch and switch</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git merge &lt;branch name&gt;</strong></td>
+                                    <td>Merge branch</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git branch -d &lt;branch name&gt;</strong></td>
+                                    <td>Delete branch</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git branch</strong></td>
+                                    <td>List all local branches</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git branch -v</strong></td>
+                                    <td>List branches with last commit</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git branch --merged</strong></td>
+                                    <td>List all branches merged with current branch</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git branch --no-merged</strong></td>
+                                    <td>List all branches which haven&#39;t yet merged</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Remote branch</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>git branch -r</strong></td>
+                                    <td>List all remote branches</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git checkout -b &lt;branch-name&gt; &lt;remote-branch-name&gt;</strong></td>
+                                    <td>Creates new local repo from this remote branch</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git push origin --delete &lt;branch-name&gt;</strong></td>
+                                    <td>Delete&#39;s remote branch</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Stash</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>git stash</strong></td>
+                                    <td>Saves all files to stash</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git stash clear</strong></td>
+                                    <td>Delete all changes in stash</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git stash list</strong></td>
+                                    <td>List all changes in the stash</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git stash apply</strong></td>
+                                    <td>Pops and applies recent stash</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git stash show</strong></td>
+                                    <td>List all recent stash changes</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
                 </div>
+                
+                <div class="col-sm-6">
+                        
+                            <h5>Rebase</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>git rebase &lt;branch&gt;</strong></td>
+                                    <td>Saves all files to stash</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git rebase --continue</strong></td>
+                                    <td>To continue after fixing rebase conflict issues</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>View commit history</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>git log</strong></td>
+                                    <td>Lists summary of all commits</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git log -p -2</strong></td>
+                                    <td>Lists last two commit details</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git log --stat</strong></td>
+                                    <td>Displays stats</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git log --pretty=online</strong></td>
+                                    <td>Display in one line. *Other options for pretty is short, full and fuller*{:.bg-warning}</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git log --pretty=format: &quot;%h %s&quot; --graph</strong></td>
+                                    <td>Display as graph</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git log --oneline --decorate</strong></td>
+                                    <td>Shows current HEAD pointer. (Git keeps a special pointer called HEAD, which helps git to know in which branch it is on)</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Working with remotes</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>git remote</strong></td>
+                                    <td>List all remote branches (use -v option to show URL&#39;s)</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git remote add pb &lt;URL&gt;</strong></td>
+                                    <td>Add remote repo</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git fetch pb</strong></td>
+                                    <td>Fetch new changes from remote (fetch will not merge changes automatically)</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git pull</strong></td>
+                                    <td>Fetch and merge changes into curent branch</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git push origin master</strong></td>
+                                    <td>Push local changes from origin to master branch in remote</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git remote show origin</strong></td>
+                                    <td>Inspect remote; lists all details about the remote</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git remote remove pb</strong></td>
+                                    <td>Remove remotes</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Tagging</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>git tag</strong></td>
+                                    <td>List all tags</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git tag -a v1.4 -m &quot;my version&quot;</strong></td>
+                                    <td>Create annotated tag</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git tag v1.4</strong></td>
+                                    <td>Create a lightweight tag</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git tag -a v1.4 &lt;commit-id&gt;</strong></td>
+                                    <td>Tag a particular commit</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git push origin v1.4</strong></td>
+                                    <td>Push particular tag to remote (By default &#39;git push&#39; will not upload tags to remote)</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git push origin --tags</strong></td>
+                                    <td>Push all tags</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Undoing things</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>git reset HEAD &lt;file&gt;</strong></td>
+                                    <td>Un-stage a staged file</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git checkout -- &lt;file&gt;</strong></td>
+                                    <td>Undo a modified file</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git add &lt;file&gt; &amp;&amp; git commit --amend</strong></td>
+                                    <td>Instead of creating new commit, this will add file to stage and then amends the most recent commit</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git reset &lt;file&gt; &amp;&amp; git rm --cached &lt;file&gt;</strong></td>
+                                    <td>Remove tracked file. For example; target or .class files which are not needed to checkin</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>git rm -r --cached &lt;file&gt;</strong></td>
+                                    <td>Delete from git but not from file system, next time this file will not be pushed</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                </div>
+                
         </div>
     </div>
-    </div>
-    </section>
-
-    
-    
+</div>
 </section>
 </div>
 

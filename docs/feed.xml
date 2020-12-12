@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pradeep's Java and Kotlin blog</title>
-    <description>Sharing my Java and Kotlin coding experiments</description>
+    <title>Pradeep's Java blog</title>
+    <description>Sharing my Java coding experiments</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 11 Dec 2020 17:17:41 -0500</pubDate>
-    <lastBuildDate>Fri, 11 Dec 2020 17:17:41 -0500</lastBuildDate>
+    <pubDate>Sat, 12 Dec 2020 15:45:53 -0500</pubDate>
+    <lastBuildDate>Sat, 12 Dec 2020 15:45:53 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>

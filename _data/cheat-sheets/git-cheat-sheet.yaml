@@ -114,3 +114,15 @@
         value: Push particular tag to remote (By default 'git push' will not upload tags to remote)
       - key: git push origin --tags
         value: Push all tags
+    - title: Undoing things
+      items:
+      - key: git reset HEAD <file>
+        value: Un-stage a staged file
+      - key: git checkout -- <file>
+        value: Undo a modified file
+      - key: git add <file> && git commit --amend
+        value: Instead of creating new commit, this will add file to stage and then amends the most recent commit
+      - key: git reset <file> && git rm --cached <file>
+        value: Remove tracked file. For example; target or .class files which are not needed to checkin
+      - key: git rm -r --cached <file>
+        value: Delete from git but not from file system, next time this file will not be pushed

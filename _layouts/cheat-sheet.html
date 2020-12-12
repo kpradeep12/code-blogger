@@ -11,7 +11,11 @@ layout: default
         <div class="row">
             
                 {% if page.file == "git-cheat-sheet" %}
-                {% assign doclist = site.data.cheat-sheets.git-cheat-sheet  %}
+                    {% assign doclist = site.data.cheat-sheets.git-cheat-sheet  %}
+                {% elsif page.file == "curl-cheat-sheet" %}
+                    {% assign doclist = site.data.cheat-sheets.curl-cheat-sheet  %}
+                {% elsif page.file == "docker-cheat-sheet" %}
+                    {% assign doclist = site.data.cheat-sheets.docker-cheat-sheet  %}
                 {% endif %}
 
                 {% for columns in doclist %}

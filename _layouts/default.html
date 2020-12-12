@@ -89,7 +89,15 @@
                 <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
                 </li>-->
                 
-                {% if page.url == "/about.html" %}
+                {% if page.url == "/pages/cheat-sheets/git-cheat-sheet/" %}
+                <li class="nav-item active">
+                {% else %}
+                <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{{ site.baseurl }}/pages/cheat-sheets/git-cheat-sheet/">Git Cheat Sheet</a>
+                </li>
+
+                {% if page.url == "/about/" %}
                 <li class="nav-item active">
                 {% else %}
                 <li class="nav-item">
@@ -97,7 +105,7 @@
                 <a class="nav-link" href="{{ site.baseurl }}/about">About Me</a>
                 </li>
                 
-                {% if page.url == "/twitter.html" %}
+                {% if page.url == "/twitter/" %}
                 <li class="nav-item active">
                 {% else %}
                 <li class="nav-item">

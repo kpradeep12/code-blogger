@@ -1,0 +1,6 @@
+- menu: Cheat Sheets
+  sub-menus:
+    - title: Git Cheat Sheet
+      url: test.html
+    - title: cURL Cheat Sheet
+      url: test2.html

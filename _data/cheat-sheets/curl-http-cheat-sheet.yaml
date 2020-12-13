@@ -1,0 +1,38 @@
+- column: one
+  groups:
+    - title: Get
+      items:
+      - key: curl -i <URL>
+        value: Prints headers and response
+      - key: curl -v <URL>
+        value: Prints more verbose, useful for debugging
+      - key: >
+          curl -H '<key>: <value>' <URL>
+        value: Add header to the request.
+    - title: Post
+      items:
+      - key: curl -d 'key=value&key=value' <URL>
+        value: Post multiple key values using 'application/x-www-form-urlencoded' as content type
+      - key: curl -F 'key=value' -F 'key=value' <URL>
+        value: Post multiple key values using 'multipart/form-data' as content type        
+      - key: > 
+          curl -d '{json}' -H 'Content-Type: application/json' <URL>
+        value: Post JSON data
+      - key: curl -F 'image=@/folder/image.png' <URL>
+        value: Upload file, add @ before file location
+    - title: Put
+      items:
+      - key: curl -T -d 'key=value' <URL>
+        value: Send a PUT request
+    - title: Delete
+      items:
+      - key: curl -X DELETE <URL>
+        value: Send a DELETE request
+- column: two
+  groups:
+    - title: Security
+      items:
+      - key: curl -u <userid>:<pass> <URL>
+        value: Pass basic authentication details; User id and password
+      - key: curl -k <URL>
+        value: Make insecure connection, ignores SSL certification validation

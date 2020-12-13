@@ -19,10 +19,15 @@
     width: 100%;
     align-items: stretch;
 }
-.article-post {
+.cheat-sheet-article {
     font-size:0.9rem;
     line-height:1.5;
 }
-.article-post h5{
+.cheat-sheet-article h5{
     margin-bottom: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.book-toc {
+    padding-right: 40px;
 }

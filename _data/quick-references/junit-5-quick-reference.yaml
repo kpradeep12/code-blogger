@@ -1,0 +1,120 @@
+sections:
+  - title: Annotations
+    items:
+    - term: |
+        **@Test** - Declare a test method
+      code: |
+        ``` java
+          @Test
+          public void method(){}
+        ```
+    - term: |
+        **@DisplayName** - Provide a customized text on a test method/class
+      code: |
+        ``` java
+          @Test
+          @DisplayName("Custom test name")
+          public void method(){}
+        ```        
+    - term: |
+        **@BeforeEach** - execute before each test method  
+        **@AfterEach** - execute after each test method  
+        Useful to do setup and clean up, before/after every test.
+      code: |
+        ``` java
+          @BeforeEach
+          public void method1(){}
+          @AfterEach
+          public void method2(){}
+        ```
+    - term: |
+        **@BeforeAll** - execute once before all test methods  
+        **@AfterAll** - execute once after all test methods  
+        Useful to do setup and clean up, before/after all test cases.
+      code: |
+        ``` java
+          @BeforeAll
+          public void method1(){}
+          @AfterAll
+          public void method2(){}
+        ```
+    - term: |
+        **@Disabled** - Disable test method
+      code: |
+        ``` java
+          @Test
+          @Disabled
+          public void method(){}
+        ```
+    - term: |
+        **@Tag** - to filter out test cases  
+      code: |
+        ``` java
+          @Tag("web")
+          public void method(){}
+        ```
+    - term: |
+        **@RepeatedTest** - to repeat test execution multiple times
+      code: |
+        ``` java
+          @Test
+          @RepeatedTest(5) // execute's five times
+          public void method(){}
+        ```
+  - title: Assertions
+    items:
+    - term: |
+        **assertEquals** - Check for equality. Works with any Primitives, Primitive wrapper classes, or any object which implements equals.
+      code: |
+        ``` java
+          org.junit.jupiter.api.Assertions.assertEquals(3, 1 + 2);
+        ```
+    - term: |
+        **assertTrue** - Except true from test expression  
+        **assertFalse** - Except false from test expression
+      code: |
+        ``` java
+          org.junit.jupiter.api.Assertions.assertTrue(3 > 2, 
+              () -> "failure message");
+          org.junit.jupiter.api.Assertions.assertFalse(2 > 3, 
+              () -> "failure message");
+        ```
+    - term: |
+        **assertTimeout** - If a given test takes longer than expected, then the test fails
+      code: |
+        ``` java
+          org.junit.jupiter.api.Assertions.assertTimeout(Duration.ofMinutes(1), () -> { 
+            // test
+          });
+        ```
+    - term: |
+        **assertThrows** - Verify if the provided _executable_ throws an exception of the _expected type_ (ArithmeticException.class) and returns the exception
+      code: |
+        ``` java
+          org.junit.jupiter.api.Assertions.assertThrows(ArithmeticException.class, 
+              () -> divide(1, 0));
+        ```
+    - term: |
+        **assertAll** - Group assertions, so the execution result is shown together
+      code: |
+        ``` java
+          org.junit.jupiter.api.Assertions.assertAll("group-a", 
+              () -> assertTrue(2 > 1),
+              () -> assertEquals(3, 1 + 2));
+        ```
+  - title: Assumptions
+    items:
+    - term: |
+        **assumeTrue** - Assume expression will return true, if true then only execution continues
+      code: |
+        ``` java
+          org.junit.jupiter.api.Assumptions.assumeTrue(4 > 3);
+          // continues execution only if expression returns true
+        ```
+    - term: |
+        **assumeFalse** - Assume expression will return false, if false then only execution continues
+      code: |
+        ``` java
+          org.junit.jupiter.api.Assumptions.assumeFalse(4 > 5);
+          // continues execution only if expression returns false
+        ```

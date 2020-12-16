@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<section>
+    <div class="section-title">
+        <h2><span>{{ page.title }}</span></h2>
+    </div>
+    <div class="article-post">
+                {% if page.file == "junit-5-quick-reference" %}
+                    {% assign doclist = site.data.quick-references.junit-5-quick-reference  %}
+                {% endif %}
+
+                {% for section in doclist.sections %}
+                <h4>{{section.title}}</h4>
+                {% for item in section.items %}
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term">{{item.term | markdownify}}</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                {{item.code | markdownify}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% endfor %}
+    </div>
+</section>

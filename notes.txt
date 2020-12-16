@@ -47,3 +47,12 @@ Jekyll Cheat Sheet: https://devhints.io/jekyll
 Cheat Sheets upgrade ideas: https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet
 (Highlight headers and underline them)
 
+Inline highlight example:
+{% ihighlight java %} @Test  public void method() {}{% endihighlight %}
+ref: https://stackoverflow.com/questions/40073270/jekyll-syntax-highlighting-with-data-variable
+
+Paragraph:
+Insert two spaces after the line to create line break
+
+Jekyll & Liquid Cheat Sheet:
+https://gist.github.com/magicznyleszek/9803727

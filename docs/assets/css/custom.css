@@ -31,3 +31,27 @@
 .book-toc {
     padding-right: 40px;
 }
+
+.quick-reference-item {
+    background: #F7FAFB;
+    margin-bottom: 15px;
+    border:#E3EDF3 1px solid;
+    box-shadow: 1px 1px 3px #E3EDF3;
+}
+
+.quick-ref-highlight .highlight{
+    background: #F7FAFB;
+    border: 0px;
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.term {
+    padding: 10px;
+}
+.quick-reference-article h4{
+    margin-bottom: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}

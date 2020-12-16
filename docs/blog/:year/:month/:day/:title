@@ -46,7 +46,7 @@
 <meta property="og:url" content="http://thetechstack.net/blog/:year/:month/:day/:title" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <script type="application/ld+json">
-{"description":"Sharing my Java coding experiments","@type":"WebPage","headline":"cloud","url":"http://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
+{"@type":"WebPage","url":"http://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","headline":"cloud","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -98,6 +98,12 @@
                 <a class="nav-link" href="/index.html">Blog</a>
                 </li>-->
                 
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5 Quick Reference</a>
+                </li>
+
                 
                 <li class="nav-item">
                 

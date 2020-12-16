@@ -213,7 +213,7 @@
 <lastmod>2020-11-23T12:11:10-05:00</lastmod>
 </url>
 <url>
-<loc>http://thetechstack.net/spring-cloud-gateway-part-2/</loc>
+<loc>http://thetechstack.net/spring-cloud-gateway-part-2-copy/</loc>
 <lastmod>2020-11-30T12:11:10-05:00</lastmod>
 </url>
 <url>
@@ -226,7 +226,7 @@
 <loc>http://thetechstack.net/about/</loc>
 </url>
 <url>
-<loc>http://thetechstack.net/pages/cheat-sheets/curl-cheat-sheet/</loc>
+<loc>http://thetechstack.net/pages/cheat-sheets/curl-http-cheat-sheet/</loc>
 </url>
 <url>
 <loc>http://thetechstack.net/pages/cheat-sheets/docker-cheat-sheet/</loc>
@@ -242,6 +242,9 @@
 </url>
 <url>
 <loc>http://thetechstack.net/category/java/</loc>
+</url>
+<url>
+<loc>http://thetechstack.net/pages/quick-references/junit-5-quick-reference/</loc>
 </url>
 <url>
 <loc>http://thetechstack.net/category/kotlin/</loc>
@@ -275,6 +278,6 @@
 </url>
 <url>
 <loc>http://thetechstack.net/google1fd4f9cfcde74320.html</loc>
-<lastmod>2020-03-09T19:47:42-04:00</lastmod>
+<lastmod>2020-04-07T22:04:40-04:00</lastmod>
 </url>
 </urlset>

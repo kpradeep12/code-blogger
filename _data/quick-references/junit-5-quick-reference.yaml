@@ -1,5 +1,5 @@
 sections:
-  - title: Annotations
+  - title: Basic Annotations
     items:
     - term: |
         **@Test** - Declare a test method
@@ -117,4 +117,83 @@ sections:
         ``` java
           org.junit.jupiter.api.Assumptions.assumeFalse(4 > 5);
           // continues execution only if expression returns false
+        ```
+  - title: Conditional Tests
+    items:
+    - term: |
+        **@EnabledOnOs** - Executes only on matched OS  
+        **@DisabledOnOs** - Disabled on matched OS  
+        Available OS: MAC, AIX, WINDOWS, LINUX & SOLARIS
+      code: |
+        ``` java
+          @Test
+          @EnabledOnOs({OS.MAC, OS.WINDOWS}) // executes on MAC & Windows
+          public void method1(){}
+
+          @Test
+          @DisabledOnOs(OS.WINDOWS) // disabled on Windows
+          public void method2(){}
+        ```
+    - term: |
+        **@EnabledOnJre** - Executes only on matched JRE  
+        **@DisabledOnJre** - Disabled on matched JRE  
+        **@EnabledForJreRange** - Executes only on matched JRE range  
+        **@DisabledForJreRange** - Disabled on matched JRE range  
+        Available JRE: 8 to 16
+      code: |
+        ``` java
+          @Test
+          @EnabledOnJre(JRE.JAVA_14) // executes on JRE 14
+          public void method1(){}
+
+          @Test
+          @DisabledOnJre(JRE.JAVA_11) // disabled on JRE 11
+          public void method2(){}
+          
+          @Test
+          @EnabledForJreRange(min = JAVA_9, max = JAVA_10) // enabled from 9 to 11
+          public void method3(){}
+
+          @Test
+          @DisabledForJreRange(min = JAVA_9, max = JAVA_11) // disabled from 9 to 11
+          public void method4(){}
+        ```
+    - term: |
+        **@EnabledIfSystemProperty** - Execute if value of the provided system property matches  
+        **@DisabledIfSystemProperty** - Disabled if value of the provided system property matches
+      code: |
+        ``` java
+          @Test
+          @EnabledIfSystemProperty(named = "test-env", matches = "dev")
+          public void method1(){}
+
+          @Test
+          @DisabledIfSystemProperty(named = "test-env", matches = "perf")
+          public void method2(){}
+        ```
+    - term: |
+        **@EnabledIfEnvironmentVariable** - Execute if value of the provided environment variable matches  
+        **@DisabledIfEnvironmentVariable** - Disabled if value of the provided environment variable matches
+      code: |
+        ``` java
+          @Test
+          @EnabledIfEnvironmentVariable(named = "test-env", matches = "dev")
+          public void method1(){}
+
+          @Test
+          @DisabledIfEnvironmentVariable(named = "test-env", matches = "perf")
+          public void method2(){}
+        ```
+    - term: |
+        **@EnabledIf** - Execute if provided condition is true  
+        **@DisabledIf** - Disabled if provided condition is true
+      code: |
+        ``` java
+          @Test
+          @EnabledIf("#{<spel_expression>}")
+          public void method1(){}
+
+          @Test
+          @DisabledIf("#{<spel_expression>}")
+          public void method2(){}
         ```

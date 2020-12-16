@@ -10,7 +10,7 @@
 <!-- Twitter cards-->
 <meta name="twitter:site"    content="@PradeepK4J">
 <meta name="twitter:creator" content="@">
-<meta name="twitter:title"   content="cURL cheat sheet">
+<meta name="twitter:title"   content="cURL HTTP cheat sheet">
 
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:image" content="">
@@ -20,7 +20,7 @@
 
 <link rel="icon" href="/assets/images/logo.png">
     
-<!--<title>cURL cheat sheet | The Tech Stack . Net</title>-->
+<!--<title>cURL HTTP cheat sheet | The Tech Stack . Net</title>-->
     
  
     
@@ -35,18 +35,18 @@
 <link href="/assets/css/main.css" rel="stylesheet">
 <link href="/assets/css/custom.css" rel="stylesheet">
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>cURL cheat sheet | Pradeep’s Java blog</title>
+<title>cURL HTTP cheat sheet | Pradeep’s Java blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="cURL cheat sheet" />
+<meta property="og:title" content="cURL HTTP cheat sheet" />
 <meta name="author" content="Pradeep Kundarapu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sharing my Java coding experiments" />
 <meta property="og:description" content="Sharing my Java coding experiments" />
-<link rel="canonical" href="http://thetechstack.net/pages/cheat-sheets/curl-cheat-sheet/" />
-<meta property="og:url" content="http://thetechstack.net/pages/cheat-sheets/curl-cheat-sheet/" />
+<link rel="canonical" href="http://thetechstack.net/pages/cheat-sheets/curl-http-cheat-sheet/" />
+<meta property="og:url" content="http://thetechstack.net/pages/cheat-sheets/curl-http-cheat-sheet/" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <script type="application/ld+json">
-{"description":"Sharing my Java coding experiments","@type":"WebPage","headline":"cURL cheat sheet","url":"http://thetechstack.net/pages/cheat-sheets/curl-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
+{"@type":"WebPage","url":"http://thetechstack.net/pages/cheat-sheets/curl-http-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","headline":"cURL HTTP cheat sheet","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -101,6 +101,12 @@
                 
                 <li class="nav-item">
                 
+                <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5 Quick Reference</a>
+                </li>
+
+                
+                <li class="nav-item">
+                
                 <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git Cheat Sheet</a>
                 </li>
 
@@ -150,7 +156,7 @@
 <div class="main-content">
     <section>
     <div class="section-title">
-        <h2><span>cURL cheat sheet</span></h2>
+        <h2><span>cURL HTTP cheat sheet</span></h2>
     </div>
     <div class="cheat-sheet-article">
     <div class="container-fluid">
@@ -166,23 +172,92 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>curl &lt;URL&gt;</strong></td>
-                                    <td>Prints headers and response body</td>
+                                    <td><strong>curl -i &lt;URL&gt;</strong></td>
+                                    <td>Prints headers and response</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>curl -i &lt;URL&gt;</strong></td>
-                                    <td>Prints only response</td>
+                                    <td><strong>curl -v &lt;URL&gt;</strong></td>
+                                    <td>Prints more verbose, useful for debugging</td>
                                 </tr>
+                                    
+                                <tr>
+                                    <td><strong>curl -H &#39;&lt;key&gt;: &lt;value&gt;&#39; &lt;URL&gt;
+</strong></td>
+                                    <td>Add header to the request.</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Post</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>curl -d &#39;key=value&amp;key=value&#39; &lt;URL&gt;</strong></td>
+                                    <td>Post multiple key values using &#39;application/x-www-form-urlencoded&#39; as content type</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>curl -F &#39;key=value&#39; -F &#39;key=value&#39; &lt;URL&gt;</strong></td>
+                                    <td>Post multiple key values using &#39;multipart/form-data&#39; as content type</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>curl -d &#39;{json}&#39; -H &#39;Content-Type: application/json&#39; &lt;URL&gt;
+</strong></td>
+                                    <td>Post JSON data</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong>curl -F &#39;image=@/folder/image.png&#39; &lt;URL&gt;</strong></td>
+                                    <td>Upload file, add @ before file location</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Put</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>curl -T -d &#39;key=value&#39; &lt;URL&gt;</strong></td>
+                                    <td>Send a PUT request</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Delete</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong>curl -X DELETE &lt;URL&gt;</strong></td>
+                                    <td>Send a DELETE request</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                </div>
+                
+                <div class="col-sm-6">
+                        
+                            <h5>Security</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
                                     
                                 <tr>
                                     <td><strong>curl -u &lt;userid&gt;:&lt;pass&gt; &lt;URL&gt;</strong></td>
-                                    <td>Pass basic authentication details with user id and password</td>
+                                    <td>Pass basic authentication details; User id and password</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>curl -H &quot;&lt;key&gt;: &lt;value&gt;&quot; &lt;URL&gt;</strong></td>
-                                    <td>Pass header in the request.</td>
+                                    <td><strong>curl -k &lt;URL&gt;</strong></td>
+                                    <td>Make insecure connection, ignores SSL certification validation</td>
                                 </tr>
                                     
                                 </tbody>

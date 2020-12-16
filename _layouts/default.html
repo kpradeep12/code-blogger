@@ -89,6 +89,14 @@
                 <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
                 </li>-->
                 
+                {% if page.url == "/pages/quick-references/junit-5-quick-reference/" %}
+                <li class="nav-item active">
+                {% else %}
+                <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{{ site.baseurl }}/pages/quick-references/junit-5-quick-reference/">JUnit 5 Quick Reference</a>
+                </li>
+
                 {% if page.url == "/pages/cheat-sheets/git-cheat-sheet/" %}
                 <li class="nav-item active">
                 {% else %}

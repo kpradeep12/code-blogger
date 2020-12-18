@@ -6,6 +6,9 @@ Custom helpfull classes
 Apply multiple classes:
 {: .table .table-striped}
 
+Apply classes to text:
+*text*{: .small}
+
 Table example:
 Group Id | Artifact Id | Version | Description
 --- | --- | --- | ---

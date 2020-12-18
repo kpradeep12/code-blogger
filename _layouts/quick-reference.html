@@ -9,6 +9,8 @@ layout: default
     <div class="quick-reference-article">
                 {% if page.file == "junit-5-quick-reference" %}
                     {% assign doclist = site.data.quick-references.junit-5-quick-reference  %}
+                {% elsif page.file == "dockerfile-quick-reference" %}
+                    {% assign doclist = site.data.quick-references.dockerfile-quick-reference  %}                    
                 {% endif %}
 
                 {% for section in doclist.sections %}

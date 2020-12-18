@@ -1,0 +1,131 @@
+sections:
+  - title: Build Docker Image
+    items:
+    - term: |
+        **docker build** - Builds docker image. By default it will look for 'Dockerfile' file in current folder  
+      code: |
+        ``` bash
+          $docker build .
+        ```
+  - title: Dockerfile instructions
+    items:
+    - term: |
+        **FROM** - This will create the base layer for the subsequent instructions  
+        *FROM \<image>:\<tag>*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+        ```
+    - term: |
+        **WORKDIR** - Set the working directory. RUN, CMD, ENTRYPOINT, COPY and ADD instructions will use this while execution. 
+        We can have multiple WORKDIR's in a single Dockerfile  
+        *WORKDIR /temp*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+        ```
+    - term: |
+        **COPY** - Copy files from source file system to container's file system  
+        *COPY \<src>... \<dest>  
+        COPY target/\*.jar / - copies all .jar files to container parent folder*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+        ```
+    - term: |
+        **ENV** - Sets environment variable  
+        *ENV \<key> \<value> - sets single key value pair (first space is used to seperate key and value)  
+        ENV \<key>=\<value> \<key>=\<value> - set multiple key value pairs*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          ENV app_config=/app.properties
+        ```
+    - term: |
+        **LABEL** - Adds metadata to an image  
+        *LABEL \<key>=\<value> \<key>=\<value> - set multiple key value pairs*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          LABEL description="inventory app" version="1.0"
+        ```
+    - term: |
+        **USER** - Sets the username to use when running the image, all subsequent RUN, CMD and ENTRYPOINT instructions use this user when running  
+        *USER \<user>[:\<group>] - sets user name and optional group*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          USER app-user
+        ```
+    - term: |
+        **ARG** - Define a variable to pass the value at build time; subsequent instructions will use this value  
+        *ARG \<name>[=\<default-value>] - define argument with optional default value*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          # pass user-id at build time '$docker build --build-arg user-id=app-user'
+          USER user-id
+        ```
+    - term: |
+        **RUN** - Executes given command in a new layer on top of the current image and commits the result; 
+        this resulted image will be used as a base image by the next instructions. Also, note that RUN is executed at build time,
+        for example; you can use RUN to setup environment before application execution, like updating software or installing required tools  
+        *RUN \<command> \<param1> \<param2>  - supports shell form  
+        RUN ["executable", "param1", "param2"] - supports exec form*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          RUN apt-get update
+        ```
+    - term: |
+        **CMD** - Executes given command when the container is launched with 'docker run'. Provide only one CMD instruction; 
+        if you provide more, then the last one will be used to execute  
+        *CMD \<command> \<param1> \<param2>  - supports shell form  
+        CMD ["executable", "param1", "param2"] - supports exec form; preferred form  
+        CMD ["param1", "param2"] -  default params to ENTRYPOINT*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          CMD java -jar inventory-1.0.jar
+        ```
+    - term: |
+        **ENTRYPOINT** - Executes given command when container is launched with 'docker run'. When CMD and ENTRYPOINT, both are provided
+        then ENTRYPOINT will be used to execute container and all the arguments of CMD will be passed to ENTRYPOINT.
+        Click [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact) to understand how CMD and ENTRYPOINT will work together.  
+        *ENTRYPOINT \<command> \<param1> \<param2>  - supports shell form  
+        ENTRYPOINT ["executable", "param1", "param2"] - supports exec form; preferred form*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          ENTRYPOINT ["java", "-jar", "inventory-1.0.jar"]
+        ```
+    - term: |
+        **HEALTHCHECK** - Docker will run this command to check if the container is working properly.  
+        *HEALTHCHECK [OPTIONS] CMD command - checks container health by running it inside the container  
+        HEALTHCHECK NONE - disable healthcheck on this container*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          # to check every five minutes
+          HEALTHCHECK --interval=5m CMD curl -f http://localhost:8080/ || exit 1
+          ENTRYPOINT ["java", "-jar", "inventory-1.0.jar"]
+        ```

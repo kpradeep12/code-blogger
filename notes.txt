@@ -63,3 +63,6 @@ https://gist.github.com/magicznyleszek/9803727
 
 TODO
 https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
+
+junit 5 quick references -> publish personal linked in
+dockerfile quick reference -> publish all places

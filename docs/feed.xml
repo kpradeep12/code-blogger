@@ -5,16 +5,16 @@
     <description>Sharing my Java coding experiments</description>
     <link>http://thetechstack.net/</link>
     <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 18 Dec 2020 14:55:50 -0500</pubDate>
-    <lastBuildDate>Fri, 18 Dec 2020 14:55:50 -0500</lastBuildDate>
+    <pubDate>Fri, 18 Dec 2020 15:58:45 -0500</pubDate>
+    <lastBuildDate>Fri, 18 Dec 2020 15:58:45 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Spring Cloud Gateway - Part 2</title>
         <description>This is the second part of Spring cloud gateway tutorial. We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Filters to change request and response.</description>
         <pubDate>Mon, 30 Nov 2020 12:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/spring-cloud-gateway-part-2-copy/</link>
-        <guid isPermaLink="true">http://thetechstack.net/spring-cloud-gateway-part-2-copy/</guid>
+        <link>http://thetechstack.net/spring-cloud-gateway-part-2/</link>
+        <guid isPermaLink="true">http://thetechstack.net/spring-cloud-gateway-part-2/</guid>
         
         
         <category>java</category>

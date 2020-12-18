@@ -169,23 +169,6 @@
                 
 
                 
-                <h4>Build Docker Image</h4>
-                
-                    <div class="container-fluid">
-                        <div class="row quick-reference-item">
-                            <div class="col-sm-6 p-0">
-                                <div class="term"><p><strong>docker build</strong> - Builds docker image. By default it will look for ‘Dockerfile’ file in current folder</p>
-</div>
-                            </div>
-                            <div class="col-sm-6 p-0 quick-ref-highlight">
-                                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$docker</span> build <span class="nb">.</span>
-</code></pre></div></div>
-
-                            </div>
-                        </div>
-                    </div>
-                
-                
                 <h4>Dockerfile instructions</h4>
                 
                     <div class="container-fluid">
@@ -391,6 +374,80 @@ HEALTHCHECK NONE - disable healthcheck on this container</em></p>
   HEALTHCHECK <span class="nt">--interval</span><span class="o">=</span>5m CMD curl <span class="nt">-f</span> http://localhost:8080/ <span class="o">||</span> <span class="nb">exit </span>1
   ENTRYPOINT <span class="o">[</span><span class="s2">"java"</span>, <span class="s2">"-jar"</span>, <span class="s2">"inventory-1.0.jar"</span><span class="o">]</span>
 </code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p><strong>EXPOSE</strong> - Expose port to allow incoming traffic to the contianer<br />
+<em class="small">EXPOSE &lt;port-number&gt;</em></p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  FROM openjdk:8-jdk-alpine
+  WORKDIR /my-projects/inventory
+  COPY target/inventory-1.0.jar /inventory-1.0.jar
+  <span class="c"># exposes 8080 port</span>
+  EXPOSE 8080
+  ENTRYPOINT <span class="o">[</span><span class="s2">"java"</span>, <span class="s2">"-jar"</span>, <span class="s2">"inventory-1.0.jar"</span><span class="o">]</span>
+</code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p><strong>VOLUME</strong> - Mount file system to the container<br />
+<em class="small">VOLUME [“/var/app”] - single volume<br />
+VOLUME /var/app1 /var/app2 - multiple volumes</em></p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  FROM openjdk:8-jdk-alpine
+  WORKDIR /my-projects/inventory
+  COPY target/inventory-1.0.jar /inventory-1.0.jar
+  <span class="c"># inventory can write logs to /var/app1</span>
+  VOLUME /var/app1
+  ENTRYPOINT <span class="o">[</span><span class="s2">"java"</span>, <span class="s2">"-jar"</span>, <span class="s2">"inventory-1.0.jar"</span><span class="o">]</span>
+</code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <h4>Build Docker Image</h4>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p><strong>docker build</strong> - Builds docker image. By default it will look for ‘Dockerfile’ file in current folder</p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$docker</span> build <span class="nb">.</span>
+</code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <h4>More references</h4>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p>Docker official documentation on Dockerfile - <a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                
 
                             </div>
                         </div>

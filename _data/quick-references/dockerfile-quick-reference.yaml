@@ -1,12 +1,4 @@
 sections:
-  - title: Build Docker Image
-    items:
-    - term: |
-        **docker build** - Builds docker image. By default it will look for 'Dockerfile' file in current folder  
-      code: |
-        ``` bash
-          $docker build .
-        ```
   - title: Dockerfile instructions
     items:
     - term: |
@@ -128,6 +120,39 @@ sections:
           # to check every five minutes
           HEALTHCHECK --interval=5m CMD curl -f http://localhost:8080/ || exit 1
           ENTRYPOINT ["java", "-jar", "inventory-1.0.jar"]
+        ```
+    - term: |
+        **EXPOSE** - Expose port to allow incoming traffic to the contianer  
+        *EXPOSE \<port-number>*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          # exposes 8080 port
+          EXPOSE 8080
+          ENTRYPOINT ["java", "-jar", "inventory-1.0.jar"]
+        ```
+    - term: |
+        **VOLUME** - Mount file system to the container  
+        *VOLUME ["/var/app"] - single volume  
+        VOLUME /var/app1 /var/app2 - multiple volumes*{: .small}
+      code: |
+        ``` bash
+          FROM openjdk:8-jdk-alpine
+          WORKDIR /my-projects/inventory
+          COPY target/inventory-1.0.jar /inventory-1.0.jar
+          # inventory can write logs to /var/app1
+          VOLUME /var/app1
+          ENTRYPOINT ["java", "-jar", "inventory-1.0.jar"]
+        ```
+  - title: Build Docker Image
+    items:
+    - term: |
+        **docker build** - Builds docker image. By default it will look for 'Dockerfile' file in current folder  
+      code: |
+        ``` bash
+          $docker build .
         ```
   - title: More references
     items:

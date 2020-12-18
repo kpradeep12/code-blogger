@@ -157,5 +157,5 @@ sections:
   - title: More references
     items:
     - term: |
-        Docker official documentation on Dockerfile - [https://docs.docker.com/engine/reference/builder/](https://docs.docker.com/engine/reference/builder/)
+        Official documentation on Dockerfile - [https://docs.docker.com/engine/reference/builder/](https://docs.docker.com/engine/reference/builder/)
       code:

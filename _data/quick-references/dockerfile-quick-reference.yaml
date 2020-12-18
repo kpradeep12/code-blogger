@@ -129,3 +129,8 @@ sections:
           HEALTHCHECK --interval=5m CMD curl -f http://localhost:8080/ || exit 1
           ENTRYPOINT ["java", "-jar", "inventory-1.0.jar"]
         ```
+  - title: More references
+    items:
+    - term: |
+        Docker official documentation on Dockerfile - [https://docs.docker.com/engine/reference/builder/](https://docs.docker.com/engine/reference/builder/)
+      code:

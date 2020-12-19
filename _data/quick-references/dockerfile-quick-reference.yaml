@@ -14,7 +14,7 @@ sections:
         *WORKDIR /temp*{: .small}
       code: |
         ``` bash
-          FROM openjdk:8-jdk-alpine
+          FROM openjdk:11-jdk-slim
           WORKDIR /my-projects/inventory
         ```
     - term: |

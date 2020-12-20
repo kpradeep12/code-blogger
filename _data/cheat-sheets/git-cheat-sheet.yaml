@@ -2,7 +2,7 @@
   groups:
     - title: Basic operations
       items:
-      - key: git clone <repo_url>
+      - key: git clone \<repo_url>
         value: Clone and create new local repository
       - key: git status
         value: List all the changes in the repository; new file, modification or deletion
@@ -10,45 +10,45 @@
         value: List all the changes in the repository; short format
       - key: git diff
         value: Compares modified files to staging area
-      - key: git diff --staged
+      - key: git diff \--staged
         value: Compares staged files to last commit
-      - key: git add <file>
+      - key: git add \<file>
         value: Move file from working area to staging area
       - key: git add -A
         value: Move all modified/new files to staging area
-      - key: git commit -m "<message>"
+      - key: git commit -m "\<message>"
         value: Commit all staged files to local project history
-      - key: git commit -a -m "<message>"
-        value: Add and commit together. Short form for 'git add -A && git commit -m <>'
-      - key: git push <origin> <master>
-        value: Push local commited changes to remote. <origin> is the server and <master> is the branch to which changes are pushed
-      - key: git pull --all
+      - key: git commit -a -m "\<message>"
+        value: Add and commit together. Short form for 'git add -A && git commit -m \<>'
+      - key: git push \<origin> \<master>
+        value: Push local commited changes to remote. \<origin> is the server and \<master> is the branch to which changes are pushed
+      - key: git pull \--all
         value: Pull all new changes on remote to local
     - title: Branching
       items:
-      - key: git checkout <branch name>
+      - key: git checkout \<branch name>
         value: Create new branch
-      - key: git checkout -b <branch name>
+      - key: git checkout -b \<branch name>
         value: Create new branch and switch
-      - key: git merge <branch name>
+      - key: git merge \<branch name>
         value: Merge branch
-      - key: git branch -d <branch name>
+      - key: git branch -d \<branch name>
         value: Delete branch
       - key: git branch
         value: List all local branches
       - key: git branch -v
         value: List branches with last commit
-      - key: git branch --merged
+      - key: git branch \--merged
         value: List all branches merged with current branch
-      - key: git branch --no-merged
+      - key: git branch \--no-merged
         value: List all branches which haven't yet merged
     - title: Remote branch
       items:
       - key: git branch -r
         value: List all remote branches
-      - key: git checkout -b <branch-name> <remote-branch-name>
+      - key: git checkout -b \<branch-name> \<remote-branch-name>
         value: Creates new local repo from this remote branch
-      - key: git push origin --delete <branch-name>
+      - key: git push origin \--delete \<branch-name>
         value: Delete's remote branch
     - title: Stash
       items:
@@ -66,9 +66,9 @@
   groups:
     - title: Rebase
       items:
-      - key: git rebase <branch>
+      - key: git rebase \<branch>
         value: Saves all files to stash
-      - key: git rebase --continue
+      - key: git rebase \--continue
         value: To continue after fixing rebase conflict issues    
     - title: View commit history
       items:
@@ -76,19 +76,19 @@
         value: Lists summary of all commits
       - key: git log -p -2
         value: Lists last two commit details
-      - key: git log --stat
+      - key: git log \--stat
         value: Displays stats
-      - key: git log --pretty=online
+      - key: git log \--pretty=online
         value: Display in one line. Other options for pretty is short, full and fuller
-      - key: 'git log --pretty=format: "%h %s" --graph'
+      - key: 'git log \--pretty=format: "%h %s" \--graph'
         value: Display as graph
-      - key: git log --oneline --decorate
+      - key: git log \--oneline \--decorate
         value: Shows current HEAD pointer. (Git keeps a special pointer called HEAD, which helps git to know in which branch it is on)
     - title: Working with remotes
       items:
       - key: git remote
         value: List all remote branches (use -v option to show URL's)
-      - key: git remote add pb <URL>
+      - key: git remote add pb \<URL>
         value: Add remote repo
       - key: git fetch pb
         value: Fetch new changes from remote (fetch will not merge changes automatically)
@@ -108,21 +108,21 @@
         value: Create annotated tag
       - key: git tag v1.4
         value: Create a lightweight tag
-      - key: git tag -a v1.4 <commit-id>
+      - key: git tag -a v1.4 \<commit-id>
         value: Tag a particular commit
       - key: git push origin v1.4
         value: Push particular tag to remote (By default 'git push' will not upload tags to remote)
-      - key: git push origin --tags
+      - key: git push origin \--tags
         value: Push all tags
     - title: Undoing things
       items:
-      - key: git reset HEAD <file>
+      - key: git reset HEAD \<file>
         value: Un-stage a staged file
-      - key: git checkout -- <file>
+      - key: git checkout \-- \<file>
         value: Undo a modified file
-      - key: git add <file> && git commit --amend
+      - key: git add \<file> && git commit \--amend
         value: Instead of creating new commit, this will add file to stage and then amends the most recent commit
-      - key: git reset <file> && git rm --cached <file>
+      - key: git reset \<file> && git rm \--cached \<file>
         value: Remove tracked file. For example; target or .class files which are not needed to checkin
-      - key: git rm -r --cached <file>
+      - key: git rm -r \--cached \<file>
         value: Delete from git but not from file system, next time this file will not be pushed

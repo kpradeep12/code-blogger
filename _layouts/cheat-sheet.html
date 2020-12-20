@@ -26,8 +26,8 @@ layout: default
                                 <tbody>
                                     {% for item in group.items %}
                                 <tr>
-                                    <td><strong>{{item.key | escape}}</strong></td>
-                                    <td>{{item.value | escape}}</td>
+                                    <td><strong>{{item.key | markdownify}}</strong></td>
+                                    <td>{{item.value | markdownify}}</td>
                                 </tr>
                                     {% endfor %}
                                 </tbody>

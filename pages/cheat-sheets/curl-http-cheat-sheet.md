@@ -1,6 +1,6 @@
 ---
 layout: cheat-sheet
-title: cURL HTTP cheat sheet
+title: cURL HTTP Cheat Sheet
 categories: cheat-sheet
-file: curl-http-cheat-sheet
+file: docker-cli-cheat-sheet
 ---

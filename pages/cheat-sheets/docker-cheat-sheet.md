@@ -1,6 +1,6 @@
 ---
 layout: cheat-sheet
-title: Docker cheat sheet
+title: Docker CLI cheat sheet
 categories: cheat-sheet
-file: docker-cheat-sheet
+file: docker-cli-cheat-sheet
 ---

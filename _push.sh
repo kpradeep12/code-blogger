@@ -1,4 +1,4 @@
 git add -A
 git reset -- docs
-git commit -m "update"
+git commit -m "save"
 git push origin master

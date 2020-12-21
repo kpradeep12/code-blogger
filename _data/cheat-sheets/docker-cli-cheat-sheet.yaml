@@ -18,26 +18,11 @@
           
           **-d** run a container in background and print container id  
           **--name** assign a name to the container  
-          **-p \<host port>:\<container port>** publish container's port to the host  
-          **-v** mount a volume
+          **-p \<local port>:\<container port>** publish container's port to the host  
+          **-v \<local file system>:\<container file system>** mount a volume
           {: #options_tx}
           
           $ docker run -d --name jenkins -p 8085:8080 -p 50000:50000 -v "/docker_volume/jenkins":/var/jenkins_home jenkins/jenkins:lts-jdk11
-          {: #terminal_tx}
-      - key: docker start [OPTIONS] CONTAINER [CONTAINER...]
-        value: |
-          Start one or more containers 
-
-          **-i** interactive mode; attach container's STDIN
-          {: #options_tx}
-          
-          $ docker start jenkins
-          {: #terminal_tx}
-      - key: docker stop [OPTIONS] CONTAINER [CONTAINER...]
-        value: |
-          Stop one or more containers
-          
-          $ docker stop jenkins
           {: #terminal_tx}
       - key: |
           docker images [OPTIONS] [REPOSITORY[:TAG]]
@@ -53,40 +38,56 @@
           
           $ docker build .
           {: #terminal_tx}
-- column: two
-  groups:
     - title: Cleanup
       items:
-      - key: |
-          docker rmi [OPTIONS] IMAGE [IMAGE...]
-        value: |
-          Remove one or more images 
-          
-          **-f** force remove image
-          {: #options_tx}
-
-          $ docker rmi -f 8b7c2b10838b 1a7a055a6252
-          {: #terminal_tx}
-      - key: |
-          docker rm [OPTIONS] CONTAINER [CONTAINER...]
-        value: |
-          Remove one or more containers  
-          
-          **-f** force remove running container
-          {: #options_tx}
-    - title: Inspection
+        - key: |
+            docker rmi [OPTIONS] IMAGE [IMAGE...]
+          value: |
+            Remove one or more images 
+    
+            **-f** force remove image
+            {: #options_tx}
+    
+            $ docker rmi -f 8b7c2b10838b 1a7a055a6252
+            {: #terminal_tx}
+        - key: |
+            docker rm [OPTIONS] CONTAINER [CONTAINER...]
+          value: |
+            Remove one or more containers  
+    
+            **-f** force remove running container
+            {: #options_tx}
+- column: two
+  groups:
+    - title: Container
       items:
-      - key: docker ps [OPTIONS]
+      - key: docker container start [OPTIONS] CONTAINER [CONTAINER...]
+        value: |
+          Start one or more containers 
+  
+          **-i** interactive mode; attach container's STDIN
+          {: #options_tx}
+  
+          $ docker container start jenkins
+          {: #terminal_tx}
+      - key: docker container stop [OPTIONS] CONTAINER [CONTAINER...]
+        value: |
+          Stop one or more containers 
+  
+          $ docker container stop jenkins
+          {: #terminal_tx}
+      - key: docker container ls [OPTIONS]
         value: |
           List containers  
           
           **-a** show all containers (default shows just running)  
-          **-q** only display container id's
+          **-q** only display container id's  
+          **-s** display total file size
           {: #options_tx}
           
-          $ docker ps
+          $ docker container ls
           {: #terminal_tx}
-      - key: docker logs [OPTIONS] CONTAINER
+      - key: docker container logs [OPTIONS] CONTAINER
         value: |
           Display logs of the container
           
@@ -94,9 +95,9 @@
           **--tail \<number>** number of lines to show from the end of the log
           {: #options_tx}
           
-          $ docker logs --tail 5 jenkins
+          $ docker container logs --tail 5 jenkins
           {: #terminal_tx}
-      - key: docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+      - key: docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
         value: |
           Run a command in a running container
           
@@ -105,5 +106,29 @@
           **-t** allocate a pseudo-TTY
           {: #options_tx}
           
-          $ docker exec -it jenkins /bin/bash
+          $ docker container exec -it jenkins /bin/bash
+          {: #terminal_tx}
+      - key: docker container diff CONTAINER
+        value: |
+          List changed files and directories on the container 
+
+          $ docker container diff jenkins
+          {: #terminal_tx}
+      - key: docker container stats [OPTIONS] [CONTAINER...]
+        value: |
+          Display live stream on container resource usage statistics 
+  
+          $ docker container stats jenkins
+          {: #terminal_tx}
+      - key: docker container inspect [OPTIONS] CONTAINER [CONTAINER...]
+        value: |
+          Display detailed information on one or more container's 
+
+          $ docker container inspect jenkins
+          {: #terminal_tx}
+      - key: docker container kill [OPTIONS] CONTAINER [CONTAINER...]
+        value: |
+          Kill one or more running container's 
+
+          $ docker container kill jenkins
           {: #terminal_tx}

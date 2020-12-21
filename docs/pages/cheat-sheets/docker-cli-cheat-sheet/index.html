@@ -12,8 +12,8 @@
 <meta name="twitter:creator" content="@">
 <meta name="twitter:title"   content="Docker CLI cheat sheet">
 
-<meta name="twitter:card"  content="summary">
-<meta name="twitter:image" content="">
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://thetechstack.net/assets/images/banners/docker-cli-cheat-sheet-banner.png">
 
 <!-- end of Twitter cards -->
 
@@ -50,8 +50,9 @@
 <link rel="canonical" href="http://thetechstack.net/pages/cheat-sheets/docker-cli-cheat-sheet/" />
 <meta property="og:url" content="http://thetechstack.net/pages/cheat-sheets/docker-cli-cheat-sheet/" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
+<meta property="og:image" content="http://thetechstack.net/assets/images/banners/docker-cli-cheat-sheet-banner.png" />
 <script type="application/ld+json">
-{"description":"Sharing my Java coding experiments","@type":"WebPage","headline":"Docker CLI cheat sheet","url":"http://thetechstack.net/pages/cheat-sheets/docker-cli-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
+{"@type":"WebPage","image":"http://thetechstack.net/assets/images/banners/docker-cli-cheat-sheet-banner.png","url":"http://thetechstack.net/pages/cheat-sheets/docker-cli-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","headline":"Docker CLI cheat sheet","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -90,6 +91,10 @@
     <span class="navbar-toggler-icon"></span>
     </button>
     
+    <div>
+        <script async src="https://cse.google.com/cse.js?cx=a39f12b298f0f881d"></script>
+        <div class="gcse-search"></div>
+    </div>
     
     <div class="collapse navbar-collapse" id="navbarMediumish">
        
@@ -197,30 +202,10 @@
 
 <p id="options_tx"><strong>-d</strong> run a container in background and print container id<br />
 <strong>–name</strong> assign a name to the container<br />
-<strong>-p &lt;host port&gt;:&lt;container port&gt;</strong> publish container’s port to the host<br />
-<strong>-v</strong> mount a volume</p>
+<strong>-p &lt;local port&gt;:&lt;container port&gt;</strong> publish container’s port to the host<br />
+<strong>-v &lt;local file system&gt;:&lt;container file system&gt;</strong> mount a volume</p>
 
 <p id="terminal_tx">$ docker run -d –name jenkins -p 8085:8080 -p 50000:50000 -v “/docker_volume/jenkins”:/var/jenkins_home jenkins/jenkins:lts-jdk11</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker start [OPTIONS] CONTAINER [CONTAINER…]</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Start one or more containers</p>
-
-<p id="options_tx"><strong>-i</strong> interactive mode; attach container’s STDIN</p>
-
-<p id="terminal_tx">$ docker start jenkins</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker stop [OPTIONS] CONTAINER [CONTAINER…]</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Stop one or more containers</p>
-
-<p id="terminal_tx">$ docker stop jenkins</p>
 </td>
                                 </tr>
                                     
@@ -244,10 +229,6 @@
                                     
                                 </tbody>
                             </table>
-                        
-                </div>
-                
-                <div class="col-sm-6">
                         
                             <h5>Cleanup</h5>
                             <table class="custom-cheat-sheet-table">
@@ -276,36 +257,61 @@
                                 </tbody>
                             </table>
                         
-                            <h5>Inspection</h5>
+                </div>
+                
+                <div class="col-sm-6">
+                        
+                            <h5>Container</h5>
                             <table class="custom-cheat-sheet-table">
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong><p>docker ps [OPTIONS]</p>
+                                    <td><strong><p>docker container start [OPTIONS] CONTAINER [CONTAINER…]</p>
 </strong></td>
-                                    <td class="cheat-sheet-value"><p>List containers</p>
+                                    <td class="cheat-sheet-value"><p>Start one or more containers</p>
 
-<p id="options_tx"><strong>-a</strong> show all containers (default shows just running)<br />
-<strong>-q</strong> only display container id’s</p>
+<p id="options_tx"><strong>-i</strong> interactive mode; attach container’s STDIN</p>
 
-<p id="terminal_tx">$ docker ps</p>
+<p id="terminal_tx">$ docker container start jenkins</p>
 </td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong><p>docker logs [OPTIONS] CONTAINER</p>
+                                    <td><strong><p>docker container stop [OPTIONS] CONTAINER [CONTAINER…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Stop one or more containers</p>
+
+<p id="terminal_tx">$ docker container stop jenkins</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker container ls [OPTIONS]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List containers</p>
+
+<p id="options_tx"><strong>-a</strong> show all containers (default shows just running)<br />
+<strong>-q</strong> only display container id’s<br />
+<strong>-s</strong> display total file size</p>
+
+<p id="terminal_tx">$ docker container ls</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker container logs [OPTIONS] CONTAINER</p>
 </strong></td>
                                     <td class="cheat-sheet-value"><p>Display logs of the container</p>
 
 <p id="options_tx"><strong>-f</strong> follow log output<br />
 <strong>–tail &lt;number&gt;</strong> number of lines to show from the end of the log</p>
 
-<p id="terminal_tx">$ docker logs –tail 5 jenkins</p>
+<p id="terminal_tx">$ docker container logs –tail 5 jenkins</p>
 </td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong><p>docker exec [OPTIONS] CONTAINER COMMAND [ARG…]</p>
+                                    <td><strong><p>docker container exec [OPTIONS] CONTAINER COMMAND [ARG…]</p>
 </strong></td>
                                     <td class="cheat-sheet-value"><p>Run a command in a running container</p>
 
@@ -313,7 +319,43 @@
 <strong>-i</strong> interactive mode, keep STDIN open<br />
 <strong>-t</strong> allocate a pseudo-TTY</p>
 
-<p id="terminal_tx">$ docker exec -it jenkins /bin/bash</p>
+<p id="terminal_tx">$ docker container exec -it jenkins /bin/bash</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker container diff CONTAINER</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List changed files and directories on the container</p>
+
+<p id="terminal_tx">$ docker container diff jenkins</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker container stats [OPTIONS] [CONTAINER…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Display live stream on container resource usage statistics</p>
+
+<p id="terminal_tx">$ docker container stats jenkins</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker container inspect [OPTIONS] CONTAINER [CONTAINER…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Display detailed information on one or more container’s</p>
+
+<p id="terminal_tx">$ docker container inspect jenkins</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker container kill [OPTIONS] CONTAINER [CONTAINER…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Kill one or more running container’s</p>
+
+<p id="terminal_tx">$ docker container kill jenkins</p>
 </td>
                                 </tr>
                                     

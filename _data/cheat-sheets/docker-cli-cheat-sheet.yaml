@@ -22,7 +22,7 @@
           **-v \<local file system>:\<container file system>** mount a volume
           {: #options_tx}
           
-          $ docker run -d --name jenkins -p 8085:8080 -p 50000:50000 -v "/docker_volume/jenkins":/var/jenkins_home jenkins/jenkins:lts-jdk11
+          $ docker run -d --name jenkins -p 8085:8080 -v "/docker_volume/jenkins":/var/jenkins_home jenkins/jenkins:lts-jdk11
           {: #terminal_tx}
       - key: |
           docker images [OPTIONS] [REPOSITORY[:TAG]]

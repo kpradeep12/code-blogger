@@ -52,7 +52,7 @@
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <meta property="og:image" content="http://thetechstack.net/assets/images/banners/dockerfile-quick-reference.png" />
 <script type="application/ld+json">
-{"@type":"WebPage","image":"http://thetechstack.net/assets/images/banners/dockerfile-quick-reference.png","url":"http://thetechstack.net/pages/quick-references/dockerfile-quick-reference/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","headline":"Dockerfile Quick Reference","@context":"http://schema.org"}</script>
+{"description":"Sharing my Java coding experiments","@type":"WebPage","headline":"Dockerfile Quick Reference","url":"http://thetechstack.net/pages/quick-references/dockerfile-quick-reference/","image":"http://thetechstack.net/assets/images/banners/dockerfile-quick-reference.png","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -106,15 +106,17 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5</a>
                         <a class="nav-link" href="/pages/quick-references/dockerfile-quick-reference/">Dockerfile</a>
+                        <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5</a>
                     </div>
                 </li>
 
-                
-                <li class="nav-item">
-                
-                <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git Cheat Sheet</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cheat Sheet's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown02">
+                        <a class="nav-link" href="/pages/cheat-sheets/docker-cli-cheat-sheet/">Docker CLI</a>
+                        <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git</a>
+                    </div>
                 </li>
 
                 
@@ -195,7 +197,7 @@ We can have multiple WORKDIR’s in a single Dockerfile<br />
 </div>
                             </div>
                             <div class="col-sm-6 p-0 quick-ref-highlight">
-                                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  FROM openjdk:8-jdk-alpine
+                                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  FROM openjdk:11-jdk-slim
   WORKDIR /my-projects/inventory
 </code></pre></div></div>
 
@@ -443,7 +445,7 @@ VOLUME /var/app1 /var/app2 - multiple volumes</em></p>
                     <div class="container-fluid">
                         <div class="row quick-reference-item">
                             <div class="col-sm-6 p-0">
-                                <div class="term"><p>Docker official documentation on Dockerfile - <a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></p>
+                                <div class="term"><p>Official documentation on Dockerfile - <a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></p>
 </div>
                             </div>
                             <div class="col-sm-6 p-0 quick-ref-highlight">

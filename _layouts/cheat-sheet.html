@@ -27,7 +27,7 @@ layout: default
                                     {% for item in group.items %}
                                 <tr>
                                     <td><strong>{{item.key | markdownify}}</strong></td>
-                                    <td>{{item.value | markdownify}}</td>
+                                    <td class="cheat-sheet-value">{{item.value | markdownify}}</td>
                                 </tr>
                                     {% endfor %}
                                 </tbody>

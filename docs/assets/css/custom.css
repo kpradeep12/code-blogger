@@ -28,6 +28,7 @@
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
+
 .book-toc {
     padding-right: 40px;
 }
@@ -54,4 +55,26 @@
     font-weight: 700;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
+}
+.cheat-sheet-value{
+    display: inline-block;
+    vertical-align: top;
+}
+.cheat-sheet-value p{
+    margin-bottom: 0px;
+}
+#options_tx {
+    background-color: #aeaeae;
+    color: rgb(54, 54, 54);
+    padding: 0px 5px 0px 5px;
+    border-radius: 3px;
+    display: inline-block; 
+}
+#terminal_tx {
+    background-color: #373737;
+    color: white;
+    padding: 0px 5px 0px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-top: 5px;
 }

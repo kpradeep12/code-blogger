@@ -51,7 +51,7 @@
 <meta property="og:url" content="http://thetechstack.net/pages/cheat-sheets/git-cheat-sheet/" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://thetechstack.net/pages/cheat-sheets/git-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","headline":"Git cheat sheet","@context":"http://schema.org"}</script>
+{"description":"Sharing my Java coding experiments","@type":"WebPage","headline":"Git cheat sheet","url":"http://thetechstack.net/pages/cheat-sheets/git-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -105,15 +105,17 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5</a>
                         <a class="nav-link" href="/pages/quick-references/dockerfile-quick-reference/">Dockerfile</a>
+                        <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5</a>
                     </div>
                 </li>
 
-                
-                <li class="nav-item active">
-                
-                <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git Cheat Sheet</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cheat Sheet's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown02">
+                        <a class="nav-link" href="/pages/cheat-sheets/docker-cli-cheat-sheet/">Docker CLI</a>
+                        <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git</a>
+                    </div>
                 </li>
 
                 
@@ -178,58 +180,80 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>git clone &lt;repo_url&gt;</strong></td>
-                                    <td>Clone and create new local repository</td>
+                                    <td><strong><p>git clone &lt;repo_url&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Clone and create new local repository</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git status</strong></td>
-                                    <td>List all the changes in the repository; new file, modification or deletion</td>
+                                    <td><strong><p>git status</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all the changes in the repository; new file, modification or deletion</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git status -s</strong></td>
-                                    <td>List all the changes in the repository; short format</td>
+                                    <td><strong><p>git status -s</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all the changes in the repository; short format</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git diff</strong></td>
-                                    <td>Compares modified files to staging area</td>
+                                    <td><strong><p>git diff</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Compares modified files to staging area</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git diff --staged</strong></td>
-                                    <td>Compares staged files to last commit</td>
+                                    <td><strong><p>git diff --staged</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Compares staged files to last commit</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git add &lt;file&gt;</strong></td>
-                                    <td>Move file from working area to staging area</td>
+                                    <td><strong><p>git add &lt;file&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Move file from working area to staging area</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git add -A</strong></td>
-                                    <td>Move all modified/new files to staging area</td>
+                                    <td><strong><p>git add -A</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Move all modified/new files to staging area</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git commit -m &quot;&lt;message&gt;&quot;</strong></td>
-                                    <td>Commit all staged files to local project history</td>
+                                    <td><strong><p>git commit -m “&lt;message&gt;”</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Commit all staged files to local project history</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git commit -a -m &quot;&lt;message&gt;&quot;</strong></td>
-                                    <td>Add and commit together. Short form for &#39;git add -A &amp;&amp; git commit -m &lt;&gt;&#39;</td>
+                                    <td><strong><p>git commit -a -m “&lt;message&gt;”</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Add and commit together. Short form for ‘git add -A &amp;&amp; git commit -m &lt;&gt;’</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git push &lt;origin&gt; &lt;master&gt;</strong></td>
-                                    <td>Push local commited changes to remote. &lt;origin&gt; is the server and &lt;master&gt; is the branch to which changes are pushed</td>
+                                    <td><strong><p>git push &lt;origin&gt; &lt;master&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Push local commited changes to remote. &lt;origin&gt; is the server and &lt;master&gt; is the branch to which changes are pushed</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git pull --all</strong></td>
-                                    <td>Pull all new changes on remote to local</td>
+                                    <td><strong><p>git pull --all</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Pull all new changes on remote to local</p>
+</td>
                                 </tr>
                                     
                                 </tbody>
@@ -240,43 +264,59 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>git checkout &lt;branch name&gt;</strong></td>
-                                    <td>Create new branch</td>
+                                    <td><strong><p>git checkout &lt;branch name&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Create new branch</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git checkout -b &lt;branch name&gt;</strong></td>
-                                    <td>Create new branch and switch</td>
+                                    <td><strong><p>git checkout -b &lt;branch name&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Create new branch and switch</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git merge &lt;branch name&gt;</strong></td>
-                                    <td>Merge branch</td>
+                                    <td><strong><p>git merge &lt;branch name&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Merge branch</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git branch -d &lt;branch name&gt;</strong></td>
-                                    <td>Delete branch</td>
+                                    <td><strong><p>git branch -d &lt;branch name&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Delete branch</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git branch</strong></td>
-                                    <td>List all local branches</td>
+                                    <td><strong><p>git branch</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all local branches</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git branch -v</strong></td>
-                                    <td>List branches with last commit</td>
+                                    <td><strong><p>git branch -v</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List branches with last commit</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git branch --merged</strong></td>
-                                    <td>List all branches merged with current branch</td>
+                                    <td><strong><p>git branch --merged</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all branches merged with current branch</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git branch --no-merged</strong></td>
-                                    <td>List all branches which haven&#39;t yet merged</td>
+                                    <td><strong><p>git branch --no-merged</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all branches which haven’t yet merged</p>
+</td>
                                 </tr>
                                     
                                 </tbody>
@@ -287,18 +327,24 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>git branch -r</strong></td>
-                                    <td>List all remote branches</td>
+                                    <td><strong><p>git branch -r</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all remote branches</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git checkout -b &lt;branch-name&gt; &lt;remote-branch-name&gt;</strong></td>
-                                    <td>Creates new local repo from this remote branch</td>
+                                    <td><strong><p>git checkout -b &lt;branch-name&gt; &lt;remote-branch-name&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Creates new local repo from this remote branch</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git push origin --delete &lt;branch-name&gt;</strong></td>
-                                    <td>Delete&#39;s remote branch</td>
+                                    <td><strong><p>git push origin --delete &lt;branch-name&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Delete’s remote branch</p>
+</td>
                                 </tr>
                                     
                                 </tbody>
@@ -309,28 +355,38 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>git stash</strong></td>
-                                    <td>Saves all files to stash</td>
+                                    <td><strong><p>git stash</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Saves all files to stash</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git stash clear</strong></td>
-                                    <td>Delete all changes in stash</td>
+                                    <td><strong><p>git stash clear</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Delete all changes in stash</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git stash list</strong></td>
-                                    <td>List all changes in the stash</td>
+                                    <td><strong><p>git stash list</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all changes in the stash</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git stash apply</strong></td>
-                                    <td>Pops and applies recent stash</td>
+                                    <td><strong><p>git stash apply</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Pops and applies recent stash</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git stash show</strong></td>
-                                    <td>List all recent stash changes</td>
+                                    <td><strong><p>git stash show</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all recent stash changes</p>
+</td>
                                 </tr>
                                     
                                 </tbody>
@@ -345,13 +401,17 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>git rebase &lt;branch&gt;</strong></td>
-                                    <td>Saves all files to stash</td>
+                                    <td><strong><p>git rebase &lt;branch&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Saves all files to stash</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git rebase --continue</strong></td>
-                                    <td>To continue after fixing rebase conflict issues</td>
+                                    <td><strong><p>git rebase --continue</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>To continue after fixing rebase conflict issues</p>
+</td>
                                 </tr>
                                     
                                 </tbody>
@@ -362,33 +422,45 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>git log</strong></td>
-                                    <td>Lists summary of all commits</td>
+                                    <td><strong><p>git log</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Lists summary of all commits</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git log -p -2</strong></td>
-                                    <td>Lists last two commit details</td>
+                                    <td><strong><p>git log -p -2</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Lists last two commit details</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git log --stat</strong></td>
-                                    <td>Displays stats</td>
+                                    <td><strong><p>git log --stat</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Displays stats</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git log --pretty=online</strong></td>
-                                    <td>Display in one line. Other options for pretty is short, full and fuller</td>
+                                    <td><strong><p>git log --pretty=online</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Display in one line. Other options for pretty is short, full and fuller</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git log --pretty=format: &quot;%h %s&quot; --graph</strong></td>
-                                    <td>Display as graph</td>
+                                    <td><strong><p>git log --pretty=format: “%h %s” --graph</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Display as graph</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git log --oneline --decorate</strong></td>
-                                    <td>Shows current HEAD pointer. (Git keeps a special pointer called HEAD, which helps git to know in which branch it is on)</td>
+                                    <td><strong><p>git log --oneline --decorate</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Shows current HEAD pointer. (Git keeps a special pointer called HEAD, which helps git to know in which branch it is on)</p>
+</td>
                                 </tr>
                                     
                                 </tbody>
@@ -399,38 +471,52 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>git remote</strong></td>
-                                    <td>List all remote branches (use -v option to show URL&#39;s)</td>
+                                    <td><strong><p>git remote</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all remote branches (use -v option to show URL’s)</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git remote add pb &lt;URL&gt;</strong></td>
-                                    <td>Add remote repo</td>
+                                    <td><strong><p>git remote add pb &lt;URL&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Add remote repo</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git fetch pb</strong></td>
-                                    <td>Fetch new changes from remote (fetch will not merge changes automatically)</td>
+                                    <td><strong><p>git fetch pb</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Fetch new changes from remote (fetch will not merge changes automatically)</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git pull</strong></td>
-                                    <td>Fetch and merge changes into curent branch</td>
+                                    <td><strong><p>git pull</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Fetch and merge changes into curent branch</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git push origin master</strong></td>
-                                    <td>Push local changes from origin to master branch in remote</td>
+                                    <td><strong><p>git push origin master</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Push local changes from origin to master branch in remote</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git remote show origin</strong></td>
-                                    <td>Inspect remote; lists all details about the remote</td>
+                                    <td><strong><p>git remote show origin</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Inspect remote; lists all details about the remote</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git remote remove pb</strong></td>
-                                    <td>Remove remotes</td>
+                                    <td><strong><p>git remote remove pb</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Remove remotes</p>
+</td>
                                 </tr>
                                     
                                 </tbody>
@@ -441,33 +527,45 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>git tag</strong></td>
-                                    <td>List all tags</td>
+                                    <td><strong><p>git tag</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List all tags</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git tag -a v1.4 -m &quot;my version&quot;</strong></td>
-                                    <td>Create annotated tag</td>
+                                    <td><strong><p>git tag -a v1.4 -m “my version”</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Create annotated tag</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git tag v1.4</strong></td>
-                                    <td>Create a lightweight tag</td>
+                                    <td><strong><p>git tag v1.4</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Create a lightweight tag</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git tag -a v1.4 &lt;commit-id&gt;</strong></td>
-                                    <td>Tag a particular commit</td>
+                                    <td><strong><p>git tag -a v1.4 &lt;commit-id&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Tag a particular commit</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git push origin v1.4</strong></td>
-                                    <td>Push particular tag to remote (By default &#39;git push&#39; will not upload tags to remote)</td>
+                                    <td><strong><p>git push origin v1.4</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Push particular tag to remote (By default ‘git push’ will not upload tags to remote)</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git push origin --tags</strong></td>
-                                    <td>Push all tags</td>
+                                    <td><strong><p>git push origin --tags</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Push all tags</p>
+</td>
                                 </tr>
                                     
                                 </tbody>
@@ -478,28 +576,38 @@
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>git reset HEAD &lt;file&gt;</strong></td>
-                                    <td>Un-stage a staged file</td>
+                                    <td><strong><p>git reset HEAD &lt;file&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Un-stage a staged file</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git checkout -- &lt;file&gt;</strong></td>
-                                    <td>Undo a modified file</td>
+                                    <td><strong><p>git checkout -- &lt;file&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Undo a modified file</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git add &lt;file&gt; &amp;&amp; git commit --amend</strong></td>
-                                    <td>Instead of creating new commit, this will add file to stage and then amends the most recent commit</td>
+                                    <td><strong><p>git add &lt;file&gt; &amp;&amp; git commit --amend</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Instead of creating new commit, this will add file to stage and then amends the most recent commit</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git reset &lt;file&gt; &amp;&amp; git rm --cached &lt;file&gt;</strong></td>
-                                    <td>Remove tracked file. For example; target or .class files which are not needed to checkin</td>
+                                    <td><strong><p>git reset &lt;file&gt; &amp;&amp; git rm --cached &lt;file&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Remove tracked file. For example; target or .class files which are not needed to checkin</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>git rm -r --cached &lt;file&gt;</strong></td>
-                                    <td>Delete from git but not from file system, next time this file will not be pushed</td>
+                                    <td><strong><p>git rm -r --cached &lt;file&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Delete from git but not from file system, next time this file will not be pushed</p>
+</td>
                                 </tr>
                                     
                                 </tbody>

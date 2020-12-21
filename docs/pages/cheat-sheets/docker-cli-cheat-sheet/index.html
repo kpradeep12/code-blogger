@@ -10,7 +10,7 @@
 <!-- Twitter cards-->
 <meta name="twitter:site"    content="@PradeepK4J">
 <meta name="twitter:creator" content="@">
-<meta name="twitter:title"   content="Docker cheat sheet">
+<meta name="twitter:title"   content="Docker CLI cheat sheet">
 
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:image" content="">
@@ -25,7 +25,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
     
-<!--<title>Docker cheat sheet | The Tech Stack . Net</title>-->
+<!--<title>Docker CLI cheat sheet | The Tech Stack . Net</title>-->
     
  
     
@@ -40,18 +40,18 @@
 <link href="/assets/css/main.css" rel="stylesheet">
 <link href="/assets/css/custom.css" rel="stylesheet">
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Docker cheat sheet | Pradeep’s Java blog</title>
+<title>Docker CLI cheat sheet | Pradeep’s Java blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Docker cheat sheet" />
+<meta property="og:title" content="Docker CLI cheat sheet" />
 <meta name="author" content="Pradeep Kundarapu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sharing my Java coding experiments" />
 <meta property="og:description" content="Sharing my Java coding experiments" />
-<link rel="canonical" href="http://thetechstack.net/pages/cheat-sheets/docker-cheat-sheet/" />
-<meta property="og:url" content="http://thetechstack.net/pages/cheat-sheets/docker-cheat-sheet/" />
+<link rel="canonical" href="http://thetechstack.net/pages/cheat-sheets/docker-cli-cheat-sheet/" />
+<meta property="og:url" content="http://thetechstack.net/pages/cheat-sheets/docker-cli-cheat-sheet/" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://thetechstack.net/pages/cheat-sheets/docker-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","headline":"Docker cheat sheet","@context":"http://schema.org"}</script>
+{"description":"Sharing my Java coding experiments","@type":"WebPage","headline":"Docker CLI cheat sheet","url":"http://thetechstack.net/pages/cheat-sheets/docker-cli-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -105,15 +105,17 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5</a>
                         <a class="nav-link" href="/pages/quick-references/dockerfile-quick-reference/">Dockerfile</a>
+                        <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5</a>
                     </div>
                 </li>
 
-                
-                <li class="nav-item">
-                
-                <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git Cheat Sheet</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cheat Sheet's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown02">
+                        <a class="nav-link" href="/pages/cheat-sheets/docker-cli-cheat-sheet/">Docker CLI</a>
+                        <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git</a>
+                    </div>
                 </li>
 
                 
@@ -162,7 +164,7 @@
 <div class="main-content">
     <section>
     <div class="section-title">
-        <h2><span>Docker cheat sheet</span></h2>
+        <h2><span>Docker CLI cheat sheet</span></h2>
     </div>
     <div class="cheat-sheet-article">
     <div class="container-fluid">
@@ -173,28 +175,146 @@
                 
                 <div class="col-sm-6">
                         
-                            <h5>Get</h5>
+                            <h5>Basic Docker Commands</h5>
                             <table class="custom-cheat-sheet-table">
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong>curl &lt;URL&gt;</strong></td>
-                                    <td>Prints headers and response body</td>
+                                    <td><strong><p>docker pull [OPTIONS] NAME[:TAG|@DIGEST]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Downloads image</p>
+
+<p id="options_tx"><strong>-q</strong> less verbose</p>
+
+<p id="terminal_tx">$ docker pull jenkins/jenkins:lts-jdk11</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>curl -i &lt;URL&gt;</strong></td>
-                                    <td>Prints only response</td>
+                                    <td><strong><p>docker run [OPTIONS] IMAGE [COMMAND] [ARG…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Creates a new container</p>
+
+<p id="options_tx"><strong>-d</strong> run a container in background and print container id<br />
+<strong>–name</strong> assign a name to the container<br />
+<strong>-p &lt;host port&gt;:&lt;container port&gt;</strong> publish container’s port to the host<br />
+<strong>-v</strong> mount a volume</p>
+
+<p id="terminal_tx">$ docker run -d –name jenkins -p 8085:8080 -p 50000:50000 -v “/docker_volume/jenkins”:/var/jenkins_home jenkins/jenkins:lts-jdk11</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>curl -u &lt;userid&gt;:&lt;pass&gt; &lt;URL&gt;</strong></td>
-                                    <td>Pass basic authentication details with user id and password</td>
+                                    <td><strong><p>docker start [OPTIONS] CONTAINER [CONTAINER…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Start one or more containers</p>
+
+<p id="options_tx"><strong>-i</strong> interactive mode; attach container’s STDIN</p>
+
+<p id="terminal_tx">$ docker start jenkins</p>
+</td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong>curl -H &quot;&lt;key&gt;: &lt;value&gt;&quot; &lt;URL&gt;</strong></td>
-                                    <td>Pass header in the request.</td>
+                                    <td><strong><p>docker stop [OPTIONS] CONTAINER [CONTAINER…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Stop one or more containers</p>
+
+<p id="terminal_tx">$ docker stop jenkins</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker images [OPTIONS] [REPOSITORY[:TAG]]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Lists all images, repositories, tags and their size</p>
+
+<p id="options_tx"><strong>-a</strong> show all images (default hides intermediate images)</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker build [OPTIONS] PATH | URL | -</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Build an image from the docker file, by default it looks for ‘Dockerfile’</p>
+
+<p id="terminal_tx">$ docker build .</p>
+</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                </div>
+                
+                <div class="col-sm-6">
+                        
+                            <h5>Cleanup</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong><p>docker rmi [OPTIONS] IMAGE [IMAGE…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Remove one or more images</p>
+
+<p id="options_tx"><strong>-f</strong> force remove image</p>
+
+<p id="terminal_tx">$ docker rmi -f 8b7c2b10838b 1a7a055a6252</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker rm [OPTIONS] CONTAINER [CONTAINER…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Remove one or more containers</p>
+
+<p id="options_tx"><strong>-f</strong> force remove running container</p>
+</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Inspection</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong><p>docker ps [OPTIONS]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>List containers</p>
+
+<p id="options_tx"><strong>-a</strong> show all containers (default shows just running)<br />
+<strong>-q</strong> only display container id’s</p>
+
+<p id="terminal_tx">$ docker ps</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker logs [OPTIONS] CONTAINER</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Display logs of the container</p>
+
+<p id="options_tx"><strong>-f</strong> follow log output<br />
+<strong>–tail &lt;number&gt;</strong> number of lines to show from the end of the log</p>
+
+<p id="terminal_tx">$ docker logs –tail 5 jenkins</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>docker exec [OPTIONS] CONTAINER COMMAND [ARG…]</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Run a command in a running container</p>
+
+<p id="options_tx"><strong>-d</strong> run command in the background<br />
+<strong>-i</strong> interactive mode, keep STDIN open<br />
+<strong>-t</strong> allocate a pseudo-TTY</p>
+
+<p id="terminal_tx">$ docker exec -it jenkins /bin/bash</p>
+</td>
                                 </tr>
                                     
                                 </tbody>

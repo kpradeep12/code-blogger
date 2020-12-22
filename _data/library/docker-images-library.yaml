@@ -1,13 +1,17 @@
 sections:
   - title: Jenkins
     steps:
-    - step: |
-        *&nbsp;*{: .fas .fa-terminal} Pull Jenkins image  
+    - step:
+      action: terminal
+      description: |
+        Pull Jenkins image  
         
         $ docker pull jenkins/jenkins:lts-jdk11
         {: .terminal_lable}
-    - step: |
-        *&nbsp;*{: .fas .fa-terminal} Run newly downloaded Jenkins image
+    - step:
+      action: terminal
+      description: |
+        Run newly downloaded Jenkins image
   
         $ docker run -d --name jenkins -p 8085:8080 -v E:/code/docker_volume/jenkins:/var/jenkins_home jenkins/jenkins:lts-jdk11
         {: .terminal_lable}
@@ -17,16 +21,22 @@ sections:
         **-p** Jenkins will run on port 8080, so we are mapping to 8085 on the local host  
         **-v** We configured volume because Jenkins will store job information, so next time when we restart, we will see all previous ran jobs in the history
         {: .action_lable}
-    - step: |
-        *&nbsp;*{: .fas .fa-terminal} Verify if Jenkins started and make sure the last line in the log says 'Jenkins is fully up and running'
+    - step: 
+      action: terminal
+      description: |
+        Verify if Jenkins started and make sure the last line in the log says 'Jenkins is fully up and running'
   
         $ docker container logs jenkins
         {: .terminal_lable}
-    - step: |
-        *&nbsp;*{: .fab .fa-internet-explorer} From your browser access Jenkins at [http://localhost:8085](http://localhost:8085)  
+    - step:
+      action: browser
+      description: |
+        From your browser access Jenkins at [http://localhost:8085](http://localhost:8085)  
         Since this is the first time we are accessing Jenkins, so we need to extract the password from this default file '/var/jenkins_home/secrets/initialAdminPassword'
-    - step: |
-        *&nbsp;*{: .fas .fa-terminal} Access jenkins container file system by executing command
+    - step:
+      action: terminal
+      description: |
+        Access jenkins container file system by executing command
   
         $ docker container exec -it jenkins /bin/bash
         {: .terminal_lable}
@@ -35,25 +45,23 @@ sections:
         $ cat /var/jenkins_home/secrets/initialAdminPassword
         {: .terminal_lable}
         Copy the output
-    - step: |
-        *&nbsp;*{: .fab .fa-internet-explorer} Paste copied password in the Jenkins login page, then click on 'Continue'.  
+    - step:
+      action: browser
+      description: |
+        Paste copied password in the Jenkins login page, then click on 'Continue'.  
         Click on 'Suggested Plugin Option'. Necessary plugins will get installed. It will take a couple of minutes, so wait for the setup.  
         'Create First Admin User'
   - title: My SQL
     items:
-      - term: |
+      - term:
+        action: terminal
+        description: |
           **FROM** - This will create the base layer for the subsequent instructions  
           *FROM \<image>:\<tag>*{: .small}
-        code: |
-          ``` bash
-            FROM openjdk:8-jdk-alpine
-          ```
   - title: Postgress DB
     items:
-      - term: |
+      - term:
+        action: terminal
+        description: |
           **FROM** - This will create the base layer for the subsequent instructions  
           *FROM \<image>:\<tag>*{: .small}
-        code: |
-          ``` bash
-            FROM openjdk:8-jdk-alpine
-          ```

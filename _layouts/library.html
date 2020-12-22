@@ -25,9 +25,23 @@ layout: default
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         {% for item in section.steps %}
-                        <div class="library-step">
-                            {{item.step | markdownify}}
+                        <div class="d-flex">
+                            <div class="library-step">
+                                {% case item.action %}
+                                {% when 'terminal' %}
+                                    <i class="fas fa-terminal"></i>
+                                {% when 'browser' %}
+                                    <i class="fab fa-internet-explorer"></i>
+                                {% when 'editor' %}
+                                    <i class="fas fa-laptop-code"></i>
+                                {% else %}
+                                {% endcase %}
+                            </div>
+                            <div class="library-step">
+                                {{item.description | markdownify}}
+                            </div>
                         </div>
+                        
                         {% endfor %}
                     </div>
                 </div>

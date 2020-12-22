@@ -28,7 +28,7 @@ module Jekyll
                 </button>
               </h4>
             </div>
-            <div id="#{collapsedID}" class="collapse" aria-labelledby="#{headingID}" data-parent="##{accordionID}">
+            <div id="#{collapsedID}" class="collapse show" aria-labelledby="#{headingID}" data-parent="##{accordionID}">
               <div class="card-body libary-card-body">#{content}</div>
             </div>
           </div>

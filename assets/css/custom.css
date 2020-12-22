@@ -116,3 +116,20 @@
     background-color: rgb(196, 196, 196);
     border-bottom: none;
 }
+
+.library-article a{
+    color: #fff;
+    transition: all 0.2s;
+}
+.action_lable {
+    background-color: #aeaeae;
+    color: rgb(54, 54, 54);
+    padding: 0px 5px 0px 5px;
+    border-radius: 3px;
+    display: inline-block; 
+}
+.library-article .highlight{
+    padding-left: 40px;
+    border: 0px;
+    margin: 0px;
+}

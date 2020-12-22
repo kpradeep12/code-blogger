@@ -60,9 +60,14 @@ Insert two spaces after the line to create line break
 Jekyll & Liquid Cheat Sheet:
 https://gist.github.com/magicznyleszek/9803727
 
+Accordian configuration:
+http://mikelui.io/2018/07/22/jekyll-nested-blocks.html
 
 TODO
 https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
 
 junit 5 quick references -> publish personal linked in
 dockerfile quick reference -> publish all places
+
+Syntax highlight
+https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers

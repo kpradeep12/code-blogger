@@ -1,6 +1,10 @@
 sections:
   - title: Jenkins
     id: jenkins
+    show: false
+    labels:
+      - key: image
+        value: jenkins/jenkins:lts-jdk11
     steps:
     - step:
       action: terminal
@@ -25,50 +29,83 @@ sections:
     - step: 
       action: terminal
       description: |
-        Verify if Jenkins started and make sure the last line in the log says *Jenkins is fully up and running*{: .highlight_lable}
+        Verify if Jenkins started properly by checking the last line in the log, which says something like this; *Jenkins is fully up and running*{: .highlight}
   
         $ docker container logs jenkins
         {: .terminal_lable}
     - step:
       action: browser
       description: |
-        From your browser access Jenkins at [http://localhost:8085](http://localhost:8085)  
-        Since this is the first time we are accessing Jenkins, so we need to extract the password from this default file '/var/jenkins_home/secrets/initialAdminPassword'
+        Access Jenkins console using the browser; *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[http://localhost:8085](http://localhost:8085){:target="_blank"}*{:.underline}  
+        It is the first time we accessed the Jenkins console, so it will ask us to enter a password. Jenkin writes an initial password to a file, 
+        which will available at */var/jenkins_home/secrets/initialAdminPassword*{: .highlight}
     - step:
       action: terminal
       description: |
-        Access jenkins container file system by executing command
-  
+        Access jenkins container *bash*{:.highlight} by executing command
+        
         $ docker container exec -it jenkins /bin/bash
         {: .terminal_lable}
-        Read password from '/var/jenkins_home/secrets/initialAdminPassword'
-  
+        Read password from file; */var/jenkins_home/secrets/initialAdminPassword*{:.highlight}
+        
         $ cat /var/jenkins_home/secrets/initialAdminPassword
         {: .terminal_lable}
         Copy the output
     - step:
       action: browser
       description: |
-        Paste copied password in the Jenkins login page, then click on 'Continue'.  
-        Click on 'Suggested Plugin Option'. Necessary plugins will get installed. It will take a couple of minutes, so wait for the setup.  
-        'Create First Admin User'
-  - title: My SQL
-    id: my-sql
+        Paste the copied password in the Jenkins login page, then click on *Continue*{:.highlight}. 
+        Jenkins will redirect us to the Plugin installation page. Click on *Suggested Plugin Option*{:.highlight} to install default plugins. 
+        It will take a couple of minutes, and then it will take us to the user's page, create an admin user so next time you can use these credentials 
+        to login Jenkins console.
+    - step:
+      action: info
+      description: |
+        Now we have our Jenkins running on the Docker.  
+        Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.
+  - title: MySQL
+    id: mysql
+    show: false
     steps:
       - step:
         action: terminal
         description: |
-          Pull Jenkins image  
+          Pull MySQL image  
     
-          $ docker pull jenkins/jenkins:lts-jdk11
+          $ docker pull mysql:8.0.22
           {: .terminal_lable}
-  - title: Postgress DB
-    id: postgress-db
-    steps:
       - step:
         action: terminal
         description: |
-          Pull Jenkins image  
+          Run newly downloaded MySQL image
     
-          $ docker pull jenkins/jenkins:lts-jdk11
+          $ docker run -d --name mysql -p 2306:3306 -e MYSQL_ROOT_PASSWORD=secret-pw -v E:/code/docker_volume/mysql:/var/lib/mysql mysql:8.0.22
           {: .terminal_lable}
+          >
+          **-d** Runs container in background  
+          **\--name** This container will run under the name of 'mysql'  
+          **-p** 3306 is MySQL's default port, so we are mapping it to 2306 on the local host  
+          **-e** Pass initial password for the admin user
+          **-v** Configure volume so that MySQL can store data
+          {: .action_lable}
+      - step:
+        action: terminal
+        description: |
+          Verify if MySQL started properly by checking the last line in the log, which says something like this; *ready for connections*{: .highlight}
+    
+          $ docker container logs mysql
+          {: .terminal_lable}
+      - step:
+        action: terminal
+        description: |
+          Use any MySQL client to verify if connection is succesfull.  
+          Here I used *MySQL CLI*{:.highlight} client to verify the connection. From the terminal, execute the below command;
+          
+          $ mysql -uroot -psecret-pw -h localhost -P 2306
+          {: .terminal_lable}
+          If the connection is a success, then we get an SQL prompt.
+      - step:
+        action: info
+        description: |
+          Now we have our MySQL running on the Docker.  
+          Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.

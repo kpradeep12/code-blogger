@@ -1,3 +1,14 @@
+.highlight {
+    color: lightseagreen;
+    font-weight: bold;
+}
+.underline {
+    text-decoration: underline;   
+}
+.small_text {
+    font-size:0.7rem;
+}
+
 .custom-cheat-sheet-table{
     width: 100%;
     margin-bottom: 1rem;
@@ -116,7 +127,6 @@
 }
 .library-article .card-header{
     padding: 0rem 0.2rem;
-    background-color: rgb(196, 196, 196);
     border-bottom: none;
 }
 
@@ -147,9 +157,8 @@
     margin-bottom: 5px;
 }
 .library-article .library-step {
-    background-color: #ffead0;
     border-radius: 4px;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 0px 5px 0px;
     margin-bottom: 10px;
 }
 .library-article .action-box {
@@ -169,10 +178,4 @@
     padding: 0px 10px 5px 10px;
     margin: 0px 5px 10px 0px;
 }
-.highlight_lable {
-    background-color: rgba(96, 90, 90, 0.5);
-    color: #eceaea;
-    padding: 0px 5px 0px 5px;
-    border-radius: 3px;
-    display: inline-block;
-}
+

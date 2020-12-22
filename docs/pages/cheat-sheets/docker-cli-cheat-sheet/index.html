@@ -52,7 +52,7 @@
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <meta property="og:image" content="http://thetechstack.net/assets/images/banners/docker-cli-cheat-sheet-banner.png" />
 <script type="application/ld+json">
-{"@type":"WebPage","image":"http://thetechstack.net/assets/images/banners/docker-cli-cheat-sheet-banner.png","url":"http://thetechstack.net/pages/cheat-sheets/docker-cli-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","headline":"Docker CLI cheat sheet","@context":"http://schema.org"}</script>
+{"@type":"WebPage","headline":"Docker CLI cheat sheet","image":"http://thetechstack.net/assets/images/banners/docker-cli-cheat-sheet-banner.png","url":"http://thetechstack.net/pages/cheat-sheets/docker-cli-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,13 +128,14 @@
                 
                 <a class="nav-link" href="/about">About Me</a>
                 </li>
-                
+
+                <!--
                 
                 <li class="nav-item">
                 
                 <a class="nav-link" href="/twitter">Twitter</a>
                 </li>
-                <!--
+                
                 <li class="nav-item">
                 <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
                 </li>-->
@@ -205,7 +206,7 @@
 <strong>-p &lt;local port&gt;:&lt;container port&gt;</strong> publish container’s port to the host<br />
 <strong>-v &lt;local file system&gt;:&lt;container file system&gt;</strong> mount a volume</p>
 
-<p id="terminal_tx">$ docker run -d –name jenkins -p 8085:8080 -p 50000:50000 -v “/docker_volume/jenkins”:/var/jenkins_home jenkins/jenkins:lts-jdk11</p>
+<p id="terminal_tx">$ docker run -d –name jenkins -p 8085:8080 -v “/docker_volume/jenkins”:/var/jenkins_home jenkins/jenkins:lts-jdk11</p>
 </td>
                                 </tr>
                                     

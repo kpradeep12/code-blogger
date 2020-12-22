@@ -51,7 +51,7 @@
 <meta property="og:url" content="http://thetechstack.net/blog/:year/:month/:day/:title" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","headline":"cloud","@context":"http://schema.org"}</script>
+{"@type":"WebPage","headline":"cloud","url":"http://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -127,13 +127,14 @@
                 
                 <a class="nav-link" href="/about">About Me</a>
                 </li>
-                
+
+                <!--
                 
                 <li class="nav-item">
                 
                 <a class="nav-link" href="/twitter">Twitter</a>
                 </li>
-                <!--
+                
                 <li class="nav-item">
                 <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
                 </li>-->

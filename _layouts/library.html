@@ -7,6 +7,8 @@ layout: default
         <h2><span>{{ page.title }}</span></h2>
     </div>
     <div class="library-article">
+        {{content}}
+        
         {% if page.file == "docker-images-library" %}
         {% assign doclist = site.data.library.docker-images-library  %}
         {% endif %}
@@ -22,40 +24,40 @@ layout: default
                     </h5>
                 </div>
 
-                <div id="{{section.id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="{{section.id}}" class="collapse {% if section.show %} show {% endif %}" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
+                        {% comment %}
+                        {% for label in section.labels %}
+                            <span class="badge badge-light">{{label.key}}: {{label.value}}</span>
+                        {% endfor %}
+                        {% endcomment %}
+                        
                         {% for item in section.steps %}
                         {% assign value = forloop.index | modulo:2 %}
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>{{ forloop.index }}</h3>
-
-                                {% comment %}
-                                
-                                {% endcomment %}
                                 
                             </div>
-                                {% if value == 0 %}
-                                        <div class="library-step w-100 library-step-even d-flex justify-content-start">
-                                {% else %}
-                                        <div class="library-step w-100 library-step-odd d-flex justify-content-start">
-                                {% endif %}
+                            <div class="library-step w-100 d-flex justify-content-start">
                                             <div>
                                             {% case item.action %}
-                                            {% when 'terminal' %}
-                                            <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
-                                            {% when 'browser' %}
-                                            <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
-                                            {% when 'editor' %}
-                                            <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
-                                            {% else %}
+                                                {% when 'terminal' %}
+                                                <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                                {% when 'browser' %}
+                                                <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                                {% when 'editor' %}
+                                                <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                                {% when 'info' %}
+                                                <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                                {% else %}
                                             {% endcase %}
                                             </div>
                                             
-                                            <div>
-                                                {{item.description | markdownify}}
-                                            </div>
-                                        </div>
+                                <div>
+                                    {{item.description | markdownify}}
+                                </div>
+                            </div>
                         </div>
                         
                         {% endfor %}
@@ -64,7 +66,16 @@ layout: default
             </div>
             {% endfor %}
         </div>
-
+        <br>
         
+        <blockquote class="action_lable">
+            <p>
+                Each step starts with an action icon; this icon will give you an idea of what kind of work we will do in this step. <br>
+                <span class="action-box badge badge-dark"><i class="fas fa-terminal"></i></span> Terminal
+                <span class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></span> Browser
+                <span class="action-box badge badge-dark"><i class="fas fa-code"></i></span> Code editor
+                <span class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></span> Info
+            </p>
+        </blockquote>
     </div>
 </section>

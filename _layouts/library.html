@@ -16,30 +16,46 @@ layout: default
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
-                        <button class="btn btn-link library-accordian-header-button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link library-accordian-header-button" data-toggle="collapse" data-target="#{{section.id}}" aria-expanded="true" aria-controls="{{section.id}}">
                             {{section.title}}
                         </button>
                     </h5>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="{{section.id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         {% for item in section.steps %}
-                        <div class="d-flex">
-                            <div class="library-step">
-                                {% case item.action %}
-                                {% when 'terminal' %}
-                                    <i class="fas fa-terminal"></i>
-                                {% when 'browser' %}
-                                    <i class="fab fa-internet-explorer"></i>
-                                {% when 'editor' %}
-                                    <i class="fas fa-laptop-code"></i>
+                        {% assign value = forloop.index | modulo:2 %}
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>{{ forloop.index }}</h3>
+
+                                {% comment %}
+                                
+                                {% endcomment %}
+                                
+                            </div>
+                                {% if value == 0 %}
+                                        <div class="library-step w-100 library-step-even d-flex justify-content-start">
                                 {% else %}
-                                {% endcase %}
-                            </div>
-                            <div class="library-step">
-                                {{item.description | markdownify}}
-                            </div>
+                                        <div class="library-step w-100 library-step-odd d-flex justify-content-start">
+                                {% endif %}
+                                            <div>
+                                            {% case item.action %}
+                                            {% when 'terminal' %}
+                                            <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                            {% when 'browser' %}
+                                            <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                            {% when 'editor' %}
+                                            <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                            {% else %}
+                                            {% endcase %}
+                                            </div>
+                                            
+                                            <div>
+                                                {{item.description | markdownify}}
+                                            </div>
+                                        </div>
                         </div>
                         
                         {% endfor %}
@@ -48,23 +64,7 @@ layout: default
             </div>
             {% endfor %}
         </div>
-        
-        {% for section in doclist.sections %}
-        <h4>{{section.title}}</h4>
-        {% for item in section.items %}
-        <div class="container-fluid">
-            <div class="row quick-reference-item">
-                <div class="col-sm-6 p-0">
-                    <div class="term">{{item.term | markdownify}}</div>
-                </div>
-                <div class="col-sm-6 p-0 quick-ref-highlight">
-                    {{item.code | markdownify}}
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-        
-        {% endfor %}
+
         
     </div>
 </section>

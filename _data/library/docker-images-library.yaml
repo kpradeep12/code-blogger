@@ -109,3 +109,54 @@ sections:
         description: |
           Now we have our MySQL running on the Docker.  
           Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.
+  - title: MongoDB
+    id: mongodb
+    show: false
+    labels:
+      - key: image
+        value: mongo:latest
+    steps:
+      - step:
+        action: terminal
+        description: |
+          Pull Mongo image  
+    
+          $ docker pull mongo:latest
+          {: .terminal_lable}
+      - step:
+        action: terminal
+        description: |
+          Run newly downloaded Mongo image
+    
+          $ docker run -d --name mongo -p 27017:27017 -v E:/code/docker_volume/mongo:/data/db mongo:latest
+          {: .terminal_lable}
+          >
+          **-d** Runs container in background  
+          **\--name** This container will run under the name of 'mongo'  
+          **-p** Mongo uses 27017 as default port, so we are mapping to 27017 on the local host  
+          **-v** We configured volume, so Mongo will use this space to store data
+          {: .action_lable}
+      - step:
+        action: terminal
+        description: |
+          Verify if Mongo started properly by checking the logs, you should see a line saying *Waiting for connections*{: .highlight}
+    
+          $ docker container logs mongo
+          {: .terminal_lable}
+      - step:
+        action: terminal
+        description: |
+          Access *bash*{:.highlight} of Mongo container by executing command
+    
+          $ docker container exec -it mongo /bin/bash
+          {: .terminal_lable}
+          Now access Mongo shell by executing below command; this will connect to local mongo at port 27017
+    
+          $ mongo -host localhost -port 27017
+          {: .terminal_lable}
+          If you see Mongo prompt, then the connection is successfull and Mongo DB is up.
+      - step:
+        action: info
+        description: |
+          Now we have our Mongo DB running on the Docker.  
+          Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.

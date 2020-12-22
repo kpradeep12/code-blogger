@@ -6,19 +6,51 @@ layout: default
     <div class="section-title">
         <h2><span>{{ page.title }}</span></h2>
     </div>
-
     <div class="library-article">
-        {{content}}
-    </div>
+        {% if page.file == "docker-images-library" %}
+        {% assign doclist = site.data.library.docker-images-library  %}
+        {% endif %}
 
-    {% if page.comments == true %}
+        <div id="accordion">
+            {% for section in doclist.sections %}
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link library-accordian-header-button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            {{section.title}}
+                        </button>
+                    </h5>
+                </div>
 
-    <div id="comments" class="row mb-5">
-        <div class="col-md-8">
-            {% include disqus.html %}
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        {% for item in section.steps %}
+                        <div class="library-step">
+                            {{item.step | markdownify}}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
+        
+        {% for section in doclist.sections %}
+        <h4>{{section.title}}</h4>
+        {% for item in section.items %}
+        <div class="container-fluid">
+            <div class="row quick-reference-item">
+                <div class="col-sm-6 p-0">
+                    <div class="term">{{item.term | markdownify}}</div>
+                </div>
+                <div class="col-sm-6 p-0 quick-ref-highlight">
+                    {{item.code | markdownify}}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+        {% endfor %}
+        
     </div>
-
-    {% endif %}
-
 </section>

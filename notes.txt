@@ -68,3 +68,6 @@ https://github.blog/2020-12-15-token-authentication-requirements-for-git-operati
 
 junit 5 quick references -> publish personal linked in
 dockerfile quick reference -> publish all places
+
+Syntax highlight
+https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers

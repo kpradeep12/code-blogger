@@ -9,7 +9,11 @@ module Jekyll
         context.stack do
           @content = super
         end
-        output = %(<div class="container">#{@content}</div>)
+        site = context.registers[:site]
+        converter = site.find_converter_instance(::Jekyll::Converters::Markdown)
+        content = converter.convert(super)
+        
+        output = %(<div class="library-entry">#{content}</div>)
 
         output
       end

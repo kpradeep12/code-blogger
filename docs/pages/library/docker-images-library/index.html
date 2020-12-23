@@ -167,47 +167,77 @@
 <!-- Content
 ================================================== --> 
 <div class="main-content">
-    <section>
-    <div class="section-title">
-        <h2><span>Docker Image Library</span></h2>
-    </div>
-    <div class="library-article">
-        <p>A curated list of Docker images useful for Java developers; look for your tool to setup on Docker and follow the steps. 
+    
+
+<div class="container">
+    <div class="row">
+
+        <!--<div class="col-md-2 pl-0">
+            <div class="book-toc">
+                <ul class="markdown-toc library-toc">
+                    
+                    <li>
+                        <a href="#Jenkins" >Jenkins</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#MySQL" >MySQL</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#MongoDB" >MongoDB</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>-->
+        <div class="col-md-12 flex-first flex-md-unordered">
+            <div class="mainheading">
+                <h1 class="posttitle">Docker Image Library</h1>
+            </div>
+
+            <section>
+                <p>A curated list of Docker images useful for Java developers; look for your tool to setup on Docker and follow the steps. 
 Before you follow the instructions, make sure your Docker is running on the computer.</p>
 
 
-        
-        
-
-        <div id="accordion">
-            
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link library-accordian-header-button" data-toggle="collapse" data-target="#jenkins" aria-expanded="true" aria-controls="jenkins">
-                            Jenkins
-                        </button>
-                    </h5>
+                <div class="book-toc">
+                    <ul class="markdown-toc library-toc">
+                        
+                        <li>
+                            <a href="#Jenkins" >Jenkins</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#MySQL" >MySQL</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#MongoDB" >MongoDB</a>
+                        </li>
+                        
+                    </ul>
                 </div>
+                
+                    <div class="library-article">
+  
+                        
+                        <h2 id="Jenkins" style="margin-top:20px">Jenkins</h2>
 
-                <div id="jenkins" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
+
                         
-                        
-                        
+
                         
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>1</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Pull Jenkins image</p>
 
@@ -217,20 +247,16 @@ Before you follow the instructions, make sure your Docker is running on the comp
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>2</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Run newly downloaded Jenkins image</p>
 
@@ -247,20 +273,16 @@ Before you follow the instructions, make sure your Docker is running on the comp
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>3</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Verify if Jenkins started properly by checking the last line in the log, which says something like this; <em class="highlight">Jenkins is fully up and running</em></p>
 
@@ -270,20 +292,16 @@ Before you follow the instructions, make sure your Docker is running on the comp
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>4</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Access Jenkins console using the browser; <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="http://localhost:8085" target="_blank">http://localhost:8085</a></em><br />
 It is the first time we accessed the Jenkins console, so it will ask us to enter a password. Jenkin writes an initial password to a file, 
@@ -293,20 +311,16 @@ which will available at <em class="highlight">/var/jenkins_home/secrets/initialA
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>5</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Access jenkins container <em class="highlight">bash</em> by executing command</p>
 
@@ -320,20 +334,16 @@ which will available at <em class="highlight">/var/jenkins_home/secrets/initialA
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>6</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Paste the copied password in the Jenkins login page, then click on <em class="highlight">Continue</em>. 
 Jenkins will redirect us to the Plugin installation page. Click on <em class="highlight">Suggested Plugin Option</em> to install default plugins. 
@@ -344,20 +354,16 @@ to login Jenkins console.</p>
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>7</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Now we have our Jenkins running on the Docker.<br />
 Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
@@ -367,37 +373,22 @@ Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="unde
                         </div>
                         
                         
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link library-accordian-header-button" data-toggle="collapse" data-target="#mysql" aria-expanded="true" aria-controls="mysql">
-                            MySQL
-                        </button>
-                    </h5>
-                </div>
+                        <h2 id="MySQL" style="margin-top:20px">MySQL</h2>
 
-                <div id="mysql" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
+
                         
-                        
-                        
+
                         
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>1</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Pull MySQL image</p>
 
@@ -407,20 +398,16 @@ Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="unde
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>2</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Run newly downloaded MySQL image</p>
 
@@ -438,20 +425,16 @@ Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="unde
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>3</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Verify if MySQL started properly by checking the last line in the log, which says something like this; <em class="highlight">ready for connections</em></p>
 
@@ -461,20 +444,16 @@ Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="unde
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>4</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Use any MySQL client to verify if connection is succesfull.<br />
 Here I used <em class="highlight">MySQL CLI</em> client to verify the connection. From the terminal, execute the below command;</p>
@@ -486,20 +465,16 @@ Here I used <em class="highlight">MySQL CLI</em> client to verify the connection
                             </div>
                         </div>
                         
-                        
-                        
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>5</h3>
-                                
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
-                                            <div>
-                                            
-                                                <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
-                                                
-                                            </div>
-                                            
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                    
+                                </div>
                                 <div>
                                     <p>Now we have our MySQL running on the Docker.<br />
 Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
@@ -509,24 +484,139 @@ Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="unde
                         </div>
                         
                         
+                        <h2 id="MongoDB" style="margin-top:20px">MongoDB</h2>
+
+
+                        
+
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>1</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Pull Mongo image</p>
+
+<p class="terminal_lable">$ docker pull mongo:latest</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>2</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Run newly downloaded Mongo image</p>
+
+<p class="terminal_lable">$ docker run -d –name mongo -p 27017:27017 -v E:/code/docker_volume/mongo:/data/db mongo:latest</p>
+<blockquote class="action_lable">
+
+  <p><strong>-d</strong> Runs container in background<br />
+<strong>--name</strong> This container will run under the name of ‘mongo’<br />
+<strong>-p</strong> Mongo uses 27017 as default port, so we are mapping to 27017 on the local host<br />
+<strong>-v</strong> We configured volume, so Mongo will use this space to store data</p>
+</blockquote>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>3</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Verify if Mongo started properly by checking the logs, you should see a line saying <em class="highlight">Waiting for connections</em></p>
+
+<p class="terminal_lable">$ docker container logs mongo</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>4</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Access <em class="highlight">bash</em> of Mongo container by executing command</p>
+
+<p class="terminal_lable">$ docker container exec -it mongo /bin/bash</p>
+<p>Now access Mongo shell by executing below command; this will connect to local mongo at port 27017</p>
+
+<p class="terminal_lable">$ mongo -host localhost -port 27017</p>
+<p>If you see Mongo prompt, then the connection is successfull and Mongo DB is up.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>5</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Now we have our Mongo DB running on the Docker.<br />
+Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <br>
+                        <blockquote class="action_lable">
+                            <p>
+                                Each step starts with an action icon; this icon will give you an idea of what kind of work we will do in this step. <br>
+                                <span class="action-box badge badge-dark"><i class="fas fa-terminal"></i></span> Terminal
+                                <span class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></span> Browser
+                                <span class="action-box badge badge-dark"><i class="fas fa-code"></i></span> Code editor
+                                <span class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></span> Info
+                            </p>
+                        </blockquote>
                     </div>
-                </div>
-            </div>
+            </section>
+            
+            
             
         </div>
-        <br>
-        
-        <blockquote class="action_lable">
-            <p>
-                Each step starts with an action icon; this icon will give you an idea of what kind of work we will do in this step. <br>
-                <span class="action-box badge badge-dark"><i class="fas fa-terminal"></i></span> Terminal
-                <span class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></span> Browser
-                <span class="action-box badge badge-dark"><i class="fas fa-code"></i></span> Code editor
-                <span class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></span> Info
-            </p>
-        </blockquote>
     </div>
-</section>
+</div>
+
+
+
 </div>
 
 <!-- Bottom Alert Bar

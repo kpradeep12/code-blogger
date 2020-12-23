@@ -1,6 +1,7 @@
 .highlight {
-    color: lightseagreen;
+    color: indianred;
     font-weight: bold;
+    background-color: antiquewhite;
 }
 .underline {
     text-decoration: underline;   
@@ -41,7 +42,9 @@
 }
 
 .book-toc {
-    padding-right: 40px;
+    padding-right: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 .quick-reference-item {
@@ -95,8 +98,9 @@
 
 
 .library-article {
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.84;
+    margin: 0px 0px 0px 10px;
 }
 .library-article h5{
     margin-bottom: 1rem;
@@ -158,14 +162,15 @@
 }
 .library-article .library-step {
     border-radius: 4px;
-    padding: 5px 0px 5px 0px;
+    padding: 0px 0px 5px 0px;
     margin-bottom: 10px;
 }
 .library-article .action-box {
   margin: 0px 5px 0px 0px;
   font-size: 70%;
   line-height: unset;
-  background-color: rosybrown;
+  background-color: teal;
+  padding: 0px 5px 0px 5px;
 }
 .library-article .library-step-even {
     background-color: #ffead0;
@@ -178,4 +183,8 @@
     padding: 0px 10px 5px 10px;
     margin: 0px 5px 10px 0px;
 }
-
+.library-toc {
+    list-style-type: none;
+    padding-left: 10px;
+    font-weight: bold;
+}

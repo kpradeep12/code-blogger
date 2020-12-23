@@ -1,6 +1,6 @@
 sections:
   - title: Jenkins
-    id: jenkins
+    id: Jenkins
     show: false
     labels:
       - key: image
@@ -64,7 +64,7 @@ sections:
         Now we have our Jenkins running on the Docker.  
         Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.
   - title: MySQL
-    id: mysql
+    id: MySQL
     show: false
     steps:
       - step:
@@ -110,7 +110,7 @@ sections:
           Now we have our MySQL running on the Docker.  
           Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.
   - title: MongoDB
-    id: mongodb
+    id: MongoDB
     show: false
     labels:
       - key: image

@@ -106,6 +106,13 @@
                 
                 <a class="nav-link" href="/index.html">Blog</a>
                 </li>-->
+
+                
+                <li class="nav-item active">
+                    
+                    <a class="nav-link" href="/pages/library/docker-images-library/">Docker Image Library</a>
+                </li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -239,7 +246,7 @@ Before you follow the instructions, make sure your Docker is running on the comp
                                     
                                 </div>
                                 <div>
-                                    <p>Pull Jenkins image</p>
+                                    <p>Pull Jenkins image from <em class="highlight">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull jenkins/jenkins:lts-jdk11</p>
 
@@ -265,8 +272,8 @@ Before you follow the instructions, make sure your Docker is running on the comp
 
   <p><strong>-d</strong> Runs container in background<br />
 <strong>--name</strong> This container will run under the name of ‘jenkins’<br />
-<strong>-p</strong> Jenkins will run on port 8080, so we are mapping to 8085 on the local host<br />
-<strong>-v</strong> We configured volume because Jenkins will store job information, so next time when we restart, we will see all previous ran jobs in the history</p>
+<strong>-p</strong> 8080 is default Jenkins port and we are mapping to 8085 on the local host<br />
+<strong>-v</strong> Configured Volume to store Jenkins job information, so next time we restart, we will see all previous ran jobs in history</p>
 </blockquote>
 
                                 </div>
@@ -284,7 +291,8 @@ Before you follow the instructions, make sure your Docker is running on the comp
                                     
                                 </div>
                                 <div>
-                                    <p>Verify if Jenkins started properly by checking the last line in the log, which says something like this; <em class="highlight">Jenkins is fully up and running</em></p>
+                                    <p>Verify if Jenkins started properly. Execute Docker log command to view Jenkins logs and check if the log ends with something like this;
+<em class="highlight">Jenkins is fully up and running</em></p>
 
 <p class="terminal_lable">$ docker container logs jenkins</p>
 
@@ -304,8 +312,8 @@ Before you follow the instructions, make sure your Docker is running on the comp
                                 </div>
                                 <div>
                                     <p>Access Jenkins console using the browser; <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="http://localhost:8085" target="_blank">http://localhost:8085</a></em><br />
-It is the first time we accessed the Jenkins console, so it will ask us to enter a password. Jenkin writes an initial password to a file, 
-which will available at <em class="highlight">/var/jenkins_home/secrets/initialAdminPassword</em></p>
+It is the first time we accessed the Jenkins console, so it prompts us to enter a password. Jenkin writes an initial password to a file. This password 
+file path is <em class="highlight">/var/jenkins_home/secrets/initialAdminPassword</em></p>
 
                                 </div>
                             </div>
@@ -322,7 +330,7 @@ which will available at <em class="highlight">/var/jenkins_home/secrets/initialA
                                     
                                 </div>
                                 <div>
-                                    <p>Access jenkins container <em class="highlight">bash</em> by executing command</p>
+                                    <p>Retrieve the password by accessing the container’s <em class="highlight">bash</em>.</p>
 
 <p class="terminal_lable">$ docker container exec -it jenkins /bin/bash</p>
 <p>Read password from file; <em class="highlight">/var/jenkins_home/secrets/initialAdminPassword</em></p>
@@ -345,7 +353,7 @@ which will available at <em class="highlight">/var/jenkins_home/secrets/initialA
                                     
                                 </div>
                                 <div>
-                                    <p>Paste the copied password in the Jenkins login page, then click on <em class="highlight">Continue</em>. 
+                                    <p>Paste it in the password field on the Jenkins login page, then click on <em class="highlight">Continue</em>. 
 Jenkins will redirect us to the Plugin installation page. Click on <em class="highlight">Suggested Plugin Option</em> to install default plugins. 
 It will take a couple of minutes, and then it will take us to the user’s page, create an admin user so next time you can use these credentials 
 to login Jenkins console.</p>
@@ -365,8 +373,9 @@ to login Jenkins console.</p>
                                     
                                 </div>
                                 <div>
-                                    <p>Now we have our Jenkins running on the Docker.<br />
-Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
+                                    <p>Now we have our Jenkins running on the Docker.</p>
+
+<p class="help">Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
 
                                 </div>
                             </div>
@@ -390,7 +399,7 @@ Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="unde
                                     
                                 </div>
                                 <div>
-                                    <p>Pull MySQL image</p>
+                                    <p>Pull MySQL image from <em class="highlight">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull mysql:8.0.22</p>
 
@@ -476,8 +485,9 @@ Here I used <em class="highlight">MySQL CLI</em> client to verify the connection
                                     
                                 </div>
                                 <div>
-                                    <p>Now we have our MySQL running on the Docker.<br />
-Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
+                                    <p>Now we have our MySQL running on the Docker.</p>
+
+<p class="help">Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
 
                                 </div>
                             </div>
@@ -501,7 +511,7 @@ Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="unde
                                     
                                 </div>
                                 <div>
-                                    <p>Pull Mongo image</p>
+                                    <p>Pull Mongo image from <em class="highlight">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull mongo:latest</p>
 
@@ -588,8 +598,9 @@ Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="unde
                                     
                                 </div>
                                 <div>
-                                    <p>Now we have our Mongo DB running on the Docker.<br />
-Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
+                                    <p>Now we have our Mongo DB running on the Docker.</p>
+
+<p class="help">Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
 
                                 </div>
                             </div>

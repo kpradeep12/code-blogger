@@ -97,6 +97,15 @@
                 {% endif %}
                 <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
                 </li>-->
+
+                {% if page.url == "/pages/library/docker-images-library/" %}
+                <li class="nav-item active">
+                    {% else %}
+                <li class="nav-item">
+                    {% endif %}
+                    <a class="nav-link" href="{{ site.baseurl }}/pages/library/docker-images-library/">Docker Image Library</a>
+                </li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">

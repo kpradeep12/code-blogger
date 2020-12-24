@@ -9,7 +9,7 @@ sections:
     - step:
       action: terminal
       description: |
-        Pull Jenkins image  
+        Pull Jenkins image from *Docker Hub*{: .highlight} 
         
         $ docker pull jenkins/jenkins:lts-jdk11
         {: .terminal_lable}
@@ -23,13 +23,14 @@ sections:
         >
         **-d** Runs container in background  
         **\--name** This container will run under the name of 'jenkins'  
-        **-p** Jenkins will run on port 8080, so we are mapping to 8085 on the local host  
-        **-v** We configured volume because Jenkins will store job information, so next time when we restart, we will see all previous ran jobs in the history
+        **-p** 8080 is default Jenkins port and we are mapping to 8085 on the local host  
+        **-v** Configured Volume to store Jenkins job information, so next time we restart, we will see all previous ran jobs in history
         {: .action_lable}
     - step: 
       action: terminal
       description: |
-        Verify if Jenkins started properly by checking the last line in the log, which says something like this; *Jenkins is fully up and running*{: .highlight}
+        Verify if Jenkins started properly. Execute Docker log command to view Jenkins logs and check if the log ends with something like this;
+        *Jenkins is fully up and running*{: .highlight}
   
         $ docker container logs jenkins
         {: .terminal_lable}
@@ -37,12 +38,12 @@ sections:
       action: browser
       description: |
         Access Jenkins console using the browser; *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[http://localhost:8085](http://localhost:8085){:target="_blank"}*{:.underline}  
-        It is the first time we accessed the Jenkins console, so it will ask us to enter a password. Jenkin writes an initial password to a file, 
-        which will available at */var/jenkins_home/secrets/initialAdminPassword*{: .highlight}
+        It is the first time we accessed the Jenkins console, so it prompts us to enter a password. Jenkin writes an initial password to a file. This password 
+        file path is */var/jenkins_home/secrets/initialAdminPassword*{: .highlight}
     - step:
       action: terminal
       description: |
-        Access jenkins container *bash*{:.highlight} by executing command
+        Retrieve the password by accessing the container's *bash*{:.highlight}.
         
         $ docker container exec -it jenkins /bin/bash
         {: .terminal_lable}
@@ -54,7 +55,7 @@ sections:
     - step:
       action: browser
       description: |
-        Paste the copied password in the Jenkins login page, then click on *Continue*{:.highlight}. 
+        Paste it in the password field on the Jenkins login page, then click on *Continue*{:.highlight}. 
         Jenkins will redirect us to the Plugin installation page. Click on *Suggested Plugin Option*{:.highlight} to install default plugins. 
         It will take a couple of minutes, and then it will take us to the user's page, create an admin user so next time you can use these credentials 
         to login Jenkins console.
@@ -62,7 +63,9 @@ sections:
       action: info
       description: |
         Now we have our Jenkins running on the Docker.  
+        
         Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.
+        {: .help}
   - title: MySQL
     id: MySQL
     show: false
@@ -70,7 +73,7 @@ sections:
       - step:
         action: terminal
         description: |
-          Pull MySQL image  
+          Pull MySQL image from *Docker Hub*{: .highlight} 
     
           $ docker pull mysql:8.0.22
           {: .terminal_lable}
@@ -107,8 +110,10 @@ sections:
       - step:
         action: info
         description: |
-          Now we have our MySQL running on the Docker.  
+          Now we have our MySQL running on the Docker.
+          
           Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.
+          {: .help}
   - title: MongoDB
     id: MongoDB
     show: false
@@ -119,7 +124,7 @@ sections:
       - step:
         action: terminal
         description: |
-          Pull Mongo image  
+          Pull Mongo image from *Docker Hub*{: .highlight}
     
           $ docker pull mongo:latest
           {: .terminal_lable}
@@ -158,5 +163,7 @@ sections:
       - step:
         action: info
         description: |
-          Now we have our Mongo DB running on the Docker.  
+          Now we have our Mongo DB running on the Docker.
+          
           Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.
+          {: .help}

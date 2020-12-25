@@ -200,7 +200,7 @@ sections:
         action: editor
         description: |
           Provide a default configuration. ActiveMQ expects default configuration files in the **/opt/activemq/conf** folder. It will be empty by default so we will see 
-          errors in the ActiveMQ startup logs. To fix this, click *[here](/assets/attachments/library/activemq/conf.zip)* to download the default configuration, 
+          errors in the ActiveMQ startup logs. To fix this, click *[here](/assets/attachments/library/activemq/conf.zip)*{:.ul} to download the default configuration, 
           then extract and copy it to your local **conf** folder (which is _E:/code/docker_volume/activemq/conf_ in above case). 
       - step:
         action: terminal

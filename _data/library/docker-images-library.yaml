@@ -9,7 +9,7 @@ sections:
     - step:
       action: terminal
       description: |
-        Pull Jenkins image from *Docker Hub*{: .highlight} 
+        Pull Jenkins image from *Docker Hub*{: .hl} 
         
         $ docker pull jenkins/jenkins:lts-jdk11
         {: .terminal_lable}
@@ -30,7 +30,7 @@ sections:
       action: terminal
       description: |
         Verify if Jenkins started properly. Execute Docker log command to view Jenkins logs and check if the log ends with something like this;
-        *Jenkins is fully up and running*{: .highlight}
+        *Jenkins is fully up and running*{: .hl}
   
         $ docker container logs jenkins
         {: .terminal_lable}
@@ -39,15 +39,15 @@ sections:
       description: |
         Access Jenkins console using the browser; *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[http://localhost:8085](http://localhost:8085){:target="_blank"}*{:.underline}  
         It is the first time we accessed the Jenkins console, so it prompts us to enter a password. Jenkin writes an initial password to a file. This password 
-        file path is */var/jenkins_home/secrets/initialAdminPassword*{: .highlight}
+        file path is */var/jenkins_home/secrets/initialAdminPassword*{: .hl}
     - step:
       action: terminal
       description: |
-        Retrieve the password by accessing the container's *bash*{:.highlight}.
+        Retrieve the password by accessing the container's *bash*{:.hl}.
         
         $ docker container exec -it jenkins /bin/bash
         {: .terminal_lable}
-        Read password from file; */var/jenkins_home/secrets/initialAdminPassword*{:.highlight}
+        Read password from file; */var/jenkins_home/secrets/initialAdminPassword*{:.hl}
         
         $ cat /var/jenkins_home/secrets/initialAdminPassword
         {: .terminal_lable}
@@ -55,8 +55,8 @@ sections:
     - step:
       action: browser
       description: |
-        Paste it in the password field on the Jenkins login page, then click on *Continue*{:.highlight}. 
-        Jenkins will redirect us to the Plugin installation page. Click on *Suggested Plugin Option*{:.highlight} to install default plugins. 
+        Paste it in the password field on the Jenkins login page, then click on *Continue*{:.hl}. 
+        Jenkins will redirect us to the Plugin installation page. Click on *Suggested Plugin Option*{:.hl} to install default plugins. 
         It will take a couple of minutes, and then it will take us to the user's page, create an admin user so next time you can use these credentials 
         to login Jenkins console.
     - step:
@@ -73,7 +73,7 @@ sections:
       - step:
         action: terminal
         description: |
-          Pull MySQL image from *Docker Hub*{: .highlight} 
+          Pull MySQL image from *Docker Hub*{: .hl} 
     
           $ docker pull mysql:8.0.22
           {: .terminal_lable}
@@ -94,7 +94,7 @@ sections:
       - step:
         action: terminal
         description: |
-          Verify if MySQL started properly by checking the last line in the log, which says something like this; *ready for connections*{: .highlight}
+          Verify if MySQL started properly by checking the last line in the log, which says something like this; *ready for connections*{: .hl}
     
           $ docker container logs mysql
           {: .terminal_lable}
@@ -102,7 +102,7 @@ sections:
         action: terminal
         description: |
           Use any MySQL client to verify if connection is succesfull.  
-          Here I used *MySQL CLI*{:.highlight} client to verify the connection. From the terminal, execute the below command;
+          Here I used *MySQL CLI*{:.hl} client to verify the connection. From the terminal, execute the below command;
           
           $ mysql -uroot -psecret-pw -h localhost -P 2306
           {: .terminal_lable}
@@ -111,9 +111,6 @@ sections:
         action: info
         description: |
           Now we have our MySQL running on the Docker.
-          
-          Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.
-          {: .help}
   - title: MongoDB
     id: MongoDB
     show: false
@@ -124,7 +121,7 @@ sections:
       - step:
         action: terminal
         description: |
-          Pull Mongo image from *Docker Hub*{: .highlight}
+          Pull Mongo image from *Docker Hub*{: .hl}
     
           $ docker pull mongo:latest
           {: .terminal_lable}
@@ -144,14 +141,14 @@ sections:
       - step:
         action: terminal
         description: |
-          Verify if Mongo started properly by checking the logs, you should see a line saying *Waiting for connections*{: .highlight}
+          Verify if Mongo started properly by checking the logs, you should see a line saying *Waiting for connections*{: .hl}
     
           $ docker container logs mongo
           {: .terminal_lable}
       - step:
         action: terminal
         description: |
-          Access *bash*{:.highlight} of Mongo container by executing command
+          Access *bash*{:.hl} of Mongo container by executing command
     
           $ docker container exec -it mongo /bin/bash
           {: .terminal_lable}
@@ -163,7 +160,70 @@ sections:
       - step:
         action: info
         description: |
-          Now we have our Mongo DB running on the Docker.
+          We have our Mongo DB running on the Docker.
           
           Use this *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[Docker CLI cheat sheet](/pages/cheat-sheets/docker-cli-cheat-sheet/){:target="_blank"}*{:.underline} to refer Docker CLI commands.
           {: .help}
+  - title: ActiveMQ
+    id: ActiveMQ
+    show: false
+    labels:
+      - key: image
+        value: rmohr/activemq
+    steps:
+      - step:
+        action: terminal
+        description: |
+          Pull ActiveMQ image from *Docker Hub*{: .hl}
+    
+          $ docker pull rmohr/activemq:5.15.9-alpine
+          {: .terminal_lable}
+    
+          **Note:** This is not an official image. I didn't found any official ActiveMQ image on Docker Hub, but I found instructions to create one on the ActiveMQ website. 
+          Click *&nbsp;*{:.fas .fa-external-link-alt .small_text}*[here](https://github.com/apache/activemq-artemis/tree/master/artemis-docker){:target="_blank"}*{:.underline} for the instructions.
+      - step:
+        action: terminal
+        description: |
+          Run newly downloaded ActiveMQ image
+    
+          $ docker run -d --name activemq -p 61616:61616 -p 8161:8161 -v E:/code/docker_volume/activemq/conf:/opt/activemq/conf -v E:/code/docker_volume/activemq/data:/opt/activemq/data rmohr/activemq:5.15.9-alpine
+          {: .terminal_lable}
+          
+          >
+          **-d** Runs container in background  
+          **\--name** This container will run under the name of 'activemq'  
+          **-p** ActiveMQ uses 61616 and 8161 as default ports, so we are mapping same ports on the local host  
+          **-v** Configured volume for 'conf' and 'data' folders, so data will be available on the next startup.   
+          **NOTE:** Make sure to replace _E:/code/docker_volume/activemq/*_ folder with the path according to your local.
+          {: .action_lable}
+      - step:
+        action: editor
+        description: |
+          Provide a default configuration. ActiveMQ expects default configuration files in the **/opt/activemq/conf** folder. It will be empty by default so we will see 
+          errors in the ActiveMQ startup logs. To fix this, click *[here](/assets/attachments/library/activemq/conf.zip)* to download the default configuration, 
+          then extract and copy it to your local **conf** folder (which is _E:/code/docker_volume/activemq/conf_ in above case). 
+      - step:
+        action: terminal
+        description: |
+          Start ActiveMQ by executing below command
+  
+          $ docker container start activemq
+          {: .terminal_lable}
+          
+          Now access ActiveMQ logs to check if there are no errors.
+          
+          $ docker container logs activemq
+          {: .terminal_lable}
+          Make sure no errors in the log.
+      - step:
+        action: browser
+        description: |
+          Access ActiveMQ console by going to *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[http://localhost:8161/admin](http://localhost:8161/admin){:target="_blank"}*{:.ul}
+          
+          >
+          Provide default admin credentials; username: admin and password: admin
+          {: .action_lable}
+      - step:
+        action: info
+        description: |
+          We have our ActiveMQ running on the Docker.          

@@ -79,16 +79,11 @@
     <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div>
-        <script async src="https://cse.google.com/cse.js?cx=a39f12b298f0f881d"></script>
-        <div class="gcse-search"></div>
-    </div>
-    
     <div class="collapse navbar-collapse" id="navbarMediumish">
        
         <!-- Begin Menu -->
         
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto align-items-center">
                 <!--
                 {% if page.url == "/" %}
                 <li class="nav-item active">
@@ -98,6 +93,13 @@
                 <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
                 </li>-->
 
+                <li class="nav-item">
+                    <div>
+                        <script async src="https://cse.google.com/cse.js?cx=a39f12b298f0f881d"></script>
+                        <div class="gcse-search"></div>
+                    </div>
+                </li>
+                
                 {% if page.url == "/pages/library/docker-images-library/" %}
                 <li class="nav-item active">
                     {% else %}

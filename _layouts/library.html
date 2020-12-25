@@ -3,6 +3,8 @@ layout: default
 ---
 {% if page.file == "docker-images-library" %}
 {% assign doclist = site.data.library.docker-images-library  %}
+{% elsif page.file == "spring-boot-dependencies-library"%}
+{% assign doclist = site.data.library.spring-boot-dependencies-library  %}
 {% endif %}
 
 <div class="container">

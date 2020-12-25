@@ -1,0 +1,61 @@
+sections:
+  - title: Apache Camel
+    id: apache-camel
+    show: false
+    labels:
+      - key: image
+        value: 
+    steps:
+    - step:
+      action: browser
+      description: |
+        If you want to start with a new project, then go to *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[start.spring.io](https://start.spring.io/){:target="_blank"}*{:.ul} and provide your favorite configuration details and 
+        choose *Apache Camel*{: .hl} as a dependency. Download and open it in your favorite Java editor.
+  
+        You can also extend any existing Spring Boot application in your local by adding the below dependency to your project.  
+        
+        >
+        **groupId** org.apache.camel.springboot  
+        **artifactId** camel-spring-boot-starter  
+        **version** 3.7.0
+        {: .action_lable}
+    - step:
+      action: editor
+      description: |
+        Let's verify Apache Camel by creating a simple Route. We will create a simple route using the **File** component. 
+        This component will move files from one folder to another. To create a route, we need to extend **RouteBuilder** and override its **configure()** method. 
+        Copy below code snippet into your project.
+        
+        ``` java
+        import org.apache.camel.builder.RouteBuilder;
+        import org.springframework.stereotype.Component;
+  
+        @Component
+        public class FileRoute extends RouteBuilder {
+            @Override
+            public void configure() throws Exception {
+                from("file:<source_folder>?noop=false")
+                        .to("file:<destination_folder>");
+            }
+        }
+        ```
+        
+        Create new source and destination folders in your local and update *\<source_folder>*{: .hl} and *\<destination_folder>*{: .hl} to point to newly created folders.
+    - step: 
+      action: editor
+      description: |
+        Update **application.properties** file. We need to keep the application up running because our _FileRoute_ need to look for files in the source folder, 
+        so add the below property, this will keep the main thread alive, or another option is to add **spring-boot-starter-web** dependency in the _pom.xml_ file.
+        
+        ``` text
+        camel.springboot.main-run-controller=true
+        ```
+    - step:
+      action: editor
+      description: |
+        Run Spring Boot application. Once the application is up, then create a file in *\<source_folder>*{: .hl}, and as soon as the file got created then 
+        Apache camel will move it to *\<destination_folder>*{: .hl}
+    - step:
+      action: info
+      description: |
+        Now we have Spring Boot project with Apache Camel running.

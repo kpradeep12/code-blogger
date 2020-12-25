@@ -1,9 +1,9 @@
-.highlight {
+.hl {
     color: indianred;
     font-weight: bold;
     background-color: antiquewhite;
 }
-.underline {
+.ul {
     text-decoration: underline;   
 }
 .small_text {
@@ -192,4 +192,8 @@ background-color: #e0ffb1;
     list-style-type: none;
     padding-left: 10px;
     font-weight: bold;
+}
+
+.library-article .highlight{
+    background-color: antiquewhite;
 }

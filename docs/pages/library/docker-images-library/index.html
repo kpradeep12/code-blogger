@@ -91,16 +91,11 @@
     <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div>
-        <script async src="https://cse.google.com/cse.js?cx=a39f12b298f0f881d"></script>
-        <div class="gcse-search"></div>
-    </div>
-    
     <div class="collapse navbar-collapse" id="navbarMediumish">
        
         <!-- Begin Menu -->
         
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto align-items-center">
                 <!--
                 
                 <li class="nav-item">
@@ -108,6 +103,13 @@
                 <a class="nav-link" href="/index.html">Blog</a>
                 </li>-->
 
+                <li class="nav-item">
+                    <div>
+                        <script async src="https://cse.google.com/cse.js?cx=a39f12b298f0f881d"></script>
+                        <div class="gcse-search"></div>
+                    </div>
+                </li>
+                
                 
                 <li class="nav-item active">
                     
@@ -196,6 +198,10 @@
                         <a href="#MongoDB" >MongoDB</a>
                     </li>
                     
+                    <li>
+                        <a href="#ActiveMQ" >ActiveMQ</a>
+                    </li>
+                    
                 </ul>
             </div>
         </div>-->
@@ -205,7 +211,7 @@
             </div>
 
             <section>
-                <p>A curated list of Docker images useful for Java developers; look for your tool to setup on Docker and follow the steps. 
+                <p>A curated list of Docker images useful for Java developers; look for the image you want to setup on Docker and follow the steps. 
 Before you follow the instructions, make sure your Docker is running on the computer.</p>
 
 
@@ -222,6 +228,10 @@ Before you follow the instructions, make sure your Docker is running on the comp
                         
                         <li>
                             <a href="#MongoDB" >MongoDB</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#ActiveMQ" >ActiveMQ</a>
                         </li>
                         
                     </ul>
@@ -247,7 +257,7 @@ Before you follow the instructions, make sure your Docker is running on the comp
                                     
                                 </div>
                                 <div>
-                                    <p>Pull Jenkins image from <em class="highlight">Docker Hub</em></p>
+                                    <p>Pull Jenkins image from <em class="hl">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull jenkins/jenkins:lts-jdk11</p>
 
@@ -293,7 +303,7 @@ Before you follow the instructions, make sure your Docker is running on the comp
                                 </div>
                                 <div>
                                     <p>Verify if Jenkins started properly. Execute Docker log command to view Jenkins logs and check if the log ends with something like this;
-<em class="highlight">Jenkins is fully up and running</em></p>
+<em class="hl">Jenkins is fully up and running</em></p>
 
 <p class="terminal_lable">$ docker container logs jenkins</p>
 
@@ -314,7 +324,7 @@ Before you follow the instructions, make sure your Docker is running on the comp
                                 <div>
                                     <p>Access Jenkins console using the browser; <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="http://localhost:8085" target="_blank">http://localhost:8085</a></em><br />
 It is the first time we accessed the Jenkins console, so it prompts us to enter a password. Jenkin writes an initial password to a file. This password 
-file path is <em class="highlight">/var/jenkins_home/secrets/initialAdminPassword</em></p>
+file path is <em class="hl">/var/jenkins_home/secrets/initialAdminPassword</em></p>
 
                                 </div>
                             </div>
@@ -331,10 +341,10 @@ file path is <em class="highlight">/var/jenkins_home/secrets/initialAdminPasswor
                                     
                                 </div>
                                 <div>
-                                    <p>Retrieve the password by accessing the container’s <em class="highlight">bash</em>.</p>
+                                    <p>Retrieve the password by accessing the container’s <em class="hl">bash</em>.</p>
 
 <p class="terminal_lable">$ docker container exec -it jenkins /bin/bash</p>
-<p>Read password from file; <em class="highlight">/var/jenkins_home/secrets/initialAdminPassword</em></p>
+<p>Read password from file; <em class="hl">/var/jenkins_home/secrets/initialAdminPassword</em></p>
 
 <p class="terminal_lable">$ cat /var/jenkins_home/secrets/initialAdminPassword</p>
 <p>Copy the output</p>
@@ -354,8 +364,8 @@ file path is <em class="highlight">/var/jenkins_home/secrets/initialAdminPasswor
                                     
                                 </div>
                                 <div>
-                                    <p>Paste it in the password field on the Jenkins login page, then click on <em class="highlight">Continue</em>. 
-Jenkins will redirect us to the Plugin installation page. Click on <em class="highlight">Suggested Plugin Option</em> to install default plugins. 
+                                    <p>Paste it in the password field on the Jenkins login page, then click on <em class="hl">Continue</em>. 
+Jenkins will redirect us to the Plugin installation page. Click on <em class="hl">Suggested Plugin Option</em> to install default plugins. 
 It will take a couple of minutes, and then it will take us to the user’s page, create an admin user so next time you can use these credentials 
 to login Jenkins console.</p>
 
@@ -400,7 +410,7 @@ to login Jenkins console.</p>
                                     
                                 </div>
                                 <div>
-                                    <p>Pull MySQL image from <em class="highlight">Docker Hub</em></p>
+                                    <p>Pull MySQL image from <em class="hl">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull mysql:8.0.22</p>
 
@@ -446,7 +456,7 @@ to login Jenkins console.</p>
                                     
                                 </div>
                                 <div>
-                                    <p>Verify if MySQL started properly by checking the last line in the log, which says something like this; <em class="highlight">ready for connections</em></p>
+                                    <p>Verify if MySQL started properly by checking the last line in the log, which says something like this; <em class="hl">ready for connections</em></p>
 
 <p class="terminal_lable">$ docker container logs mysql</p>
 
@@ -466,7 +476,7 @@ to login Jenkins console.</p>
                                 </div>
                                 <div>
                                     <p>Use any MySQL client to verify if connection is succesfull.<br />
-Here I used <em class="highlight">MySQL CLI</em> client to verify the connection. From the terminal, execute the below command;</p>
+Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From the terminal, execute the below command;</p>
 
 <p class="terminal_lable">$ mysql -uroot -psecret-pw -h localhost -P 2306</p>
 <p>If the connection is a success, then we get an SQL prompt.</p>
@@ -487,8 +497,6 @@ Here I used <em class="highlight">MySQL CLI</em> client to verify the connection
                                 </div>
                                 <div>
                                     <p>Now we have our MySQL running on the Docker.</p>
-
-<p class="help">Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
 
                                 </div>
                             </div>
@@ -512,7 +520,7 @@ Here I used <em class="highlight">MySQL CLI</em> client to verify the connection
                                     
                                 </div>
                                 <div>
-                                    <p>Pull Mongo image from <em class="highlight">Docker Hub</em></p>
+                                    <p>Pull Mongo image from <em class="hl">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull mongo:latest</p>
 
@@ -557,7 +565,7 @@ Here I used <em class="highlight">MySQL CLI</em> client to verify the connection
                                     
                                 </div>
                                 <div>
-                                    <p>Verify if Mongo started properly by checking the logs, you should see a line saying <em class="highlight">Waiting for connections</em></p>
+                                    <p>Verify if Mongo started properly by checking the logs, you should see a line saying <em class="hl">Waiting for connections</em></p>
 
 <p class="terminal_lable">$ docker container logs mongo</p>
 
@@ -576,7 +584,7 @@ Here I used <em class="highlight">MySQL CLI</em> client to verify the connection
                                     
                                 </div>
                                 <div>
-                                    <p>Access <em class="highlight">bash</em> of Mongo container by executing command</p>
+                                    <p>Access <em class="hl">bash</em> of Mongo container by executing command</p>
 
 <p class="terminal_lable">$ docker container exec -it mongo /bin/bash</p>
 <p>Now access Mongo shell by executing below command; this will connect to local mongo at port 27017</p>
@@ -599,9 +607,148 @@ Here I used <em class="highlight">MySQL CLI</em> client to verify the connection
                                     
                                 </div>
                                 <div>
-                                    <p>Now we have our Mongo DB running on the Docker.</p>
+                                    <p>We have our Mongo DB running on the Docker.</p>
 
 <p class="help">Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <h2 id="ActiveMQ" style="margin-top:20px">ActiveMQ</h2>
+
+
+                        
+
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>1</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Pull ActiveMQ image from <em class="hl">Docker Hub</em></p>
+
+<p class="terminal_lable">$ docker pull rmohr/activemq:5.15.9-alpine</p>
+
+<p><strong>Note:</strong> This is not an official image. I didn’t found any official ActiveMQ image on Docker Hub, but I found instructions to create one on the ActiveMQ website. 
+Click <em class="fas fa-external-link-alt small_text"> </em><em class="underline"><a href="https://github.com/apache/activemq-artemis/tree/master/artemis-docker" target="_blank">here</a></em> for the instructions.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>2</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Run newly downloaded ActiveMQ image</p>
+
+<p class="terminal_lable">$ docker run -d –name activemq -p 61616:61616 -p 8161:8161 -v E:/code/docker_volume/activemq/conf:/opt/activemq/conf -v E:/code/docker_volume/activemq/data:/opt/activemq/data rmohr/activemq:5.15.9-alpine</p>
+
+<blockquote class="action_lable">
+
+  <p><strong>-d</strong> Runs container in background<br />
+<strong>--name</strong> This container will run under the name of ‘activemq’<br />
+<strong>-p</strong> ActiveMQ uses 61616 and 8161 as default ports, so we are mapping same ports on the local host<br />
+<strong>-v</strong> Configured volume for ‘conf’ and ‘data’ folders, so data will be available on the next startup. <br />
+<strong>NOTE:</strong> Make sure to replace <em>E:/code/docker_volume/activemq/*</em> folder with the path according to your local.</p>
+</blockquote>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>3</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Provide a default configuration. ActiveMQ expects default configuration files in the <strong>/opt/activemq/conf</strong> folder. It will be empty by default so we will see 
+errors in the ActiveMQ startup logs. To fix this, click <em><a href="/assets/attachments/library/activemq/conf.zip">here</a></em> to download the default configuration, 
+then extract and copy it to your local <strong>conf</strong> folder (which is <em>E:/code/docker_volume/activemq/conf</em> in above case).</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>4</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Start ActiveMQ by executing below command</p>
+
+<p class="terminal_lable">$ docker container start activemq</p>
+
+<p>Now access ActiveMQ logs to check if there are no errors.</p>
+
+<p class="terminal_lable">$ docker container logs activemq</p>
+<p>Make sure no errors in the log.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>5</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Access ActiveMQ console by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="http://localhost:8161/admin" target="_blank">http://localhost:8161/admin</a></em></p>
+
+<blockquote class="action_lable">
+
+  <p>Provide default admin credentials; username: admin and password: admin</p>
+</blockquote>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>6</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>We have our ActiveMQ running on the Docker.</p>
 
                                 </div>
                             </div>

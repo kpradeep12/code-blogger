@@ -156,8 +156,13 @@
 <!-- End Navigation
 ================================================== -->
     
-<div class="site-content">   
+<div class="site-content">
+
+{% if layout == 'layout-book'%}
+<div class="container-fluid">
+{% else %}
 <div class="container">
+{% endif %}
     
 <!-- Site Title
 ================================================== -->
@@ -191,7 +196,7 @@
 </div>
     
 </div>
-
+<!--
 <div class="jumbotron fortags">
 	<div class="d-md-flex h-100">
 		<div class="col-md-4 transpdark align-self-center text-center h-100">
@@ -215,7 +220,7 @@
 		</div>
 	</div>
 </div>
- 
+ -->
 
 
 <!-- Begin Footer
@@ -226,9 +231,6 @@
             <div class="col-md-6 col-sm-6 text-center text-lg-left">
                  Copyright © {{ site.time | date: "%Y" }} {{ site.name }} 
             </div>
-            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
-                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
-            </div>-->
         </div>
     </div>
 </footer>

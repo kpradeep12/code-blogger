@@ -7,7 +7,7 @@ layout: default
 {% assign doclist = site.data.library.spring-boot-dependencies-library  %}
 {% endif %}
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
 
         <!--<div class="col-md-2 pl-0">
@@ -96,3 +96,18 @@ layout: default
 </div>
 
 
+<!-- Begin Comments
+================================================== -->
+{% if jekyll.environment == 'production' %}
+{% if page.comments != false %}
+<div class="container-fluid">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-12">
+            {% include disqus.html %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endif %}
+<!--End Comments
+================================================== -->

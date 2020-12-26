@@ -160,8 +160,11 @@
 <!-- End Navigation
 ================================================== -->
     
-<div class="site-content">   
+<div class="site-content">
+
+
 <div class="container">
+
     
 <!-- Site Title
 ================================================== -->
@@ -177,7 +180,19 @@
 <!-- Content
 ================================================== --> 
 <div class="main-content">
-    <section>
+    <div class="container-fluid">
+    <div class="row">
+
+        <!--<div class="col-md-2 pl-0">
+            <div class="book-toc">
+                <ul class="markdown-toc library-toc">
+                    
+                </ul>
+            </div>
+        </div>-->
+        <div class="col-md-12">
+            
+<section>
     <div class="section-title">
         <h2><span>Dockerfile Quick Reference</span></h2>
     </div>
@@ -472,6 +487,40 @@ VOLUME /var/app1 /var/app2 - multiple volumes</em></p>
                 
     </div>
 </section>
+        </div>
+    </div>
+</div>
+
+<!-- Begin Comments
+================================================== -->
+
+
+<div class="container-fluid">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-12">
+            
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+        </div>
+    </div>
+</div>
+
+
+<!--End Comments
+================================================== -->
 </div>
 
 <!-- Bottom Alert Bar
@@ -489,7 +538,7 @@ VOLUME /var/app1 /var/app2 - multiple volumes</em></p>
 </div>
     
 </div>
-
+<!--
 <div class="jumbotron fortags">
 	<div class="d-md-flex h-100">
 		<div class="col-md-4 transpdark align-self-center text-center h-100">
@@ -521,7 +570,7 @@ VOLUME /var/app1 /var/app2 - multiple volumes</em></p>
 		</div>
 	</div>
 </div>
- 
+ -->
 
 
 <!-- Begin Footer
@@ -532,9 +581,6 @@ VOLUME /var/app1 /var/app2 - multiple volumes</em></p>
             <div class="col-md-6 col-sm-6 text-center text-lg-left">
                  Copyright © 2020 The Tech Stack . Net 
             </div>
-            <!--<div class="col-md-6 col-sm-6 text-center text-lg-right">    
-                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
-            </div>-->
         </div>
     </div>
 </footer>

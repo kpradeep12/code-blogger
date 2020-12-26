@@ -1,7 +1,22 @@
 ---
 layout: default
 ---
+<div class="container-fluid">
+    <div class="row">
 
+        <!--<div class="col-md-2 pl-0">
+            <div class="book-toc">
+                <ul class="markdown-toc library-toc">
+                    {% for section in doclist.sections %}
+                    <li>
+                        <a href="#{{section.id}}" >{{section.title}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>-->
+        <div class="col-md-12">
+            
 <section>
     <div class="section-title">
         <h2><span>{{ page.title }}</span></h2>
@@ -30,3 +45,22 @@ layout: default
                 {% endfor %}
     </div>
 </section>
+        </div>
+    </div>
+</div>
+
+<!-- Begin Comments
+================================================== -->
+{% if jekyll.environment == 'production' %}
+{% if page.comments != false %}
+<div class="container-fluid">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-12">
+            {% include disqus.html %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endif %}
+<!--End Comments
+================================================== -->

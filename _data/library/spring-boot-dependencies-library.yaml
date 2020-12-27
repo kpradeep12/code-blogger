@@ -9,7 +9,7 @@ sections:
     - step:
       action: browser
       description: |
-        If you want to start with a new project, then go to *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[start.spring.io](https://start.spring.io/){:target="_blank"}*{:.ul} and provide your favorite configuration details and 
+        If you want to start with a new project, then go to *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[start.spring.io](https://start.spring.io/){:target="_blank"}*{:.ul} and provide configuration details (Java version, Spring boot version) and 
         choose *Apache Camel*{: .hl} as a dependency. Download and open it in your favorite Java editor.
   
         You can also extend any existing Spring Boot application in your local by adding the below dependency to your project.  
@@ -59,3 +59,68 @@ sections:
       action: info
       description: |
         Now we have Spring Boot project with Apache Camel running.
+  - title: H2 Database
+    id: h2-database
+    show: false
+    labels:
+      - key: image
+        value: 
+    steps:
+    - step:
+      action: browser
+      description: |
+        Create a new project by going to *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[start.spring.io](https://start.spring.io/){:target="_blank"}*{:.ul} and provide configuration details (Java version, Spring boot version) and 
+        choose *H2 Database*{: .hl}, *Spring Web*{: .hl} and *Spring Data JPA*{: .hl} as a dependencies. Download and open it in your Java editor.
+  
+        You can also extend any existing Spring Boot application in your local by adding the below dependency to that project.  
+        
+        >
+        <dependency>
+          <groupId>com.h2database</groupId>
+          <artifactId>h2</artifactId>
+          <scope>runtime</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        {: .action_lable}
+    - step: 
+      action: editor
+      description: |
+        Update **application.properties** file with below properties
+        
+        ``` text
+        spring.datasource.url=jdbc:h2:mem:empdb
+        spring.datasource.driver-class-name=org.h2.Driver
+        spring.datasource.username=sa
+        spring.datasource.password=
+        spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+        spring.h2.console.enabled=true
+        ```
+        This will create a **in-memory database** with name _empdb_ and enables H2 DB web console. 
+        Because it is an in-memory database, so data will lose once we restart the application. 
+        To save data in a file, update the property **spring.datasource.url** with value **jdbc:h2:file:./empdb**
+        
+        Run Spring boot application.
+    - step:
+      action: browser
+      description: |
+        Access H2 database web console at *&nbsp;*{:.fas .fa-external-link-alt .small_text}*[http://localhost:8080/h2-console](http://localhost:8080/h2-console){:target="_blank"}*{:.ul}  
+        Web console prompts user to enter connection details;
+        
+        >
+        JDBC URL: <what ever the value provided for **spring.datasource.url** in the application properties>
+        User Name: sa
+        Password:
+        {: .action_lable}
+
+        Click on *Connect*{: .hl}
+    - step:
+      action: info
+      description: |
+        Now we have Spring Boot project with H2 Database running.

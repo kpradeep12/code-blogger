@@ -226,4 +226,54 @@ sections:
       - step:
         action: info
         description: |
-          We have our ActiveMQ running on the Docker.          
+          We have our ActiveMQ running on the Docker.
+  - title: MariaDB
+    id: MariaDB
+    show: false
+    labels:
+      - key: image
+        value: mariadb:10.5
+    steps:
+      - step:
+        action: terminal
+        description: |
+          Pull MariaDB image from *Docker Hub*{: .hl}
+    
+          $ docker pull mariadb:10.5
+          {: .terminal_lable}
+      - step:
+        action: terminal
+        description: |
+          Run newly downloaded MariaDB image
+    
+          $ docker run -d --name mariadb -p 3310:3306 -v E:/code/docker_volume/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret-pw mariadb:10.5
+          {: .terminal_lable}
+    
+          >
+          **-d** Runs container in background  
+          **\--name** This container will run under the name of 'mariadb'  
+          **-p** MariaDB listens on 3306 port and I mapped it to 3310 on the local host  
+          **-v** Configured volume to store data on local host, so data will be available on the next startup.   
+          **NOTE:** Make sure to replace _E:/code/docker_volume/mariadb_ folder with the path according to your local.
+          {: .action_lable}
+      - step:
+        action: terminal
+        description: |
+          Verify MariaDB logs to check if there are no errors.
+    
+          $ docker container logs mariadb
+          {: .terminal_lable}
+          Make sure no errors in the log.
+      - step:
+        action: terminal
+        description: |
+          Use any MySQL client to verify if connection is succesfull.  
+          Here I used *MySQL CLI*{:.hl} client to verify the connection. From the terminal, execute the below command;
+  
+          $ mysql -uroot -psecret-pw -h localhost -P 3310
+          {: .terminal_lable}
+          If the connection is a success, then we get an SQL prompt.
+      - step:
+        action: info
+        description: |
+          We have our MariaDB running on the Docker.          

@@ -205,6 +205,10 @@
                         <a href="#ActiveMQ" >ActiveMQ</a>
                     </li>
                     
+                    <li>
+                        <a href="#MariaDB" >MariaDB</a>
+                    </li>
+                    
                 </ul>
             </div>
         </div>-->
@@ -235,6 +239,10 @@ Before you follow the instructions, make sure your Docker is running on the comp
                         
                         <li>
                             <a href="#ActiveMQ" >ActiveMQ</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#MariaDB" >MariaDB</a>
                         </li>
                         
                     </ul>
@@ -752,6 +760,118 @@ then extract and copy it to your local <strong>conf</strong> folder (which is <e
                                 </div>
                                 <div>
                                     <p>We have our ActiveMQ running on the Docker.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <h2 id="MariaDB" style="margin-top:20px">MariaDB</h2>
+
+
+                        
+
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>1</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Pull MariaDB image from <em class="hl">Docker Hub</em></p>
+
+<p class="terminal_lable">$ docker pull mariadb:10.5</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>2</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Run newly downloaded MariaDB image</p>
+
+<p class="terminal_lable">$ docker run -d –name mariadb -p 3310:3306 -v E:/code/docker_volume/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret-pw mariadb:10.5</p>
+
+<blockquote class="action_lable">
+
+  <p><strong>-d</strong> Runs container in background<br />
+<strong>--name</strong> This container will run under the name of ‘mariadb’<br />
+<strong>-p</strong> MariaDB listens on 3306 port and I mapped it to 3310 on the local host<br />
+<strong>-v</strong> Configured volume to store data on local host, so data will be available on the next startup. <br />
+<strong>NOTE:</strong> Make sure to replace <em>E:/code/docker_volume/mariadb</em> folder with the path according to your local.</p>
+</blockquote>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>3</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Verify MariaDB logs to check if there are no errors.</p>
+
+<p class="terminal_lable">$ docker container logs mariadb</p>
+<p>Make sure no errors in the log.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>4</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Use any MySQL client to verify if connection is succesfull.<br />
+Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From the terminal, execute the below command;</p>
+
+<p class="terminal_lable">$ mysql -uroot -psecret-pw -h localhost -P 3310</p>
+<p>If the connection is a success, then we get an SQL prompt.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>5</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>We have our MariaDB running on the Docker.</p>
 
                                 </div>
                             </div>

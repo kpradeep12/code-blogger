@@ -193,6 +193,10 @@
                         <a href="#apache-camel" >Apache Camel</a>
                     </li>
                     
+                    <li>
+                        <a href="#h2-database" >H2 Database</a>
+                    </li>
+                    
                 </ul>
             </div>
         </div>-->
@@ -209,6 +213,10 @@
                         
                         <li>
                             <a href="#apache-camel" >Apache Camel</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#h2-database" >H2 Database</a>
                         </li>
                         
                     </ul>
@@ -234,7 +242,7 @@
                                     
                                 </div>
                                 <div>
-                                    <p>If you want to start with a new project, then go to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide your favorite configuration details and 
+                                    <p>If you want to start with a new project, then go to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
 choose <em class="hl">Apache Camel</em> as a dependency. Download and open it in your favorite Java editor.</p>
 
 <p>You can also extend any existing Spring Boot application in your local by adding the below dependency to your project.</p>
@@ -335,6 +343,122 @@ Apache camel will move it to <em class="hl">&lt;destination_folder&gt;</em></p>
                                 </div>
                                 <div>
                                     <p>Now we have Spring Boot project with Apache Camel running.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <h2 id="h2-database" style="margin-top:20px">H2 Database</h2>
+
+
+                        
+
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>1</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Create a new project by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
+choose <em class="hl">H2 Database</em>, <em class="hl">Spring Web</em> and <em class="hl">Spring Data JPA</em> as a dependencies. Download and open it in your Java editor.</p>
+
+<p>You can also extend any existing Spring Boot application in your local by adding the below dependency to that project.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>h2<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-data-jpa<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>2</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Update <strong>application.properties</strong> file with below properties</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spring.datasource.url=jdbc:h2:mem:empdb
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+</code></pre></div></div>
+<p>This will create a <strong>in-memory database</strong> with name <em>empdb</em> and enables H2 DB web console. 
+Because it is an in-memory database, so data will lose once we restart the application. 
+To save data in a file, update the property <strong>spring.datasource.url</strong> with value <strong>jdbc:h2:file:./empdb</strong></p>
+
+<p>Run Spring boot application.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>3</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Access H2 database web console at <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://localhost:8080/h2-console" target="_blank">http://localhost:8080/h2-console</a></em><br />
+Web console prompts user to enter connection details;</p>
+
+<blockquote class="action_lable">
+
+  <p>JDBC URL: &lt;what ever the value provided for <strong>spring.datasource.url</strong> in the application properties&gt;
+User Name: sa
+Password:</p>
+</blockquote>
+
+<p>Click on <em class="hl">Connect</em></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>4</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Now we have Spring Boot project with H2 Database running.</p>
 
                                 </div>
                             </div>

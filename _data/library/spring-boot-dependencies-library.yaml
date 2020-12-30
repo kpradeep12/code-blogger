@@ -379,66 +379,92 @@ sections:
         action: browser
         description: |
           Create a new project by going to *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[start.spring.io](https://start.spring.io/){:target="_blank"}*{:.ul} and provide configuration details (Java version, Spring boot version) and 
-          choose *Spring Boot DevTools*{: .hl} and *Thymeleaf*{: .hl} as a dependency. (Note that we are including Web, just to demostrate dev tools). Download and open it in your Java editor.
+          choose *Spring Data MongoDB*{: .hl} and *Spring Web*{: .hl} as a dependency. (Note that we are including Web to access MongoDB through REST endpoint). Download and open it in your Java editor.
     
           You can also extend any existing Spring Boot application in your local by adding the below dependencies to that project.  
     
           ``` xml
           <dependency>
-              <groupId>org.springframework.boot</groupId>
-              <artifactId>spring-boot-devtools</artifactId>
-              <scope>runtime</scope>
-              <optional>true</optional>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
           </dependency>
           <dependency>
-              <groupId>org.springframework.boot</groupId>
-              <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
           </dependency>
           ```
           >
-          Spring Dev Tools will use 35729 port number, so ensure no applications are using this port number.
+          Make sure you have MongoDB installed and running. If you like to setup MongoDB on the docker, then follow these *&nbsp;*{:.fas .fa-external-link-alt .small_text}*[instructions](/pages/library/docker-images-library/#MongoDB){:target="_blank"}*{: .ul}.
           {: .action_lable}
-      - step:
-        action: browser
-        description: |
-          Install *LiveReload*{: .hl} browser extension. Click *&nbsp;*{:.fas .fa-external-link-alt .small_text}*[here](http://livereload.com/extensions/){:target="_blank"}*{:.ul} for installation instructions.
-          After the installation, start the LiveReload browser extension. This extension will look for a 35729 port on localhost and connects to it.
       - step:
         action: editor
         description: |
-          We need to do some configuration on the IntelliJ editor to do LiveReload work properly.
-    
-          * In File > Settings > Build, Execution, Deployment > Compiler > Enable 'Build project automatically'
-          * Go to Actions (Ctrl + Shift + A) and search for Registry. Look for 'compiler.automake.allow.when.app.running' and enable it.
-    
-          Add below Java Class 
-    
+          Create Document class
           ``` java
-          @Controller
-          public class IndexController {
-              @GetMapping("/")
-              public String index() {
-                  return "index";
+          @Data
+          @AllArgsConstructor
+          @NoArgsConstructor
+          public class User {
+              @Id
+              private String id;
+              private String firstName;
+              private String lastName;
+          }
+
+          ```
+          Note that I used Lombok annotations for less verbose and we are going to store and retrive User documents from MongoDB.
+
+          Create User Repository Interface
+
+          ``` java
+          public interface UserRepository extends MongoRepository<User, String> {}
+          ```
+
+          Create User REST controller
+          ``` java
+          @RestController
+          public class UserController implements CommandLineRunner {
+              @Autowired
+              UserRepository userRepository;
+
+              @Override
+              public void run(String... args) throws Exception {
+                  userRepository.deleteAll();
+                  userRepository.save(new User(UUID.randomUUID().toString(), "Adam", "Jr"));
+                  userRepository.save(new User(UUID.randomUUID().toString(), "Olive", "Brown"));
+                  userRepository.save(new User(UUID.randomUUID().toString(), "Ana", "Smith"));
+              }
+
+              @GetMapping("/users")
+              public List<User> all() {
+                  return userRepository.findAll();
               }
           }
           ```
-    
-          In templates folder add index.html
-    
-          ``` html
-          <html>
-            <body>
-              <h2>Hello World!</h2>
-            </body>
-          </html>
-          ```
-    
-          Run Spring boot application. In the startup logs, look for the line **LiveReload server is running on port 35729**. This is to make sure that the LiveReload server is up.
+          This class implements *CommandLineRunner*{: .hl} interface because this will help us to store some initial User records
+          and this controller exposes a single end point at _/users_ which will return all users.
       - step:
-        action: browser
+        action: editor
         description: |
-          Enable _LiveReload_ in the browser and access application at *&nbsp;*{:.fas .fa-external-link-alt .small_text}*[http://localhost:8080](http://localhost:8080){:target="_blank"}*{:.ul}
+          Configure MongoDB in application.properties
+    
+          ``` text
+          spring.data.mongodb.authentication-database=admin
+          spring.data.mongodb.database=test_db
+          spring.data.mongodb.port=27017
+          spring.data.mongodb.host=localhost
+          ```
+          
+          Run Spring boot application.
+      - step:
+        action: terminal
+        description: |
+          Access _/users_ endpoint to get all users.
+
+          ``` console
+          curl http://localhost:8080/users
+          ```
       - step:
         action: info
         description: |
-          Now we have Spring Boot project with Dev Tools.
+          Now we have our Spring MongoDB running.

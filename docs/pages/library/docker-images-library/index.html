@@ -52,7 +52,7 @@
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <meta property="og:image" content="http://thetechstack.net/assets/images/banners/docker-images-library.png" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"Docker Image Library","image":"http://thetechstack.net/assets/images/banners/docker-images-library.png","url":"http://thetechstack.net/pages/library/docker-images-library/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
+{"image":"http://thetechstack.net/assets/images/banners/docker-images-library.png","description":"Sharing my Java coding experiments","@type":"WebPage","url":"http://thetechstack.net/pages/library/docker-images-library/","headline":"Docker Image Library","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -289,7 +289,7 @@ Before you follow the instructions, make sure your Docker is running on the comp
                                 <div>
                                     <p>Run newly downloaded Jenkins image</p>
 
-<p class="terminal_lable">$ docker run -d –name jenkins -p 8085:8080 -v E:/code/docker_volume/jenkins:/var/jenkins_home jenkins/jenkins:lts-jdk11</p>
+<p class="terminal_lable">$ docker run -d --name jenkins -p 8085:8080 -v E:/code/docker_volume/jenkins:/var/jenkins_home jenkins/jenkins:lts-jdk11</p>
 <blockquote class="action_lable">
 
   <p><strong>-d</strong> Runs container in background<br />
@@ -442,7 +442,7 @@ to login Jenkins console.</p>
                                 <div>
                                     <p>Run newly downloaded MySQL image</p>
 
-<p class="terminal_lable">$ docker run -d –name mysql -p 2306:3306 -e MYSQL_ROOT_PASSWORD=secret-pw -v E:/code/docker_volume/mysql:/var/lib/mysql mysql:8.0.22</p>
+<p class="terminal_lable">$ docker run -d --name mysql -p 2306:3306 -e MYSQL_ROOT_PASSWORD=secret-pw -v E:/code/docker_volume/mysql:/var/lib/mysql mysql:8.0.22</p>
 <blockquote class="action_lable">
 
   <p><strong>-d</strong> Runs container in background<br />
@@ -552,7 +552,7 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                                 <div>
                                     <p>Run newly downloaded Mongo image</p>
 
-<p class="terminal_lable">$ docker run -d –name mongo -p 27017:27017 -v E:/code/docker_volume/mongo:/data/db mongo:latest</p>
+<p class="terminal_lable">$ docker run -d --name mongo -p 27017:27017 -v E:/code/docker_volume/mongo:/data/db mongo:latest</p>
 <blockquote class="action_lable">
 
   <p><strong>-d</strong> Runs container in background<br />
@@ -668,7 +668,7 @@ Click <em class="fas fa-external-link-alt small_text"> </em><em class="underlin
                                 <div>
                                     <p>Run newly downloaded ActiveMQ image</p>
 
-<p class="terminal_lable">$ docker run -d –name activemq -p 61616:61616 -p 8161:8161 -v E:/code/docker_volume/activemq/conf:/opt/activemq/conf -v E:/code/docker_volume/activemq/data:/opt/activemq/data rmohr/activemq:5.15.9-alpine</p>
+<p class="terminal_lable">$ docker run -d --name activemq -p 61616:61616 -p 8161:8161 -v E:/code/docker_volume/activemq/conf:/opt/activemq/conf -v E:/code/docker_volume/activemq/data:/opt/activemq/data rmohr/activemq:5.15.9-alpine</p>
 
 <blockquote class="action_lable">
 
@@ -804,7 +804,7 @@ then extract and copy it to your local <strong>conf</strong> folder (which is <e
                                 <div>
                                     <p>Run newly downloaded MariaDB image</p>
 
-<p class="terminal_lable">$ docker run -d –name mariadb -p 3310:3306 -v E:/code/docker_volume/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret-pw mariadb:10.5</p>
+<p class="terminal_lable">$ docker run -d --name mariadb -p 3310:3306 -v E:/code/docker_volume/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret-pw mariadb:10.5</p>
 
 <blockquote class="action_lable">
 

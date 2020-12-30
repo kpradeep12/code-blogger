@@ -52,7 +52,7 @@
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <meta property="og:image" content="http://thetechstack.net/assets/images/banners/spring-boot-dependencies-library.png" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"Spring Boot Dependencies Library","image":"http://thetechstack.net/assets/images/banners/spring-boot-dependencies-library.png","url":"http://thetechstack.net/pages/library/spring-boot-dependencies-library/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
+{"image":"http://thetechstack.net/assets/images/banners/spring-boot-dependencies-library.png","description":"Sharing my Java coding experiments","@type":"WebPage","url":"http://thetechstack.net/pages/library/spring-boot-dependencies-library/","headline":"Spring Boot Dependencies Library","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -194,7 +194,19 @@
                     </li>
                     
                     <li>
-                        <a href="#h2-database" >H2 Database</a>
+                        <a href="#h2-database" >H2 Database with Spring Data JPA</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#thymeleaf" >Thymeleaf</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#spring-dev-tools" >Spring Dev Tools</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#mongo-db" >Mongo DB with Spring Data JPA</a>
                     </li>
                     
                 </ul>
@@ -216,7 +228,19 @@
                         </li>
                         
                         <li>
-                            <a href="#h2-database" >H2 Database</a>
+                            <a href="#h2-database" >H2 Database with Spring Data JPA</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#thymeleaf" >Thymeleaf</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#spring-dev-tools" >Spring Dev Tools</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#mongo-db" >Mongo DB with Spring Data JPA</a>
                         </li>
                         
                     </ul>
@@ -349,7 +373,7 @@ Apache camel will move it to <em class="hl">&lt;destination_folder&gt;</em></p>
                         </div>
                         
                         
-                        <h2 id="h2-database" style="margin-top:20px">H2 Database</h2>
+                        <h2 id="h2-database" style="margin-top:20px">H2 Database with Spring Data JPA</h2>
 
 
                         
@@ -367,9 +391,9 @@ Apache camel will move it to <em class="hl">&lt;destination_folder&gt;</em></p>
                                 </div>
                                 <div>
                                     <p>Create a new project by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
-choose <em class="hl">H2 Database</em>, <em class="hl">Spring Web</em> and <em class="hl">Spring Data JPA</em> as a dependencies. Download and open it in your Java editor.</p>
+choose <em class="hl">H2 Database</em>, <em class="hl">Spring Data JPA</em> and <em class="hl">Spring Web</em> as a dependencies. Download and open it in your Java editor.</p>
 
-<p>You can also extend any existing Spring Boot application in your local by adding the below dependency to that project.</p>
+<p>You can also extend any existing Spring Boot application in your local by adding the below dependencies to that project.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
   <span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
@@ -409,6 +433,8 @@ spring.datasource.username=sa
 spring.datasource.password=
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.h2.console.enabled=true
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
 </code></pre></div></div>
 <p>This will create a <strong>in-memory database</strong> with name <em>empdb</em> and enables H2 DB web console. 
 Because it is an in-memory database, so data will lose once we restart the application. 
@@ -423,6 +449,72 @@ To save data in a file, update the property <strong>spring.datasource.url</stron
                         <div class="d-flex justify-content-start">
                             <div class="library-step-counter">
                                 <h3>3</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Create a new class called <em>User</em> in the project with the below content.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+    <span class="nd">@Id</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">userId</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">()</span> <span class="o">{}</span>
+
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">(</span><span class="n">String</span> <span class="n">userId</span><span class="o">,</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">,</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userId</span> <span class="o">=</span> <span class="n">userId</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">firstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">lastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Create a <em>UserRepository</em> interface which extends <em class="hl">JpaRepository</em></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">User</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">{}</span>
+</code></pre></div></div>
+
+<p>Create a <em>UserRepoInitializer</em> class</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Component</span>
+<span class="kd">class</span> <span class="nc">UserRepoInitializer</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>
+  <span class="nd">@Autowired</span>
+  <span class="n">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Amanda"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Hannah"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Anna"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Audrey"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Caroline"</span><span class="o">,</span> <span class="s">""</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nl">userRepository:</span><span class="o">:</span><span class="n">save</span><span class="o">);</span>
+    <span class="n">userRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>As an alternative to UserRepoInitializer, we can add <em>data.sql</em> in resources folder and inlude insert statements in it.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span><span class="p">(</span><span class="n">USER_ID</span><span class="p">,</span> <span class="n">FIRST_NAME</span><span class="p">,</span> <span class="n">LAST_NAME</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'1'</span><span class="p">,</span><span class="s1">'Mathew'</span><span class="p">,</span><span class="s1">'Luis'</span><span class="p">);</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span><span class="p">(</span><span class="n">USER_ID</span><span class="p">,</span> <span class="n">FIRST_NAME</span><span class="p">,</span> <span class="n">LAST_NAME</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'2'</span><span class="p">,</span><span class="s1">'Olive'</span><span class="p">,</span><span class="s1">'Brenz'</span><span class="p">);</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span><span class="p">(</span><span class="n">USER_ID</span><span class="p">,</span> <span class="n">FIRST_NAME</span><span class="p">,</span> <span class="n">LAST_NAME</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'3'</span><span class="p">,</span><span class="s1">'Joseph'</span><span class="p">,</span><span class="s1">'Grand'</span><span class="p">);</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span><span class="p">(</span><span class="n">USER_ID</span><span class="p">,</span> <span class="n">FIRST_NAME</span><span class="p">,</span> <span class="n">LAST_NAME</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'4'</span><span class="p">,</span><span class="s1">'David'</span><span class="p">,</span><span class="s1">'Jr'</span><span class="p">);</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span><span class="p">(</span><span class="n">USER_ID</span><span class="p">,</span> <span class="n">FIRST_NAME</span><span class="p">,</span> <span class="n">LAST_NAME</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'5'</span><span class="p">,</span><span class="s1">'Arvind'</span><span class="p">,</span><span class="s1">'Kumar'</span><span class="p">);</span>
+</code></pre></div></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>4</h3>
                             </div>
                             <div class="library-step w-100 d-flex justify-content-start">
                                 <div>
@@ -443,6 +535,149 @@ Password:</p>
 
 <p>Click on <em class="hl">Connect</em></p>
 
+<p>In the left side tree, make sure you see table <em>USER</em></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>5</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Now we have Spring Boot project with H2 Database running.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <h2 id="thymeleaf" style="margin-top:20px">Thymeleaf</h2>
+
+
+                        
+
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>1</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Create a new project by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
+choose <em class="hl">Thymeleaf</em> as a dependency. Download and open it in your Java editor.</p>
+
+<p>You can also extend any existing Spring Boot application in your local by adding the below dependency to that project.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-thymeleaf<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>2</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    
+<p>Update <strong>application.properties</strong> file with below properties</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spring.datasource.url=jdbc:h2:mem:empdb
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
+</code></pre></div></div>
+<p>This will create a <strong>in-memory database</strong> with name <em>empdb</em> and enables H2 DB web console. 
+Because it is an in-memory database, so data will lose once we restart the application. 
+To save data in a file, update the property <strong>spring.datasource.url</strong> with value <strong>jdbc:h2:file:./empdb</strong></p>
+
+<p>Run Spring boot application.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>3</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Create a new class called <em>User</em> in the project with the below content.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+    <span class="nd">@Id</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">userId</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">()</span> <span class="o">{}</span>
+
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">(</span><span class="n">String</span> <span class="n">userId</span><span class="o">,</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">,</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userId</span> <span class="o">=</span> <span class="n">userId</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">firstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">lastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Create a <em>UserRepository</em> interface which extends <em class="hl">JpaRepository</em></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">User</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">{}</span>
+</code></pre></div></div>
+
+<p>Create a <em>UserRepoInitializer</em> class</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Component</span>
+<span class="kd">class</span> <span class="nc">UserRepoInitializer</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>
+  <span class="nd">@Autowired</span>
+  <span class="n">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Amanda"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Hannah"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Anna"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Audrey"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Caroline"</span><span class="o">,</span> <span class="s">""</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nl">userRepository:</span><span class="o">:</span><span class="n">save</span><span class="o">);</span>
+    <span class="n">userRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
                                 </div>
                             </div>
                         </div>
@@ -454,11 +689,339 @@ Password:</p>
                             <div class="library-step w-100 d-flex justify-content-start">
                                 <div>
                                     
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Access H2 database web console at <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://localhost:8080/h2-console" target="_blank">http://localhost:8080/h2-console</a></em><br />
+Web console prompts user to enter connection details;</p>
+
+<blockquote class="action_lable">
+
+  <p>JDBC URL: &lt;what ever the value provided for <strong>spring.datasource.url</strong> in the application properties&gt;
+User Name: sa
+Password:</p>
+</blockquote>
+
+<p>Click on <em class="hl">Connect</em></p>
+
+<p>In the left side tree, make sure you see table <em>USER</em></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>5</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
                                 </div>
                                 <div>
                                     <p>Now we have Spring Boot project with H2 Database running.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <h2 id="spring-dev-tools" style="margin-top:20px">Spring Dev Tools</h2>
+
+
+                        
+
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>1</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Create a new project by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
+choose <em class="hl">Spring Boot DevTools</em> and <em class="hl">Thymeleaf</em> as a dependency. (Note that we are including Web, just to demostrate dev tools). Download and open it in your Java editor.</p>
+
+<p>You can also extend any existing Spring Boot application in your local by adding the below dependencies to that project.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>spring-boot-devtools<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+    <span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-thymeleaf<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+<blockquote class="action_lable">
+
+  <p>Spring Dev Tools will use 35729 port number, so ensure no applications are using this port number.</p>
+</blockquote>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>2</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Install <em class="hl">LiveReload</em> browser extension. Click <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://livereload.com/extensions/" target="_blank">here</a></em> for installation instructions.
+After the installation, start the LiveReload browser extension. This extension will look for a 35729 port on localhost and connects to it.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>3</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>We need to do some configuration on the IntelliJ editor to do LiveReload work properly.</p>
+
+<ul>
+  <li>In File &gt; Settings &gt; Build, Execution, Deployment &gt; Compiler &gt; Enable ‘Build project automatically’</li>
+  <li>Go to Actions (Ctrl + Shift + A) and search for Registry. Look for ‘compiler.automake.allow.when.app.running’ and enable it.</li>
+</ul>
+
+<p>Add below Java Class</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IndexController</span> <span class="o">{</span>
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">index</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"index"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>In templates folder add index.html</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Hello World!<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Run Spring boot application. In the startup logs, look for the line <strong>LiveReload server is running on port 35729</strong>. This is to make sure that the LiveReload server is up.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>4</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Enable <em>LiveReload</em> in the browser and access application at <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://localhost:8080" target="_blank">http://localhost:8080</a></em></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>5</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Now we have Spring Boot project with Dev Tools.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <h2 id="mongo-db" style="margin-top:20px">Mongo DB with Spring Data JPA</h2>
+
+
+                        
+
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>1</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Create a new project by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
+choose <em class="hl">Spring Data MongoDB</em> and <em class="hl">Spring Web</em> as a dependency. (Note that we are including Web to access MongoDB through REST endpoint). Download and open it in your Java editor.</p>
+
+<p>You can also extend any existing Spring Boot application in your local by adding the below dependencies to that project.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-data-mongodb<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+<blockquote class="action_lable">
+
+  <p>Make sure you have MongoDB installed and running. If you like to setup MongoDB on the docker, then follow these <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="/pages/library/docker-images-library/#MongoDB" target="_blank">instructions</a></em>.</p>
+</blockquote>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>2</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Create Document class</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Data</span>
+<span class="nd">@AllArgsConstructor</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+    <span class="nd">@Id</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">id</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+<p>Note that I used Lombok annotations for less verbose and we are going to store and retrive User documents from MongoDB.</p>
+
+<p>Create User Repository Interface</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="kd">extends</span> <span class="n">MongoRepository</span><span class="o">&lt;</span><span class="n">User</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">{}</span>
+</code></pre></div></div>
+
+<p>Create User REST controller</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserController</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>
+    <span class="nd">@Autowired</span>
+    <span class="n">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">userRepository</span><span class="o">.</span><span class="na">deleteAll</span><span class="o">();</span>
+        <span class="n">userRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Adam"</span><span class="o">,</span> <span class="s">"Jr"</span><span class="o">));</span>
+        <span class="n">userRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Olive"</span><span class="o">,</span> <span class="s">"Brown"</span><span class="o">));</span>
+        <span class="n">userRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Ana"</span><span class="o">,</span> <span class="s">"Smith"</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/users"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="nf">all</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>This class implements <em class="hl">CommandLineRunner</em> interface because this will help us to store some initial User records
+and this controller exposes a single end point at <em>/users</em> which will return all users.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>3</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Configure MongoDB in application.properties</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spring.data.mongodb.authentication-database=admin
+spring.data.mongodb.database=test_db
+spring.data.mongodb.port=27017
+spring.data.mongodb.host=localhost
+</code></pre></div></div>
+
+<p>Run Spring boot application.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>4</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Access <em>/users</em> endpoint to get all users.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">curl http://localhost:8080/users
+</span></code></pre></div></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-start">
+                            <div class="library-step-counter">
+                                <h3>5</h3>
+                            </div>
+                            <div class="library-step w-100 d-flex justify-content-start">
+                                <div>
+                                    
+                                    <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
+                                    
+                                </div>
+                                <div>
+                                    <p>Now we have our Spring MongoDB running.</p>
 
                                 </div>
                             </div>

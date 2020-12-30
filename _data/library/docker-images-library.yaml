@@ -18,7 +18,7 @@ sections:
       description: |
         Run newly downloaded Jenkins image
   
-        $ docker run -d --name jenkins -p 8085:8080 -v E:/code/docker_volume/jenkins:/var/jenkins_home jenkins/jenkins:lts-jdk11
+        $ docker run -d \--name jenkins -p 8085:8080 -v E:/code/docker_volume/jenkins:/var/jenkins_home jenkins/jenkins:lts-jdk11
         {: .terminal_lable}
         >
         **-d** Runs container in background  
@@ -82,7 +82,7 @@ sections:
         description: |
           Run newly downloaded MySQL image
     
-          $ docker run -d --name mysql -p 2306:3306 -e MYSQL_ROOT_PASSWORD=secret-pw -v E:/code/docker_volume/mysql:/var/lib/mysql mysql:8.0.22
+          $ docker run -d \--name mysql -p 2306:3306 -e MYSQL_ROOT_PASSWORD=secret-pw -v E:/code/docker_volume/mysql:/var/lib/mysql mysql:8.0.22
           {: .terminal_lable}
           >
           **-d** Runs container in background  
@@ -130,7 +130,7 @@ sections:
         description: |
           Run newly downloaded Mongo image
     
-          $ docker run -d --name mongo -p 27017:27017 -v E:/code/docker_volume/mongo:/data/db mongo:latest
+          $ docker run -d \--name mongo -p 27017:27017 -v E:/code/docker_volume/mongo:/data/db mongo:latest
           {: .terminal_lable}
           >
           **-d** Runs container in background  
@@ -186,7 +186,7 @@ sections:
         description: |
           Run newly downloaded ActiveMQ image
     
-          $ docker run -d --name activemq -p 61616:61616 -p 8161:8161 -v E:/code/docker_volume/activemq/conf:/opt/activemq/conf -v E:/code/docker_volume/activemq/data:/opt/activemq/data rmohr/activemq:5.15.9-alpine
+          $ docker run -d \--name activemq -p 61616:61616 -p 8161:8161 -v E:/code/docker_volume/activemq/conf:/opt/activemq/conf -v E:/code/docker_volume/activemq/data:/opt/activemq/data rmohr/activemq:5.15.9-alpine
           {: .terminal_lable}
           
           >
@@ -246,7 +246,7 @@ sections:
         description: |
           Run newly downloaded MariaDB image
     
-          $ docker run -d --name mariadb -p 3310:3306 -v E:/code/docker_volume/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret-pw mariadb:10.5
+          $ docker run -d \--name mariadb -p 3310:3306 -v E:/code/docker_volume/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret-pw mariadb:10.5
           {: .terminal_lable}
     
           >

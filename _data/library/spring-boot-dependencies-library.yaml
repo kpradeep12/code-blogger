@@ -157,6 +157,15 @@ sections:
           }
         }
         ```  
+        As an alternative to UserRepoInitializer, we can add _data.sql_ in resources folder and inlude insert statements in it.
+        
+        ``` sql
+        INSERT INTO USER(USER_ID, FIRST_NAME, LAST_NAME) VALUES ('1','Mathew','Luis');
+        INSERT INTO USER(USER_ID, FIRST_NAME, LAST_NAME) VALUES ('2','Olive','Brenz');
+        INSERT INTO USER(USER_ID, FIRST_NAME, LAST_NAME) VALUES ('3','Joseph','Grand');
+        INSERT INTO USER(USER_ID, FIRST_NAME, LAST_NAME) VALUES ('4','David','Jr');
+        INSERT INTO USER(USER_ID, FIRST_NAME, LAST_NAME) VALUES ('5','Arvind','Kumar');
+        ```
     - step:
       action: browser
       description: |
@@ -285,3 +294,151 @@ sections:
       action: info
       description: |
         Now we have Spring Boot project with H2 Database running.
+  - title: Spring Dev Tools
+    id: spring-dev-tools
+    show: false
+    labels:
+      - key: image
+        value:
+    steps:
+      - step:
+        action: browser
+        description: |
+          Create a new project by going to *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[start.spring.io](https://start.spring.io/){:target="_blank"}*{:.ul} and provide configuration details (Java version, Spring boot version) and 
+          choose *Spring Boot DevTools*{: .hl} and *Thymeleaf*{: .hl} as a dependency. (Note that we are including Web, just to demostrate dev tools). Download and open it in your Java editor.
+    
+          You can also extend any existing Spring Boot application in your local by adding the below dependencies to that project.  
+    
+          ``` xml
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-devtools</artifactId>
+              <scope>runtime</scope>
+              <optional>true</optional>
+          </dependency>
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-thymeleaf</artifactId>
+          </dependency>
+          ```
+          >
+          Spring Dev Tools will use 35729 port number, so ensure no applications are using this port number.
+          {: .action_lable}
+      - step:
+        action: browser
+        description: |
+          Install *LiveReload*{: .hl} browser extension. Click *&nbsp;*{:.fas .fa-external-link-alt .small_text}*[here](http://livereload.com/extensions/){:target="_blank"}*{:.ul} for installation instructions.
+          After the installation, start the LiveReload browser extension. This extension will look for a 35729 port on localhost and connects to it.
+      - step:
+        action: editor
+        description: |
+          We need to do some configuration on the IntelliJ editor to do LiveReload work properly.
+          
+          * In File > Settings > Build, Execution, Deployment > Compiler > Enable 'Build project automatically'
+          * Go to Actions (Ctrl + Shift + A) and search for Registry. Look for 'compiler.automake.allow.when.app.running' and enable it.
+          
+          Add below Java Class 
+          
+          ``` java
+          @Controller
+          public class IndexController {
+              @GetMapping("/")
+              public String index() {
+                  return "index";
+              }
+          }
+          ```
+          
+          In templates folder add index.html
+          
+          ``` html
+          <html>
+            <body>
+              <h2>Hello World!</h2>
+            </body>
+          </html>
+          ```
+  
+          Run Spring boot application. In the startup logs, look for the line **LiveReload server is running on port 35729**. This is to make sure that the LiveReload server is up.
+      - step:
+        action: browser
+        description: |
+          Enable _LiveReload_ in the browser and access application at *&nbsp;*{:.fas .fa-external-link-alt .small_text}*[http://localhost:8080](http://localhost:8080){:target="_blank"}*{:.ul}
+      - step:
+        action: info
+        description: |
+          Now we have Spring Boot project with Dev Tools.
+  - title: Mongo DB with Spring Data JPA
+    id: mongo-db
+    show: false
+    labels:
+      - key: image
+        value:
+    steps:
+      - step:
+        action: browser
+        description: |
+          Create a new project by going to *&nbsp;*{:.fas .fa-external-link-alt .small_text} *[start.spring.io](https://start.spring.io/){:target="_blank"}*{:.ul} and provide configuration details (Java version, Spring boot version) and 
+          choose *Spring Boot DevTools*{: .hl} and *Thymeleaf*{: .hl} as a dependency. (Note that we are including Web, just to demostrate dev tools). Download and open it in your Java editor.
+    
+          You can also extend any existing Spring Boot application in your local by adding the below dependencies to that project.  
+    
+          ``` xml
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-devtools</artifactId>
+              <scope>runtime</scope>
+              <optional>true</optional>
+          </dependency>
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-thymeleaf</artifactId>
+          </dependency>
+          ```
+          >
+          Spring Dev Tools will use 35729 port number, so ensure no applications are using this port number.
+          {: .action_lable}
+      - step:
+        action: browser
+        description: |
+          Install *LiveReload*{: .hl} browser extension. Click *&nbsp;*{:.fas .fa-external-link-alt .small_text}*[here](http://livereload.com/extensions/){:target="_blank"}*{:.ul} for installation instructions.
+          After the installation, start the LiveReload browser extension. This extension will look for a 35729 port on localhost and connects to it.
+      - step:
+        action: editor
+        description: |
+          We need to do some configuration on the IntelliJ editor to do LiveReload work properly.
+    
+          * In File > Settings > Build, Execution, Deployment > Compiler > Enable 'Build project automatically'
+          * Go to Actions (Ctrl + Shift + A) and search for Registry. Look for 'compiler.automake.allow.when.app.running' and enable it.
+    
+          Add below Java Class 
+    
+          ``` java
+          @Controller
+          public class IndexController {
+              @GetMapping("/")
+              public String index() {
+                  return "index";
+              }
+          }
+          ```
+    
+          In templates folder add index.html
+    
+          ``` html
+          <html>
+            <body>
+              <h2>Hello World!</h2>
+            </body>
+          </html>
+          ```
+    
+          Run Spring boot application. In the startup logs, look for the line **LiveReload server is running on port 35729**. This is to make sure that the LiveReload server is up.
+      - step:
+        action: browser
+        description: |
+          Enable _LiveReload_ in the browser and access application at *&nbsp;*{:.fas .fa-external-link-alt .small_text}*[http://localhost:8080](http://localhost:8080){:target="_blank"}*{:.ul}
+      - step:
+        action: info
+        description: |
+          Now we have Spring Boot project with Dev Tools.

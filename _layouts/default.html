@@ -100,14 +100,14 @@
                     </div>
                 </li>
                 
-                {% if page.url == "/pages/library/docker-images-library/" %}
-                <li class="nav-item active">
-                    {% else %}
-                <li class="nav-item">
-                    {% endif %}
-                    <a class="nav-link" href="{{ site.baseurl }}/pages/library/docker-images-library/">Docker Image Library</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown00" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Libraries</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown00">
+                        <a class="nav-link" href="{{ site.baseurl }}/pages/library/docker-images-library/">Docker Image's</a>
+                        <a class="nav-link" href="{{ site.baseurl }}/pages/library/spring-boot-dependencies-library/">Spring Boot Dependencie's</a>
+                    </div>
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">

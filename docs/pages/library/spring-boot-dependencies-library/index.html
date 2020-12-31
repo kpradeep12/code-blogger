@@ -110,12 +110,14 @@
                     </div>
                 </li>
                 
-                
-                <li class="nav-item">
-                    
-                    <a class="nav-link" href="/pages/library/docker-images-library/">Docker Image Library</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown00" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Libraries</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown00">
+                        <a class="nav-link" href="/pages/library/docker-images-library/">Docker Image's</a>
+                        <a class="nav-link" href="/pages/library/spring-boot-dependencies-library/">Spring Boot Dependencie's</a>
+                    </div>
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -194,7 +196,7 @@
                     </li>
                     
                     <li>
-                        <a href="#h2-database" >H2 Database with Spring Data JPA</a>
+                        <a href="#h2-database" >H2 Database</a>
                     </li>
                     
                     <li>
@@ -206,7 +208,7 @@
                     </li>
                     
                     <li>
-                        <a href="#mongo-db" >Mongo DB with Spring Data JPA</a>
+                        <a href="#mongo-db" >Mongo DB</a>
                     </li>
                     
                 </ul>
@@ -228,7 +230,7 @@
                         </li>
                         
                         <li>
-                            <a href="#h2-database" >H2 Database with Spring Data JPA</a>
+                            <a href="#h2-database" >H2 Database</a>
                         </li>
                         
                         <li>
@@ -240,7 +242,7 @@
                         </li>
                         
                         <li>
-                            <a href="#mongo-db" >Mongo DB with Spring Data JPA</a>
+                            <a href="#mongo-db" >Mongo DB</a>
                         </li>
                         
                     </ul>
@@ -373,7 +375,7 @@ Apache camel will move it to <em class="hl">&lt;destination_folder&gt;</em></p>
                         </div>
                         
                         
-                        <h2 id="h2-database" style="margin-top:20px">H2 Database with Spring Data JPA</h2>
+                        <h2 id="h2-database" style="margin-top:20px">H2 Database</h2>
 
 
                         
@@ -440,8 +442,6 @@ spring.jpa.show-sql=true
 Because it is an in-memory database, so data will lose once we restart the application. 
 To save data in a file, update the property <strong>spring.datasource.url</strong> with value <strong>jdbc:h2:file:./empdb</strong></p>
 
-<p>Run Spring boot application.</p>
-
                                 </div>
                             </div>
                         </div>
@@ -499,7 +499,7 @@ To save data in a file, update the property <strong>spring.datasource.url</stron
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-<p>As an alternative to UserRepoInitializer, we can add <em>data.sql</em> in resources folder and inlude insert statements in it.</p>
+<p>As an alternative to UserRepoInitializer, we can add <em>data.sql</em> in resources folder and include insert statements in it.</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span><span class="p">(</span><span class="n">USER_ID</span><span class="p">,</span> <span class="n">FIRST_NAME</span><span class="p">,</span> <span class="n">LAST_NAME</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'1'</span><span class="p">,</span><span class="s1">'Mathew'</span><span class="p">,</span><span class="s1">'Luis'</span><span class="p">);</span>
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span><span class="p">(</span><span class="n">USER_ID</span><span class="p">,</span> <span class="n">FIRST_NAME</span><span class="p">,</span> <span class="n">LAST_NAME</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'2'</span><span class="p">,</span><span class="s1">'Olive'</span><span class="p">,</span><span class="s1">'Brenz'</span><span class="p">);</span>
@@ -507,6 +507,7 @@ To save data in a file, update the property <strong>spring.datasource.url</stron
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span><span class="p">(</span><span class="n">USER_ID</span><span class="p">,</span> <span class="n">FIRST_NAME</span><span class="p">,</span> <span class="n">LAST_NAME</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'4'</span><span class="p">,</span><span class="s1">'David'</span><span class="p">,</span><span class="s1">'Jr'</span><span class="p">);</span>
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span><span class="p">(</span><span class="n">USER_ID</span><span class="p">,</span> <span class="n">FIRST_NAME</span><span class="p">,</span> <span class="n">LAST_NAME</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'5'</span><span class="p">,</span><span class="s1">'Arvind'</span><span class="p">,</span><span class="s1">'Kumar'</span><span class="p">);</span>
 </code></pre></div></div>
+<p>Run Spring boot application.</p>
 
                                 </div>
                             </div>
@@ -528,9 +529,9 @@ Web console prompts user to enter connection details;</p>
 
 <blockquote class="action_lable">
 
-  <p>JDBC URL: &lt;what ever the value provided for <strong>spring.datasource.url</strong> in the application properties&gt;
-User Name: sa
-Password:</p>
+  <p><strong>JDBC URL</strong>: &lt;what ever the value provided for <strong>spring.datasource.url</strong> in the application properties&gt;<br />
+<strong>User Name</strong>: sa<br />
+<strong>Password</strong>:</p>
 </blockquote>
 
 <p>Click on <em class="hl">Connect</em></p>
@@ -576,10 +577,10 @@ Password:</p>
                                     
                                 </div>
                                 <div>
-                                    <p>Create a new project by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
-choose <em class="hl">Thymeleaf</em> as a dependency. Download and open it in your Java editor.</p>
+                                    <p>Let’s include Thymeleaf in the Spring Boot project by extending the User’s example, which we created under <em class="ul"><a href="/pages/library/spring-boot-dependencies-library/#h2-database">H2 Database</a></em> section. 
+We can use Thymeleaf to load Users from the database and show them on the HTML page.</p>
 
-<p>You can also extend any existing Spring Boot application in your local by adding the below dependency to that project.</p>
+<p>Follow the steps mentioned under the <em class="hl">H2 Database</em> section and then include the below dependency to the project.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
   <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
@@ -602,23 +603,51 @@ choose <em class="hl">Thymeleaf</em> as a dependency. Download and open it in yo
                                     
                                 </div>
                                 <div>
-                                    
-<p>Update <strong>application.properties</strong> file with below properties</p>
+                                    <p>Create a new class called <em>UserController</em> in the project with the below content. This controller will listen for requests at <em>/users</em> endpoint and this will add all users from the 
+database to the <em>Model</em> with the key ‘users’.</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spring.datasource.url=jdbc:h2:mem:empdb
-spring.datasource.driver-class-name=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=
-spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-spring.h2.console.enabled=true
-spring.jpa.hibernate.ddl-auto=create
-spring.jpa.show-sql=true
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.ui.Model</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+
+<span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserController</span> <span class="o">{</span>
+    <span class="nd">@Autowired</span> <span class="n">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/users"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">all</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"users"</span><span class="o">,</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">());</span>
+        <span class="k">return</span> <span class="s">"users"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
-<p>This will create a <strong>in-memory database</strong> with name <em>empdb</em> and enables H2 DB web console. 
-Because it is an in-memory database, so data will lose once we restart the application. 
-To save data in a file, update the property <strong>spring.datasource.url</strong> with value <strong>jdbc:h2:file:./empdb</strong></p>
+<p>Create a Thymeleaf template file <em>/src/main/resources/templates/users.html</em>. In this file we will
+extract <em>users</em> and add them to a HTML table.</p>
 
-<p>Run Spring boot application.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h2&gt;</span>Users<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;table&gt;</span>
+        <span class="nt">&lt;thead&gt;</span>
+          <span class="nt">&lt;tr&gt;</span>
+              <span class="nt">&lt;th&gt;</span>Id<span class="nt">&lt;/th&gt;</span>
+              <span class="nt">&lt;th&gt;</span>First Name<span class="nt">&lt;/th&gt;</span>
+              <span class="nt">&lt;th&gt;</span>Last Name<span class="nt">&lt;/th&gt;</span>
+          <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;/thead&gt;</span>
+        <span class="nt">&lt;tbody&gt;</span>
+          <span class="nt">&lt;tr</span> <span class="na">th:each=</span><span class="s">"user: ${users}"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;th</span> <span class="na">th:text=</span><span class="s">"${user.userId}"</span><span class="nt">&gt;&lt;/th&gt;</span>
+              <span class="nt">&lt;td</span> <span class="na">th:text=</span><span class="s">"${user.firstName}"</span><span class="nt">&gt;&lt;/td&gt;</span>
+              <span class="nt">&lt;td</span> <span class="na">th:text=</span><span class="s">"${user.lastName}"</span><span class="nt">&gt;&lt;/td&gt;</span>
+          <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;/tbody&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Run Spring Boot application.</p>
 
                                 </div>
                             </div>
@@ -631,52 +660,15 @@ To save data in a file, update the property <strong>spring.datasource.url</stron
                             <div class="library-step w-100 d-flex justify-content-start">
                                 <div>
                                     
-                                    <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
+                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
                                 </div>
                                 <div>
-                                    <p>Create a new class called <em>User</em> in the project with the below content.</p>
+                                    <p>Access H2 database web console at <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://localhost:8080/h2-console" target="_blank">http://localhost:8080/h2-console</a></em> 
+and make sure you see <em>User</em> table.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
-    <span class="nd">@Id</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">userId</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">User</span><span class="o">()</span> <span class="o">{}</span>
-
-    <span class="kd">public</span> <span class="nf">User</span><span class="o">(</span><span class="n">String</span> <span class="n">userId</span><span class="o">,</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">,</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">userId</span> <span class="o">=</span> <span class="n">userId</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">firstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">lastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>Create a <em>UserRepository</em> interface which extends <em class="hl">JpaRepository</em></p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">User</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">{}</span>
-</code></pre></div></div>
-
-<p>Create a <em>UserRepoInitializer</em> class</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Component</span>
-<span class="kd">class</span> <span class="nc">UserRepoInitializer</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>
-  <span class="nd">@Autowired</span>
-  <span class="n">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
-  <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-    <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Amanda"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
-        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Hannah"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
-        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Anna"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
-        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Audrey"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
-        <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="s">"Caroline"</span><span class="o">,</span> <span class="s">""</span><span class="o">))</span>
-        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nl">userRepository:</span><span class="o">:</span><span class="n">save</span><span class="o">);</span>
-    <span class="n">userRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
+<p>Access application at <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://localhost:8080/users" target="_blank">http://localhost:8080/users</a></em> 
+and we will see all Users in the page.</p>
 
                                 </div>
                             </div>
@@ -689,40 +681,11 @@ To save data in a file, update the property <strong>spring.datasource.url</stron
                             <div class="library-step w-100 d-flex justify-content-start">
                                 <div>
                                     
-                                    <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
-                                    
-                                </div>
-                                <div>
-                                    <p>Access H2 database web console at <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://localhost:8080/h2-console" target="_blank">http://localhost:8080/h2-console</a></em><br />
-Web console prompts user to enter connection details;</p>
-
-<blockquote class="action_lable">
-
-  <p>JDBC URL: &lt;what ever the value provided for <strong>spring.datasource.url</strong> in the application properties&gt;
-User Name: sa
-Password:</p>
-</blockquote>
-
-<p>Click on <em class="hl">Connect</em></p>
-
-<p>In the left side tree, make sure you see table <em>USER</em></p>
-
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
-                                    
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
                                 </div>
                                 <div>
-                                    <p>Now we have Spring Boot project with H2 Database running.</p>
+                                    <p>Now we have Spring Boot project with Thymeleaf running.</p>
 
                                 </div>
                             </div>
@@ -818,7 +781,7 @@ After the installation, start the LiveReload browser extension. This extension w
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>In templates folder add index.html</p>
+<p>In <em>/src/main/resources/templates</em> folder add index.html</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;body&gt;</span>
@@ -861,14 +824,14 @@ After the installation, start the LiveReload browser extension. This extension w
                                     
                                 </div>
                                 <div>
-                                    <p>Now we have Spring Boot project with Dev Tools.</p>
+                                    <p>Now we have Spring Boot project with Dev Tools. Instead of restarting the application for every change, do a build, and it will trigger LiveReload on the browser to reload the page.</p>
 
                                 </div>
                             </div>
                         </div>
                         
                         
-                        <h2 id="mongo-db" style="margin-top:20px">Mongo DB with Spring Data JPA</h2>
+                        <h2 id="mongo-db" style="margin-top:20px">Mongo DB</h2>
 
 
                         
@@ -931,7 +894,7 @@ choose <em class="hl">Spring Data MongoDB</em> and <em class="hl">Spring Web</em
 <span class="o">}</span>
 
 </code></pre></div></div>
-<p>Note that I used Lombok annotations for less verbose and we are going to store and retrive User documents from MongoDB.</p>
+<p>I used Lombok annotations for less verbose. We are going to store and retrive User documents from MongoDB.</p>
 
 <p>Create User Repository Interface</p>
 

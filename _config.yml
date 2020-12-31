@@ -7,7 +7,7 @@ author: "Pradeep Kundarapu"
 #logo: 'assets/images/logo.png'
 #favicon: 'assets/images/logo.png'
 baseurl: ''
-url: 'http://thetechstack.net'
+url: 'https://thetechstack.net'
 google_analytics: 'UA-115619272-1'
 disqus: 'thetechstack-net'
 destination: ./docs
@@ -40,7 +40,7 @@ authors:
     display_name: Pradeep Kundarapu
     #gravatar: e56154546cf4be74e393c62d1ae9f9d4
     email: k.pradeep12@outlook.com
-    web: http://thetechstack.net
+    web: https://thetechstack.net
     twitter: https://twitter.com/PradeepK4J
     description: "Java developer, blogger and tech enthusiast."
 

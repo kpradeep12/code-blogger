@@ -3,18 +3,18 @@
   <channel>
     <title>Pradeep's Java blog</title>
     <description>Sharing my Java coding experiments</description>
-    <link>http://thetechstack.net/</link>
-    <atom:link href="http://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 31 Dec 2020 12:21:33 -0500</pubDate>
-    <lastBuildDate>Thu, 31 Dec 2020 12:21:33 -0500</lastBuildDate>
+    <link>https://thetechstack.net/</link>
+    <atom:link href="https://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 31 Dec 2020 15:50:51 -0500</pubDate>
+    <lastBuildDate>Thu, 31 Dec 2020 15:50:51 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Spring Cloud Gateway - Part 2</title>
         <description>This is the second part of Spring cloud gateway tutorial. We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Filters to change request and response.</description>
         <pubDate>Mon, 30 Nov 2020 12:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/spring-cloud-gateway-part-2/</link>
-        <guid isPermaLink="true">http://thetechstack.net/spring-cloud-gateway-part-2/</guid>
+        <link>https://thetechstack.net/spring-cloud-gateway-part-2/</link>
+        <guid isPermaLink="true">https://thetechstack.net/spring-cloud-gateway-part-2/</guid>
         
         
         <category>java</category>
@@ -25,8 +25,8 @@
         <title>Spring Cloud Gateway - Part 1</title>
         <description>We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates.</description>
         <pubDate>Mon, 23 Nov 2020 12:11:10 -0500</pubDate>
-        <link>http://thetechstack.net/spring-cloud-gateway-part-1/</link>
-        <guid isPermaLink="true">http://thetechstack.net/spring-cloud-gateway-part-1/</guid>
+        <link>https://thetechstack.net/spring-cloud-gateway-part-1/</link>
+        <guid isPermaLink="true">https://thetechstack.net/spring-cloud-gateway-part-1/</guid>
         
         
         <category>java</category>
@@ -37,8 +37,8 @@
         <title>Understanding CountDownLatch With Simple Example</title>
         <description>CountDownLatch is a simple utility, which we can use to wait for multiple threads to complete their job, till then CountDownLatch will block the thread. In this article, we will compare two examples, one without and the other with CountDownLatch. This comparison will help in understanding how CountDownLatch will work.</description>
         <pubDate>Fri, 24 Apr 2020 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/understanding-countdownlatch-with-simple-example-copy/</link>
-        <guid isPermaLink="true">http://thetechstack.net/understanding-countdownlatch-with-simple-example-copy/</guid>
+        <link>https://thetechstack.net/understanding-countdownlatch-with-simple-example-copy/</link>
+        <guid isPermaLink="true">https://thetechstack.net/understanding-countdownlatch-with-simple-example-copy/</guid>
         
         
         <category>java</category>
@@ -49,8 +49,8 @@
         <title>Using new Switch expressions</title>
         <description>One of the new features released as part of Java 14 is the switch expressions. This feature was available in earlier versions (Java 12 and 13), too, but as a preview. In Java 14, it became standard. The main difference between the existing and new switch is, the new switch is not the only statement but also expression. There are some more differences, which we will learn in this article.</description>
         <pubDate>Sun, 12 Apr 2020 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/using-new-switch-expressions/</link>
-        <guid isPermaLink="true">http://thetechstack.net/using-new-switch-expressions/</guid>
+        <link>https://thetechstack.net/using-new-switch-expressions/</link>
+        <guid isPermaLink="true">https://thetechstack.net/using-new-switch-expressions/</guid>
         
         
         <category>java</category>
@@ -61,8 +61,8 @@
         <title>How to use records in Java</title>
         <description>Record is a new feature added in Java 14. In this article, we will learn about Records, and we will explore some examples.</description>
         <pubDate>Wed, 08 Apr 2020 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/how-to-use-records-in-java/</link>
-        <guid isPermaLink="true">http://thetechstack.net/how-to-use-records-in-java/</guid>
+        <link>https://thetechstack.net/how-to-use-records-in-java/</link>
+        <guid isPermaLink="true">https://thetechstack.net/how-to-use-records-in-java/</guid>
         
         
         <category>java</category>
@@ -73,8 +73,8 @@
         <title>Create Singleton Instance In Kotlin</title>
         <description>There are many use cases where we need Singleton instances in applications. For example; to maintain a single instance of resources like a database or object store or file system. Kotlin supports singleton instances within the language with object keyword. In this article, we learn using the object keyword to implement singleton instances in Kotlin.</description>
         <pubDate>Thu, 19 Sep 2019 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/create-singleton-instance-in-kotlin/</link>
-        <guid isPermaLink="true">http://thetechstack.net/create-singleton-instance-in-kotlin/</guid>
+        <link>https://thetechstack.net/create-singleton-instance-in-kotlin/</link>
+        <guid isPermaLink="true">https://thetechstack.net/create-singleton-instance-in-kotlin/</guid>
         
         
         <category>kotlin</category>
@@ -85,8 +85,8 @@
         <title>Cloud Configuration With Micronaut and Consul</title>
         <description>Services may be running on multiple machines/containers, and if each service has its copy of the configuration, then it is a very tedious job to change and restart all instances, in cloud environments we can resolve this issue by publishing configuration at a single location and allowing all services to read it. We learn more about this by developing a sample application using Micronaut and Consul.</description>
         <pubDate>Tue, 16 Jul 2019 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/micronaut-configuration/</link>
-        <guid isPermaLink="true">http://thetechstack.net/micronaut-configuration/</guid>
+        <link>https://thetechstack.net/micronaut-configuration/</link>
+        <guid isPermaLink="true">https://thetechstack.net/micronaut-configuration/</guid>
         
         
         <category>cloud</category>
@@ -97,8 +97,8 @@
         <title>Asyn Method Invocation Design Pattern</title>
         <description>Instead of executing thread and managing its life cycle lets create an Async method invocation pattern which allows us to submit tasks and this pattern manages the threads and when execution completes it passes the result with a callback. This pattern frees up the main thread so it can continue to execute other tasks. This article explains the design and implementation of the Async method invocation design pattern.</description>
         <pubDate>Fri, 17 May 2019 13:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/async-method-invocation-design-pattern/</link>
-        <guid isPermaLink="true">http://thetechstack.net/async-method-invocation-design-pattern/</guid>
+        <link>https://thetechstack.net/async-method-invocation-design-pattern/</link>
+        <guid isPermaLink="true">https://thetechstack.net/async-method-invocation-design-pattern/</guid>
         
         
         <category>kotlin</category>
@@ -109,8 +109,8 @@
         <title>Secure web application with OAuth</title>
         <description>This post explains the details needed to authorize users using OAuth. The main advantage of using this approach is that some third party application authorizes users, so it is more secure than storing and maintaining user credentials on the application side.</description>
         <pubDate>Mon, 08 Apr 2019 21:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/secure-web-application-with-oauth/</link>
-        <guid isPermaLink="true">http://thetechstack.net/secure-web-application-with-oauth/</guid>
+        <link>https://thetechstack.net/secure-web-application-with-oauth/</link>
+        <guid isPermaLink="true">https://thetechstack.net/secure-web-application-with-oauth/</guid>
         
         
         <category>kotlin</category>
@@ -121,8 +121,8 @@
         <title>Deploy Serverless Kotlin App To Amazon AWS</title>
         <description>AWS Lambda is a serverless architecture where we can deploy our functions and pay for only the compute time. I will explain the steps needed to create, build and deploy a Kotlin function as AWS Lambda using some simple tools.</description>
         <pubDate>Sat, 23 Mar 2019 21:11:10 -0400</pubDate>
-        <link>http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/</link>
-        <guid isPermaLink="true">http://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/</guid>
+        <link>https://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/</link>
+        <guid isPermaLink="true">https://thetechstack.net/deploy-serverless-kotlin-app-to-amazon-aws/</guid>
         
         <category>kotlin</category>
         

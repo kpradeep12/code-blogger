@@ -52,7 +52,7 @@
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <meta property="og:image" content="https://thetechstack.net/assets/images/banners/spring-boot-dependencies-library.png" />
 <script type="application/ld+json">
-{"image":"https://thetechstack.net/assets/images/banners/spring-boot-dependencies-library.png","description":"Sharing my Java coding experiments","@type":"WebPage","url":"https://thetechstack.net/pages/library/spring-boot-dependencies-library/","headline":"Spring Boot Dependencies Library","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
+{"@type":"WebPage","headline":"Spring Boot Dependencies Library","image":"https://thetechstack.net/assets/images/banners/spring-boot-dependencies-library.png","url":"https://thetechstack.net/pages/library/spring-boot-dependencies-library/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -257,17 +257,17 @@
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>If you want to start with a new project, then go to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
 choose <em class="hl">Apache Camel</em> as a dependency. Download and open it in your favorite Java editor.</p>
 
@@ -284,17 +284,18 @@ choose <em class="hl">Apache Camel</em> as a dependency. Download and open it in
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Let’s verify Apache Camel by creating a simple Route. We will create a simple route using the <strong>File</strong> component. 
 This component will move files from one folder to another. To create a route, we need to extend <strong>RouteBuilder</strong> and override its <strong>configure()</strong> method. 
 Copy below code snippet into your project.</p>
@@ -318,17 +319,18 @@ Copy below code snippet into your project.</p>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Update <strong>application.properties</strong> file. We need to keep the application up running because our <em>FileRoute</em> need to look for files in the source folder, 
 so add the below property, this will keep the main thread alive, or another option is to add <strong>spring-boot-starter-web</strong> dependency in the <em>pom.xml</em> file.</p>
 
@@ -339,17 +341,18 @@ so add the below property, this will keep the main thread alive, or another opti
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Run Spring Boot application. Once the application is up, then create a file in <em class="hl">&lt;source_folder&gt;</em>, and as soon as the file got created then 
 Apache camel will move it to <em class="hl">&lt;destination_folder&gt;</em></p>
 
@@ -357,22 +360,26 @@ Apache camel will move it to <em class="hl">&lt;destination_folder&gt;</em></p>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Now we have Spring Boot project with Apache Camel running.</p>
 
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        
                         
                         
                         <h2 id="h2-database" style="margin-top:20px">H2 Database</h2>
@@ -381,17 +388,17 @@ Apache camel will move it to <em class="hl">&lt;destination_folder&gt;</em></p>
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Create a new project by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
 choose <em class="hl">H2 Database</em>, <em class="hl">Spring Data JPA</em> and <em class="hl">Spring Web</em> as a dependencies. Download and open it in your Java editor.</p>
 
@@ -416,17 +423,18 @@ choose <em class="hl">H2 Database</em>, <em class="hl">Spring Data JPA</em> and 
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Update <strong>application.properties</strong> file with below properties</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spring.datasource.url=jdbc:h2:mem:empdb
@@ -446,17 +454,18 @@ To save data in a file, update the property <strong>spring.datasource.url</stron
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Create a new class called <em>User</em> in the project with the below content.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
@@ -513,17 +522,18 @@ To save data in a file, update the property <strong>spring.datasource.url</stron
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Access H2 database web console at <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://localhost:8080/h2-console" target="_blank">http://localhost:8080/h2-console</a></em><br />
 Web console prompts user to enter connection details;</p>
 
@@ -542,22 +552,26 @@ Web console prompts user to enter connection details;</p>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Now we have Spring Boot project with H2 Database running.</p>
 
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        
                         
                         
                         <h2 id="thymeleaf" style="margin-top:20px">Thymeleaf</h2>
@@ -566,17 +580,17 @@ Web console prompts user to enter connection details;</p>
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Let’s include Thymeleaf in the Spring Boot project by extending the User’s example, which we created under <em class="ul"><a href="/pages/library/spring-boot-dependencies-library/#h2-database">H2 Database</a></em> section. 
 We can use Thymeleaf to load Users from the database and show them on the HTML page.</p>
 
@@ -592,17 +606,18 @@ We can use Thymeleaf to load Users from the database and show them on the HTML p
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Create a new class called <em>UserController</em> in the project with the below content. This controller will listen for requests at <em>/users</em> endpoint and this will add all users from the 
 database to the <em>Model</em> with the key ‘users’.</p>
 
@@ -653,17 +668,18 @@ extract <em>users</em> and add them to a HTML table.</p>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Access H2 database web console at <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://localhost:8080/h2-console" target="_blank">http://localhost:8080/h2-console</a></em> 
 and make sure you see <em>User</em> table.</p>
 
@@ -674,22 +690,26 @@ and we will see all Users in the page.</p>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Now we have Spring Boot project with Thymeleaf running.</p>
 
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        
                         
                         
                         <h2 id="spring-dev-tools" style="margin-top:20px">Spring Dev Tools</h2>
@@ -698,17 +718,17 @@ and we will see all Users in the page.</p>
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Create a new project by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
 choose <em class="hl">Spring Boot DevTools</em> and <em class="hl">Thymeleaf</em> as a dependency. (Note that we are including Web, just to demostrate dev tools). Download and open it in your Java editor.</p>
 
@@ -734,17 +754,18 @@ choose <em class="hl">Spring Boot DevTools</em> and <em class="hl">Thymeleaf</em
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Install <em class="hl">LiveReload</em> browser extension. Click <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://livereload.com/extensions/" target="_blank">here</a></em> for installation instructions.
 After the installation, start the LiveReload browser extension. This extension will look for a 35729 port on localhost and connects to it.</p>
 
@@ -752,17 +773,18 @@ After the installation, start the LiveReload browser extension. This extension w
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>We need to do some configuration on the IntelliJ editor to do LiveReload work properly.</p>
 
 <ul>
@@ -796,39 +818,44 @@ After the installation, start the LiveReload browser extension. This extension w
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Enable <em>LiveReload</em> in the browser and access application at <em class="fas fa-external-link-alt small_text"> </em><em class="ul"><a href="http://localhost:8080" target="_blank">http://localhost:8080</a></em></p>
 
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Now we have Spring Boot project with Dev Tools. Instead of restarting the application for every change, do a build, and it will trigger LiveReload on the browser to reload the page.</p>
 
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        
                         
                         
                         <h2 id="mongo-db" style="margin-top:20px">Mongo DB</h2>
@@ -837,17 +864,17 @@ After the installation, start the LiveReload browser extension. This extension w
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Create a new project by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="https://start.spring.io/" target="_blank">start.spring.io</a></em> and provide configuration details (Java version, Spring boot version) and 
 choose <em class="hl">Spring Data MongoDB</em> and <em class="hl">Spring Web</em> as a dependency. (Note that we are including Web to access MongoDB through REST endpoint). Download and open it in your Java editor.</p>
 
@@ -871,17 +898,18 @@ choose <em class="hl">Spring Data MongoDB</em> and <em class="hl">Spring Web</em
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Create Document class</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Data</span>
 <span class="nd">@AllArgsConstructor</span>
@@ -928,17 +956,18 @@ and this controller exposes a single end point at <em>/users</em> which will ret
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Configure MongoDB in application.properties</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spring.data.mongodb.authentication-database=admin
@@ -953,17 +982,18 @@ spring.data.mongodb.host=localhost
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Access <em>/users</em> endpoint to get all users.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">curl http://localhost:8080/users
@@ -973,17 +1003,18 @@ spring.data.mongodb.host=localhost
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Now we have our Spring MongoDB running.</p>
 
                                 </div>
@@ -991,16 +1022,23 @@ spring.data.mongodb.host=localhost
                         </div>
                         
                         
-                        <br>
+                        
+                        
+                        
+                        
+                        <br><br>
                         <blockquote class="action_lable">
                             <p>
                                 Each step starts with an action icon; this icon will give you an idea of what kind of work we will do in this step. <br>
-                                <span class="action-box badge badge-dark"><i class="fas fa-terminal"></i></span> Terminal
-                                <span class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></span> Browser
-                                <span class="action-box badge badge-dark"><i class="fas fa-code"></i></span> Code editor
-                                <span class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></span> Info
+                                <ul style="list-style: none;" class="p-0">
+                                <li><span class="action-box badge badge-dark"><i class="fas fa-terminal"></i></span> Terminal</li>
+                                <li><span class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></span> Browser</li>
+                                <li><span class="action-box badge badge-dark"><i class="fas fa-code"></i></span> Code editor</li>
+                                <li><span class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></span> Info</li>
+                                </ul>
                             </p>
                         </blockquote>
+                        
                     </div>
             </section>
             
@@ -1084,7 +1122,7 @@ spring.data.mongodb.host=localhost
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                 Copyright © 2020 The Tech Stack . Net 
+                 Copyright © 2021 The Tech Stack . Net 
             </div>
         </div>
     </div>

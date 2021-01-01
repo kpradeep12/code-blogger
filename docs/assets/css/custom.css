@@ -165,28 +165,13 @@ background-color: #e0ffb1;
 .library-article .highlight pre{
     margin-bottom: 5px;
 }
-.library-article .library-step {
-    border-radius: 4px;
-    padding: 0px 0px 5px 0px;
-    margin-bottom: 10px;
-}
 .library-article .action-box {
-  margin: 0px 5px 0px 0px;
+  margin: 5px 8px 0px 0px;
   font-size: 70%;
   line-height: unset;
-  background-color: teal;
+  background-color: darkgray;
+  float: left;
   padding: 0px 5px 0px 5px;
-}
-.library-article .library-step-even {
-    background-color: #ffead0;
-}
-.library-article .library-step-odd {
-    background-color: #f9d8af;
-}
-.library-article .library-step-counter {
-    border-radius: 4px;
-    padding: 0px 10px 5px 10px;
-    margin: 0px 5px 10px 0px;
 }
 .library-toc {
     list-style-type: none;

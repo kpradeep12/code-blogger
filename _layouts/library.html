@@ -51,12 +51,13 @@ layout: default
                         {% endcomment %}
 
                         {% for item in section.steps %}
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>{{ forloop.index }}</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>{{ forloop.index }}</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     {% case item.action %}
                                     {% when 'terminal' %}
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
@@ -68,24 +69,30 @@ layout: default
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     {% else %}
                                     {% endcase %}
-                                </div>
-                                <div>
+                                    
                                     {{item.description | markdownify}}
                                 </div>
                             </div>
                         </div>
+                        
                         {% endfor %}
+                        
+                        
                         {% endfor %}
-                        <br>
+                        
+                        <br><br>
                         <blockquote class="action_lable">
                             <p>
                                 Each step starts with an action icon; this icon will give you an idea of what kind of work we will do in this step. <br>
-                                <span class="action-box badge badge-dark"><i class="fas fa-terminal"></i></span> Terminal
-                                <span class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></span> Browser
-                                <span class="action-box badge badge-dark"><i class="fas fa-code"></i></span> Code editor
-                                <span class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></span> Info
+                                <ul style="list-style: none;" class="p-0">
+                                <li><span class="action-box badge badge-dark"><i class="fas fa-terminal"></i></span> Terminal</li>
+                                <li><span class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></span> Browser</li>
+                                <li><span class="action-box badge badge-dark"><i class="fas fa-code"></i></span> Code editor</li>
+                                <li><span class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></span> Info</li>
+                                </ul>
                             </p>
                         </blockquote>
+                        
                     </div>
             </section>
             

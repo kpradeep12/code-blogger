@@ -52,7 +52,7 @@
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <meta property="og:image" content="https://thetechstack.net/assets/images/banners/docker-images-library.png" />
 <script type="application/ld+json">
-{"image":"https://thetechstack.net/assets/images/banners/docker-images-library.png","description":"Sharing my Java coding experiments","@type":"WebPage","url":"https://thetechstack.net/pages/library/docker-images-library/","headline":"Docker Image Library","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
+{"@type":"WebPage","headline":"Docker Image Library","image":"https://thetechstack.net/assets/images/banners/docker-images-library.png","url":"https://thetechstack.net/pages/library/docker-images-library/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -259,17 +259,17 @@ Before you follow the instructions, make sure your Docker is running on the comp
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Pull Jenkins image from <em class="hl">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull jenkins/jenkins:lts-jdk11</p>
@@ -278,17 +278,18 @@ Before you follow the instructions, make sure your Docker is running on the comp
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Run newly downloaded Jenkins image</p>
 
 <p class="terminal_lable">$ docker run -d --name jenkins -p 8085:8080 -v E:/code/docker_volume/jenkins:/var/jenkins_home jenkins/jenkins:lts-jdk11</p>
@@ -304,17 +305,18 @@ Before you follow the instructions, make sure your Docker is running on the comp
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Verify if Jenkins started properly. Execute Docker log command to view Jenkins logs and check if the log ends with something like this;
 <em class="hl">Jenkins is fully up and running</em></p>
 
@@ -324,17 +326,18 @@ Before you follow the instructions, make sure your Docker is running on the comp
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Access Jenkins console using the browser; <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="http://localhost:8085" target="_blank">http://localhost:8085</a></em><br />
 It is the first time we accessed the Jenkins console, so it prompts us to enter a password. Jenkin writes an initial password to a file. This password 
 file path is <em class="hl">/var/jenkins_home/secrets/initialAdminPassword</em></p>
@@ -343,17 +346,18 @@ file path is <em class="hl">/var/jenkins_home/secrets/initialAdminPassword</em><
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Retrieve the password by accessing the container’s <em class="hl">bash</em>.</p>
 
 <p class="terminal_lable">$ docker container exec -it jenkins /bin/bash</p>
@@ -366,17 +370,18 @@ file path is <em class="hl">/var/jenkins_home/secrets/initialAdminPassword</em><
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>6</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>6</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Paste it in the password field on the Jenkins login page, then click on <em class="hl">Continue</em>. 
 Jenkins will redirect us to the Plugin installation page. Click on <em class="hl">Suggested Plugin Option</em> to install default plugins. 
 It will take a couple of minutes, and then it will take us to the user’s page, create an admin user so next time you can use these credentials 
@@ -386,17 +391,18 @@ to login Jenkins console.</p>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>7</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>7</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Now we have our Jenkins running on the Docker.</p>
 
 <p class="help">Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
@@ -406,23 +412,26 @@ to login Jenkins console.</p>
                         </div>
                         
                         
+                        
+                        
+                        
                         <h2 id="MySQL" style="margin-top:20px">MySQL</h2>
 
 
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Pull MySQL image from <em class="hl">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull mysql:8.0.22</p>
@@ -431,17 +440,18 @@ to login Jenkins console.</p>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Run newly downloaded MySQL image</p>
 
 <p class="terminal_lable">$ docker run -d --name mysql -p 2306:3306 -e MYSQL_ROOT_PASSWORD=secret-pw -v E:/code/docker_volume/mysql:/var/lib/mysql mysql:8.0.22</p>
@@ -458,17 +468,18 @@ to login Jenkins console.</p>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Verify if MySQL started properly by checking the last line in the log, which says something like this; <em class="hl">ready for connections</em></p>
 
 <p class="terminal_lable">$ docker container logs mysql</p>
@@ -477,17 +488,18 @@ to login Jenkins console.</p>
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Use any MySQL client to verify if connection is succesfull.<br />
 Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From the terminal, execute the below command;</p>
 
@@ -498,22 +510,26 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Now we have our MySQL running on the Docker.</p>
 
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        
                         
                         
                         <h2 id="MongoDB" style="margin-top:20px">MongoDB</h2>
@@ -522,17 +538,17 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Pull Mongo image from <em class="hl">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull mongo:latest</p>
@@ -541,17 +557,18 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Run newly downloaded Mongo image</p>
 
 <p class="terminal_lable">$ docker run -d --name mongo -p 27017:27017 -v E:/code/docker_volume/mongo:/data/db mongo:latest</p>
@@ -567,17 +584,18 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Verify if Mongo started properly by checking the logs, you should see a line saying <em class="hl">Waiting for connections</em></p>
 
 <p class="terminal_lable">$ docker container logs mongo</p>
@@ -586,17 +604,18 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Access <em class="hl">bash</em> of Mongo container by executing command</p>
 
 <p class="terminal_lable">$ docker container exec -it mongo /bin/bash</p>
@@ -609,17 +628,18 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>We have our Mongo DB running on the Docker.</p>
 
 <p class="help">Use this <em class="fas fa-external-link-alt small_text"> </em> <em class="underline"><a href="/pages/cheat-sheets/docker-cli-cheat-sheet/" target="_blank">Docker CLI cheat sheet</a></em> to refer Docker CLI commands.</p>
@@ -629,23 +649,26 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                         </div>
                         
                         
+                        
+                        
+                        
                         <h2 id="ActiveMQ" style="margin-top:20px">ActiveMQ</h2>
 
 
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Pull ActiveMQ image from <em class="hl">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull rmohr/activemq:5.15.9-alpine</p>
@@ -657,17 +680,18 @@ Click <em class="fas fa-external-link-alt small_text"> </em><em class="underlin
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Run newly downloaded ActiveMQ image</p>
 
 <p class="terminal_lable">$ docker run -d --name activemq -p 61616:61616 -p 8161:8161 -v E:/code/docker_volume/activemq/conf:/opt/activemq/conf -v E:/code/docker_volume/activemq/data:/opt/activemq/data rmohr/activemq:5.15.9-alpine</p>
@@ -685,17 +709,18 @@ Click <em class="fas fa-external-link-alt small_text"> </em><em class="underlin
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-code"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Provide a default configuration. ActiveMQ expects default configuration files in the <strong>/opt/activemq/conf</strong> folder. It will be empty by default so we will see 
 errors in the ActiveMQ startup logs. To fix this, click <em class="ul"><a href="/assets/attachments/library/activemq/conf.zip">here</a></em> to download the default configuration, 
 then extract and copy it to your local <strong>conf</strong> folder (which is <em>E:/code/docker_volume/activemq/conf</em> in above case).</p>
@@ -704,17 +729,18 @@ then extract and copy it to your local <strong>conf</strong> folder (which is <e
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Start ActiveMQ by executing below command</p>
 
 <p class="terminal_lable">$ docker container start activemq</p>
@@ -728,17 +754,18 @@ then extract and copy it to your local <strong>conf</strong> folder (which is <e
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Access ActiveMQ console by going to <em class="fas fa-external-link-alt small_text"> </em> <em class="ul"><a href="http://localhost:8161/admin" target="_blank">http://localhost:8161/admin</a></em></p>
 
 <blockquote class="action_lable">
@@ -750,22 +777,26 @@ then extract and copy it to your local <strong>conf</strong> folder (which is <e
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>6</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>6</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>We have our ActiveMQ running on the Docker.</p>
 
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        
                         
                         
                         <h2 id="MariaDB" style="margin-top:20px">MariaDB</h2>
@@ -774,17 +805,17 @@ then extract and copy it to your local <strong>conf</strong> folder (which is <e
                         
 
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>1</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Pull MariaDB image from <em class="hl">Docker Hub</em></p>
 
 <p class="terminal_lable">$ docker pull mariadb:10.5</p>
@@ -793,17 +824,18 @@ then extract and copy it to your local <strong>conf</strong> folder (which is <e
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>2</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>2</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Run newly downloaded MariaDB image</p>
 
 <p class="terminal_lable">$ docker run -d --name mariadb -p 3310:3306 -v E:/code/docker_volume/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret-pw mariadb:10.5</p>
@@ -821,17 +853,18 @@ then extract and copy it to your local <strong>conf</strong> folder (which is <e
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>3</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>3</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Verify MariaDB logs to check if there are no errors.</p>
 
 <p class="terminal_lable">$ docker container logs mariadb</p>
@@ -841,17 +874,18 @@ then extract and copy it to your local <strong>conf</strong> folder (which is <e
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>4</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>4</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-terminal"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>Use any MySQL client to verify if connection is succesfull.<br />
 Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From the terminal, execute the below command;</p>
 
@@ -862,17 +896,18 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                             </div>
                         </div>
                         
-                        <div class="d-flex justify-content-start">
-                            <div class="library-step-counter">
-                                <h3>5</h3>
-                            </div>
-                            <div class="library-step w-100 d-flex justify-content-start">
-                                <div>
+                        
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-1 p-0">
+                                    <h3>5</h3>
+                                </div>
+                                <div class="col-sm-11 p-0">
                                     
                                     <div class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></div>
                                     
-                                </div>
-                                <div>
+                                    
                                     <p>We have our MariaDB running on the Docker.</p>
 
                                 </div>
@@ -880,16 +915,23 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
                         </div>
                         
                         
-                        <br>
+                        
+                        
+                        
+                        
+                        <br><br>
                         <blockquote class="action_lable">
                             <p>
                                 Each step starts with an action icon; this icon will give you an idea of what kind of work we will do in this step. <br>
-                                <span class="action-box badge badge-dark"><i class="fas fa-terminal"></i></span> Terminal
-                                <span class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></span> Browser
-                                <span class="action-box badge badge-dark"><i class="fas fa-code"></i></span> Code editor
-                                <span class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></span> Info
+                                <ul style="list-style: none;" class="p-0">
+                                <li><span class="action-box badge badge-dark"><i class="fas fa-terminal"></i></span> Terminal</li>
+                                <li><span class="action-box badge badge-dark"><i class="fab fa-internet-explorer"></i></span> Browser</li>
+                                <li><span class="action-box badge badge-dark"><i class="fas fa-code"></i></span> Code editor</li>
+                                <li><span class="action-box badge badge-dark"><i class="fas fa-info-circle"></i></span> Info</li>
+                                </ul>
                             </p>
                         </blockquote>
+                        
                     </div>
             </section>
             
@@ -988,7 +1030,7 @@ Here I used <em class="hl">MySQL CLI</em> client to verify the connection. From 
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                 Copyright © 2020 The Tech Stack . Net 
+                 Copyright © 2021 The Tech Stack . Net 
             </div>
         </div>
     </div>

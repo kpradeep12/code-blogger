@@ -2,6 +2,13 @@ intro-to-certificates-for-java-developers:
   title: Introduction to certificates for java developers
   sections:
     - title: Introduction
-      url: 0-introduction
+      url: 1-introduction
     - title: Security concepts
-      url: 1-security-concepts
+      url: 2-security-concepts
+spring-security-guide:
+  title: Spring Security Guide
+  sections:
+    - title: Introduction
+      url: 1-introduction
+    - title: Security concepts
+      url: 2-security-concepts

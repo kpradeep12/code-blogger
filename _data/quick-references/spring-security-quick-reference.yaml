@@ -36,10 +36,26 @@ sections:
   - title: Authentication
     items:
       - term: |
-          **assertEquals** - Check for equality. Works with any Primitives, Primitive wrapper classes, or any object which implements equals.
+          Implement **AuthenticationProvider** to customize user authentication.
         code: |
           ``` java
-            org.junit.jupiter.api.Assertions.assertEquals(3, 1 + 2);
+            public interface AuthenticationProvider {
+                Authentication authenticate(Authentication var1) throws AuthenticationException;
+                boolean supports(Class<?> var1);
+            }
+          ```
+      - term: |
+          **Authentication** - represents the token for an authentication request or for an authenticated principal.
+        code: |
+          ``` java
+            public interface Authentication extends Principal, Serializable {
+              Collection<? extends GrantedAuthority> getAuthorities();
+              Object getCredentials();
+              Object getDetails();
+              Object getPrincipal();
+              boolean isAuthenticated();
+              void setAuthenticated(boolean var1) throws IllegalArgumentException;
+            }
           ```
   - title: Authorization
     items:

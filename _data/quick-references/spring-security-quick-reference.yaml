@@ -1,0 +1,51 @@
+sections:
+  - title: User & Password Management
+    items:
+    - term: |
+        Implement **UserDetailsService** to load users from user store (InMemory, Database, LDAP) 
+      code: |
+        ``` java
+          public interface UserDetailsService {
+              UserDetails loadUserByUsername(String var1) throws UsernameNotFoundException;
+          }
+        ```
+    - term: |
+        Implement **UserDetailsManager** to manage users like adding, modifying and deleting users.
+      code: |
+        ``` java
+          public interface UserDetailsManager extends UserDetailsService {
+              void createUser(UserDetails var1);
+              void updateUser(UserDetails var1);
+              void deleteUser(String var1);
+              void changePassword(String var1, String var2);
+              boolean userExists(String var1);
+          }
+        ```
+    - term: |
+        Implement **PasswordEncoder** to customize password encoding.
+      code: |
+        ``` java
+          public interface PasswordEncoder {
+              String encode(CharSequence var1);
+              boolean matches(CharSequence var1, String var2);
+              default boolean upgradeEncoding(String encodedPassword) {
+                  return false;
+              }
+          }
+        ```
+  - title: Authentication
+    items:
+      - term: |
+          **assertEquals** - Check for equality. Works with any Primitives, Primitive wrapper classes, or any object which implements equals.
+        code: |
+          ``` java
+            org.junit.jupiter.api.Assertions.assertEquals(3, 1 + 2);
+          ```
+  - title: Authorization
+    items:
+      - term: |
+          **assertEquals** - Check for equality. Works with any Primitives, Primitive wrapper classes, or any object which implements equals.
+        code: |
+          ``` java
+            org.junit.jupiter.api.Assertions.assertEquals(3, 1 + 2);
+          ```

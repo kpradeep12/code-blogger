@@ -26,6 +26,8 @@ layout: default
                     {% assign doclist = site.data.quick-references.junit-5-quick-reference  %}
                 {% elsif page.file == "dockerfile-quick-reference" %}
                     {% assign doclist = site.data.quick-references.dockerfile-quick-reference  %}                    
+                {% elsif page.file == "spring-security-quick-reference" %}
+                    {% assign doclist = site.data.quick-references.spring-security-quick-reference  %}
                 {% endif %}
 
                 {% for section in doclist.sections %}

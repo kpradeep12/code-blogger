@@ -1,0 +1,9 @@
+sections:
+  - title: Properties
+    items:
+    - term: |
+        **server.port** to change embedded web server port number. Default is **8080** 
+      code: |
+        ``` text
+        server.port = 8081
+        ```

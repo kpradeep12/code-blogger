@@ -60,8 +60,10 @@ sections:
   - title: Authorization
     items:
       - term: |
-          **assertEquals** - Check for equality. Works with any Primitives, Primitive wrapper classes, or any object which implements equals.
+          **GrantedAuthority** represents an action that a user can perform on the application.
         code: |
           ``` java
-            org.junit.jupiter.api.Assertions.assertEquals(3, 1 + 2);
+            public interface GrantedAuthority extends Serializable {
+              String getAuthority();
+            }
           ```

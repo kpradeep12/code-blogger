@@ -7,3 +7,36 @@ sections:
         ``` text
         server.port = 8081
         ```
+  - title: Spring Run Commands
+    items:
+    - term: |
+        To run Maven based Spring application, use **spring-boot:run** and for Gradle use **bootRun**
+      code: |
+        ``` console
+        # Maven
+        $ mvn spring-boot:run
+
+        # Gradle
+        $ gradle bootRun
+        ```
+  - title: Startup
+    items:
+    - term: |
+        Implement **CommandLineRunner** and **ApplicationRunner** to run specific code after the application startup but before it accepts any traffic.
+      code: |
+        ``` java
+        @Component
+        public class MyBean implements CommandLineRunner {
+            public void run(String... args) {
+                // Do something...
+            }
+        }
+
+        @Component
+        class Test implements ApplicationRunner {
+          @Override
+          public void run(ApplicationArguments args) throws Exception {
+                // Do something...
+          }
+        }
+        ```

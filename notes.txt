@@ -28,6 +28,8 @@ Vertx vertx = Vertx.vertx();
 Image:
 ![Spring Security Flow]({{site.baseurl}}/assets/images/books/spring-security-guide/spring-security-flow.png){: width="700px" height="600px"}{: .align-center}
 
+Highlight:
+*Docker Hub*{: .hl} 
 
 published: false
 

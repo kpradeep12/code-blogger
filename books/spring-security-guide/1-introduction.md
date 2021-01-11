@@ -5,7 +5,7 @@ book_id: spring-security-guide
 
 ##### Introduction
 
-Security is an essential part of any application because it will protect the application from intruders. **Spring Security** is one of the projects in the Spring suite. This project will help us to secure our application. As a developer, we need to learn how this framework works internally and understand configuring it.
+Security is an essential part of any application because it will protect the application from intruders. *Spring Security*{: .hl} is one of the projects in the Spring suite. This project will help us to secure our application. As a developer, we need to learn how this framework works internally and understand configuring it.
 
 Some of the use-cases where we can use Spring security;
 
@@ -85,7 +85,7 @@ We successfully created a web application with Spring Security, and we secured o
 
 There are a lot of things happening behind the scenes. Whenever a user sends an HTTP request, then the request will pass through some stages. These stages will help Spring to authenticate and authorize the user and store the user information in the security context. Go through the below steps to understand what happens when an application received an HTTP request.
 
-![Spring Security Flow]({{site.baseurl}}/assets/images/books/spring-security-guide/spring-security-flow.png){: width="700px" height="600px"}{: .align-center}
+![Spring Security Flow]({{site.baseurl}}/assets/images/books/spring-security-guide/spring-security-flow.png){: width="100%" height="100%"}{: .align-center}
 
 1. Application users will request a web page by making an HTTP request.  
 2. Spring Security will configure a default **Authentication Filter**, and all the HTTP requests will pass through this filter. Authentication filter will forward this request to the **Authentication Manager**. Authentication manager will, in turn, forwards the request to an 		**Authentication Provider**.  

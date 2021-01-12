@@ -12,14 +12,10 @@ title: Home
         <h2><span>Featured</span></h2>
     </div>
     <div class="row">
-        
-    {% for post in site.posts %}
+    {% assign featuredList = site.data.featured  %}
+    {% for sections in featuredList.featured %}
 
-        {% if post.featured == true %}
-
-            {% include featuredbox.html %}
-
-        {% endif %}
+    {{ sections.title }}
 
     {% endfor %}
         

@@ -10,5 +10,5 @@ spring-security-guide:
   sections:
     - title: Introduction
       url: 1-introduction
-    - title: Security concepts
-      url: 2-security-concepts
+    - title: User Service
+      url: 2-user-service

@@ -85,7 +85,7 @@ We successfully created a web application with Spring Security, and we secured o
 
 There are a lot of things happening behind the scenes. Whenever a user sends an HTTP request, then the request will pass through some stages. These stages will help Spring to authenticate and authorize the user and store the user information in the security context. Go through the below steps to understand what happens when an application received an HTTP request.
 
-![Spring Security Flow]({{site.baseurl}}/assets/images/books/spring-security-guide/spring-security-flow.png){: width="100%" height="100%"}{: .align-center}
+![Spring Security Flow]({{site.baseurl}}/assets/images/books/spring-security-guide/spring-security-flow.png){: width="75%" height="75%"}{: .align-center}
 
 1. Application users will request a web page by making an HTTP request.  
 2. Spring Security will configure a default **Authentication Filter**, and all the HTTP requests will pass through this filter. Authentication filter will forward this request to the **Authentication Manager**. Authentication manager will, in turn, forwards the request to an 		**Authentication Provider**.  
@@ -98,4 +98,4 @@ Above flow is very high level but very important to understand how Spring securi
 
 As I mentioned earlier, Spring will configure only one user called **user**. If we provide wrong credentials, then authentication will fail, and the page is not served.
 
-In this section, we learned how spring security would authenticate users. In the next section, we will see how to configure User details and password encoder.
+In this section, we learned how spring security would authenticate users. In the next section, we will see how to configure User details.

@@ -1,5 +1,4 @@
 ---
-layout: book
 book_id: spring-security-guide
 ---
 

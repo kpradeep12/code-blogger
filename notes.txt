@@ -17,8 +17,11 @@ Group Id | Artifact Id | Version | Description
 io.ktor | ktor-server-core | 1.1.2 | Ktor core library
 {: .table .table-striped}
 
-Link:
+External link:
 *[here](https://github.com/kpradeep12/thetechstack-projects/tree/main/spring-security-introduction-1){:target="_blank"}*{:.ul} *&nbsp;*{:.fas .fa-external-link-alt .small_text}
+
+Internal post link:
+**[Part 1]({{site.baseurl}}/spring-cloud-gateway-part-1/)**
 
 Code:
 {% highlight java %}

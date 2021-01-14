@@ -1,5 +1,4 @@
 ---
-layout: book
 book_id: intro-to-certificates-for-java-developers
 ---
 

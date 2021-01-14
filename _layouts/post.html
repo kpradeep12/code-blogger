@@ -5,6 +5,12 @@ archive: false
 post_class: post-template
 ---
 
+{% if page.categories contains "book" %}
+
+    {% include book.html %}
+
+{% else %}
+
 <!-- Begin Article
 ================================================== -->
 <div class="container">
@@ -108,3 +114,5 @@ post_class: post-template
 {% endif %}
 <!--End Comments
 ================================================== -->
+
+{% endif %}

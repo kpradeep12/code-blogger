@@ -1,4 +1,4 @@
-s---
+---
 title: "Spring Security User Service"
 date: 2021-01-12 12:11:10 -0500
 categories: [java, spring, book]

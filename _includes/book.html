@@ -48,12 +48,10 @@
 ================================================== -->
 {% if page.comments != false %}
 <div class="container">
-    <div class="row">
-            <div id="comments" class="row justify-content-center mb-5">
-                <div class="col-md-8">
-                    {% include disqus.html %}
-                </div>
-            </div>
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            {% include disqus.html %}
+        </div>
     </div>
 </div>
 {% endif %}

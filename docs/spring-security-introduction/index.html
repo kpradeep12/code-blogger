@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+<meta name="google-site-verification" content="6prhbit_zvr5fgjCg8h5zm8eH7tQrVeMcbHGOhb393g" />
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@pradeep">
+<meta name="twitter:title"   content="Spring Security Introduction">
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="https://thetechstack.net/assets/images/banners/spring-security-introduction.jpg">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="favicon-32x32.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    
+<!--<title>Spring Security Introduction | The Tech Stack . Net</title>-->
+    
+<meta name="description" content="A new series of articles will be published soon to introduce Spring Security. This series will help beginners to understand how Spring security will protect the application. I will continue to add more articles to this series in the coming weeks. As this is the first article, so we will start with the introduction."> 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/custom.css" rel="stylesheet">
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Spring Security Introduction | Pradeep’s Java blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Spring Security Introduction" />
+<meta name="author" content="pradeep" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A new series of articles will be published soon to introduce Spring Security. This series will help beginners to understand how Spring security will protect the application. I will continue to add more articles to this series in the coming weeks. As this is the first article, so we will start with the introduction." />
+<meta property="og:description" content="A new series of articles will be published soon to introduce Spring Security. This series will help beginners to understand how Spring security will protect the application. I will continue to add more articles to this series in the coming weeks. As this is the first article, so we will start with the introduction." />
+<link rel="canonical" href="https://thetechstack.net/spring-security-introduction/" />
+<meta property="og:url" content="https://thetechstack.net/spring-security-introduction/" />
+<meta property="og:site_name" content="Pradeep’s Java blog" />
+<meta property="og:image" content="https://thetechstack.net/assets/images/banners/spring-security-introduction.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-12T12:11:10-05:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Spring Security Introduction","dateModified":"2021-01-12T12:11:10-05:00","datePublished":"2021-01-12T12:11:10-05:00","image":"https://thetechstack.net/assets/images/banners/spring-security-introduction.jpg","url":"https://thetechstack.net/spring-security-introduction/","mainEntityOfPage":{"@type":"WebPage","@id":"https://thetechstack.net/spring-security-introduction/"},"author":{"@type":"Person","name":"pradeep"},"description":"A new series of articles will be published soon to introduce Spring Security. This series will help beginners to understand how Spring security will protect the application. I will continue to add more articles to this series in the coming weeks. As this is the first article, so we will start with the introduction.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+    
+
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto align-items-center">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>-->
+
+                <li class="nav-item">
+                    <div>
+                        <script async src="https://cse.google.com/cse.js?cx=a39f12b298f0f881d"></script>
+                        <div class="gcse-search"></div>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown00" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Libraries</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown00">
+                        <a class="nav-link" href="/pages/library/docker-images-library/">Docker Image's</a>
+                        <a class="nav-link" href="/pages/library/spring-boot-dependencies-library/">Spring Boot Dependencie's</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="nav-link" href="/pages/quick-references/dockerfile-quick-reference/">Dockerfile</a>
+                        <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cheat Sheet's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown02">
+                        <a class="nav-link" href="/pages/cheat-sheets/docker-cli-cheat-sheet/">Docker CLI</a>
+                        <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git</a>
+                    </div>
+                </li>
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/twitter">Twitter</a>
+                </li>
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>-->
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">
+
+
+<div class="container">
+
+    
+<!-- Site Title
+================================================== -->
+<!--<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java coding experiments
+    </p>
+</div>-->
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    
+
+    
+
+
+<section>
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <div class="section-title">
+                    <h2><span>Introduction</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 pl-5">
+                <!--<i class="fas fa-book"></i>&nbsp;-->
+                <div style="background-color:lightgray" class="p-1 mb-3"><b> Spring Security Guide</b></div>
+                <ol class="pl-3">
+                    
+                    <li>
+                        
+                        Introduction
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <a href="/spring-security-user-service" >User Service</a>
+                        
+                    </li>
+                    
+                </ol>
+            </div>
+            <div class="col-sm-8">
+                <div class="article-post">
+                    <p>Security is an essential part of any application because it will protect the application from intruders. <em class="hl">Spring Security</em> is one of the projects in the Spring suite. This project will help us to secure our application. As a developer, we need to learn how this framework works internally and understand configuring it.</p>
+
+<p>Some of the use-cases where we can use Spring security;</p>
+
+<ul>
+  <li>Restricting access to REST endpoints to only authenticated users</li>
+  <li>Load web pages only after users logs-in using the login form.</li>
+  <li>Before authentication, load the user from a database or any other third-party application.</li>
+</ul>
+
+<p>This guide will explain all essential parts of the Spring Security. We will try to create a project and understand how this framework will work. Before we dig into the framework details, let’s create a project and analyze the default behavior.</p>
+
+<h5 id="spring-security-project-setup">Spring Security Project Setup</h5>
+
+<p>Follow the below instructions to create a spring project;</p>
+
+<ul>
+  <li>Go to https://start.spring.io/</li>
+  <li>Select your own choice of configuration (Project, Language, Spring Boot, Project Metadata, Packaging, and Java version) prefer to use Java 11 or higher.</li>
+  <li>Select below dependencies;
+    <ul>
+      <li>Spring Web</li>
+      <li>Thymeleaf</li>
+      <li>Spring Security</li>
+    </ul>
+  </li>
+  <li>Click on <strong>Generate</strong> to download this spring project. Open it in your favorite Java editor.</li>
+</ul>
+
+<p>You can also download this project from Github <em class="ul"><a href="https://github.com/kpradeep12/thetechstack-projects/tree/main/spring-security-introduction-1" target="_blank">here</a></em> <em class="fas fa-external-link-alt small_text"> </em>.</p>
+
+<p>Now we have our base project ready. Let’s add some files to it. Before that, let me explain what we are going to do. This project will greet the logged-in user with a message <strong>Welcome &lt;user name&gt;!</strong> on the web page. To implement this, we need to create two files; <em>Java controller</em> and <em>Thymeleaf HTML template</em> file.</p>
+
+<p>Create a new Java file called <em>GreetingsController.java</em>. Make sure to create this file either at the same package level where your SpringBootApplication class is or create it under a sub-package from it.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GreetingsController</span> <span class="o">{</span>
+<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/greeting"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">all</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">,</span> <span class="n">Principal</span> <span class="n">principal</span><span class="o">)</span> <span class="o">{</span>
+<span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"userName"</span><span class="o">,</span> <span class="n">principal</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+<span class="k">return</span> <span class="s">"greeting"</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>It is a simple class with a single method in it. We annotated this class with <strong>@Controller</strong>. @Controller annotation is a Spring stereotype annotation; By declaring this class with @Controller, we tell Spring that this is a Web controller, which means Spring will direct HTTP requests to this class. We declared a method with <strong>@GetMapping(“/greeting”)</strong> annotation in this class. This method will handle the GET HTTP requests on <strong>/greetings</strong> endpoint. Spring will invoke this method when a user hits this endpoint.</p>
+
+<p>We need to pass the user name to the Thymeleaf HTML file because we need to greet the user; we can do this using Model and Principal objects. Spring can provide these objects to us, so we declared our method with these two arguments.</p>
+
+<p><strong>Model</strong> is a key-value object store; we can use this as an intermediary store between the controller and Thymeleaf template. In the Thymeleaf template, we can extract the values from this store. <strong>Principal</strong> contains the logged-in user name.</p>
+
+<p>We are getting username from the Principal object and setting this value in the Model under a key <em>userName</em>. Now, we can extract the value of <em>userName</em> in the template.</p>
+
+<p>Let’s create a Thymeleaf HTML template file <em>greeting.html</em> under <em>resources/templates</em> folder and copy below content in it.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Welcome <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${userName}"</span><span class="nt">&gt;&lt;/span&gt;</span>!<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>It is a simple, self-explanatory file. Only the thing you need to understand is the Thymeleaf attribute <strong>th:text</strong>, we passed a value to this attribute <strong>${userName}</strong>, this value represents the key in Model object. Thymeleaf will extract the value of <strong>userName</strong> from the Model and places it in the &lt;span&gt; tag.</p>
+
+<p>Now we are done with the coding. Let’s run the Spring application. In your editor, open the main Spring boot class; usually, it is annotated with <strong>@SpringBootAppliation</strong> and run it.</p>
+
+<blockquote>
+
+  <p>Spring will use <strong>8080</strong> as the default port. You can change it by updating <strong>server.port</strong> in application properties.</p>
+</blockquote>
+
+<p>Go through the application startup logs and make sure no errors. Now open a new tab in the browser and hit <em class="ul"><a href="http://localhost:8080/greeting" target="_blank">http://localhost:8080/greeting</a></em> <em class="fas fa-external-link-alt small_text"> </em>. You will see a login page, it asks for the user name and password. Spring Boot identified that we have Spring Security as a dependency, so Spring configured default security for us.</p>
+
+<p>As part of the default security configuration, Spring will secure all the endpoints and creates a default user. If we try to access any endpoint, Spring will redirect us to a login page to enter the credentials. Once the credentials are entered, then the page will be served.</p>
+
+<p>Without configuring any security and just adding a security dependency, our application is secured, isn’t it great? By default, Spring configures <strong>basic authentication</strong> means the user needs to provide a user name and password for authentication.</p>
+
+<p>As I mentioned earlier, Spring security will create a User for us, right? So the default user name is <strong>user</strong>, and the random password will be printed on the console. With in the application startup logs, look for the password. Now go back to the browser and enter credentials, user name as <strong>user</strong> and password copied from the console.</p>
+
+<p>Now you will see HTML page with the message saying <strong>Welcome user!</strong> As I said earlier, <strong>user</strong> is the user’s default name, which Spring security will create for us.</p>
+
+<p>We successfully created a web application with Spring Security, and we secured our web pages. We not at all configured anything, and our application is already secured. Let’s see what’s happening behind the scenes.</p>
+
+<h5 id="behind-the-scenes">Behind the scenes</h5>
+
+<p>There are a lot of things happening behind the scenes. Whenever a user sends an HTTP request, then the request will pass through some stages. These stages will help Spring to authenticate and authorize the user and store the user information in the security context. Go through the below steps to understand what happens when an application received an HTTP request.</p>
+
+<p><img src="/assets/images/books/spring-security-guide/spring-security-flow.png" alt="Spring Security Flow" width="75%" height="75%" class="align-center" /></p>
+
+<ol>
+  <li>Application users will request a web page by making an HTTP request.</li>
+  <li>Spring Security will configure a default <strong>Authentication Filter</strong>, and all the HTTP requests will pass through this filter. Authentication filter will forward this request to the <strong>Authentication Manager</strong>. Authentication manager will, in turn, forwards the request to an 		<strong>Authentication Provider</strong>.</li>
+  <li>It is the responsibility of the <strong>Authentication provider</strong> to authenticate the user. It will use the <strong>User details service</strong> to fetch the user information and <strong>Password encoder</strong> to encode the password to authenticate a user.</li>
+  <li>User details service will provide the user information. It means whatever the user name mentioned on the login page is validated against the user repository. Because we used the default Spring security configuration so only the user available is <strong>user</strong>, and it is saved in In-Memory. A Password encoder is used to encode the password. It is not recommended to validate the password with the raw password. In the user repository, we need to encrypt the password before storing it, and at the time of authentication, we need to decode it before comparing the password.</li>
+  <li>If the Authentication provider successfully authenticates the user, then Spring will save the user details in the <strong>security context</strong>. It is a store where Spring security will save user details until the request is complete.</li>
+  <li>Controller can access the authenticated user information, and it can return the response to the user.</li>
+</ol>
+
+<p>Above flow is very high level but very important to understand how Spring security will work. We didn’t configure anything in our project, but Spring created default user details and password encoder. When we requested a web page at <strong>/greeting</strong>, Spring verified if a user is authenticated, and if not, it provided us with a default login page. After we provided the credentials, Spring authenticated with default user details and password encoder, and if successful, then saved the user details in the security context.</p>
+
+<p>As I mentioned earlier, Spring will configure only one user called <strong>user</strong>. If we provide wrong credentials, then authentication will fail, and the page is not served.</p>
+
+<p>In this section, we learned how spring security would authenticate users. In the <strong><a href="/spring-security-user-service/">next</a></strong> section, we will see how to configure User details.</p>
+
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Begin Comments
+================================================== -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-8">
+            <div id="comments" class="row justify-content-center mb-5">
+                <div class="col-md-8">
+                    
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+<!--End Comments
+================================================== -->
+
+
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span>Never miss any <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div>
+<!--
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (35)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (4)</a>
+             
+              <a href="/category/kotlin">Kotlin (12)</a>
+             
+              <a href="/category/cloud">Cloud (1)</a>
+             
+              <a href="/category/book">Book (2)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ -->
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2021 The Tech Stack . Net 
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> 
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

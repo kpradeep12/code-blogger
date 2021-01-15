@@ -1,11 +1,17 @@
 {% assign book = site.data.books[page.book_id] %}
+{% for sec in book.sections %}
+    {% if page.url contains sec.url %}
+        {% assign section = sec %}
+    {% endif %}
+{% endfor %}
+
 <section>
     <div class="container mt-2">
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-9">
                 <div class="section-title">
-                    <h2><span><i class="fas fa-book"></i>&nbsp;&nbsp;{{ book.title }}</span></h2>
+                    <h2><span>{{ section.title }}</span></h2>
                 </div>
             </div>
         </div>
@@ -13,6 +19,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3 pl-5">
+                <!--<i class="fas fa-book"></i>&nbsp;-->
+                <div style="background-color:lightgray" class="p-1 mb-3"><b> {{book.title}}</b></div>
                 <ol class="pl-3">
                     {% for section in book.sections %}
                     <li>
@@ -35,3 +43,23 @@
         </div>
     </div>
 </section>
+
+<!-- Begin Comments
+================================================== -->
+{% if page.comments != false %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-8">
+            <div id="comments" class="row justify-content-center mb-5">
+                <div class="col-md-8">
+                    {% include disqus.html %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+{% endif %}
+<!--End Comments
+================================================== -->

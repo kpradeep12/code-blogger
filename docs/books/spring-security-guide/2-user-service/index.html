@@ -1,0 +1,107 @@
+<h5 id="user-service">User Service</h5>
+
+<p>Spring Security will configure a single default user with a username as <strong>user</strong>, and it generates a random password and prints it in the application startup log. We can use this default user to access the application, but we need multiple users in the real world application.</p>
+
+<p>In this section, we will learn to fetch users from an in-memory store. This exercise will help us understand how the Spring security configuration will work. We will also create an in-memory user store and attach it to the Spring security.</p>
+
+<p>We need to get user details from the database or LDAP, or any other third-party application in the real world, but we will start with an in-memory user store to make it simpler. Once you understand this, then you can extend this to integrate with any other user store.</p>
+
+<p>I highlighted the user details service component in the below diagram because we will understand this component in this section.</p>
+
+<p><img src="/assets/images/books/spring-security-guide/spring-security-user-details.png" alt="Spring Security User Details" width="75%" height="75%" class="align-center" /></p>
+
+<p>The main goal of the User details service is to fetch users from the store. We can fetch users from a datastore or any external system, but we need to integrate our custom logic with Spring security. To implement a custom User details service, we need to implement the <em class="hl">UserDetailsService</em> interface. Interfaces in the Java language act as a contract, so in this case, <strong>UserDetailsService</strong> acts as a contract between custom logic and Spring security.</p>
+
+<p>Below is the UserDetailsService interface; it has only a single method, <strong>loadUserByUserName</strong>. This method will fetch the user based on the provided username. In this section, we will implement this interface to fetch users from an in-memory store.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetailsService</span> <span class="o">{</span>
+    <span class="n">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="n">String</span> <span class="n">var1</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UsernameNotFoundException</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Source code for this section is available <em class="ul"><a href="https://github.com/kpradeep12/thetechstack-projects/tree/main/spring-security-user-service-2" target="_blank">here</a></em> <em class="fas fa-external-link-alt small_text"> </em>.</p>
+
+<p>Create a package called <strong>config</strong> and under this, create a Java class file <em class="hl">InMemoryUserDetailsService.java</em>; this class will implement the <strong>UserDetailsService</strong> interface. Below is the code;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InMemoryUserDetailsService</span> <span class="kd">implements</span> <span class="n">UserDetailsService</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">UserDetails</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span>
+    <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">User</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">username</span><span class="o">(</span><span class="s">"john"</span><span class="o">).</span><span class="na">password</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">authorities</span><span class="o">(</span><span class="s">"READ"</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
+    <span class="n">User</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">username</span><span class="o">(</span><span class="s">"adam"</span><span class="o">).</span><span class="na">password</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">authorities</span><span class="o">(</span><span class="s">"READ"</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
+    <span class="n">User</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">username</span><span class="o">(</span><span class="s">"david"</span><span class="o">).</span><span class="na">password</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">authorities</span><span class="o">(</span><span class="s">"ADMIN"</span><span class="o">).</span><span class="na">build</span><span class="o">());</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UsernameNotFoundException</span> <span class="o">{</span>
+       <span class="n">Optional</span><span class="o">&lt;</span><span class="n">UserDetails</span><span class="o">&gt;</span> <span class="n">user</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+           <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">userDetails</span> <span class="o">-&gt;</span> <span class="n">userDetails</span><span class="o">.</span><span class="na">getUsername</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">s</span><span class="o">))</span>
+           <span class="o">.</span><span class="na">findFirst</span><span class="o">();</span>
+    
+        <span class="k">if</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">UsernameNotFoundException</span><span class="o">(</span><span class="s">"User "</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s">" not found"</span><span class="o">);</span>
+    
+        <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>We implemented <strong>loadUserByUsername</strong> method. This method is so simple; we are doing three things in this method.</p>
+
+<ul>
+  <li>Iterate the user store and find the provided username.</li>
+  <li>If no user is found, then throw <em class="hl">UsernameNotFoundException</em>.</li>
+  <li>If a user is found, then Return the user.</li>
+</ul>
+
+<p>If you notice, <strong>loadUserByUsername</strong> returns <em class="hl">UserDetails</em>. We have not discussed about UserDetails till now. Spring security can only recognize users of type UserDetails. UserDetails is an interface; it is a contract provided by Spring for us to define users. This interface represents a User. If we want to implement a custom User object, then implement this interface so Spring can identify it as a User. Below is the UserDetails interface structure.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetails</span> <span class="kd">extends</span> <span class="n">Serializable</span> <span class="o">{</span>
+    <span class="n">Collection</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">GrantedAuthority</span><span class="o">&gt;</span> <span class="nf">getAuthorities</span><span class="o">();</span>
+    <span class="n">String</span> <span class="nf">getPassword</span><span class="o">();</span>
+    <span class="n">String</span> <span class="nf">getUsername</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isAccountNonExpired</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isAccountNonLocked</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isCredentialsNonExpired</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isEnabled</span><span class="o">();</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>This interface has all the methods needed to represent a User;</p>
+<ul>
+  <li><strong>getAuthorities</strong>; All users are not the same in the application. It may need a different kind of users. For example, <strong>read-only</strong>, <strong>admin</strong>, or <strong>super-admin</strong>. <em class="hl">Authority</em> is an interface that represents the type of user. A single user can represent different types like (read-only and admin), so this method returns the authorities’ collection.</li>
+  <li><strong>getPassword</strong> and <strong>getUsername</strong> are straightforward; they will return passwords and usernames.</li>
+  <li><strong>isAccountNonExpired</strong>, <strong>isAccountNonLocked</strong>, <strong>isCredentialsNonExpired</strong> and <strong>isEnabled</strong> are to support more security features. If you implement UserDetails then all these methods should return <strong>true</strong> to pass the authentication.</li>
+</ul>
+
+<p>Spring security comes with a class called <em class="hl">User</em>. This class implements the <strong>UserDetails</strong> interface, so we no need to implement the UserDetails interface for our demo application. Instead, we will use the default <strong>User</strong> class. Below code snippet creates a User instance.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">User</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">username</span><span class="o">(</span><span class="s">"john"</span><span class="o">).</span><span class="na">password</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">authorities</span><span class="o">(</span><span class="s">"READ"</span><span class="o">).</span><span class="na">build</span><span class="o">();</span></code></pre></figure>
+
+<p>User has an inbuilt builder class, using which we can chain the methods and finally call the build() to create a User instance. In the above code snippet, we created a single user with a username as <strong>john</strong>, password as <strong>test</strong>, and a single authority of <strong>READ</strong>.</p>
+
+<p>We added three users to our List. In the <strong>loadUserByUsername</strong> method, we iterated this list to search for the provided username.</p>
+
+<p>We have our UserDetailsService ready, but we have one more thing left; we need to tie this service to Spring security so then only Spring can recognize this service. To do that, we need to create a configuration class and wire the beans. Create a new class under the <strong>config</strong> package and call it <strong>UserConfiguration.java</strong>. Copy below content in that class;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserConfiguration</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">UserDetailsService</span> <span class="nf">userDetailsService</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">InMemoryUserDetailsService</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">PasswordEncoder</span> <span class="nf">passwordEncoder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">NoOpPasswordEncoder</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>This class is declared with <strong>@Configuration</strong> annotation, which means this class will have application configuration, and it will get loaded on application startup. This class has two methods <strong>userDetailsService()</strong> and <strong>passwordEncoder()</strong>. Both are declared with <strong>@Bean</strong> annotation, which means Spring will call these methods and stores the returned instances. On application startup, Spring will provide instances of UserDetailsService and PasswordEncoder to Spring Security.</p>
+
+<p>In userDetailsService(), we are simply returning an instance of <strong>InMemoryUserDetailsService</strong>, and because we configured UserDetailsService, so it is mandatory to configure PasswordEncoder.</p>
+
+<p>We use PasswordEncoder for two things; <strong>encode the password</strong> and <strong>compare the password</strong>. We will learn more about PasswordEncoder in the next sections. In passwordEncoder(), we are just returning an instance of <strong>NoOpPasswordEncoder</strong>. NoOpPasswordEncoder comes with Spring security; it is not a recommended PasswordEncoder in the production. It is useful for testing purposes and works on plain text.</p>
+
+<p>We completed our configuration. The next step is to run the application and verify if the application accepts only the users we have in the in-memory store. Run the application. Once the application is up, notice that there will be no password printed in the startup logs because we provided a custom configuration.</p>
+
+<p>Open a new browser tab and go to <em class="ul"><a href="http://localhost:8080/greeting" target="_blank">http://localhost:8080/greeting</a></em> <em class="fas fa-external-link-alt small_text"> </em>. You are prompted with a login form. Enter any user credentials which we configured in the InMemoryUserDetailsService and click on Sign-in. Application will successfully authenticate and displays a welcome message along with the username.</p>
+
+<p>You can improve this application by extending the functionality of InMemoryUserDetailsService to fetch the users from a database or any other third party service.</p>
+
+<p>In this section, we learned how to customize user service and configure it with Spring security.</p>

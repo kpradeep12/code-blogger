@@ -1,0 +1,103 @@
+<h5 id="introduction">Introduction</h5>
+
+<p>Security is an essential part of any application because it will protect the application from intruders. <em class="hl">Spring Security</em> is one of the projects in the Spring suite. This project will help us to secure our application. As a developer, we need to learn how this framework works internally and understand configuring it.</p>
+
+<p>Some of the use-cases where we can use Spring security;</p>
+
+<ul>
+  <li>Restricting access to REST endpoints to only authenticated users</li>
+  <li>Load web pages only after users logs-in using the login form.</li>
+  <li>Before authentication, load the user from a database or any other third-party application.</li>
+</ul>
+
+<p>This guide will explain all essential parts of the Spring Security. We will try to create a project and understand how this framework will work. Before we dig into the framework details, let’s create a project and analyze the default behavior.</p>
+
+<h5 id="spring-security-project-setup">Spring Security Project Setup</h5>
+
+<p>Follow the below instructions to create a spring project;</p>
+
+<ul>
+  <li>Go to https://start.spring.io/</li>
+  <li>Select your own choice of configuration (Project, Language, Spring Boot, Project Metadata, Packaging, and Java version) prefer to use Java 11 or higher.</li>
+  <li>Select below dependencies;
+    <ul>
+      <li>Spring Web</li>
+      <li>Thymeleaf</li>
+      <li>Spring Security</li>
+    </ul>
+  </li>
+  <li>Click on <strong>Generate</strong> to download this spring project. Open it in your favorite Java editor.</li>
+</ul>
+
+<p>You can also download this project from Github <em class="ul"><a href="https://github.com/kpradeep12/thetechstack-projects/tree/main/spring-security-introduction-1" target="_blank">here</a></em> <em class="fas fa-external-link-alt small_text"> </em>.</p>
+
+<p>Now we have our base project ready. Let’s add some files to it. Before that, let me explain what we are going to do. This project will greet the logged-in user with a message <strong>Welcome &lt;user name&gt;!</strong> on the web page. To implement this, we need to create two files; <em>Java controller</em> and <em>Thymeleaf HTML template</em> file.</p>
+
+<p>Create a new Java file called <em>GreetingsController.java</em>. Make sure to create this file either at the same package level where your SpringBootApplication class is or create it under a sub-package from it.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GreetingsController</span> <span class="o">{</span>
+  <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/greeting"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">all</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">,</span> <span class="n">Principal</span> <span class="n">principal</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"userName"</span><span class="o">,</span> <span class="n">principal</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+    <span class="k">return</span> <span class="s">"greeting"</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>It is a simple class with a single method in it. We annotated this class with <strong>@Controller</strong>. @Controller annotation is a Spring stereotype annotation; By declaring this class with @Controller, we tell Spring that this is a Web controller, which means Spring will direct HTTP requests to this class. We declared a method with <strong>@GetMapping(“/greeting”)</strong> annotation in this class. This method will handle the GET HTTP requests on <strong>/greetings</strong> endpoint. Spring will invoke this method when a user hits this endpoint.</p>
+
+<p>We need to pass the user name to the Thymeleaf HTML file because we need to greet the user; we can do this using Model and Principal objects. Spring can provide these objects to us, so we declared our method with these two arguments.</p>
+
+<p><strong>Model</strong> is a key-value object store; we can use this as an intermediary store between the controller and Thymeleaf template. In the Thymeleaf template, we can extract the values from this store. <strong>Principal</strong> contains the logged-in user name.</p>
+
+<p>We are getting username from the Principal object and setting this value in the Model under a key <em>userName</em>. Now, we can extract the value of <em>userName</em> in the template.</p>
+
+<p>Let’s create a Thymeleaf HTML template file <em>greeting.html</em> under <em>resources/templates</em> folder and copy below content in it.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Welcome <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${userName}"</span><span class="nt">&gt;&lt;/span&gt;</span>!<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>It is a simple, self-explanatory file. Only the thing you need to understand is the Thymeleaf attribute <strong>th:text</strong>, we passed a value to this attribute <strong>${userName}</strong>, this value represents the key in Model object. Thymeleaf will extract the value of <strong>userName</strong> from the Model and places it in the &lt;span&gt; tag.</p>
+
+<p>Now we are done with the coding. Let’s run the Spring application. In your editor, open the main Spring boot class; usually, it is annotated with <strong>@SpringBootAppliation</strong> and run it.</p>
+
+<blockquote>
+
+  <p>Spring will use <strong>8080</strong> as the default port. You can change it by updating <strong>server.port</strong> in application properties.</p>
+</blockquote>
+
+<p>Go through the application startup logs and make sure no errors. Now open a new tab in the browser and hit <em class="ul"><a href="http://localhost:8080/greeting" target="_blank">http://localhost:8080/greeting</a></em> <em class="fas fa-external-link-alt small_text"> </em>. You will see a login page, it asks for the user name and password. Spring Boot identified that we have Spring Security as a dependency, so Spring configured default security for us.</p>
+
+<p>As part of the default security configuration, Spring will secure all the endpoints and creates a default user. If we try to access any endpoint, Spring will redirect us to a login page to enter the credentials. Once the credentials are entered, then the page will be served.</p>
+
+<p>Without configuring any security and just adding a security dependency, our application is secured, isn’t it great? By default, Spring configures <strong>basic authentication</strong> means the user needs to provide a user name and password for authentication.</p>
+
+<p>As I mentioned earlier, Spring security will create a User for us, right? So the default user name is <strong>user</strong>, and the random password will be printed on the console. With in the application startup logs, look for the password. Now go back to the browser and enter credentials, user name as <strong>user</strong> and password copied from the console.</p>
+
+<p>Now you will see HTML page with the message saying <strong>Welcome user!</strong> As I said earlier, <strong>user</strong> is the user’s default name, which Spring security will create for us.</p>
+
+<p>We successfully created a web application with Spring Security, and we secured our web pages. We not at all configured anything, and our application is already secured. Let’s see what’s happening behind the scenes.</p>
+
+<h5 id="behind-the-scenes">Behind the scenes</h5>
+
+<p>There are a lot of things happening behind the scenes. Whenever a user sends an HTTP request, then the request will pass through some stages. These stages will help Spring to authenticate and authorize the user and store the user information in the security context. Go through the below steps to understand what happens when an application received an HTTP request.</p>
+
+<p><img src="/assets/images/books/spring-security-guide/spring-security-flow.png" alt="Spring Security Flow" width="75%" height="75%" class="align-center" /></p>
+
+<ol>
+  <li>Application users will request a web page by making an HTTP request.</li>
+  <li>Spring Security will configure a default <strong>Authentication Filter</strong>, and all the HTTP requests will pass through this filter. Authentication filter will forward this request to the <strong>Authentication Manager</strong>. Authentication manager will, in turn, forwards the request to an 		<strong>Authentication Provider</strong>.</li>
+  <li>It is the responsibility of the <strong>Authentication provider</strong> to authenticate the user. It will use the <strong>User details service</strong> to fetch the user information and <strong>Password encoder</strong> to encode the password to authenticate a user.</li>
+  <li>User details service will provide the user information. It means whatever the user name mentioned on the login page is validated against the user repository. Because we used the default Spring security configuration so only the user available is <strong>user</strong>, and it is saved in In-Memory. A Password encoder is used to encode the password. It is not recommended to validate the password with the raw password. In the user repository, we need to encrypt the password before storing it, and at the time of authentication, we need to decode it before comparing the password.</li>
+  <li>If the Authentication provider successfully authenticates the user, then Spring will save the user details in the <strong>security context</strong>. It is a store where Spring security will save user details until the request is complete.</li>
+  <li>Controller can access the authenticated user information, and it can return the response to the user.</li>
+</ol>
+
+<p>Above flow is very high level but very important to understand how Spring security will work. We didn’t configure anything in our project, but Spring created default user details and password encoder. When we requested a web page at <strong>/greeting</strong>, Spring verified if a user is authenticated, and if not, it provided us with a default login page. After we provided the credentials, Spring authenticated with default user details and password encoder, and if successful, then saved the user details in the security context.</p>
+
+<p>As I mentioned earlier, Spring will configure only one user called <strong>user</strong>. If we provide wrong credentials, then authentication will fail, and the page is not served.</p>
+
+<p>In this section, we learned how spring security would authenticate users. In the next section, we will see how to configure User details.</p>

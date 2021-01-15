@@ -10,7 +10,7 @@
 <!-- Twitter cards-->
 <meta name="twitter:site"    content="@PradeepK4J">
 <meta name="twitter:creator" content="@">
-<meta name="twitter:title"   content="">
+<meta name="twitter:title"   content="Spring Boot Quick Reference">
 
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:image" content="">
@@ -25,7 +25,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
     
-<!--<title> | The Tech Stack . Net</title>-->
+<!--<title>Spring Boot Quick Reference | The Tech Stack . Net</title>-->
     
  
     
@@ -40,18 +40,18 @@
 <link href="/assets/css/main.css" rel="stylesheet">
 <link href="/assets/css/custom.css" rel="stylesheet">
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Pradeep’s Java blog | Sharing my Java coding experiments</title>
+<title>Spring Boot Quick Reference | Pradeep’s Java blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Pradeep’s Java blog" />
+<meta property="og:title" content="Spring Boot Quick Reference" />
 <meta name="author" content="Pradeep Kundarapu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sharing my Java coding experiments" />
 <meta property="og:description" content="Sharing my Java coding experiments" />
-<link rel="canonical" href="https://thetechstack.net/books/intro-to-certificates-for-java-developers/0-introduction/" />
-<meta property="og:url" content="https://thetechstack.net/books/intro-to-certificates-for-java-developers/0-introduction/" />
+<link rel="canonical" href="https://thetechstack.net/pages/quick-references/spring-boot-quick-reference/" />
+<meta property="og:url" content="https://thetechstack.net/pages/quick-references/spring-boot-quick-reference/" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"Pradeep’s Java blog","url":"https://thetechstack.net/books/intro-to-certificates-for-java-developers/0-introduction/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
+{"@type":"WebPage","headline":"Spring Boot Quick Reference","url":"https://thetechstack.net/pages/quick-references/spring-boot-quick-reference/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -71,7 +71,7 @@
     
 
 
-<body class="layout-book">
+<body class="layout-quick-reference">
 
     
 <!-- Begin Menu Navigation
@@ -164,7 +164,7 @@
 <div class="site-content">
 
 
-<div class="container-fluid">
+<div class="container">
 
     
 <!-- Site Title
@@ -181,40 +181,130 @@
 <!-- Content
 ================================================== --> 
 <div class="main-content">
-    
+    <div class="container-fluid">
+    <div class="row">
+
+        <!--<div class="col-md-2 pl-0">
+            <div class="book-toc">
+                <ul class="markdown-toc library-toc">
+                    
+                </ul>
+            </div>
+        </div>-->
+        <div class="col-md-12">
+            
 <section>
     <div class="section-title">
-        <h2><span><i class="fas fa-book"></i>&nbsp;Introduction to certificates for java developers</span></h2>
+        <h2><span>Spring Boot Quick Reference</span></h2>
     </div>
-    <div class="d-sm-flex d-md-flex">
-        <div class="book-toc">
-            <h2>&nbsp;</h2>
-            <ul class="markdown-toc">
+    <div class="quick-reference-article">
                 
-                <li>
-                    <a href="/books/intro-to-certificates-for-java-developers/0-introduction" >Introduction</a>
-                </li>
+
                 
-                <li>
-                    <a href="/books/intro-to-certificates-for-java-developers/1-security-concepts" >Security concepts</a>
-                </li>
+                <h5><b>Properties</b></h5>
                 
-            </ul>
-        </div>
-        <div>
-                <div class="article-post">
-                    <h5 id="introduction">Introduction</h5>
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p><strong>server.port</strong> to change embedded web server port number. Default is <strong>8080</strong></p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server.port = 8081
+</code></pre></div></div>
 
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <h5><b>Spring Run Commands</b></h5>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p>To run Maven based Spring application, use <strong>spring-boot:run</strong> and for Gradle use <strong>bootRun</strong></p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span> Maven
+<span class="gp">$</span> mvn spring-boot:run
+<span class="go">
+</span><span class="gp">#</span> Gradle
+<span class="gp">$</span> gradle bootRun
+</code></pre></div></div>
 
-<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <h5><b>Startup</b></h5>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p>Implement <strong>CommandLineRunner</strong> and <strong>ApplicationRunner</strong> to run specific code after the application startup but before it accepts any traffic.</p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyBean</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Do something...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from “de Finibus Bonorum et Malorum” by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+<span class="nd">@Component</span>
+<span class="kd">class</span> <span class="nc">Test</span> <span class="kd">implements</span> <span class="n">ApplicationRunner</span> <span class="o">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">ApplicationArguments</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="c1">// Do something...</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-                </div>
-        </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                
     </div>
 </section>
+        </div>
+    </div>
+</div>
+
+<!-- Begin Comments
+================================================== -->
+
+
+<div class="container-fluid">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-12">
+            
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+        </div>
+    </div>
+</div>
+
+
+<!--End Comments
+================================================== -->
 </div>
 
 <!-- Bottom Alert Bar
@@ -244,7 +334,7 @@
             
           
              
-              <a href="/category/java">Java (33)</a>
+              <a href="/category/java">Java (35)</a>
              
               <a href="/category/reactiveX">Reactivex (3)</a>
              
@@ -252,11 +342,13 @@
              
               <a href="/category/tools">Tools (1)</a>
              
-              <a href="/category/spring">Spring (2)</a>
+              <a href="/category/spring">Spring (4)</a>
              
               <a href="/category/kotlin">Kotlin (12)</a>
              
               <a href="/category/cloud">Cloud (1)</a>
+             
+              <a href="/category/book">Book (2)</a>
             
           
         

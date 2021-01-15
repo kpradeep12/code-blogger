@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+<meta name="google-site-verification" content="6prhbit_zvr5fgjCg8h5zm8eH7tQrVeMcbHGOhb393g" />
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:title"   content="Spring Security Quick Reference">
+
+<meta name="twitter:card"  content="summary">
+<meta name="twitter:image" content="">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="favicon-32x32.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    
+<!--<title>Spring Security Quick Reference | The Tech Stack . Net</title>-->
+    
+ 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/custom.css" rel="stylesheet">
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Spring Security Quick Reference | Pradeep’s Java blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Spring Security Quick Reference" />
+<meta name="author" content="Pradeep Kundarapu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Sharing my Java coding experiments" />
+<meta property="og:description" content="Sharing my Java coding experiments" />
+<link rel="canonical" href="https://thetechstack.net/pages/quick-references/spring-security-quick-reference/" />
+<meta property="og:url" content="https://thetechstack.net/pages/quick-references/spring-security-quick-reference/" />
+<meta property="og:site_name" content="Pradeep’s Java blog" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Spring Security Quick Reference","url":"https://thetechstack.net/pages/quick-references/spring-security-quick-reference/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+    
+
+
+<body class="layout-quick-reference">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto align-items-center">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>-->
+
+                <li class="nav-item">
+                    <div>
+                        <script async src="https://cse.google.com/cse.js?cx=a39f12b298f0f881d"></script>
+                        <div class="gcse-search"></div>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown00" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Libraries</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown00">
+                        <a class="nav-link" href="/pages/library/docker-images-library/">Docker Image's</a>
+                        <a class="nav-link" href="/pages/library/spring-boot-dependencies-library/">Spring Boot Dependencie's</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="nav-link" href="/pages/quick-references/dockerfile-quick-reference/">Dockerfile</a>
+                        <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cheat Sheet's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown02">
+                        <a class="nav-link" href="/pages/cheat-sheets/docker-cli-cheat-sheet/">Docker CLI</a>
+                        <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git</a>
+                    </div>
+                </li>
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/twitter">Twitter</a>
+                </li>
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>-->
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">
+
+
+<div class="container">
+
+    
+<!-- Site Title
+================================================== -->
+<!--<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java coding experiments
+    </p>
+</div>-->
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    <div class="container-fluid">
+    <div class="row">
+
+        <!--<div class="col-md-2 pl-0">
+            <div class="book-toc">
+                <ul class="markdown-toc library-toc">
+                    
+                </ul>
+            </div>
+        </div>-->
+        <div class="col-md-12">
+            
+<section>
+    <div class="section-title">
+        <h2><span>Spring Security Quick Reference</span></h2>
+    </div>
+    <div class="quick-reference-article">
+                
+
+                
+                <h5><b>User & Password Management</b></h5>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p>Implement <strong>UserDetailsService</strong> to load users from user store (InMemory, Database, LDAP)</p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetailsService</span> <span class="o">{</span>
+      <span class="n">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="n">String</span> <span class="n">var1</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UsernameNotFoundException</span><span class="o">;</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p>Implement <strong>UserDetailsManager</strong> to manage users like adding, modifying and deleting users.</p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetailsManager</span> <span class="kd">extends</span> <span class="n">UserDetailsService</span> <span class="o">{</span>
+      <span class="kt">void</span> <span class="nf">createUser</span><span class="o">(</span><span class="n">UserDetails</span> <span class="n">var1</span><span class="o">);</span>
+      <span class="kt">void</span> <span class="nf">updateUser</span><span class="o">(</span><span class="n">UserDetails</span> <span class="n">var1</span><span class="o">);</span>
+      <span class="kt">void</span> <span class="nf">deleteUser</span><span class="o">(</span><span class="n">String</span> <span class="n">var1</span><span class="o">);</span>
+      <span class="kt">void</span> <span class="nf">changePassword</span><span class="o">(</span><span class="n">String</span> <span class="n">var1</span><span class="o">,</span> <span class="n">String</span> <span class="n">var2</span><span class="o">);</span>
+      <span class="kt">boolean</span> <span class="nf">userExists</span><span class="o">(</span><span class="n">String</span> <span class="n">var1</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p>Implement <strong>PasswordEncoder</strong> to customize password encoding.</p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PasswordEncoder</span> <span class="o">{</span>
+      <span class="n">String</span> <span class="nf">encode</span><span class="o">(</span><span class="n">CharSequence</span> <span class="n">var1</span><span class="o">);</span>
+      <span class="kt">boolean</span> <span class="nf">matches</span><span class="o">(</span><span class="n">CharSequence</span> <span class="n">var1</span><span class="o">,</span> <span class="n">String</span> <span class="n">var2</span><span class="o">);</span>
+      <span class="k">default</span> <span class="kt">boolean</span> <span class="nf">upgradeEncoding</span><span class="o">(</span><span class="n">String</span> <span class="n">encodedPassword</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <h5><b>Authentication</b></h5>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p>Implement <strong>AuthenticationProvider</strong> to customize user authentication.</p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AuthenticationProvider</span> <span class="o">{</span>
+      <span class="n">Authentication</span> <span class="nf">authenticate</span><span class="o">(</span><span class="n">Authentication</span> <span class="n">var1</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">AuthenticationException</span><span class="o">;</span>
+      <span class="kt">boolean</span> <span class="nf">supports</span><span class="o">(</span><span class="n">Class</span><span class="o">&lt;?&gt;</span> <span class="n">var1</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p><strong>Authentication</strong> - represents the token for an authentication request or for an authenticated principal.</p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Authentication</span> <span class="kd">extends</span> <span class="n">Principal</span><span class="o">,</span> <span class="n">Serializable</span> <span class="o">{</span>
+    <span class="n">Collection</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">GrantedAuthority</span><span class="o">&gt;</span> <span class="nf">getAuthorities</span><span class="o">();</span>
+    <span class="n">Object</span> <span class="nf">getCredentials</span><span class="o">();</span>
+    <span class="n">Object</span> <span class="nf">getDetails</span><span class="o">();</span>
+    <span class="n">Object</span> <span class="nf">getPrincipal</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isAuthenticated</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">setAuthenticated</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">var1</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IllegalArgumentException</span><span class="o">;</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <h5><b>Authorization</b></h5>
+                
+                    <div class="container-fluid">
+                        <div class="row quick-reference-item">
+                            <div class="col-sm-6 p-0">
+                                <div class="term"><p><strong>GrantedAuthority</strong> represents an action that a user can perform on the application.</p>
+</div>
+                            </div>
+                            <div class="col-sm-6 p-0 quick-ref-highlight">
+                                <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">GrantedAuthority</span> <span class="kd">extends</span> <span class="n">Serializable</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="nf">getAuthority</span><span class="o">();</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                
+    </div>
+</section>
+        </div>
+    </div>
+</div>
+
+<!-- Begin Comments
+================================================== -->
+
+
+<div class="container-fluid">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-12">
+            
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+        </div>
+    </div>
+</div>
+
+
+<!--End Comments
+================================================== -->
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span>Never miss any <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div>
+<!--
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (35)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (4)</a>
+             
+              <a href="/category/kotlin">Kotlin (12)</a>
+             
+              <a href="/category/cloud">Cloud (1)</a>
+             
+              <a href="/category/book">Book (2)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ -->
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2021 The Tech Stack . Net 
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> 
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

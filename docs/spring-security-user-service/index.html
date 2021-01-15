@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="17GXTKdnqGMgpkrc7Kbz323f4wg41DzBsDcNsfnHmVo" />
+<!--below verification is techstackjava.com-->
+<meta name="google-site-verification" content="tuMqCtGo9Q2zjZ6e2k1iswdB1R56vqiqYfbSrrzlyRE" />
+<meta name="google-site-verification" content="6prhbit_zvr5fgjCg8h5zm8eH7tQrVeMcbHGOhb393g" />
+<!-- Twitter cards-->
+<meta name="twitter:site"    content="@PradeepK4J">
+<meta name="twitter:creator" content="@pradeep">
+<meta name="twitter:title"   content="Spring Security User Service">
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="https://thetechstack.net/assets/images/banners/spring-security-user-service.jpg">
+
+<!-- end of Twitter cards -->
+
+
+<link rel="icon" href="favicon-32x32.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    
+<!--<title>Spring Security User Service | The Tech Stack . Net</title>-->
+    
+<meta name="description" content="We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials."> 
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+    
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/custom.css" rel="stylesheet">
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Spring Security User Service | Pradeep’s Java blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Spring Security User Service" />
+<meta name="author" content="pradeep" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials." />
+<meta property="og:description" content="We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials." />
+<link rel="canonical" href="https://thetechstack.net/spring-security-user-service/" />
+<meta property="og:url" content="https://thetechstack.net/spring-security-user-service/" />
+<meta property="og:site_name" content="Pradeep’s Java blog" />
+<meta property="og:image" content="https://thetechstack.net/assets/images/banners/spring-security-user-service.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-12T12:11:10-05:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Spring Security User Service","dateModified":"2021-01-12T12:11:10-05:00","datePublished":"2021-01-12T12:11:10-05:00","image":"https://thetechstack.net/assets/images/banners/spring-security-user-service.jpg","url":"https://thetechstack.net/spring-security-user-service/","mainEntityOfPage":{"@type":"WebPage","@id":"https://thetechstack.net/spring-security-user-service/"},"author":{"@type":"Person","name":"pradeep"},"description":"We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-115619272-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+    
+
+
+<body class="layout-post">
+
+    
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    
+    <div class="container pr-0">    
+    
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/" alt="The Tech Stack . Net">
+    </a>
+    <!-- End Logo -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+       
+        <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto align-items-center">
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>-->
+
+                <li class="nav-item">
+                    <div>
+                        <script async src="https://cse.google.com/cse.js?cx=a39f12b298f0f881d"></script>
+                        <div class="gcse-search"></div>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown00" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Libraries</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown00">
+                        <a class="nav-link" href="/pages/library/docker-images-library/">Docker Image's</a>
+                        <a class="nav-link" href="/pages/library/spring-boot-dependencies-library/">Spring Boot Dependencie's</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Reference's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="nav-link" href="/pages/quick-references/dockerfile-quick-reference/">Dockerfile</a>
+                        <a class="nav-link" href="/pages/quick-references/junit-5-quick-reference/">JUnit 5</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cheat Sheet's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown02">
+                        <a class="nav-link" href="/pages/cheat-sheets/docker-cli-cheat-sheet/">Docker CLI</a>
+                        <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git</a>
+                    </div>
+                </li>
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/about">About Me</a>
+                </li>
+
+                <!--
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/twitter">Twitter</a>
+                </li>
+                
+                <li class="nav-item">
+                <a target="_blank"  class="nav-link" href="https://twitter.com/PradeepK4J"><i class="fab fa-twitter"></i></a>
+                </li>-->
+                
+            </ul>		
+  
+        <!-- End Menu -->
+
+    </div>
+        
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+    
+<div class="site-content">
+
+
+<div class="container">
+
+    
+<!-- Site Title
+================================================== -->
+<!--<div class="mainheading">
+    <h1 class="sitetitle">The Tech Stack . Net</h1>
+    <p class="lead">
+         Sharing my Java coding experiments
+    </p>
+</div>-->
+
+    
+    
+<!-- Content
+================================================== --> 
+<div class="main-content">
+    
+
+    
+
+
+<section>
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <div class="section-title">
+                    <h2><span>User Service</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 pl-5">
+                <!--<i class="fas fa-book"></i>&nbsp;-->
+                <div style="background-color:lightgray" class="p-1 mb-3"><b> Spring Security Guide</b></div>
+                <ol class="pl-3">
+                    
+                    <li>
+                        
+                        <a href="/spring-security-introduction" >Introduction</a>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        User Service
+                        
+                    </li>
+                    
+                </ol>
+            </div>
+            <div class="col-sm-8">
+                <div class="article-post">
+                    <p>Spring Security will configure a single default user with a username as <strong>user</strong>, and it generates a random password and prints it in the application startup log. We can use this default user to access the application, but we need multiple users in the real world application.</p>
+
+<p>In this section, we will learn to fetch users from an in-memory store. This exercise will help us understand how the Spring security configuration will work. We will also create an in-memory user store and attach it to the Spring security.</p>
+
+<p>We need to get user details from the database or LDAP, or any other third-party application in the real world, but we will start with an in-memory user store to make it simpler. Once you understand this, then you can extend this to integrate with any other user store.</p>
+
+<p>I highlighted the user details service component in the below diagram because we will understand this component in this section.</p>
+
+<p><img src="/assets/images/books/spring-security-guide/spring-security-user-details.png" alt="Spring Security User Details" width="75%" height="75%" class="align-center" /></p>
+
+<p>The main goal of the User details service is to fetch users from the store. We can fetch users from a datastore or any external system, but we need to integrate our custom logic with Spring security. To implement a custom User details service, we need to implement the <em class="hl">UserDetailsService</em> interface. Interfaces in the Java language act as a contract, so in this case, <strong>UserDetailsService</strong> acts as a contract between custom logic and Spring security.</p>
+
+<p>Below is the UserDetailsService interface; it has only a single method, <strong>loadUserByUserName</strong>. This method will fetch the user based on the provided username. In this section, we will implement this interface to fetch users from an in-memory store.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetailsService</span> <span class="o">{</span>
+<span class="n">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="n">String</span> <span class="n">var1</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UsernameNotFoundException</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Source code for this section is available <em class="ul"><a href="https://github.com/kpradeep12/thetechstack-projects/tree/main/spring-security-user-service-2" target="_blank">here</a></em> <em class="fas fa-external-link-alt small_text"> </em>.</p>
+
+<p>Create a package called <strong>config</strong> and under this, create a Java class file <em class="hl">InMemoryUserDetailsService.java</em>; this class will implement the <strong>UserDetailsService</strong> interface. Below is the code;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InMemoryUserDetailsService</span> <span class="kd">implements</span> <span class="n">UserDetailsService</span> <span class="o">{</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">UserDetails</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span>
+<span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">User</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">username</span><span class="o">(</span><span class="s">"john"</span><span class="o">).</span><span class="na">password</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">authorities</span><span class="o">(</span><span class="s">"READ"</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
+<span class="n">User</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">username</span><span class="o">(</span><span class="s">"adam"</span><span class="o">).</span><span class="na">password</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">authorities</span><span class="o">(</span><span class="s">"READ"</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
+<span class="n">User</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">username</span><span class="o">(</span><span class="s">"david"</span><span class="o">).</span><span class="na">password</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">authorities</span><span class="o">(</span><span class="s">"ADMIN"</span><span class="o">).</span><span class="na">build</span><span class="o">());</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UsernameNotFoundException</span> <span class="o">{</span>
+       <span class="n">Optional</span><span class="o">&lt;</span><span class="n">UserDetails</span><span class="o">&gt;</span> <span class="n">user</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+           <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">userDetails</span> <span class="o">-&gt;</span> <span class="n">userDetails</span><span class="o">.</span><span class="na">getUsername</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">s</span><span class="o">))</span>
+           <span class="o">.</span><span class="na">findFirst</span><span class="o">();</span>
+    
+        <span class="k">if</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">UsernameNotFoundException</span><span class="o">(</span><span class="s">"User "</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s">" not found"</span><span class="o">);</span>
+    
+        <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>We implemented <strong>loadUserByUsername</strong> method. This method is so simple; we are doing three things in this method.</p>
+
+<ul>
+  <li>Iterate the user store and find the provided username.</li>
+  <li>If no user is found, then throw <em class="hl">UsernameNotFoundException</em>.</li>
+  <li>If a user is found, then Return the user.</li>
+</ul>
+
+<p>If you notice, <strong>loadUserByUsername</strong> returns <em class="hl">UserDetails</em>. We have not discussed about UserDetails till now. Spring security can only recognize users of type UserDetails. UserDetails is an interface; it is a contract provided by Spring for us to define users. This interface represents a User. If we want to implement a custom User object, then implement this interface so Spring can identify it as a User. Below is the UserDetails interface structure.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetails</span> <span class="kd">extends</span> <span class="n">Serializable</span> <span class="o">{</span>
+<span class="n">Collection</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">GrantedAuthority</span><span class="o">&gt;</span> <span class="nf">getAuthorities</span><span class="o">();</span>
+<span class="n">String</span> <span class="nf">getPassword</span><span class="o">();</span>
+<span class="n">String</span> <span class="nf">getUsername</span><span class="o">();</span>
+<span class="kt">boolean</span> <span class="nf">isAccountNonExpired</span><span class="o">();</span>
+<span class="kt">boolean</span> <span class="nf">isAccountNonLocked</span><span class="o">();</span>
+<span class="kt">boolean</span> <span class="nf">isCredentialsNonExpired</span><span class="o">();</span>
+<span class="kt">boolean</span> <span class="nf">isEnabled</span><span class="o">();</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>This interface has all the methods needed to represent a User;</p>
+<ul>
+  <li><strong>getAuthorities</strong>; All users are not the same in the application. It may need a different kind of users. For example, <strong>read-only</strong>, <strong>admin</strong>, or <strong>super-admin</strong>. <em class="hl">Authority</em> is an interface that represents the type of user. A single user can represent different types like (read-only and admin), so this method returns the authorities’ collection.</li>
+  <li><strong>getPassword</strong> and <strong>getUsername</strong> are straightforward; they will return passwords and usernames.</li>
+  <li><strong>isAccountNonExpired</strong>, <strong>isAccountNonLocked</strong>, <strong>isCredentialsNonExpired</strong> and <strong>isEnabled</strong> are to support more security features. If you implement UserDetails then all these methods should return <strong>true</strong> to pass the authentication.</li>
+</ul>
+
+<p>Spring security comes with a class called <em class="hl">User</em>. This class implements the <strong>UserDetails</strong> interface, so we no need to implement the UserDetails interface for our demo application. Instead, we will use the default <strong>User</strong> class. Below code snippet creates a User instance.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">User</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">username</span><span class="o">(</span><span class="s">"john"</span><span class="o">).</span><span class="na">password</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">authorities</span><span class="o">(</span><span class="s">"READ"</span><span class="o">).</span><span class="na">build</span><span class="o">();</span></code></pre></figure>
+
+<p>User has an inbuilt builder class, using which we can chain the methods and finally call the build() to create a User instance. In the above code snippet, we created a single user with a username as <strong>john</strong>, password as <strong>test</strong>, and a single authority of <strong>READ</strong>.</p>
+
+<p>We added three users to our List. In the <strong>loadUserByUsername</strong> method, we iterated this list to search for the provided username.</p>
+
+<p>We have our UserDetailsService ready, but we have one more thing left; we need to tie this service to Spring security so then only Spring can recognize this service. To do that, we need to create a configuration class and wire the beans. Create a new class under the <strong>config</strong> package and call it <strong>UserConfiguration.java</strong>. Copy below content in that class;</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserConfiguration</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">UserDetailsService</span> <span class="nf">userDetailsService</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">InMemoryUserDetailsService</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">PasswordEncoder</span> <span class="nf">passwordEncoder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">NoOpPasswordEncoder</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>This class is declared with <strong>@Configuration</strong> annotation, which means this class will have application configuration, and it will get loaded on application startup. This class has two methods <strong>userDetailsService()</strong> and <strong>passwordEncoder()</strong>. Both are declared with <strong>@Bean</strong> annotation, which means Spring will call these methods and stores the returned instances. On application startup, Spring will provide instances of UserDetailsService and PasswordEncoder to Spring Security.</p>
+
+<p>In userDetailsService(), we are simply returning an instance of <strong>InMemoryUserDetailsService</strong>, and because we configured UserDetailsService, so it is mandatory to configure PasswordEncoder.</p>
+
+<p>We use PasswordEncoder for two things; <strong>encode the password</strong> and <strong>compare the password</strong>. We will learn more about PasswordEncoder in the next sections. In passwordEncoder(), we are just returning an instance of <strong>NoOpPasswordEncoder</strong>. NoOpPasswordEncoder comes with Spring security; it is not a recommended PasswordEncoder in the production. It is useful for testing purposes and works on plain text.</p>
+
+<p>We completed our configuration. The next step is to run the application and verify if the application accepts only the users we have in the in-memory store. Run the application. Once the application is up, notice that there will be no password printed in the startup logs because we provided a custom configuration.</p>
+
+<p>Open a new browser tab and go to <em class="ul"><a href="http://localhost:8080/greeting" target="_blank">http://localhost:8080/greeting</a></em> <em class="fas fa-external-link-alt small_text"> </em>. You are prompted with a login form. Enter any user credentials which we configured in the InMemoryUserDetailsService and click on Sign-in. Application will successfully authenticate and displays a welcome message along with the username.</p>
+
+<p>You can improve this application by extending the functionality of InMemoryUserDetailsService to fetch the users from a database or any other third party service.</p>
+
+<p>In this section, we learned how to customize user service and configure it with Spring security.</p>
+
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Begin Comments
+================================================== -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-8">
+            <div id="comments" class="row justify-content-center mb-5">
+                <div class="col-md-8">
+                    
+<section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thetechstack-net'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+<!--End Comments
+================================================== -->
+
+
+</div>
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span>Never miss any <b>article</b>, subscribe to my newsletter</span>
+        <form action="https://thetechstack.us7.list-manage.com/subscribe/post?u=1381d872f022743eb338f00a1&amp;id=88d9fceb21" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+    
+</div>
+<!--
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+          
+             
+              <a href="/category/java">Java (35)</a>
+             
+              <a href="/category/reactiveX">Reactivex (3)</a>
+             
+              <a href="/category/docker">Docker (2)</a>
+             
+              <a href="/category/tools">Tools (1)</a>
+             
+              <a href="/category/spring">Spring (4)</a>
+             
+              <a href="/category/kotlin">Kotlin (12)</a>
+             
+              <a href="/category/cloud">Cloud (1)</a>
+             
+              <a href="/category/book">Book (2)</a>
+            
+          
+        
+
+		</div>
+	</div>
+</div>
+ -->
+
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                 Copyright © 2021 The Tech Stack . Net 
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+   
+</div> 
+<!-- Placed at the end of the document so the pages load faster -->
+    
+<script src="/assets/js/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script src="/assets/js/mediumish.js"></script>
+    
+<script id="dsq-count-scr" src="//thetechstack-net.disqus.com/count.js"></script>
+</body>
+</html>

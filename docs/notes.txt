@@ -1,3 +1,5 @@
+Style:
+
 Custom helpfull classes
 .align-text-center
 .align-center
@@ -14,6 +16,23 @@ Group Id | Artifact Id | Version | Description
 --- | --- | --- | ---
 io.ktor | ktor-server-core | 1.1.2 | Ktor core library
 {: .table .table-striped}
+
+External link:
+*[here](https://github.com/kpradeep12/thetechstack-projects/tree/main/spring-security-introduction-1){:target="_blank"}*{:.ul} *&nbsp;*{:.fas .fa-external-link-alt .small_text}
+
+Internal post link:
+**[Part 1]({{site.baseurl}}/spring-cloud-gateway-part-1/)**
+
+Code:
+{% highlight java %}
+Vertx vertx = Vertx.vertx();
+{% endhighlight %}
+
+Image:
+![Spring Security Flow]({{site.baseurl}}/assets/images/books/spring-security-guide/spring-security-flow.png){: width="700px" height="600px"}{: .align-center}
+
+Highlight:
+*Docker Hub*{: .hl} 
 
 published: false
 

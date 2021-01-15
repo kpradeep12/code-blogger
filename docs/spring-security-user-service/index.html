@@ -12,8 +12,8 @@
 <meta name="twitter:creator" content="@pradeep">
 <meta name="twitter:title"   content="Spring Security User Service">
 
-<meta name="twitter:card"  content="summary_large_image">
-<meta name="twitter:image" content="https://thetechstack.net/assets/images/banners/spring-security-user-service.jpg">
+<meta name="twitter:card"  content="summary">
+<meta name="twitter:image" content="">
 
 <!-- end of Twitter cards -->
 
@@ -27,7 +27,7 @@
     
 <!--<title>Spring Security User Service | The Tech Stack . Net</title>-->
     
-<meta name="description" content="We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials."> 
+ 
     
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -45,16 +45,15 @@
 <meta property="og:title" content="Spring Security User Service" />
 <meta name="author" content="pradeep" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials." />
-<meta property="og:description" content="We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials." />
+<meta name="description" content="s— title: “Spring Security User Service” date: 2021-01-12 12:11:10 -0500 categories: [java, spring, book] image: /assets/images/banners/spring-security-user-service.jpg description: “We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials.” book_id: “spring-security-guide” —" />
+<meta property="og:description" content="s— title: “Spring Security User Service” date: 2021-01-12 12:11:10 -0500 categories: [java, spring, book] image: /assets/images/banners/spring-security-user-service.jpg description: “We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials.” book_id: “spring-security-guide” —" />
 <link rel="canonical" href="https://thetechstack.net/spring-security-user-service/" />
 <meta property="og:url" content="https://thetechstack.net/spring-security-user-service/" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
-<meta property="og:image" content="https://thetechstack.net/assets/images/banners/spring-security-user-service.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-01-12T12:11:10-05:00" />
+<meta property="article:published_time" content="2021-01-12T00:00:00-05:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"Spring Security User Service","dateModified":"2021-01-12T12:11:10-05:00","datePublished":"2021-01-12T12:11:10-05:00","image":"https://thetechstack.net/assets/images/banners/spring-security-user-service.jpg","url":"https://thetechstack.net/spring-security-user-service/","mainEntityOfPage":{"@type":"WebPage","@id":"https://thetechstack.net/spring-security-user-service/"},"author":{"@type":"Person","name":"pradeep"},"description":"We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials.","@context":"http://schema.org"}</script>
+{"@type":"BlogPosting","headline":"Spring Security User Service","dateModified":"2021-01-12T00:00:00-05:00","datePublished":"2021-01-12T00:00:00-05:00","url":"https://thetechstack.net/spring-security-user-service/","mainEntityOfPage":{"@type":"WebPage","@id":"https://thetechstack.net/spring-security-user-service/"},"author":{"@type":"Person","name":"pradeep"},"description":"s— title: “Spring Security User Service” date: 2021-01-12 12:11:10 -0500 categories: [java, spring, book] image: /assets/images/banners/spring-security-user-service.jpg description: “We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials.” book_id: “spring-security-guide” —","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -186,44 +185,91 @@
 <div class="main-content">
     
 
+<!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Spring Security User Service&url=https://thetechstack.net/spring-security-user-service/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https://thetechstack.net/spring-security-user-service/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=https://thetechstack.net/spring-security-user-service/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
     
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
 
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
 
-<section>
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-9">
-                <div class="section-title">
-                    <h2><span>User Service</span></h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 pl-5">
-                <!--<i class="fas fa-book"></i>&nbsp;-->
-                <div style="background-color:lightgray" class="p-1 mb-3"><b> Spring Security Guide</b></div>
-                <ol class="pl-3">
-                    
-                    <li>
-                        
-                        <a href="/spring-security-introduction" >Introduction</a>
-                        
-                    </li>
-                    
-                    <li>
-                        
-                        User Service
-                        
-                    </li>
-                    
-                </ol>
-            </div>
-            <div class="col-sm-8">
-                <div class="article-post">
-                    <p>Spring Security will configure a single default user with a username as <strong>user</strong>, and it generates a random password and prints it in the application startup log. We can use this default user to access the application, but we need multiple users in the real world application.</p>
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="https://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
+                
+                
+                <!-- Post Title -->
+				<h1 class="posttitle">Spring Security User Service</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>s—
+title: “Spring Security User Service”
+date: 2021-01-12 12:11:10 -0500
+categories: [java, spring, book]
+image: /assets/images/banners/spring-security-user-service.jpg
+description: “We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials.”
+book_id: “spring-security-guide”
+—</p>
+
+<p>Spring Security will configure a single default user with a username as <strong>user</strong>, and it generates a random password and prints it in the application startup log. We can use this default user to access the application, but we need multiple users in the real world application.</p>
 
 <p>In this section, we will learn to fetch users from an in-memory store. This exercise will help us understand how the Spring security configuration will work. We will also create an in-memory user store and attach it to the Spring security.</p>
 
@@ -329,24 +375,54 @@
 
 <p>In this section, we learned how to customize user service and configure it with Spring security.</p>
 
-                </div>
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2021-01-12">12 Jan 2021</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="https://thetechstack.net/spring-cloud-gateway-part-2/"> &laquo; Spring Cloud Gateway - Part 2</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="https://thetechstack.net/spring-security-introduction/">Spring Security Introduction &raquo; </a>
+            
+            <div class="clearfix"></div>
             </div>
-            <div class="col-sm-1">
-            </div>
-        </div>
-    </div>
-</section>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
 
 <!-- Begin Comments
 ================================================== -->
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-8">
-            <div id="comments" class="row justify-content-center mb-5">
-                <div class="col-md-8">
-                    
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
 <section class="disqus">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -361,13 +437,10 @@
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
-
-                </div>
+                
             </div>
         </div>
-        <div class="col-sm-1"></div>
     </div>
-</div>
 
 <!--End Comments
 ================================================== -->
@@ -402,7 +475,7 @@
             
           
              
-              <a href="/category/java">Java (35)</a>
+              <a href="/category/java">Java (34)</a>
              
               <a href="/category/reactiveX">Reactivex (3)</a>
              
@@ -410,13 +483,13 @@
              
               <a href="/category/tools">Tools (1)</a>
              
-              <a href="/category/spring">Spring (4)</a>
+              <a href="/category/spring">Spring (3)</a>
              
               <a href="/category/kotlin">Kotlin (12)</a>
              
               <a href="/category/cloud">Cloud (1)</a>
              
-              <a href="/category/book">Book (2)</a>
+              <a href="/category/book">Book (1)</a>
             
           
         

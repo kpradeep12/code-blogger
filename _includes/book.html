@@ -10,15 +10,15 @@
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-9">
-                <div class="section-title">
+                <!--<div class="section-title">
                     <h2><span>{{ section.title }}</span></h2>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-3 pl-5">
+            <div class="col-sm-3">
                 <!--<i class="fas fa-book"></i>&nbsp;-->
                 <div style="background-color:lightgray" class="p-1 mb-3"><b> {{book.title}}</b></div>
                 <ol class="pl-3">
@@ -34,6 +34,11 @@
                 </ol>
             </div>
             <div class="col-sm-8">
+                
+                <!-- Post Featured Image -->
+                {% if page.image %}<img class="img-fluid" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt="{{ page.title }}">{% endif %}
+                <!-- End Featured Image -->
+                
                 <div class="article-post">
                     {{content}}
                 </div>

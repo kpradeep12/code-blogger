@@ -38,11 +38,11 @@ Create a new Java file called _GreetingsController.java_. Make sure to create th
 {% highlight java %}
 @Controller
 public class GreetingsController {
-@GetMapping("/greeting")
-public String all(Model model, Principal principal) {
-model.addAttribute("userName", principal.getName());
-return "greeting";
-}
+  @GetMapping("/greeting")
+  public String all(Model model, Principal principal) {
+    model.addAttribute("userName", principal.getName());
+    return "greeting";
+  }
 }
 {% endhighlight %}
 
@@ -75,7 +75,7 @@ Go through the application startup logs and make sure no errors. Now open a new 
 
 As part of the default security configuration, Spring will secure all the endpoints and creates a default user. If we try to access any endpoint, Spring will redirect us to a login page to enter the credentials. Once the credentials are entered, then the page will be served.
 
-Without configuring any security and just adding a security dependency, our application is secured, isn't it great? By default, Spring configures **basic authentication** means the user needs to provide a user name and password for authentication.
+Without configuring any security and just adding a security dependency, our application is secured, isn't it great? By default, Spring configures **basic authentication,** means the user needs to provide a user name and password for authentication.
 
 As I mentioned earlier, Spring security will create a User for us, right? So the default user name is **user**, and the random password will be printed on the console. With in the application startup logs, look for the password. Now go back to the browser and enter credentials, user name as **user** and password copied from the console.
 

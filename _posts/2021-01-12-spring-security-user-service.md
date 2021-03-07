@@ -23,7 +23,7 @@ Below is the UserDetailsService interface; it has only a single method, **loadUs
 
 {% highlight java %}
 public interface UserDetailsService {
-UserDetails loadUserByUsername(String var1) throws UsernameNotFoundException;
+    UserDetails loadUserByUsername(String var1) throws UsernameNotFoundException;
 }
 {% endhighlight %}
 
@@ -62,18 +62,18 @@ If you notice, **loadUserByUsername** returns *UserDetails*{: .hl}. We have not 
 
 {% highlight java %}
 public interface UserDetails extends Serializable {
-Collection<? extends GrantedAuthority> getAuthorities();
-String getPassword();
-String getUsername();
-boolean isAccountNonExpired();
-boolean isAccountNonLocked();
-boolean isCredentialsNonExpired();
-boolean isEnabled();
+    Collection<? extends GrantedAuthority> getAuthorities();
+    String getPassword();
+    String getUsername();
+    boolean isAccountNonExpired();
+    boolean isAccountNonLocked();
+    boolean isCredentialsNonExpired();
+    boolean isEnabled();
 }
 {% endhighlight %}
 
 This interface has all the methods needed to represent a User;
-* **getAuthorities**; All users are not the same in the application. It may need a different kind of users. For example, **read-only**, **admin**, or **super-admin**. *Authority*{: .hl} is an interface that represents the type of user. A single user can represent different types like (read-only and admin), so this method returns the authorities' collection.
+* **getAuthorities**; All users are not the same in the application. It may need a different kind of users. For example, **read-only**, **admin**, or **super-admin**. *Authority*{: .hl} is an interface that represents the type of user. A single user can represent different types like (read-only and admin), so this method returns the authoritie's as collection.
 * **getPassword** and **getUsername** are straightforward; they will return passwords and usernames.
 * **isAccountNonExpired**, **isAccountNonLocked**, **isCredentialsNonExpired** and **isEnabled** are to support more security features. If you implement UserDetails then all these methods should return **true** to pass the authentication.
 

@@ -1,7 +1,7 @@
 ---
 title: "Spring Security Introduction"
 date: 2021-01-12 12:11:10 -0500
-categories: [java, spring, book]
+categories: [java, spring]
 image: /assets/images/banners/spring-security-introduction.jpg
 description: "A new series of articles will be published soon to introduce Spring Security. This series will help beginners to understand how Spring security will protect the application. I will continue to add more articles to this series in the coming weeks. As this is the first article, so we will start with the introduction."
 book_id: "spring-security-guide"

@@ -1,7 +1,7 @@
 ---
 title: "Spring Security User Service"
 date: 2021-01-12 12:11:10 -0500
-categories: [java, spring, book]
+categories: [java, spring]
 image: /assets/images/banners/spring-security-user-service.jpg
 description: "We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials."
 book_id: "spring-security-guide"

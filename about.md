@@ -3,7 +3,7 @@ layout: page
 title: Pradeep Kundarapu
 ---
 
-I am a tech enthusiast, blogger, and coder. I hope my blog techstack.net may help programmers, and I write articles based on languages, frameworks, and tools. I am a programmer by profession and majorly code using Java language.
+I am a tech enthusiast, blogger, and coder. I am a programmer by profession and majorly code using Java language. I write articles based on languages, frameworks, and tools.
 
 #### Follow me
 

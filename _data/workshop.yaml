@@ -1,0 +1,7 @@
+spring-security:
+  title: Spring Security Workshop
+  sections:
+    - title: Introduction
+      url: 1-introduction
+    - title: User Service
+      url: 2-configure-user-service

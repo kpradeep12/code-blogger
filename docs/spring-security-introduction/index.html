@@ -186,49 +186,82 @@
 <div class="main-content">
     
 
+<!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Spring Security Introduction&url=https://thetechstack.net/spring-security-introduction/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https://thetechstack.net/spring-security-introduction/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=https://thetechstack.net/spring-security-introduction/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
     
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
 
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
 
-<section>
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-9">
-                <!--<div class="section-title">
-                    <h2><span>Introduction</span></h2>
-                </div>-->
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <!--<i class="fas fa-book"></i>&nbsp;-->
-                <div style="background-color:lightgray" class="p-1 mb-3"><b> Spring Security Guide</b></div>
-                <ol class="pl-3">
-                    
-                    <li>
-                        
-                        Introduction
-                        
-                    </li>
-                    
-                    <li>
-                        
-                        <a href="/spring-security-user-service" >User Service</a>
-                        
-                    </li>
-                    
-                </ol>
-            </div>
-            <div class="col-sm-8">
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="https://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
                 
-                <!-- Post Featured Image -->
-                <img class="img-fluid" src="https://thetechstack.net/assets/images/banners/spring-security-introduction.jpg" alt="Spring Security Introduction">
-                <!-- End Featured Image -->
                 
-                <div class="article-post">
-                    <p>Security is an essential part of any application because it will protect the application from intruders. <em class="hl">Spring Security</em> is one of the projects in the Spring suite. This project will help us to secure our application. As a developer, we need to learn how this framework works internally and understand configuring it.</p>
+                <!-- Post Title -->
+				<h1 class="posttitle">Spring Security Introduction</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="https://thetechstack.net/assets/images/banners/spring-security-introduction.jpg" alt="Spring Security Introduction">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>Security is an essential part of any application because it will protect the application from intruders. <em class="hl">Spring Security</em> is one of the projects in the Spring suite. This project will help us to secure our application. As a developer, we need to learn how this framework works internally and understand configuring it.</p>
 
 <p>Some of the use-cases where we can use Spring security;</p>
 
@@ -265,11 +298,11 @@
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Controller</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">GreetingsController</span> <span class="o">{</span>
-<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/greeting"</span><span class="o">)</span>
-<span class="kd">public</span> <span class="n">String</span> <span class="nf">all</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">,</span> <span class="n">Principal</span> <span class="n">principal</span><span class="o">)</span> <span class="o">{</span>
-<span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"userName"</span><span class="o">,</span> <span class="n">principal</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
-<span class="k">return</span> <span class="s">"greeting"</span><span class="o">;</span>
-<span class="o">}</span>
+  <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/greeting"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">all</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">,</span> <span class="n">Principal</span> <span class="n">principal</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"userName"</span><span class="o">,</span> <span class="n">principal</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+    <span class="k">return</span> <span class="s">"greeting"</span><span class="o">;</span>
+  <span class="o">}</span>
 <span class="o">}</span></code></pre></figure>
 
 <p>It is a simple class with a single method in it. We annotated this class with <strong>@Controller</strong>. @Controller annotation is a Spring stereotype annotation; By declaring this class with @Controller, we tell Spring that this is a Web controller, which means Spring will direct HTTP requests to this class. We declared a method with <strong>@GetMapping(“/greeting”)</strong> annotation in this class. This method will handle the GET HTTP requests on <strong>/greetings</strong> endpoint. Spring will invoke this method when a user hits this endpoint.</p>
@@ -301,7 +334,7 @@
 
 <p>As part of the default security configuration, Spring will secure all the endpoints and creates a default user. If we try to access any endpoint, Spring will redirect us to a login page to enter the credentials. Once the credentials are entered, then the page will be served.</p>
 
-<p>Without configuring any security and just adding a security dependency, our application is secured, isn’t it great? By default, Spring configures <strong>basic authentication</strong> means the user needs to provide a user name and password for authentication.</p>
+<p>Without configuring any security and just adding a security dependency, our application is secured, isn’t it great? By default, Spring configures <strong>basic authentication,</strong> means the user needs to provide a user name and password for authentication.</p>
 
 <p>As I mentioned earlier, Spring security will create a User for us, right? So the default user name is <strong>user</strong>, and the random password will be printed on the console. With in the application startup logs, look for the password. Now go back to the browser and enter credentials, user name as <strong>user</strong> and password copied from the console.</p>
 
@@ -330,21 +363,62 @@
 
 <p>In this section, we learned how spring security would authenticate users. In the <strong><a href="/spring-security-user-service/">next</a></strong> section, we will see how to configure User details.</p>
 
-                </div>
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2021-01-12">12 Jan 2021</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+                    <li>
+                     <a href="/category/spring/">spring</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="https://thetechstack.net/spring-cloud-gateway-part-2/"> &laquo; Spring Cloud Gateway - Part 2</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="https://thetechstack.net/spring-security-user-service/">Spring Security User Service &raquo; </a>
+            
+            <div class="clearfix"></div>
             </div>
-            <div class="col-sm-1">
-            </div>
-        </div>
-    </div>
-</section>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
 
 <!-- Begin Comments
 ================================================== -->
 
-<div class="container">
-    <div id="comments" class="row justify-content-center mb-5">
-        <div class="col-md-8">
-            
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
 <section class="disqus">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -359,10 +433,10 @@
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
-
+                
+            </div>
         </div>
     </div>
-</div>
 
 <!--End Comments
 ================================================== -->
@@ -410,8 +484,6 @@
               <a href="/category/kotlin">Kotlin (12)</a>
              
               <a href="/category/cloud">Cloud (1)</a>
-             
-              <a href="/category/book">Book (2)</a>
             
           
         

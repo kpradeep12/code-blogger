@@ -10,7 +10,7 @@
 <!-- Twitter cards-->
 <meta name="twitter:site"    content="@PradeepK4J">
 <meta name="twitter:creator" content="@">
-<meta name="twitter:title"   content="book">
+<meta name="twitter:title"   content="cloud">
 
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:image" content="">
@@ -25,7 +25,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
     
-<!--<title>book | The Tech Stack . Net</title>-->
+<!--<title>cloud | The Tech Stack . Net</title>-->
     
  
     
@@ -40,9 +40,9 @@
 <link href="/assets/css/main.css" rel="stylesheet">
 <link href="/assets/css/custom.css" rel="stylesheet">
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>book | Pradeep’s Java blog</title>
+<title>cloud | Pradeep’s Java blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="book" />
+<meta property="og:title" content="cloud" />
 <meta name="author" content="Pradeep Kundarapu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sharing my Java coding experiments" />
@@ -51,7 +51,7 @@
 <meta property="og:url" content="https://thetechstack.net/blog/:year/:month/:day/:title" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"book","url":"https://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
+{"@type":"WebPage","headline":"cloud","url":"https://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -185,7 +185,7 @@
 ================================================== -->
 <section class="recent-posts">
 <div class="section-title">
-    <h2>Archive of posts with <span>category 'book'</span></h2>
+    <h2>Archive of posts with <span>category 'cloud'</span></h2>
 </div>
 <div class="row listrecent">
 
@@ -197,13 +197,13 @@
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="https://thetechstack.net/spring-security-user-service/">
-                 <img class="img-fluid" src="https://thetechstack.net/assets/images/banners/spring-security-user-service.jpg" alt="Spring Security User Service"> 
+            <a href="https://thetechstack.net/micronaut-configuration/">
+                 <img class="img-fluid" src="https://thetechstack.net/assets/images/banners/Micronaut-cloud-configuration-with-consul.png" alt="Cloud Configuration With Micronaut and Consul"> 
             </a>
         </div>
         <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="https://thetechstack.net/spring-security-user-service/">Spring Security User Service</a></h2>
-            <h4 class="card-text">Spring Security will configure a single default user with a username as user, and it generates a random password and prints it in the application startup log. We can use...</h4>            
+            <h2 class="card-title"><a class="text-dark" href="https://thetechstack.net/micronaut-configuration/">Cloud Configuration With Micronaut and Consul</a></h2>
+            <h4 class="card-text">Micronaut is one of the new framework available to Java world which helps in developing web, cloud, and serverless applications. Recently we see many new frameworks evolving like Quarkus from...</h4>            
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
@@ -214,44 +214,9 @@
                 <span class="author-meta">
                 <span class="post-name"><a target="_blank" href="https://thetechstack.net">Pradeep Kundarapu</a></span><br/>
                 
-                <span class="post-date">12 Jan 2021</span>
+                <span class="post-date">16 Jul 2019</span>
                 </span>
-                <span class="post-read-more"><a href="https://thetechstack.net/spring-security-user-service/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end post -->
-
-
-
-    <!-- begin post -->
-
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
-            <a href="https://thetechstack.net/spring-security-introduction/">
-                 <img class="img-fluid" src="https://thetechstack.net/assets/images/banners/spring-security-introduction.jpg" alt="Spring Security Introduction"> 
-            </a>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="https://thetechstack.net/spring-security-introduction/">Spring Security Introduction</a></h2>
-            <h4 class="card-text">Security is an essential part of any application because it will protect the application from intruders. Spring Security is one of the projects in the Spring suite. This project will...</h4>            
-        </div>
-        <div class="card-footer bg-white">
-            <div class="wrapfooter">
-                
-                <!--<span class="meta-footer-thumb">
-                <img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
-                </span>-->                
-                <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="https://thetechstack.net">Pradeep Kundarapu</a></span><br/>
-                
-                <span class="post-date">12 Jan 2021</span>
-                </span>
-                <span class="post-read-more"><a href="https://thetechstack.net/spring-security-introduction/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                <span class="post-read-more"><a href="https://thetechstack.net/micronaut-configuration/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -307,8 +272,6 @@
               <a href="/category/kotlin">Kotlin (12)</a>
              
               <a href="/category/cloud">Cloud (1)</a>
-             
-              <a href="/category/book">Book (2)</a>
             
           
         

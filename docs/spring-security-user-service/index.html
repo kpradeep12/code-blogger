@@ -186,49 +186,82 @@
 <div class="main-content">
     
 
+<!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<!-- Post Share -->
+		<div class="col-md-2 pl-0">            
+           <div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Spring Security User Service&url=https://thetechstack.net/spring-security-user-service/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https://thetechstack.net/spring-security-user-service/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url=https://thetechstack.net/spring-security-user-service/" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
     
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>  
+		</div>
+		
 
+		<!-- Post -->        
+        
+        
+		<div class="col-md-9 flex-first flex-md-unordered">
+			<div class="mainheading">
 
-<section>
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-9">
-                <!--<div class="section-title">
-                    <h2><span>User Service</span></h2>
-                </div>-->
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <!--<i class="fas fa-book"></i>&nbsp;-->
-                <div style="background-color:lightgray" class="p-1 mb-3"><b> Spring Security Guide</b></div>
-                <ol class="pl-3">
-                    
-                    <li>
-                        
-                        <a href="/spring-security-introduction" >Introduction</a>
-                        
-                    </li>
-                    
-                    <li>
-                        
-                        User Service
-                        
-                    </li>
-                    
-                </ol>
-            </div>
-            <div class="col-sm-8">
+                <!-- Author Box -->
+                				
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<img class="author-thumb" src="/assets/images/author.jpg" alt="Pradeep Kundarapu">
+					</div>
+					<div class="col-md-10">
+                        <a target="_blank" class="link-dark" href="https://thetechstack.net">Pradeep Kundarapu</a>
+                        <a target="_blank" href="https://twitter.com/PradeepK4J" class="btn follow">Follow</a>
+						<div class="author-description">Java developer, blogger and tech enthusiast.</div>						
+					</div>
+				</div>				
                 
-                <!-- Post Featured Image -->
-                <img class="img-fluid" src="https://thetechstack.net/assets/images/banners/spring-security-user-service.jpg" alt="Spring Security User Service">
-                <!-- End Featured Image -->
                 
-                <div class="article-post">
-                    <p>Spring Security will configure a single default user with a username as <strong>user</strong>, and it generates a random password and prints it in the application startup log. We can use this default user to access the application, but we need multiple users in the real world application.</p>
+                <!-- Post Title -->
+				<h1 class="posttitle">Spring Security User Service</h1> 
+                
+			</div>
+
+			<!-- Post Featured Image -->
+			<img class="featured-image img-fluid" src="https://thetechstack.net/assets/images/banners/spring-security-user-service.jpg" alt="Spring Security User Service">
+			<!-- End Featured Image -->
+
+			<!-- Post Content -->
+			<div class="article-post">
+				<p>Spring Security will configure a single default user with a username as <strong>user</strong>, and it generates a random password and prints it in the application startup log. We can use this default user to access the application, but we need multiple users in the real world application.</p>
 
 <p>In this section, we will learn to fetch users from an in-memory store. This exercise will help us understand how the Spring security configuration will work. We will also create an in-memory user store and attach it to the Spring security.</p>
 
@@ -243,7 +276,7 @@
 <p>Below is the UserDetailsService interface; it has only a single method, <strong>loadUserByUserName</strong>. This method will fetch the user based on the provided username. In this section, we will implement this interface to fetch users from an in-memory store.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetailsService</span> <span class="o">{</span>
-<span class="n">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="n">String</span> <span class="n">var1</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UsernameNotFoundException</span><span class="o">;</span>
+    <span class="n">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="n">String</span> <span class="n">var1</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UsernameNotFoundException</span><span class="o">;</span>
 <span class="o">}</span></code></pre></figure>
 
 <p>Source code for this section is available <em class="ul"><a href="https://github.com/kpradeep12/thetechstack-projects/tree/main/spring-security-user-service-2" target="_blank">here</a></em> <em class="fas fa-external-link-alt small_text"> </em>.</p>
@@ -280,18 +313,18 @@
 <p>If you notice, <strong>loadUserByUsername</strong> returns <em class="hl">UserDetails</em>. We have not discussed about UserDetails till now. Spring security can only recognize users of type UserDetails. UserDetails is an interface; it is a contract provided by Spring for us to define users. This interface represents a User. If we want to implement a custom User object, then implement this interface so Spring can identify it as a User. Below is the UserDetails interface structure.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetails</span> <span class="kd">extends</span> <span class="n">Serializable</span> <span class="o">{</span>
-<span class="n">Collection</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">GrantedAuthority</span><span class="o">&gt;</span> <span class="nf">getAuthorities</span><span class="o">();</span>
-<span class="n">String</span> <span class="nf">getPassword</span><span class="o">();</span>
-<span class="n">String</span> <span class="nf">getUsername</span><span class="o">();</span>
-<span class="kt">boolean</span> <span class="nf">isAccountNonExpired</span><span class="o">();</span>
-<span class="kt">boolean</span> <span class="nf">isAccountNonLocked</span><span class="o">();</span>
-<span class="kt">boolean</span> <span class="nf">isCredentialsNonExpired</span><span class="o">();</span>
-<span class="kt">boolean</span> <span class="nf">isEnabled</span><span class="o">();</span>
+    <span class="n">Collection</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">GrantedAuthority</span><span class="o">&gt;</span> <span class="nf">getAuthorities</span><span class="o">();</span>
+    <span class="n">String</span> <span class="nf">getPassword</span><span class="o">();</span>
+    <span class="n">String</span> <span class="nf">getUsername</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isAccountNonExpired</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isAccountNonLocked</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isCredentialsNonExpired</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isEnabled</span><span class="o">();</span>
 <span class="o">}</span></code></pre></figure>
 
 <p>This interface has all the methods needed to represent a User;</p>
 <ul>
-  <li><strong>getAuthorities</strong>; All users are not the same in the application. It may need a different kind of users. For example, <strong>read-only</strong>, <strong>admin</strong>, or <strong>super-admin</strong>. <em class="hl">Authority</em> is an interface that represents the type of user. A single user can represent different types like (read-only and admin), so this method returns the authorities’ collection.</li>
+  <li><strong>getAuthorities</strong>; All users are not the same in the application. It may need a different kind of users. For example, <strong>read-only</strong>, <strong>admin</strong>, or <strong>super-admin</strong>. <em class="hl">Authority</em> is an interface that represents the type of user. A single user can represent different types like (read-only and admin), so this method returns the authoritie’s as collection.</li>
   <li><strong>getPassword</strong> and <strong>getUsername</strong> are straightforward; they will return passwords and usernames.</li>
   <li><strong>isAccountNonExpired</strong>, <strong>isAccountNonLocked</strong>, <strong>isCredentialsNonExpired</strong> and <strong>isEnabled</strong> are to support more security features. If you implement UserDetails then all these methods should return <strong>true</strong> to pass the authentication.</li>
 </ul>
@@ -334,21 +367,60 @@
 
 <p>In this section, we learned how to customize user service and configure it with Spring security.</p>
 
-                </div>
+			</div>
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2021-01-12">12 Jan 2021</time></span>           
+                
+                </small>
+            </p>
+            
+			<!-- Post Categories -->
+			<div class="after-post-tags">
+				<ul class="tags">
+                    
+                    
+                    <li>
+                     <a href="/category/java/">java</a>
+                    </li>
+                    
+                    <li>
+                     <a href="/category/spring/">spring</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<!-- End Categories -->
+            
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="https://thetechstack.net/spring-security-introduction/"> &laquo; Spring Security Introduction</a>
+            
+            
+            <div class="clearfix"></div>
             </div>
-            <div class="col-sm-1">
-            </div>
-        </div>
-    </div>
-</section>
+            <!-- End Categories -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+
+  
 
 <!-- Begin Comments
 ================================================== -->
 
-<div class="container">
-    <div id="comments" class="row justify-content-center mb-5">
-        <div class="col-md-8">
-            
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">              
+                
 <section class="disqus">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -363,10 +435,10 @@
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
-
+                
+            </div>
         </div>
     </div>
-</div>
 
 <!--End Comments
 ================================================== -->
@@ -414,8 +486,6 @@
               <a href="/category/kotlin">Kotlin (12)</a>
              
               <a href="/category/cloud">Cloud (1)</a>
-             
-              <a href="/category/book">Book (2)</a>
             
           
         

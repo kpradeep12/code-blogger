@@ -3,7 +3,7 @@ layout: page
 title: Pradeep Kundarapu
 ---
 
-I am a tech enthusiast, blogger, and coder. I am a programmer by profession and majorly code using Java language. I write articles based on languages, frameworks, and tools.
+Tech enthusiast, blogger, and programmer by profession. Majorly code using Java language. I write articles based on languages, frameworks, and tools.
 
 #### Follow me
 

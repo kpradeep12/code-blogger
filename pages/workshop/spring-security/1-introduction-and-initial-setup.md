@@ -20,7 +20,7 @@ This Spring security workshop aims to build a secure web application; this works
   
 In this section, we work on showing a welcome message to the user. To implement this, we need two files; Controller and HTML template. Let's create these files.
 
-##### Step 2: Create Controller
+##### Step 2: Web Controller
 
 Create GreetingsController java file.
 
@@ -39,7 +39,7 @@ public class GreetingsController {
 
 Spring will invoke the method 'all' when an HTTP GET on '/greeting' is received. It will pass instances of Model and Principal, and we use them with in the method. The principal object represents the currently logged-in user. The Model is a key-value object store; we use it as an intermediary store between the controller and Thymeleaf template. We are returning the string "greeting" in this method, which means Spring will look for greeting.html in 'src/main/java/resources/templates' folder, processes it, and returns it to the user.
 
-##### Step 3: Thymeleaf HTML Template file
+##### Step 3: Thymeleaf HTML Template
 
 Create greetings.html
 

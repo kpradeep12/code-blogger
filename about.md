@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: about_me
 title: Pradeep Kundarapu
 ---
 
-Tech enthusiast, blogger, and programmer by profession. Majorly code using Java language. I write articles based on languages, frameworks, and tools.
+I'm a Software Engineering enthusiast specializing in Microservices, Cloud engineering, and Programming. Majorly code using Java language. Tech enthusiast, blogger. I write articles based on programming, frameworks, and tools.
 
 #### Follow me
 

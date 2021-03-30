@@ -1,0 +1,7 @@
+book-collection-web-app:
+  title: Project - Book Collection
+  sections:
+    - title: Introduction
+      url: 1-introduction
+    - title: Database Design
+      url: 2-database-design

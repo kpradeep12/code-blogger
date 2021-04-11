@@ -1,9 +1,9 @@
 ---
 layout: project
-title: "Data Base Design"
+title: "Book Collection"
 categories: [project]
 image: /assets/images/banners/dockerfile-quick-reference.png
 project_id: book-collection-web-app
 ---
 
-Database design!
+This is a project!

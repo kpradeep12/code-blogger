@@ -3,5 +3,5 @@ book-collection-web-app:
   sections:
     - title: Introduction
       url: 1-introduction
-    - title: Database Design
-      url: 2-database-design
+    - title: Design
+      url: 2-design

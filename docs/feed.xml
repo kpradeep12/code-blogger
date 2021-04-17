@@ -3,18 +3,18 @@
   <channel>
     <title>Pradeep's Java blog</title>
     <description>Sharing my Java coding experiments</description>
-    <link>https://thetechstack.net/</link>
-    <atom:link href="https://thetechstack.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 18 Mar 2021 22:46:17 -0400</pubDate>
-    <lastBuildDate>Thu, 18 Mar 2021 22:46:17 -0400</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 29 Mar 2021 21:09:12 -0400</pubDate>
+    <lastBuildDate>Mon, 29 Mar 2021 21:09:12 -0400</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Spring Security User Service</title>
         <description>We need to make sure that only authorized users can able to access an application. This article will help us learn to configure a customized user store so that Spring Security will authorize only if the user provides the right credentials.</description>
         <pubDate>Tue, 12 Jan 2021 12:11:10 -0500</pubDate>
-        <link>https://thetechstack.net/spring-security-user-service/</link>
-        <guid isPermaLink="true">https://thetechstack.net/spring-security-user-service/</guid>
+        <link>http://localhost:4000/spring-security-user-service/</link>
+        <guid isPermaLink="true">http://localhost:4000/spring-security-user-service/</guid>
         
         
         <category>java</category>
@@ -27,8 +27,8 @@
         <title>Spring Security Introduction</title>
         <description>A new series of articles will be published soon to introduce Spring Security. This series will help beginners to understand how Spring security will protect the application. I will continue to add more articles to this series in the coming weeks. As this is the first article, so we will start with the introduction.</description>
         <pubDate>Tue, 12 Jan 2021 12:11:10 -0500</pubDate>
-        <link>https://thetechstack.net/spring-security-introduction/</link>
-        <guid isPermaLink="true">https://thetechstack.net/spring-security-introduction/</guid>
+        <link>http://localhost:4000/spring-security-introduction/</link>
+        <guid isPermaLink="true">http://localhost:4000/spring-security-introduction/</guid>
         
         
         <category>java</category>
@@ -41,8 +41,8 @@
         <title>Spring Cloud Gateway - Part 2</title>
         <description>This is the second part of Spring cloud gateway tutorial. We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Filters to change request and response.</description>
         <pubDate>Mon, 30 Nov 2020 12:11:10 -0500</pubDate>
-        <link>https://thetechstack.net/spring-cloud-gateway-part-2/</link>
-        <guid isPermaLink="true">https://thetechstack.net/spring-cloud-gateway-part-2/</guid>
+        <link>http://localhost:4000/spring-cloud-gateway-part-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/spring-cloud-gateway-part-2/</guid>
         
         
         <category>java</category>
@@ -53,8 +53,8 @@
         <title>Spring Cloud Gateway - Part 1</title>
         <description>We will learn the basics and configure the Spring Cloud Gateway. We will go through the sample project and run it to see the results, and also, we will see how to configure Path and Header predicates.</description>
         <pubDate>Mon, 23 Nov 2020 12:11:10 -0500</pubDate>
-        <link>https://thetechstack.net/spring-cloud-gateway-part-1/</link>
-        <guid isPermaLink="true">https://thetechstack.net/spring-cloud-gateway-part-1/</guid>
+        <link>http://localhost:4000/spring-cloud-gateway-part-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/spring-cloud-gateway-part-1/</guid>
         
         
         <category>java</category>
@@ -65,8 +65,8 @@
         <title>Understanding CountDownLatch With Simple Example</title>
         <description>CountDownLatch is a simple utility, which we can use to wait for multiple threads to complete their job, till then CountDownLatch will block the thread. In this article, we will compare two examples, one without and the other with CountDownLatch. This comparison will help in understanding how CountDownLatch will work.</description>
         <pubDate>Fri, 24 Apr 2020 13:11:10 -0400</pubDate>
-        <link>https://thetechstack.net/understanding-countdownlatch-with-simple-example-copy/</link>
-        <guid isPermaLink="true">https://thetechstack.net/understanding-countdownlatch-with-simple-example-copy/</guid>
+        <link>http://localhost:4000/understanding-countdownlatch-with-simple-example-copy/</link>
+        <guid isPermaLink="true">http://localhost:4000/understanding-countdownlatch-with-simple-example-copy/</guid>
         
         
         <category>java</category>
@@ -77,8 +77,8 @@
         <title>Using new Switch expressions</title>
         <description>One of the new features released as part of Java 14 is the switch expressions. This feature was available in earlier versions (Java 12 and 13), too, but as a preview. In Java 14, it became standard. The main difference between the existing and new switch is, the new switch is not the only statement but also expression. There are some more differences, which we will learn in this article.</description>
         <pubDate>Sun, 12 Apr 2020 13:11:10 -0400</pubDate>
-        <link>https://thetechstack.net/using-new-switch-expressions/</link>
-        <guid isPermaLink="true">https://thetechstack.net/using-new-switch-expressions/</guid>
+        <link>http://localhost:4000/using-new-switch-expressions/</link>
+        <guid isPermaLink="true">http://localhost:4000/using-new-switch-expressions/</guid>
         
         
         <category>java</category>
@@ -89,8 +89,8 @@
         <title>How to use records in Java</title>
         <description>Record is a new feature added in Java 14. In this article, we will learn about Records, and we will explore some examples.</description>
         <pubDate>Wed, 08 Apr 2020 13:11:10 -0400</pubDate>
-        <link>https://thetechstack.net/how-to-use-records-in-java/</link>
-        <guid isPermaLink="true">https://thetechstack.net/how-to-use-records-in-java/</guid>
+        <link>http://localhost:4000/how-to-use-records-in-java/</link>
+        <guid isPermaLink="true">http://localhost:4000/how-to-use-records-in-java/</guid>
         
         
         <category>java</category>
@@ -101,8 +101,8 @@
         <title>Create Singleton Instance In Kotlin</title>
         <description>There are many use cases where we need Singleton instances in applications. For example; to maintain a single instance of resources like a database or object store or file system. Kotlin supports singleton instances within the language with object keyword. In this article, we learn using the object keyword to implement singleton instances in Kotlin.</description>
         <pubDate>Thu, 19 Sep 2019 13:11:10 -0400</pubDate>
-        <link>https://thetechstack.net/create-singleton-instance-in-kotlin/</link>
-        <guid isPermaLink="true">https://thetechstack.net/create-singleton-instance-in-kotlin/</guid>
+        <link>http://localhost:4000/create-singleton-instance-in-kotlin/</link>
+        <guid isPermaLink="true">http://localhost:4000/create-singleton-instance-in-kotlin/</guid>
         
         
         <category>kotlin</category>
@@ -113,8 +113,8 @@
         <title>Cloud Configuration With Micronaut and Consul</title>
         <description>Services may be running on multiple machines/containers, and if each service has its copy of the configuration, then it is a very tedious job to change and restart all instances, in cloud environments we can resolve this issue by publishing configuration at a single location and allowing all services to read it. We learn more about this by developing a sample application using Micronaut and Consul.</description>
         <pubDate>Tue, 16 Jul 2019 13:11:10 -0400</pubDate>
-        <link>https://thetechstack.net/micronaut-configuration/</link>
-        <guid isPermaLink="true">https://thetechstack.net/micronaut-configuration/</guid>
+        <link>http://localhost:4000/micronaut-configuration/</link>
+        <guid isPermaLink="true">http://localhost:4000/micronaut-configuration/</guid>
         
         
         <category>cloud</category>
@@ -125,8 +125,8 @@
         <title>Asyn Method Invocation Design Pattern</title>
         <description>Instead of executing thread and managing its life cycle lets create an Async method invocation pattern which allows us to submit tasks and this pattern manages the threads and when execution completes it passes the result with a callback. This pattern frees up the main thread so it can continue to execute other tasks. This article explains the design and implementation of the Async method invocation design pattern.</description>
         <pubDate>Fri, 17 May 2019 13:11:10 -0400</pubDate>
-        <link>https://thetechstack.net/async-method-invocation-design-pattern/</link>
-        <guid isPermaLink="true">https://thetechstack.net/async-method-invocation-design-pattern/</guid>
+        <link>http://localhost:4000/async-method-invocation-design-pattern/</link>
+        <guid isPermaLink="true">http://localhost:4000/async-method-invocation-design-pattern/</guid>
         
         
         <category>kotlin</category>

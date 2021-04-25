@@ -50,10 +50,14 @@ mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Dserver.port=8081"
 
 Once the application is up, then open a browser and hit *[http://localhost:8080/ned_s](http://localhost:8080/ned_s){:target="_blank"}*{:.ul} *&nbsp;*{:.fas .fa-external-link-alt .small_text}; this is the public profile of user **Ned**. Ned can share this URL with anyone to show his book collection, but only Ned can edit his collection.
 
-<image>
+![]({{site.baseurl}}/assets/images/projects/my-book-collection/ned_s_collection.jpg){: .align-center}
 
-To edit Ned's collection, log in with the below credentials;
-User name: ned_s
-password: test
+To edit Ned's collection, log in as Ned by providing User name as **ned_s** and password as **test**
 
 To browse books, click on 'Search Books' link on the top menu.
+
+![]({{site.baseurl}}/assets/images/projects/my-book-collection/search_books.jpg){: .align-center}
+
+Click on the **Add** button to add this book to Ned's collection.
+
+Finally, click on **Logout** to end Ned's session.

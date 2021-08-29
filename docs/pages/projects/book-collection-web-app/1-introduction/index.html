@@ -183,59 +183,13 @@
 ================================================== --> 
 <div class="main-content">
     
-<section>
-    <!--<div class="section-title">
-        <h2><span><i class="fas fa-book"></i>&nbsp;Project - Book Collection</span></h2>
-    </div>
-    <div class="d-sm-flex d-md-flex">
-        <div class="book-toc">
-            <h2>&nbsp;</h2>
-            <ul class="markdown-toc">
-                
-                <li>
-                    <a href="/books//1-introduction" >Introduction</a>
-                </li>
-                
-                <li>
-                    <a href="/books//2-design" >Design</a>
-                </li>
-                
-            </ul>
-        </div>
-        <div>
-                <div class="article-post">
-                    
-                </div>
-        </div>
-    </div>-->
-    <!--<div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3 px-1 position-fixed" id="sticky-sidebar">
-                <ul class="markdown-toc">
-                    
-                    <li>
-                        <a href="/books//1-introduction" >Introduction</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/books//2-design" >Design</a>
-                    </li>
-                    
-                </ul>
-            </div>
-            <div class="col-sm-9 offset-3" id="main">
-                <div class="article-post">
-                    
-                </div>
-            </div>
-        </div>
-    </div>-->
+<section class="project">
     <div class="container mt-2">
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-9">
                 <div class="section-title">
-                    <h2><span><i class="fas fa-book"></i>&nbsp;&nbsp;Project - Book Collection</span></h2>
+                    <h1><b>Project - Book Collection</b></h1>
                 </div>
             </div>
         </div>
@@ -257,7 +211,63 @@
             </div>
             <div class="col-sm-8">
                 <div class="article-post">
-                    <p>This is a project!</p>
+                    <p><strong><em>My Book Collection</em></strong> is a web application that allows users to search their favorite books and add them to their collection, and users can also share their collection.</p>
+
+<h3 id="demo">Demo</h3>
+<p><img src="/assets/images/projects/my-book-collection/my-book-collection.gif" alt="" class="align-center" /></p>
+
+<h3 id="what-did-we-use-in-this-project">What did we use in this project?</h3>
+<ul>
+  <li>Java</li>
+  <li>Spring framework
+    <ul>
+      <li>Spring boot</li>
+      <li>Spring security</li>
+      <li>Spring Thymeleaf</li>
+    </ul>
+  </li>
+  <li>H2 database</li>
+</ul>
+
+<h3 id="what-youll-need">What you’ll need?</h3>
+<ul>
+  <li>Java 11 (or higher)</li>
+  <li>Git</li>
+  <li>Your favorite Java editor to view/edit source code (optional)</li>
+</ul>
+
+<h3 id="download-and-run-application">Download and Run application</h3>
+<p>Open a terminal and clone my book collection application.</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">git clone https://github.com/kpradeep12/project-my-book-collection.git</span></code></pre></figure>
+
+<p>Run application in Mac</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">./mvnw spring-boot:run</span></code></pre></figure>
+
+<p>Run application in Windows</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">mvnw spring-boot:run</span></code></pre></figure>
+
+<h3 id="project-walkthrough">Project walkthrough</h3>
+
+<p>By default, the application starts at <strong>8080</strong> port. You can change the port number by providing an application argument, like below.</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Dserver.port=8081"</span></code></pre></figure>
+
+<p>Once the application is up, then open a browser and hit <em class="ul"><a href="http://localhost:8080/ned_s" target="_blank">http://localhost:8080/ned_s</a></em> <em class="fas fa-external-link-alt small_text"> </em>; this is the public profile of user <strong>Ned</strong>. Ned can share this URL with anyone to show his book collection, but only Ned can edit his collection.</p>
+
+<p><img src="/assets/images/projects/my-book-collection/ned_s_collection.jpg" alt="" class="align-center" /></p>
+
+<p>To edit Ned’s collection, log in as Ned by providing User name as <strong>ned_s</strong> and password as <strong>test</strong></p>
+
+<p>To browse books, click on ‘Search Books’ link on the top menu.</p>
+
+<p><img src="/assets/images/projects/my-book-collection/search_books.jpg" alt="" class="align-center" /></p>
+
+<p>Click on the <strong>Add</strong> button to add this book to Ned’s collection.</p>
+
+<p>Finally, click on <strong>Logout</strong> to end Ned’s session.</p>
 
                 </div>
             </div>

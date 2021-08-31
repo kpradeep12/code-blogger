@@ -1,0 +1,61 @@
+- column: one
+  groups:
+    - title: List files
+      items:
+      - key: ls
+        value: |
+          Lists all files in current directory
+
+          **-a** show hidden files  
+          **-l** more details about the files  
+          **-h** show file size in Kb, Mb or Gb
+          {: #options_tx}
+    - title: View files
+      items:
+      - key: cat <filename> <filename>
+        value: |
+          Prints contents of the provided file, if multiple files are provided then concatenates the contents.
+
+          $ cat file1.txt file2.txt
+          {: #terminal_tx}
+      - key: head <filename>
+        value: |
+          Peak first 10 lines of the given file.
+
+          **-n** number of lines to peak.  
+          {: #options_tx}
+
+          $ head -n 5 file.txt
+          {: #terminal_tx}
+      - key: tail <filename>
+        value: |
+          Peak last 10 lines of the given file.
+
+          **-n** number of lines to peak.  
+          {: #options_tx}
+
+          $ tail -n 5 file.txt
+          {: #terminal_tx}
+    - title: Delete files/folders
+      items:
+      - key: rm
+        value: |
+          Deletes files
+
+          **-r** (recursive) to delete folder  
+          {: #options_tx}
+
+          $ rm -r temp_folder
+          {: #terminal_tx}
+- column: two
+  groups:
+    - title: Media
+      items:
+      - key: '\[\!\[Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)'
+        value: Link to video
+      - key: '\!\[Live Score Board](https://thetechstack.net/assets/images/projects/live-score-board/live-score-board.jpg)'
+        value: Embed image
+    - title: Escape characters
+      items:
+      - key: \
+        value: Use backspace before the special character to escape and they appear as literal characters.

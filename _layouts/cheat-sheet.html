@@ -18,6 +18,8 @@ layout: default
                     {% assign doclist = site.data.cheat-sheets.docker-cli-cheat-sheet  %}
                 {% elsif page.file == "markdown-cheat-sheet" %}
                     {% assign doclist = site.data.cheat-sheets.markdown-cheat-sheet  %}
+                {% elsif page.file == "bash-cheat-sheet" %}
+                    {% assign doclist = site.data.cheat-sheets.bash-cheat-sheet  %}
                 {% endif %}
 
                 {% for columns in doclist %}

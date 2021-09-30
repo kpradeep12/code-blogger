@@ -1,0 +1,19 @@
+- column: one
+  groups:
+    - title: Project lifecycle commands
+      items:
+      - key: mvn clean
+        value: |
+          Cleans project by deleting target folder
+- column: two
+  groups:
+    - title: Media
+      items:
+      - key: '\[\!\[Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)'
+        value: Link to video
+      - key: '\!\[Live Score Board](https://thetechstack.net/assets/images/projects/live-score-board/live-score-board.jpg)'
+        value: Embed image
+    - title: Escape characters
+      items:
+      - key: \
+        value: Use backspace before the special character to escape and they appear as literal characters.

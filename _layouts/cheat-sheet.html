@@ -20,6 +20,8 @@ layout: default
                     {% assign doclist = site.data.cheat-sheets.markdown-cheat-sheet  %}
                 {% elsif page.file == "bash-cheat-sheet" %}
                     {% assign doclist = site.data.cheat-sheets.bash-cheat-sheet  %}
+                {% elsif page.file == "maven-cli-cheat-sheet" %}
+                    {% assign doclist = site.data.cheat-sheets.maven-cli-cheat-sheet  %}
                 {% endif %}
 
                 {% for columns in doclist %}

@@ -2,37 +2,65 @@
   groups:
     - title: Get
       items:
-      - key: curl -i <URL>
-        value: Prints headers and response
-      - key: curl -v <URL>
-        value: Prints more verbose, useful for debugging
-      - key: >
-          curl -H '<key>: <value>' <URL>
-        value: Add header to the request.
+      - key: |
+          curl \<URL>
+        value: |
+          Send HTTP Get request and view the response  
+
+          **-i** prints headers and response  
+          **-v** prints more verbose, useful for debugging  
+          {: #options_tx}
+
+          $ curl -v http://localhost:8085/api/vi/employee/1
+          {: #terminal_tx}
     - title: Post
       items:
-      - key: curl -d 'key=value&key=value' <URL>
-        value: Post multiple key values using 'application/x-www-form-urlencoded' as content type
-      - key: curl -F 'key=value' -F 'key=value' <URL>
-        value: Post multiple key values using 'multipart/form-data' as content type        
+      - key: curl -d 'key=value&key=value' \<URL>
+        value: |
+          Post multiple key values using 'application/x-www-form-urlencoded' as content type  
+
+          $ curl -d 'param1=value1&param2=value2' http://localhost:8085/api/vi/employee
+          {: #terminal_tx}
+      - key: curl -F 'key=value' -F 'key=value' \<URL>
+        value: |
+          Post multiple key values using 'multipart/form-data' as content type  
+
+          $ curl -F 'param1=value1' -F 'param2=value2' http://localhost:8085/api/vi/employee
+          {: #terminal_tx}
       - key: > 
-          curl -d '{json}' -H 'Content-Type: application/json' <URL>
-        value: Post JSON data
-      - key: curl -F 'image=@/folder/image.png' <URL>
-        value: Upload file, add @ before file location
+          curl -d '{json}' -H 'Content-Type: application/json' \<URL>
+        value: |
+          Post JSON data  
+
+          $ curl -d '{"id":1,"firstName":"Adam"}' -H 'Content-Type: application/json' http://localhost:8085/api/vi/employee
+          {: #terminal_tx}
+      - key: curl -F 'image=@/folder/image.png' \<URL>
+        value: Submit form by uploading file, add @ before file location
     - title: Put
       items:
-      - key: curl -T -d 'key=value' <URL>
-        value: Send a PUT request
-    - title: Delete
-      items:
-      - key: curl -X DELETE <URL>
-        value: Send a DELETE request
+      - key: curl -X PUT \<URL>
+        value: |
+          Send HTTP PUT request  
+          
+          $ curl -d 'param1=value1' http://localhost:8085/api/vi/employee
+          {: #terminal_tx}
 - column: two
   groups:
+    - title: Delete
+      items:
+      - key: curl -X DELETE \<URL>
+        value: |
+          Send HTTP DELETE request  
+          
+          $ curl -X DELETE http://localhost:8085/api/vi/employee/1
+          {: #terminal_tx}
     - title: Security
       items:
-      - key: curl -u <userid>:<pass> <URL>
-        value: Pass basic authentication details; User id and password
-      - key: curl -k <URL>
+      - key: curl -u \<userid>:\<pass> \<URL>
+        value: |
+          Pass basic authentication details; User id and password  
+
+          $ curl -u 'admin:password' http://localhost:8085/api/vi/employee
+          {: #terminal_tx}
+      - key: curl -k \<URL>
         value: Make insecure connection, ignores SSL certification validation

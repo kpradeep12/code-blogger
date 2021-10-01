@@ -10,10 +10,10 @@
 <!-- Twitter cards-->
 <meta name="twitter:site"    content="@PradeepK4J">
 <meta name="twitter:creator" content="@">
-<meta name="twitter:title"   content="Introduction And Initial Setup">
+<meta name="twitter:title"   content="Bash Cheat Sheet">
 
-<meta name="twitter:card"  content="summary_large_image">
-<meta name="twitter:image" content="https://thetechstack.net/assets/images/banners/dockerfile-quick-reference.png">
+<meta name="twitter:card"  content="summary">
+<meta name="twitter:image" content="">
 
 <!-- end of Twitter cards -->
 
@@ -25,7 +25,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
     
-<!--<title>Introduction And Initial Setup | The Tech Stack . Net</title>-->
+<!--<title>Bash Cheat Sheet | The Tech Stack . Net</title>-->
     
  
     
@@ -40,19 +40,18 @@
 <link href="/assets/css/main.css" rel="stylesheet">
 <link href="/assets/css/custom.css" rel="stylesheet">
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Introduction And Initial Setup | Pradeep’s Java blog</title>
+<title>Bash Cheat Sheet | Pradeep’s Java blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Introduction And Initial Setup" />
+<meta property="og:title" content="Bash Cheat Sheet" />
 <meta name="author" content="Pradeep Kundarapu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sharing my Java coding experiments" />
 <meta property="og:description" content="Sharing my Java coding experiments" />
-<link rel="canonical" href="https://thetechstack.net/pages/workshop/spring-security/1-introduction-and-initial-setup/" />
-<meta property="og:url" content="https://thetechstack.net/pages/workshop/spring-security/1-introduction-and-initial-setup/" />
+<link rel="canonical" href="https://thetechstack.net/pages/cheat-sheets/bash-cheat-sheet/" />
+<meta property="og:url" content="https://thetechstack.net/pages/cheat-sheets/bash-cheat-sheet/" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
-<meta property="og:image" content="https://thetechstack.net/assets/images/banners/dockerfile-quick-reference.png" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"Introduction And Initial Setup","image":"https://thetechstack.net/assets/images/banners/dockerfile-quick-reference.png","url":"https://thetechstack.net/pages/workshop/spring-security/1-introduction-and-initial-setup/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
+{"@type":"WebPage","headline":"Bash Cheat Sheet","url":"https://thetechstack.net/pages/cheat-sheets/bash-cheat-sheet/","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -72,7 +71,7 @@
     
 
 
-<body class="layout-workshop">
+<body class="layout-cheat-sheet">
 
     
 <!-- Begin Menu Navigation
@@ -186,145 +185,137 @@
 <!-- Content
 ================================================== --> 
 <div class="main-content">
-    
-<section>
-    <!--<div class="section-title">
-        <h2><span><i class="fas fa-book"></i>&nbsp;Spring Security Workshop</span></h2>
+    <section>
+    <div class="section-title">
+        <h2><span>Bash Cheat Sheet</span></h2>
     </div>
-    <div class="d-sm-flex d-md-flex">
-        <div class="book-toc">
-            <h2>&nbsp;</h2>
-            <ul class="markdown-toc">
-                
-                <li>
-                    <a href="/books//1-introduction-and-initial-setup" >Introduction And Initial Setup</a>
-                </li>
-                
-                <li>
-                    <a href="/books//2-configure-user-service" >User Service</a>
-                </li>
-                
-            </ul>
-        </div>
-        <div>
-                <div class="article-post">
-                    
-                </div>
-        </div>
-    </div>-->
-    <!--<div class="container-fluid">
+    <div class="cheat-sheet-article">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3 px-1 position-fixed" id="sticky-sidebar">
-                <ul class="markdown-toc">
-                    
-                    <li>
-                        <a href="/books//1-introduction-and-initial-setup" >Introduction And Initial Setup</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/books//2-configure-user-service" >User Service</a>
-                    </li>
-                    
-                </ul>
-            </div>
-            <div class="col-sm-9 offset-3" id="main">
-                <div class="article-post">
-                    
+            
+                
+
+                
+                <div class="col-sm-6">
+                        
+                            <h5>List files</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong><p>ls</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Lists all files in current directory</p>
+
+<p id="options_tx"><strong>-a</strong> show hidden files<br />
+<strong>-l</strong> more details about the files<br />
+<strong>-h</strong> show file size in Kb, Mb or Gb</p>
+</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>View files</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong><p>cat <filename> <filename></filename></filename></p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Prints contents of the provided file, if multiple files are provided then concatenates the contents.</p>
+
+<p id="terminal_tx">$ cat file1.txt file2.txt</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>head <filename></filename></p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Peak first 10 lines of the given file.</p>
+
+<p id="options_tx"><strong>-n</strong> number of lines to peak.</p>
+
+<p id="terminal_tx">$ head -n 5 file.txt</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>tail <filename></filename></p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Peak last 10 lines of the given file.</p>
+
+<p id="options_tx"><strong>-n</strong> number of lines to peak.</p>
+
+<p id="terminal_tx">$ tail -n 5 file.txt</p>
+</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Delete files/folders</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong><p>rm</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Deletes files</p>
+
+<p id="options_tx"><strong>-r</strong> (recursive) to delete folder</p>
+
+<p id="terminal_tx">$ rm -r temp_folder</p>
+</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
                 </div>
-            </div>
-        </div>
-    </div>-->
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-9">
-                <div class="section-title">
-                    <h2><span><i class="fas fa-book"></i>&nbsp;&nbsp;Spring Security Workshop</span></h2>
+                
+                <div class="col-sm-6">
+                        
+                            <h5>Media</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong><p>[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Link to video</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>![Live Score Board](https://thetechstack.net/assets/images/projects/live-score-board/live-score-board.jpg)</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Embed image</p>
+</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Escape characters</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong><p>\</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Use backspace before the special character to escape and they appear as literal characters.</p>
+</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 pl-5">
-                <ol class="pl-3">
-                    
-                    <li>
-                        <a href="/pages/workshop/spring-security/1-introduction-and-initial-setup" >Introduction And Initial Setup</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/pages/workshop/spring-security/2-configure-user-service" >User Service</a>
-                    </li>
-                    
-                </ol>
-            </div>
-            <div class="col-sm-8">
-                <div class="article-post">
-                    <p>This Spring security workshop aims to build a secure web application; this workshop will have less theory and more practical work. I will provide simple instructions with explanations along the path of our web application development, and I try to cover as many essential features of Spring security.</p>
-
-<h5 id="step-1-project-setup">Step 1: Project Setup</h5>
-
-<ul>
-  <li>Go to https://start.spring.io/</li>
-  <li>Select your own choice of configuration (Project, Language, Spring Boot, Project Metadata, Packaging, and Java version).</li>
-  <li>Select below dependencies;
-    <ul>
-      <li>Spring Web</li>
-      <li>Thymeleaf</li>
-      <li>Spring Security</li>
-    </ul>
-  </li>
-  <li>Click on Generate to download this spring project. Open it in your favorite Java editor.</li>
-</ul>
-
-<p>In this section, we work on showing a welcome message to the user. To implement this, we need two files; Controller and HTML template. Let’s create these files.</p>
-
-<h5 id="step-2-web-controller">Step 2: Web Controller</h5>
-
-<p>Create GreetingsController java file.</p>
-
-<p>INFO: Create Java files at either the same package level where SpringBootApplication class is or create it under a sub-package.</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Controller</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GreetingsController</span> <span class="o">{</span>
-  <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/greeting"</span><span class="o">)</span>
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">all</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">,</span> <span class="n">Principal</span> <span class="n">principal</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"userName"</span><span class="o">,</span> <span class="n">principal</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
-    <span class="k">return</span> <span class="s">"greeting"</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<p>Spring will invoke the method ‘all’ when an HTTP GET on ‘/greeting’ is received. It will pass instances of Model and Principal, and we use them with in the method. The principal object represents the currently logged-in user. The Model is a key-value object store; we use it as an intermediary store between the controller and Thymeleaf template. We are returning the string “greeting” in this method, which means Spring will look for greeting.html in ‘src/main/java/resources/templates’ folder, processes it, and returns it to the user.</p>
-
-<h5 id="step-3-thymeleaf-html-template">Step 3: Thymeleaf HTML Template</h5>
-
-<p>Create greetings.html</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Welcome <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${userName}"</span><span class="nt">&gt;&lt;/span&gt;</span>!<span class="nt">&lt;/h2&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></figure>
-
-<p>${userName} will get replaced with the logged-in user name because, in the controller, we passed the logged-in user name to ‘userName’.</p>
-
-<h5 id="step-4-run-spring-application">Step 4: Run Spring Application</h5>
-
-<p>In your editor, open the main Spring boot class; usually, it is annotated with @SpringBootAppliation and run it.</p>
-
-<h5 id="step-5-test">Step 5: Test</h5>
-
-<p>In the browser, open http://localhost:8080/greeting. You will see a login page, it asks for the user name and password. Spring Boot identified that we have Spring Security as a dependency, so Spring configured default security. With the default, security Spring creates a single user with the name ‘user’, and it generates a random password. Look for Spring startup logs for the random password. Use these credentials to log in.</p>
-
-<p>Now you will see an HTML page with the message saying, Welcome user! As I said earlier, ‘user’ is the user’s default name, which Spring security will create for us. We successfully created a</p>
-
-                </div>
-            </div>
-            <div class="col-sm-1">
-            </div>
+                
         </div>
     </div>
+</div>
 </section>
 </div>
 

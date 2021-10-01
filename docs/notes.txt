@@ -92,7 +92,12 @@ Syntax highlight
 https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
 
 
+To create a Cheat sheet.
 
+-> Copy any cheat sheet from cheat-sheets folder and create new file, update its content
+-> Update _layouts/cheat-sheet.html with new file in the if else
+-> Update _layouts/default.html by adding new menu item pointing to new file
+-> Create new file in pages/cheat-sheets folder and update its content
 
 
 

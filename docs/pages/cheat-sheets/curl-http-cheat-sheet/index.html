@@ -129,7 +129,10 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cheat Sheet's</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown02">
                         <a class="nav-link" href="/pages/cheat-sheets/docker-cli-cheat-sheet/">Docker CLI</a>
+                        <!--<a class="nav-link" href="/pages/cheat-sheets/maven-cli-cheat-sheet/">Maven CLI</a>-->
+                        <a class="nav-link" href="/pages/cheat-sheets/curl-http-cheat-sheet/">cURL CLI</a>
                         <a class="nav-link" href="/pages/cheat-sheets/git-cheat-sheet/">Git</a>
+                        <!--<a class="nav-link" href="/pages/cheat-sheets/bash-cheat-sheet/">Bash</a>-->
                         <!--<a class="nav-link" href="/pages/cheat-sheets/markdown-cheat-sheet/">Markdown</a>-->
                     </div>
                 </li>
@@ -195,77 +198,76 @@
                 
                 <div class="col-sm-6">
                         
-                            <h5>Basic Docker Commands</h5>
+                            <h5>Get</h5>
                             <table class="custom-cheat-sheet-table">
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong><p>docker pull [OPTIONS] NAME[:TAG|@DIGEST]</p>
+                                    <td><strong><p>curl &lt;URL&gt;</p>
 </strong></td>
-                                    <td class="cheat-sheet-value"><p>Downloads image</p>
+                                    <td class="cheat-sheet-value"><p>Send HTTP Get request and view the response</p>
 
-<p id="options_tx"><strong>-q</strong> less verbose</p>
+<p id="options_tx"><strong>-i</strong> prints headers and response<br />
+<strong>-v</strong> prints more verbose, useful for debugging</p>
 
-<p id="terminal_tx">$ docker pull jenkins/jenkins:lts-jdk11</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker run [OPTIONS] IMAGE [COMMAND] [ARG…]</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Creates a new container</p>
-
-<p id="options_tx"><strong>-d</strong> run a container in background and print container id<br />
-<strong>–name</strong> assign a name to the container<br />
-<strong>-p &lt;local port&gt;:&lt;container port&gt;</strong> publish container’s port to the host<br />
-<strong>-v &lt;local file system&gt;:&lt;container file system&gt;</strong> mount a volume</p>
-
-<p id="terminal_tx">$ docker run -d –name jenkins -p 8085:8080 -v “/docker_volume/jenkins”:/var/jenkins_home jenkins/jenkins:lts-jdk11</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker images [OPTIONS] [REPOSITORY[:TAG]]</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Lists all images, repositories, tags and their size</p>
-
-<p id="options_tx"><strong>-a</strong> show all images (default hides intermediate images)</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker build [OPTIONS] PATH | URL | -</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Build an image from the docker file, by default it looks for ‘Dockerfile’</p>
-
-<p id="terminal_tx">$ docker build .</p>
+<p id="terminal_tx">$ curl -v http://localhost:8085/api/vi/employee/1</p>
 </td>
                                 </tr>
                                     
                                 </tbody>
                             </table>
                         
-                            <h5>Cleanup</h5>
+                            <h5>Post</h5>
                             <table class="custom-cheat-sheet-table">
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong><p>docker rmi [OPTIONS] IMAGE [IMAGE…]</p>
+                                    <td><strong><p>curl -d ‘key=value&amp;key=value’ &lt;URL&gt;</p>
 </strong></td>
-                                    <td class="cheat-sheet-value"><p>Remove one or more images</p>
+                                    <td class="cheat-sheet-value"><p>Post multiple key values using ‘application/x-www-form-urlencoded’ as content type</p>
 
-<p id="options_tx"><strong>-f</strong> force remove image</p>
-
-<p id="terminal_tx">$ docker rmi -f 8b7c2b10838b 1a7a055a6252</p>
+<p id="terminal_tx">$ curl -d ‘param1=value1&amp;param2=value2’ http://localhost:8085/api/vi/employee</p>
 </td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong><p>docker rm [OPTIONS] CONTAINER [CONTAINER…]</p>
+                                    <td><strong><p>curl -F ‘key=value’ -F ‘key=value’ &lt;URL&gt;</p>
 </strong></td>
-                                    <td class="cheat-sheet-value"><p>Remove one or more containers</p>
+                                    <td class="cheat-sheet-value"><p>Post multiple key values using ‘multipart/form-data’ as content type</p>
 
-<p id="options_tx"><strong>-f</strong> force remove running container</p>
+<p id="terminal_tx">$ curl -F ‘param1=value1’ -F ‘param2=value2’ http://localhost:8085/api/vi/employee</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>curl -d ‘{json}’ -H ‘Content-Type: application/json’ &lt;URL&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Post JSON data</p>
+
+<p id="terminal_tx">$ curl -d ‘{“id”:1,”firstName”:”Adam”}’ -H ‘Content-Type: application/json’ http://localhost:8085/api/vi/employee</p>
+</td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td><strong><p>curl -F ‘image=@/folder/image.png’ &lt;URL&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Submit form by uploading file, add @ before file location</p>
+</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Put</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong><p>curl -X PUT &lt;URL&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Send HTTP PUT request</p>
+
+<p id="terminal_tx">$ curl -d ‘param1=value1’ http://localhost:8085/api/vi/employee</p>
 </td>
                                 </tr>
                                     
@@ -276,101 +278,39 @@
                 
                 <div class="col-sm-6">
                         
-                            <h5>Container</h5>
+                            <h5>Delete</h5>
                             <table class="custom-cheat-sheet-table">
                                 <tbody>
                                     
                                 <tr>
-                                    <td><strong><p>docker container start [OPTIONS] CONTAINER [CONTAINER…]</p>
+                                    <td><strong><p>curl -X DELETE &lt;URL&gt;</p>
 </strong></td>
-                                    <td class="cheat-sheet-value"><p>Start one or more containers</p>
+                                    <td class="cheat-sheet-value"><p>Send HTTP DELETE request</p>
 
-<p id="options_tx"><strong>-i</strong> interactive mode; attach container’s STDIN</p>
+<p id="terminal_tx">$ curl -X DELETE http://localhost:8085/api/vi/employee/1</p>
+</td>
+                                </tr>
+                                    
+                                </tbody>
+                            </table>
+                        
+                            <h5>Security</h5>
+                            <table class="custom-cheat-sheet-table">
+                                <tbody>
+                                    
+                                <tr>
+                                    <td><strong><p>curl -u &lt;userid&gt;:&lt;pass&gt; &lt;URL&gt;</p>
+</strong></td>
+                                    <td class="cheat-sheet-value"><p>Pass basic authentication details; User id and password</p>
 
-<p id="terminal_tx">$ docker container start jenkins</p>
+<p id="terminal_tx">$ curl -u ‘admin:password’ http://localhost:8085/api/vi/employee</p>
 </td>
                                 </tr>
                                     
                                 <tr>
-                                    <td><strong><p>docker container stop [OPTIONS] CONTAINER [CONTAINER…]</p>
+                                    <td><strong><p>curl -k &lt;URL&gt;</p>
 </strong></td>
-                                    <td class="cheat-sheet-value"><p>Stop one or more containers</p>
-
-<p id="terminal_tx">$ docker container stop jenkins</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker container ls [OPTIONS]</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>List containers</p>
-
-<p id="options_tx"><strong>-a</strong> show all containers (default shows just running)<br />
-<strong>-q</strong> only display container id’s<br />
-<strong>-s</strong> display total file size</p>
-
-<p id="terminal_tx">$ docker container ls</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker container logs [OPTIONS] CONTAINER</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Display logs of the container</p>
-
-<p id="options_tx"><strong>-f</strong> follow log output<br />
-<strong>–tail &lt;number&gt;</strong> number of lines to show from the end of the log</p>
-
-<p id="terminal_tx">$ docker container logs –tail 5 jenkins</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker container exec [OPTIONS] CONTAINER COMMAND [ARG…]</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Run a command in a running container</p>
-
-<p id="options_tx"><strong>-d</strong> run command in the background<br />
-<strong>-i</strong> interactive mode, keep STDIN open<br />
-<strong>-t</strong> allocate a pseudo-TTY</p>
-
-<p id="terminal_tx">$ docker container exec -it jenkins /bin/bash</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker container diff CONTAINER</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>List changed files and directories on the container</p>
-
-<p id="terminal_tx">$ docker container diff jenkins</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker container stats [OPTIONS] [CONTAINER…]</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Display live stream on container resource usage statistics</p>
-
-<p id="terminal_tx">$ docker container stats jenkins</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker container inspect [OPTIONS] CONTAINER [CONTAINER…]</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Display detailed information on one or more container’s</p>
-
-<p id="terminal_tx">$ docker container inspect jenkins</p>
-</td>
-                                </tr>
-                                    
-                                <tr>
-                                    <td><strong><p>docker container kill [OPTIONS] CONTAINER [CONTAINER…]</p>
-</strong></td>
-                                    <td class="cheat-sheet-value"><p>Kill one or more running container’s</p>
-
-<p id="terminal_tx">$ docker container kill jenkins</p>
+                                    <td class="cheat-sheet-value"><p>Make insecure connection, ignores SSL certification validation</p>
 </td>
                                 </tr>
                                     

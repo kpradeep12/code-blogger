@@ -252,6 +252,9 @@
 <loc>https://thetechstack.net/about/</loc>
 </url>
 <url>
+<loc>https://thetechstack.net/pages/cheat-sheets/bash-cheat-sheet/</loc>
+</url>
+<url>
 <loc>https://thetechstack.net/pages/cheat-sheets/curl-http-cheat-sheet/</loc>
 </url>
 <url>
@@ -283,6 +286,9 @@
 </url>
 <url>
 <loc>https://thetechstack.net/pages/cheat-sheets/markdown-cheat-sheet/</loc>
+</url>
+<url>
+<loc>https://thetechstack.net/pages/cheat-sheets/maven-cli-cheat-sheet/</loc>
 </url>
 <url>
 <loc>https://thetechstack.net/category/reactivex/</loc>

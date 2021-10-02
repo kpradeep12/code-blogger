@@ -205,7 +205,7 @@
                                 <tr>
                                     <td><strong><p>curl &lt;URL&gt;</p>
 </strong></td>
-                                    <td class="cheat-sheet-value"><p>Send HTTP Get request and view the response</p>
+                                    <td class="cheat-sheet-value"><p>Send HTTP GET request and view the response</p>
 
 <p id="options_tx"><strong>-i</strong> prints headers and response<br />
 <strong>-v</strong> prints more verbose, useful for debugging</p>
@@ -242,7 +242,7 @@
                                 <tr>
                                     <td><strong><p>curl -d ‘{json}’ -H ‘Content-Type: application/json’ &lt;URL&gt;</p>
 </strong></td>
-                                    <td class="cheat-sheet-value"><p>Post JSON data</p>
+                                    <td class="cheat-sheet-value"><p>Post request with JSON data</p>
 
 <p id="terminal_tx">$ curl -d ‘{“id”:1,”firstName”:”Adam”}’ -H ‘Content-Type: application/json’ http://localhost:8085/api/vi/employee</p>
 </td>
@@ -258,6 +258,10 @@
                                 </tbody>
                             </table>
                         
+                </div>
+                
+                <div class="col-sm-6">
+                        
                             <h5>Put</h5>
                             <table class="custom-cheat-sheet-table">
                                 <tbody>
@@ -267,16 +271,12 @@
 </strong></td>
                                     <td class="cheat-sheet-value"><p>Send HTTP PUT request</p>
 
-<p id="terminal_tx">$ curl -d ‘param1=value1’ http://localhost:8085/api/vi/employee</p>
+<p id="terminal_tx">$ curl -X PUT -d ‘param1=value1’ http://localhost:8085/api/vi/employee</p>
 </td>
                                 </tr>
                                     
                                 </tbody>
                             </table>
-                        
-                </div>
-                
-                <div class="col-sm-6">
                         
                             <h5>Delete</h5>
                             <table class="custom-cheat-sheet-table">

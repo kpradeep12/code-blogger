@@ -22,7 +22,7 @@ sections:
   - title: Startup
     items:
     - term: |
-        Implement **CommandLineRunner** and **ApplicationRunner** to run specific code after the application startup but before it accepts any traffic.
+        Implement **CommandLineRunner** or **ApplicationRunner** to run specific code after the application startup but before it accepts any traffic.
       code: |
         ``` java
         @Component

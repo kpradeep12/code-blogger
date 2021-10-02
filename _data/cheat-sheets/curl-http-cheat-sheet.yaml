@@ -5,7 +5,7 @@
       - key: |
           curl \<URL>
         value: |
-          Send HTTP Get request and view the response  
+          Send HTTP GET request and view the response  
 
           **-i** prints headers and response  
           **-v** prints more verbose, useful for debugging  
@@ -30,22 +30,22 @@
       - key: > 
           curl -d '{json}' -H 'Content-Type: application/json' \<URL>
         value: |
-          Post JSON data  
+          Post request with JSON data  
 
           $ curl -d '{"id":1,"firstName":"Adam"}' -H 'Content-Type: application/json' http://localhost:8085/api/vi/employee
           {: #terminal_tx}
       - key: curl -F 'image=@/folder/image.png' \<URL>
         value: Submit form by uploading file, add @ before file location
+- column: two
+  groups:
     - title: Put
       items:
       - key: curl -X PUT \<URL>
         value: |
           Send HTTP PUT request  
           
-          $ curl -d 'param1=value1' http://localhost:8085/api/vi/employee
-          {: #terminal_tx}
-- column: two
-  groups:
+          $ curl -X PUT -d 'param1=value1' http://localhost:8085/api/vi/employee
+          {: #terminal_tx}  
     - title: Delete
       items:
       - key: curl -X DELETE \<URL>

@@ -6,12 +6,14 @@ image: /assets/images/banners/dockerfile-quick-reference.png
 project_id: book-collection-web-app
 ---
 
+## Introduction
+
 **_My Book Collection_** is a web application that allows users to search their favorite books and add them to their collection, and users can also share their collection.
 
 ### Demo
 ![]({{site.baseurl}}/assets/images/projects/my-book-collection/my-book-collection.gif){: .align-center}
 
-### What did we use in this project?
+### What tech stack we used for this project?
 * Java
 * Spring framework
     * Spring boot

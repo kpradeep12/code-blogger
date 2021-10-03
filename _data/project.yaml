@@ -5,3 +5,13 @@ book-collection-web-app:
       url: 1-introduction
     - title: Design
       url: 2-design
+    - title: Application Setup
+      url: 3-application-setup
+    - title: Database and JPA
+      url: 4-database-and-jpa
+    - title: Web and Security configuration
+      url: 5-web-and-security-configuration
+    - title: Web pages
+      url: 6-web-pages
+    - title: Run and test application
+      url: 7-run-and-test-application

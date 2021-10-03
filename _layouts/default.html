@@ -131,6 +131,15 @@
                     </div>
                 </li>
 
+                {% if jekyll.environment != 'production' %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Project's</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="nav-link" href="{{ site.baseurl }}/pages/projects/book-collection-web-app/1-introduction/">Book Collection</a>
+                    </div>
+                </li>
+                {% endif %}
+
                 {% if page.url == "/about/" %}
                 <li class="nav-item active">
                 {% else %}

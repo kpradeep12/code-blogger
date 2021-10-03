@@ -1,1 +1,1 @@
-git status . -- ':!docs'
+git status -s . -- ':!docs'

@@ -6,4 +6,7 @@ image: /assets/images/banners/dockerfile-quick-reference.png
 project_id: book-collection-web-app
 ---
 
-This is a project!
+Design
+
+### Demo
+![]({{site.baseurl}}/assets/images/projects/my-book-collection/design.jpg){: .align-center}

@@ -1,4 +1,4 @@
-git add -A
-git reset -- docs
-git commit -m "save"
+comment=${1-save}
+git add --all -- ':!docs'
+git commit -m "$comment"
 git push origin master

@@ -5,17 +5,31 @@
       - key: git clone \<repo_url>
         value: Clone and create new local repository
       - key: git status
-        value: List all the changes in the repository; new file, modification or deletion
-      - key: git status -s
-        value: List all the changes in the repository; short format
+        value: |
+          List all the changes in the repository; new file, modification or deletion  
+
+          **-s** list all changes in short format  
+          {: #options_tx}
+
+          //to list changes in specific directory  
+          $ git status \<dir>  
+          //to exclude a directory  
+          $ git status . \-- ':!dir1' ':!dir2'  
+          {: #terminal_tx}
       - key: git diff
         value: Compares modified files to staging area
       - key: git diff \--staged
         value: Compares staged files to last commit
       - key: git add \<file>
-        value: Move file from working area to staging area
-      - key: git add -A
-        value: Move all modified/new files to staging area
+        value: |
+          Move file from working area to staging area  
+
+          **-A or \--all** move all modified/new files to staging area  
+          {: #options_tx}
+
+          //to exclude certain files and folders  
+          $ git add \--all \-- ':!test/document.txt' ':!docs'  
+          {: #terminal_tx}
       - key: git commit -m "\<message>"
         value: Commit all staged files to local project history
       - key: git commit -a -m "\<message>"

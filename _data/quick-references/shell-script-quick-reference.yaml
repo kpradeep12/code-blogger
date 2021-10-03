@@ -1,0 +1,19 @@
+sections:
+  - title:
+    items:
+    - term: |
+        Pass paramter to shell script
+      code: |
+        ``` bash
+          //pass notes.txt 'read.sh notes.sh' it prints 'reading file notes.txt'
+          file=${1}
+          echo "reading file $file"
+        ```
+    - term: |
+        Use default value if no parameter is passed to shell script
+      code: |
+        ``` bash
+          //Use notes.txt if no value is passed for $1
+          file=${1-notes.txt}
+          echo "reading file $file"
+        ```        

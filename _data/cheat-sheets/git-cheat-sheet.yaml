@@ -14,7 +14,7 @@
           //to list changes in specific directory  
           $ git status \<dir>  
           //to exclude a directory  
-          $ git status . \-- ':!dir1' ':!dir2'  
+          $ git status . \-- ':!dir_1' ':!dir_2'  
           {: #terminal_tx}
       - key: git diff
         value: Compares modified files to staging area

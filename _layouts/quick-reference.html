@@ -32,6 +32,8 @@ layout: default
                     {% assign doclist = site.data.quick-references.spring-boot-quick-reference  %}
                 {% elsif page.file == "shell-script-quick-reference" %}
                     {% assign doclist = site.data.quick-references.shell-script-quick-reference  %}
+                {% elsif page.file == "important-websites-to-bookmark" %}
+                    {% assign doclist = site.data.quick-references.important-websites-to-bookmark  %}    
                 {% endif %}
 
                 {% for section in doclist.sections %}

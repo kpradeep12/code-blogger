@@ -105,3 +105,9 @@ To create any Book, Project or Workshop:
 -> Add entry in _data/*.yaml
 -> Add required files in pages/*
 -> Update menu in _layouts/default.html
+
+
+New page Idea:
+Important URL's to bookmark
+
+https://andersbrownworth.com/blockchain/

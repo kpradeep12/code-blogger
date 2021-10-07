@@ -4,20 +4,21 @@ date: 2021-10-07 12:11:10 -0500
 categories: [git, workflow]
 image: /assets/images/banners/common-workflows-in-git.png
 description: "Most of the time, we try to search for solutions for some common Git problems. I started compiling them on this page; it might help you understand or learn more about Git."
-published: false
 ---
 
 In this article we will look at some common Git workflows.
 
 * Connect local repo to Github repository
 * Check if any new changes in remote
+* Exclude some files/directories from staging
+* Working on tags
 {:toc}
 
 ### Connect local repo to Github repository
 
 At a later point, you might want to connect the local repo with the Github repository. To do that, initiate the git project and sync it by following the below commands.
 
-{% highlight bash%}
+{% highlight bash %}
 #initiate git project in loca repo
 git init .
 
@@ -32,7 +33,7 @@ git pull origin master
 
 Sometimes we may want to check if any new changes are available in remote before pulling the changes. To check that, execute the below sequence of Git commands.
 
-{% highlight bash%}
+{% highlight bash %}
 #fetch the changes from remote; this command will not touch your local changes.
 git fetch origin
 
@@ -52,5 +53,28 @@ git merge origin/master
 git pull
 {% endhighlight %}
 
+### Exclude some files/directories from staging
+
+If you want to skip some files/directories from staging, then use the below command. 
+
+{% highlight bash %}
+#skips notes.txt and docs from staging but remaining all file will be staged
+git add --all -- ':!<notes.txt>' ':!<docs>'
+{% endhighlight %}
+
+### Working on tags
+
+Commit all your changes and look below commands for your specific need.
+
+{% highlight bash %}
+#to create a tag
+git tag v1.0
+
+#list all tags
+git tag
+
+#to push a particular tag
+git push origin v1.0
+{% endhighlight %}
 
 > Read this **[Git Cheat Sheet]({{site.baseurl}}/pages/cheat-sheets/git-cheat-sheet/)**  for quick overlook of Git commands.

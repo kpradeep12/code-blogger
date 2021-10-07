@@ -23,7 +23,7 @@ External link:
 Internal post link:
 **[Part 1]({{site.baseurl}}/spring-cloud-gateway-part-1/)**
 
-Code:
+Code: java,bash, yaml, xml
 {% highlight java %}
 Vertx vertx = Vertx.vertx();
 {% endhighlight %}
@@ -92,7 +92,7 @@ Syntax highlight
 https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
 
 
-To create a Cheat sheet.
+To create a Cheat sheet, Quick ref, Libraries.
 
 -> Copy any cheat sheet from cheat-sheets folder and create new file, update its content
 -> Update _layouts/cheat-sheet.html with new file in the if else
@@ -100,26 +100,14 @@ To create a Cheat sheet.
 -> Create new file in pages/cheat-sheets folder and update its content
 
 
+To create any Book, Project or Workshop:
+
+-> Add entry in _data/*.yaml
+-> Add required files in pages/*
+-> Update menu in _layouts/default.html
 
 
+New page Idea:
+Important URL's to bookmark
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+https://andersbrownworth.com/blockchain/

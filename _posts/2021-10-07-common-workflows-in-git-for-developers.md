@@ -9,8 +9,24 @@ published: false
 
 In this article we will look at some common Git workflows.
 
+* Connect local repo to Github repository
 * Check if any new changes in remote
 {:toc}
+
+### Connect local repo to Github repository
+
+At a later point, you might want to connect the local repo with the Github repository. To do that, initiate the git project and sync it by following the below commands.
+
+{% highlight bash%}
+#initiate git project in loca repo
+git init .
+
+#Add remote repo
+git remote add origin https://github.com/<user>/repo.git
+
+#pull changes from remote
+git pull origin master
+{% endhighlight %}
 
 ### Check if any new changes in remote
 

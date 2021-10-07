@@ -23,7 +23,7 @@ External link:
 Internal post link:
 **[Part 1]({{site.baseurl}}/spring-cloud-gateway-part-1/)**
 
-Code:
+Code: java,bash, yaml, xml
 {% highlight java %}
 Vertx vertx = Vertx.vertx();
 {% endhighlight %}

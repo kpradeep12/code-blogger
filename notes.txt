@@ -111,3 +111,13 @@ New page Idea:
 Important URL's to bookmark
 
 https://andersbrownworth.com/blockchain/
+
+
+PNG compression utility:
+
+> Download https://github.com/amadvance/advancecomp/releases
+> Extract to any folder and set path to it
+> Using this tool https://linux.die.net/man/1/advpng
+
+Create code snippets in Visual Code
+https://code.visualstudio.com/docs/editor/userdefinedsnippets

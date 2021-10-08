@@ -10,6 +10,7 @@ In this article we will look at some common Git workflows.
 
 * Connect local repo to Github repository
 * Check if any new changes in remote
+* Force pull to overwrite local files
 * Exclude some files/directories from staging
 * Working on tags
 {:toc}
@@ -52,6 +53,26 @@ git merge origin/master
 #or pull the changes
 git pull
 {% endhighlight %}
+
+### Force pull to overwrite local files
+
+You may be faced the below error when trying to pull changes from the remote.
+
+{% highlight bash %}
+error: Your local changes to the following files would be overwritten by merge:
+{% endhighlight %}
+
+To fix this issue, we need to first either save local changes by stashing them 'git stash' or discard local changes with the below commands
+
+{% highlight bash %}
+#reset staged files
+git reset --hard
+
+#delete local untracked/new files
+git clean -fd
+{% endhighlight %}
+
+After the local changes are cleaned then, execute 'git pull'
 
 ### Exclude some files/directories from staging
 

@@ -51,7 +51,7 @@
 <meta property="og:url" content="https://thetechstack.net/blog/:year/:month/:day/:title" />
 <meta property="og:site_name" content="Pradeep’s Java blog" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"workflow","url":"https://thetechstack.net/blog/:year/:month/:day/:title","author":{"@type":"Person","name":"Pradeep Kundarapu"},"description":"Sharing my Java coding experiments","@context":"http://schema.org"}</script>
+{"description":"Sharing my Java coding experiments","@type":"WebPage","url":"https://thetechstack.net/blog/:year/:month/:day/:title","headline":"workflow","author":{"@type":"Person","name":"Pradeep Kundarapu"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 

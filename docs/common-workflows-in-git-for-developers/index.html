@@ -54,7 +54,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-10-07T13:11:10-04:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"Common Workflows In Git For Developers","dateModified":"2021-10-07T13:11:10-04:00","datePublished":"2021-10-07T13:11:10-04:00","image":"https://thetechstack.net/assets/images/banners/common-workflows-in-git.png","url":"https://thetechstack.net/common-workflows-in-git-for-developers/","mainEntityOfPage":{"@type":"WebPage","@id":"https://thetechstack.net/common-workflows-in-git-for-developers/"},"author":{"@type":"Person","name":"pradeep"},"description":"Most of the time, we try to search for solutions for some common Git problems. I started compiling them on this page; it might help you understand or learn more about Git.","@context":"http://schema.org"}</script>
+{"image":"https://thetechstack.net/assets/images/banners/common-workflows-in-git.png","description":"Most of the time, we try to search for solutions for some common Git problems. I started compiling them on this page; it might help you understand or learn more about Git.","@type":"BlogPosting","url":"https://thetechstack.net/common-workflows-in-git-for-developers/","headline":"Common Workflows In Git For Developers","dateModified":"2021-10-07T13:11:10-04:00","datePublished":"2021-10-07T13:11:10-04:00","author":{"@type":"Person","name":"pradeep"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://thetechstack.net/common-workflows-in-git-for-developers/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -273,6 +273,7 @@
 <ul id="markdown-toc">
   <li><a href="#connect-local-repo-to-github-repository" id="markdown-toc-connect-local-repo-to-github-repository">Connect local repo to Github repository</a></li>
   <li><a href="#check-if-any-new-changes-in-remote" id="markdown-toc-check-if-any-new-changes-in-remote">Check if any new changes in remote</a></li>
+  <li><a href="#force-pull-to-overwrite-local-files" id="markdown-toc-force-pull-to-overwrite-local-files">Force pull to overwrite local files</a></li>
   <li><a href="#exclude-some-filesdirectories-from-staging" id="markdown-toc-exclude-some-filesdirectories-from-staging">Exclude some files/directories from staging</a></li>
   <li><a href="#working-on-tags" id="markdown-toc-working-on-tags">Working on tags</a></li>
 </ul>
@@ -311,6 +312,22 @@ git merge origin/master
 
 <span class="c">#or pull the changes</span>
 git pull</code></pre></figure>
+
+<h3 id="force-pull-to-overwrite-local-files">Force pull to overwrite local files</h3>
+
+<p>You may be faced the below error when trying to pull changes from the remote.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">error: Your <span class="nb">local </span>changes to the following files would be overwritten by merge:</code></pre></figure>
+
+<p>To fix this issue, we need to first either save local changes by stashing them ‘git stash’ or discard local changes with the below commands</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#reset staged files</span>
+git reset <span class="nt">--hard</span>
+
+<span class="c">#delete local untracked/new files</span>
+git clean <span class="nt">-fd</span></code></pre></figure>
+
+<p>After the local changes are cleaned then, execute ‘git pull’</p>
 
 <h3 id="exclude-some-filesdirectories-from-staging">Exclude some files/directories from staging</h3>
 

@@ -1,8 +1,8 @@
 ---
-title: "Fastest way to create a ReactJS and Spring Boot App"
-date: 2021-10-07 12:11:10 -0500
+title: "A quick way to create a ReactJS and Spring Boot app"
+date: 2021-10-08 12:11:10 -0500
 categories: [spring, reactjs]
-image: /assets/images/banners/common-workflows-in-git.pn
+image: /assets/images/banners/quick-way-create-reactjs-spring-boot-app.png
 description: ""
 published: false
 ---
@@ -11,7 +11,7 @@ Creating a fresh ReactJS and Spring Boot application involves a lot of configura
 
 * Create a new application
 * Run and test
-* Package for deployment
+* Package the app for deployment
 {:toc}
 
 ### Create a new application
@@ -64,7 +64,7 @@ This proxy is needed only in local environment because Spring and ReactJS run on
 
 > **Note** that 'ui' folder is generated based on **[create-a-new-react-app.html](https://reactjs.org/docs/create-a-new-react-app.html)** this is a standard folder structure ReactJS recommends.
 
-### Package for deployment
+### Package the app for deployment
 
 In the project folder, execute the below command to generate a final .jar file.
 
@@ -72,7 +72,7 @@ In the project folder, execute the below command to generate a final .jar file.
 .\mnvw package
 {% endhighlight %}
 
-You can run this jar file and access both UI and Spring at port 8080. To run this .jar execute the below command
+Because we used 'frontend-maven-plugin', this plugin will internally execute 'npm install' and 'npm build' and copy all generated static files into target/classes/public folder. We can see all these files in the final packaged jar file. You can run this jar file and access both UI and Spring at port 8080. To run this .jar execute the below command
 
 {% highlight bash %}
 java -jar <file-name>.jar

@@ -1,10 +1,9 @@
 ---
 title: "A quick way to create a ReactJS and Spring Boot app"
-date: 2021-10-08 12:11:10 -0500
+date: 2021-10-23 12:11:10 -0500
 categories: [spring, reactjs]
 image: /assets/images/banners/quick-way-create-reactjs-spring-boot-app.png
-description: ""
-published: false
+description: "Let's learn to create a ReactJS and Spring Boot Application in a single project folder instead of two separate projects. This setup is helpful if you are making small or POC projects."
 ---
 
 Creating a fresh ReactJS and Spring Boot application involves a lot of configuration changes and testing. It is a repetitive process if you frequently make this type of application. Instead of repeating the same thing, let's reuse the existing pre-configured application. We follow below three sections to create an end-to-end application.
@@ -62,7 +61,7 @@ NPM will redirect all the HTTP requests coming from 3000 port to 8080 port. We d
 
 This proxy is needed only in local environment because Spring and ReactJS run on different ports.
 
-> **Note** that 'ui' folder is generated based on **[create-a-new-react-app.html](https://reactjs.org/docs/create-a-new-react-app.html)** this is a standard folder structure ReactJS recommends.
+> **Note** that 'ui' folder is generated based on **[create-a-new-react-app](https://reactjs.org/docs/create-a-new-react-app.html)** this is a standard folder structure ReactJS recommends.
 
 ### Package the app for deployment
 

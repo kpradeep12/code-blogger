@@ -38,6 +38,17 @@
           
           $ docker build .
           {: #terminal_tx}
+      - key: |
+          docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+        value: |
+          Execute a command in a running container
+          
+          **-i** interactive mode, keeps STDIN open  
+          **-t** Allocate a pseudo-TTY
+          {: #options_tx}
+
+          $ docker container exec -it mariadb /bin/bash
+          {: #terminal_tx}
     - title: Cleanup
       items:
         - key: |
